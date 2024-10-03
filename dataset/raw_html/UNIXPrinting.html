@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   UNIXPrinting - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3GtVoGGHsd10o@qVvvRAAAAAM","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"UNIXPrinting","wgTitle":"UNIXPrinting","wgCurRevisionId":9829,"wgRevisionId":9829,"wgArticleId":1501,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"UNIXPrinting","wgRelevantArticleId":1501,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":
+"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-UNIXPrinting rootpage-UNIXPrinting skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     UNIXPrinting
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Introduction">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Introduction
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-2">
+         <a href="#lpr">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           lpr
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-3">
+         <a href="#nscript">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           nscript
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-4">
+         <a href="#lprm">
+          <span class="tocnumber">
+           4
+          </span>
+          <span class="toctext">
+           lprm
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-5">
+         <a href="#lpq">
+          <span class="tocnumber">
+           5
+          </span>
+          <span class="toctext">
+           lpq
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-6">
+         <a href="#Generate_Postscript">
+          <span class="tocnumber">
+           6
+          </span>
+          <span class="toctext">
+           Generate Postscript
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-7">
+         <a href="#Preview_your_job">
+          <span class="tocnumber">
+           7
+          </span>
+          <span class="toctext">
+           Preview your job
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-8">
+         <a href="#Choose_a_print_queue">
+          <span class="tocnumber">
+           8
+          </span>
+          <span class="toctext">
+           Choose a print queue
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-9">
+         <a href="#Send_a_print_job">
+          <span class="tocnumber">
+           9
+          </span>
+          <span class="toctext">
+           Send a print job
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-10">
+         <a href="#Monitor_a_print_job">
+          <span class="tocnumber">
+           10
+          </span>
+          <span class="toctext">
+           Monitor a print job
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-11">
+         <a href="#Remove_a_Print_Job">
+          <span class="tocnumber">
+           11
+          </span>
+          <span class="toctext">
+           Remove a Print Job
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <h2>
+       <span class="mw-headline" id="Introduction">
+        Introduction
+       </span>
+      </h2>
+      <p>
+       UMIACS uses the LPRng spooling system to provide both a Berkeley UNIX interface to our network printing system.
+      </p>
+      <p>
+       The commands are located in /usr/local/bin. They include the programs 'lpr', 'lprm', 'lpq', and 'lpstat'.
+      </p>
+      <p>
+       All of the UNIX queues are configured to handle postscript. See the examples section for more information on how to print different file types.
+Basic Commands
+      </p>
+      <h2>
+       <span class="mw-headline" id="lpr">
+        lpr
+       </span>
+      </h2>
+      <p>
+       Use `lpr -Pprintername filename.ps` to submit the postscript file named filename.ps to the printer queue named printername. If no filename is specified, lpr reads from standard input. If no printer name is specified, then the job is discarded by the print server.
+      </p>
+      <p>
+       Additional options to specify media handling, page orientation, and double sided printing can be passed to the print spooler using one or more -Z options. Double sided printing is specified with -Zduplex. Page orientation is controlled with -Zportrait, -Zlandscape. Manual feed media (eg. transparencies) is specified with -Zmanual. Please note that not all printers support all -Z options.
+      </p>
+      <h2>
+       <span class="mw-headline" id="nscript">
+        nscript
+       </span>
+      </h2>
+      <p>
+       Use `nscript -Pprintername filename.txt` to send the text file named filename.txt to the printer named printername. If no filename is specified, then nscript reads from standard input.
+      </p>
+      <p>
+       Nscript is a weak attempt to simulate Adobe Systems Incorporated nscript programs. It supports a handful of interesting arguments. With the '-G' argument, nscript generates gaudy output that includes header information on each page. The '-2' argument generates two column output and '-r' rotates the job's orientation to landscape mode.
+      </p>
+      <h2>
+       <span class="mw-headline" id="lprm">
+        lprm
+       </span>
+      </h2>
+      <p>
+       Use 'lprm -Pprintername' to remove jobs from the queue named printername. With no further arguments, it removes the first removable job in the queue. Given a job's id as an argument, it will remove the specified job from the queue and you can remove all removable jobs from a queue with the argument "all".
+      </p>
+      <p>
+       You are able to remove items from the queue that you have submitted from anywhere, not just the computer from which the job was submitted.
+      </p>
+      <h2>
+       <span class="mw-headline" id="lpq">
+        lpq
+       </span>
+      </h2>
+      <p>
+       Use 'lpq -Pprintername' to get the status of the queue named printername. With no further arguments, it will print the printer queue, the host queried, and the number of jobs in the queue. With the -l argument, it will specify the id, queue rank, the total size of the job in bytes, and any errors encountered in processing the job.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Generate_Postscript">
+        Generate Postscript
+       </span>
+      </h2>
+      <p>
+       Postscript is a Page Description Language that is understood by high quality printers and typically generated by applications. There is a lot of documentation about using and programming in postscript, but for our purposes you'll just need to generate postscript from an existing text file.
+      </p>
+      <p>
+       You can generate postscript from an existing text file with textps. For example, to convert the Message of the Day file to a postscript file try `textps ... &gt; file.ps`.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Preview_your_job">
+        Preview your job
+       </span>
+      </h2>
+      <p>
+       It's helpful to preview your postscript files before printing by calling Ghostview with `ghostview file.ps`.
+      </p>
+      <p>
+       Higher quality previewing is available using Ghostview's derivativegv. You can call it as `gv file.ps`.
+      </p>
+      <p>
+       Both commands should open a window that displays the contents of your postscript file.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Choose_a_print_queue">
+        Choose a print queue
+       </span>
+      </h2>
+      <p>
+       Print queues are described here:
+       <a href="/umiacs/index.php/PrinterQueueNaming" title="PrinterQueueNaming">
+        Print Queues
+       </a>
+       .
+      </p>
+      <p>
+       You can check list all the print queues with `lpq -a` and you can list just a single queue `lpq -Pprintername` -- eg. ps432-3208 with `lpq -Pps432-3208`.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Send_a_print_job">
+        Send a print job
+       </span>
+      </h2>
+      <p>
+       After you choose a suitable printer (eg. ps432-3208), you can send your postscript file to the printer with `lpr -Pps432-3208 file.ps`.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Monitor_a_print_job">
+        Monitor a print job
+       </span>
+      </h2>
+      <p>
+       You can monitor the job you sent to the printer (eg. ps432-3208) with `lpq -Pps432-3208`.
+      </p>
+      <p>
+       Lpq will return the following output:
+      </p>
+      <pre>[herzog 33] lpq -Pps432-3208
+Printer: ps432-3208@lpr1 (dest raw@ps432-3208.umiacs.umd.edu) 'HP M653 in IRB 3208'
+Queue: 2 printable jobs
+Server: pid 11833 active
+Unspooler: pid 11837 active
+Status: waiting for subserver to exit at 14:50:45.141
+Rank   Owner/ID                  Class Job Files                 Size Time
+active username@herzog+198           A   198 file.ps               4309 14:50:44
+2      username2@prime+199           A   199 hpss.ps               4309 14:50:45
+Active connection from  128.8.120.247
+Waiting connection from 128.8.120.247
+</pre>
+      <h2>
+       <span class="mw-headline" id="Remove_a_Print_Job">
+        Remove a Print Job
+       </span>
+      </h2>
+      <p>
+       If you would like to remove your job from the queue, you should get the job's id from the output of `lpq`. You can remove it with `lprm -Pps432-3208 198`
+      </p>
+      <p>
+       From the output of lpq, I can see that the job id is 198 and I can remove it with lprm as follows:
+      </p>
+      <pre>[herzog 35] lprm -Pps432-3208 198
+Printer ps432-3208@durer:
+checking perms 'username@herzog+198'
+dequeued 'username@herzog+198'
+</pre>
+      <p>
+       Often the last job listed in the printer queue has already spooled to the printer, and lprm will be unable to delete the job.  In this case, the only way to cancel the job will be to press the 'cancel' button on the printer.
+      </p>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=UNIXPrinting&amp;oldid=9829">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=UNIXPrinting&amp;oldid=9829
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=UNIXPrinting" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/UNIXPrinting" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:UNIXPrinting&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/UNIXPrinting">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=UNIXPrinting&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=UNIXPrinting&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/UNIXPrinting" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/UNIXPrinting" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=UNIXPrinting&amp;oldid=9829" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=UNIXPrinting&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 7 May 2021, at 15:46.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.010","ppvisitednodes":{"value":33,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002214111","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":142});});
+  </script>
+ </body>
+</html>

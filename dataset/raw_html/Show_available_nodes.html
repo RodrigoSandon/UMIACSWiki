@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   SLURM/JobSubmission - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3G3aHxlTEvsO03Q339VAAAAAo","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SLURM/JobSubmission","wgTitle":"SLURM/JobSubmission","wgCurRevisionId":11991,"wgRevisionId":11991,"wgArticleId":2504,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SLURM/JobSubmission","wgRelevantArticleId":2504,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Show_available_nodes",
+"wgVector2022PreviewPages":[],"wgInternalRedirectTargetUrl":"/umiacs/index.php/SLURM/JobSubmission#show_available_nodes"};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["mediawiki.action.view.redirect","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/index.php/SLURM/JobSubmission#show_available_nodes" rel="canonical"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SLURM_JobSubmission rootpage-SLURM_JobSubmission skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     SLURM/JobSubmission
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+     <span class="mw-redirectedfrom">
+      (Redirected from
+      <a class="mw-redirect" href="/umiacs/index.php?title=Show_available_nodes&amp;redirect=no" title="Show available nodes">
+       Show available nodes
+      </a>
+      )
+     </span>
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Job_Submission">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Job Submission
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-2">
+           <a href="#srun">
+            <span class="tocnumber">
+             1.1
+            </span>
+            <span class="toctext">
+             srun
+            </span>
+           </a>
+           <ul>
+            <li class="toclevel-3 tocsection-3">
+             <a href="#Common_srun_Arguments">
+              <span class="tocnumber">
+               1.1.1
+              </span>
+              <span class="toctext">
+               Common srun Arguments
+              </span>
+             </a>
+            </li>
+            <li class="toclevel-3 tocsection-4">
+             <a href="#Interactive_Shell_Sessions">
+              <span class="tocnumber">
+               1.1.2
+              </span>
+              <span class="toctext">
+               Interactive Shell Sessions
+              </span>
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="toclevel-2 tocsection-5">
+           <a href="#salloc">
+            <span class="tocnumber">
+             1.2
+            </span>
+            <span class="toctext">
+             salloc
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-6">
+           <a href="#sbatch">
+            <span class="tocnumber">
+             1.3
+            </span>
+            <span class="toctext">
+             sbatch
+            </span>
+           </a>
+           <ul>
+            <li class="toclevel-3 tocsection-7">
+             <a href="#Advanced_Batch_Scripts">
+              <span class="tocnumber">
+               1.3.1
+              </span>
+              <span class="toctext">
+               Advanced Batch Scripts
+              </span>
+             </a>
+            </li>
+            <li class="toclevel-3 tocsection-8">
+             <a href="#More_Examples">
+              <span class="tocnumber">
+               1.3.2
+              </span>
+              <span class="toctext">
+               More Examples
+              </span>
+             </a>
+            </li>
+            <li class="toclevel-3 tocsection-9">
+             <a href="#scancel">
+              <span class="tocnumber">
+               1.3.3
+              </span>
+              <span class="toctext">
+               scancel
+              </span>
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-10">
+         <a href="#Identifying_Resources_and_Features">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           Identifying Resources and Features
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-11">
+           <a href="#show_nodes">
+            <span class="tocnumber">
+             2.1
+            </span>
+            <span class="toctext">
+             show_nodes
+            </span>
+           </a>
+           <ul>
+            <li class="toclevel-3 tocsection-12">
+             <a href="#Examples">
+              <span class="tocnumber">
+               2.1.1
+              </span>
+              <span class="toctext">
+               Examples
+              </span>
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="toclevel-2 tocsection-13">
+           <a href="#show_available_nodes">
+            <span class="tocnumber">
+             2.2
+            </span>
+            <span class="toctext">
+             show_available_nodes
+            </span>
+           </a>
+           <ul>
+            <li class="toclevel-3 tocsection-14">
+             <a href="#Footnotes">
+              <span class="tocnumber">
+               2.2.1
+              </span>
+              <span class="toctext">
+               Footnotes
+              </span>
+             </a>
+            </li>
+            <li class="toclevel-3 tocsection-15">
+             <a href="#Examples_2">
+              <span class="tocnumber">
+               2.2.2
+              </span>
+              <span class="toctext">
+               Examples
+              </span>
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-16">
+         <a href="#Requesting_GPUs">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           Requesting GPUs
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-17">
+         <a href="#MPI_example">
+          <span class="tocnumber">
+           4
+          </span>
+          <span class="toctext">
+           MPI example
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <h1>
+       <span class="mw-headline" id="Job_Submission">
+        Job Submission
+       </span>
+      </h1>
+      <p>
+       SLURM offers a variety of ways to run jobs. It is important to understand the different options available and how to request the resources required for a job in order for it to run successfully. All job submission should be done from submit nodes; any computational code should be run in a job allocation on compute nodes. The following commands outline how to allocate resources on the compute nodes and submit processes to be run on the allocated nodes.
+      </p>
+      <p>
+       The cluster that everyone with a
+       <a href="/umiacs/index.php/Accounts#UMIACS_Account" title="Accounts">
+        UMIACS account
+       </a>
+       has access to is
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       . Please visit the Nexus page for instructions on how to connect to your assigned submit nodes.
+      </p>
+      <p>
+       <b>
+        Computationally intensive processes run on submission nodes will be terminated. Please submit jobs to be scheduled on compute nodes for this purpose.
+       </b>
+      </p>
+      <p>
+       For details on how SLURM decides how to schedule jobs when multiple jobs are waiting in a scheduler's queue, please see
+       <a href="/umiacs/index.php/SLURM/Priority" title="SLURM/Priority">
+        SLURM/Priority
+       </a>
+       .
+      </p>
+      <h2>
+       <span class="mw-headline" id="srun">
+        srun
+       </span>
+      </h2>
+      <p>
+       The
+       <code>
+        srun
+       </code>
+       command is used to run a process on the compute nodes in the cluster. If you pass it a normal shell command (or command that executes a script), it will submit a job to run that shell command/script on a compute node and then return.
+       <code>
+        srun
+       </code>
+       accepts many command line options to specify the resources required by the command passed to it. Some common command line arguments are listed below and full documentation of all available options is available in the man page for
+       <code>
+        srun
+       </code>
+       , which can be accessed by running
+       <code>
+        man srun
+       </code>
+       .
+      </p>
+      <pre>$ srun --qos=default --mem=100mb --time=1:00:00 bash -c 'echo "Hello World from" `hostname`'
+Hello World from tron33.umiacs.umd.edu
+</pre>
+      <p>
+       It is important to understand that
+       <code>
+        srun
+       </code>
+       is an interactive command. By default input to
+       <code>
+        srun
+       </code>
+       is broadcast to all compute nodes running your process and output from the compute nodes is redirected to
+       <code>
+        srun
+       </code>
+       . This behavior can be changed; however,
+       <b>
+        srun will always wait for the command passed to finish before exiting, so if you start a long running process and end your terminal session, your process will stop running on the compute nodes and your job will end
+       </b>
+       . To run a non-interactive submission that will remain running after you logout, you will need to wrap your
+       <code>
+        srun
+       </code>
+       commands in a batch script and submit it with
+       <a href="#sbatch">
+        sbatch
+       </a>
+       .
+      </p>
+      <h3>
+       <span class="mw-headline" id="Common_srun_Arguments">
+        Common srun Arguments
+       </span>
+      </h3>
+      <ul>
+       <li>
+        <code>
+         --job-name=&lt;JOBNAME&gt;
+        </code>
+        <i>
+         Requests your job be named &lt;JOBNAME&gt;
+        </i>
+       </li>
+       <li>
+        <code>
+         --mem=1g
+        </code>
+        <i>
+         Requests 1GB of memory for your job, if no unit is given MB is assumed
+        </i>
+       </li>
+       <li>
+        <code>
+         --ntasks=2
+        </code>
+        <i>
+         Requests 2 "tasks" which map to cores on a CPU for your job; if passed to srun, runs the given command concurrently on each core
+        </i>
+       </li>
+       <li>
+        <code>
+         --nodes=2
+        </code>
+        <i>
+         Requests 2 nodes be allocated to your job; if passed to srun, runs the given command concurrently on each node
+        </i>
+       </li>
+       <li>
+        <code>
+         --nodelist=&lt;NODENAME&gt;
+        </code>
+        <i>
+         Requests to run your job on the &lt;NODENAME&gt; node
+        </i>
+       </li>
+       <li>
+        <code>
+         --time=dd-hh:mm:ss
+        </code>
+        <i>
+         Requests your job run for dd days, hh hours, mm minutes, and ss seconds
+        </i>
+       </li>
+       <li>
+        <code>
+         --error=&lt;ERRNAME&gt;
+        </code>
+        <i>
+         Redirects stderr for your job to the &lt;ERRNAME&gt; file
+        </i>
+       </li>
+       <li>
+        <code>
+         --partition=&lt;PARTITIONNAME&gt;
+        </code>
+        <i>
+         Requests your job run in the &lt;PARTITIONNAME&gt; partition
+        </i>
+       </li>
+       <li>
+        <code>
+         --qos=&lt;QOSNAME&gt;default
+        </code>
+        <i>
+         Requests your job run with the &lt;QOSNAME&gt; QOS, to see the available QOS options on a cluster, run
+        </i>
+        <code>
+         show_qos
+        </code>
+       </li>
+       <li>
+        <code>
+         --account=&lt;ACCOUNTNAME&gt;
+        </code>
+        <i>
+         Requests your job runs under the &lt;ACCOUNTNAME&gt; Slurm account, different accounts have different available partitions/QOS
+        </i>
+       </li>
+       <li>
+        <code>
+         --output=&lt;OUTNAME&gt;
+        </code>
+        <i>
+         Redirects stdout for your job to the &lt;OUTNAME&gt; file
+        </i>
+       </li>
+       <li>
+        <code>
+         --requeue
+        </code>
+        <i>
+         Requests your job be automatically requeued if it is preempted
+        </i>
+       </li>
+       <li>
+        <code>
+         --exclusive
+        </code>
+        <i>
+         Requests your job be the only one running on the node(s) it is assigned to. This requires that your job be allocated all of the resources on the node(s). The scheduler
+         <b>
+          does not
+         </b>
+         automatically give your job all of the node's/nodes' resources, however, so if you need more than the default, you still need to request these with
+        </i>
+        <code>
+         --ntasks
+        </code>
+        <i>
+         and
+        </i>
+        <code>
+         --mem
+        </code>
+       </li>
+      </ul>
+      <h3>
+       <span class="mw-headline" id="Interactive_Shell_Sessions">
+        Interactive Shell Sessions
+       </span>
+      </h3>
+      <p>
+       An interactive shell session on a compute node can be useful for debugging or developing code that isn't ready to be run as a batch job. To get an interactive shell on a node, use
+       <code>
+        srun
+       </code>
+       with the
+       <code>
+        --pty
+       </code>
+       argument to invoke a shell:
+      </p>
+      <pre>$ srun --pty --qos=default --mem=1g --time=01:00:00 bash
+$ hostname
+tron33.umiacs.umd.edu
+</pre>
+      <p>
+       <b>
+        Please do not leave interactive shells running for long periods of time when you are not working. This blocks resources from being used by everyone else.
+       </b>
+      </p>
+      <h2>
+       <span class="mw-headline" id="salloc">
+        salloc
+       </span>
+      </h2>
+      <p>
+       The
+       <code>
+        salloc
+       </code>
+       command can also be used to request resources be allocated without needing a batch script. Running salloc with a list of resources will allocate the resources you requested, create a job, and drop you into a subshell with the environment variables necessary to run commands in the newly created job allocation. When your time is up or you exit the subshell, your job allocation will be relinquished.
+      </p>
+      <pre>$ salloc --qos=default -N 1 --mem=2g --time=01:00:00
+salloc: Granted job allocation 159
+$ srun /usr/bin/hostname
+tron33.umiacs.umd.edu
+$ exit
+exit
+salloc: Relinquishing job allocation 159
+</pre>
+      <p>
+       <b>
+        Please note that any commands not invoked with srun will be run locally on the submit node. Please be careful when using salloc.
+       </b>
+      </p>
+      <h2>
+       <span class="mw-headline" id="sbatch">
+        sbatch
+       </span>
+      </h2>
+      <p>
+       The
+       <code>
+        sbatch
+       </code>
+       command allows you to write a batch script to be submitted and run non-interactively on the compute nodes. To run a simple Hello World command on the compute nodes you could write a file, helloWorld.sh with the following contents:
+      </p>
+      <pre>#!/bin/bash
+
+srun bash -c 'echo Hello World from `hostname`'
+</pre>
+      <p>
+       Then you need to submit the script with sbatch and request resources:
+      </p>
+      <pre>$ sbatch --qos=default --mem=1g --time=1:00:00 helloWorld.sh
+Submitted batch job 121
+</pre>
+      <p>
+       SLURM will return a job number that you can use to check the status of your job with squeue:
+      </p>
+      <pre>$ squeue
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+               121      tron helloWor username  R       0:01      1 tron32
+</pre>
+      <h4>
+       <span class="mw-headline" id="Advanced_Batch_Scripts">
+        Advanced Batch Scripts
+       </span>
+      </h4>
+      <p>
+       You can also write a batch script with all of your resources/options defined in the script itself. This is useful for jobs that need to be run tens/hundreds/thousands of times. You can then handle any necessary environment setup and run commands on the resources you requested by invoking commands with srun. The srun commands can also be more complex and be told to only use portions of your entire job allocation, each of these distinct srun commands makes up one "job step". The batch script will be run on the first node allocated as part of your job allocation and each job step will be run on whatever resources you tell them to. In the following example, we have a batch job that will request 2 nodes in the cluster. We then load a specific version of
+       <a href="/umiacs/index.php/Python" title="Python">
+        Python
+       </a>
+       into our environment and submit two job steps, each one using one node. Since srun is blocks until the command finishes, we use the '&amp;' operator to background the process so that both job steps can run at once; however, this means that we then need to use the wait command to block processing until all background processes have finished.
+      </p>
+      <pre>#!/bin/bash
+
+# Lines that begin with #SBATCH specify commands to be used by SLURM for scheduling
+
+#SBATCH --job-name=helloWorld                                        # sets the job name
+#SBATCH --output=helloWorld.out.%j                                   # indicates a file to redirect STDOUT to; %j is the jobid. If set, must be set to a file instead of a directory or else submission will fail.
+#SBATCH --error=helloWorld.out.%j                                    # indicates a file to redirect STDERR to; %j is the jobid. If set, must be set to a file instead of a directory or else submission will fail.
+#SBATCH --time=00:05:00                                              # how long you would like your job to run; format=dd-hh:mm:ss
+#SBATCH --qos=default                                                # set QOS, this will determine what resources can be requested
+#SBATCH --nodes=2                                                    # number of nodes to allocate for your job
+#SBATCH --ntasks=4                                                   # request 4 cpu cores be reserved for your node total
+#SBATCH --ntasks-per-node=2                                          # request 2 cpu cores be reserved per node
+#SBATCH --mem=1g                                                     # memory required by job; if unit is not specified MB will be assumed. for multi-node jobs, this argument allocates this much memory *per node*
+
+srun --nodes=1 --mem=512m bash -c "hostname; python3 --version" &amp;    # use srun to invoke commands within your job; using an '&amp;'
+srun --nodes=1 --mem=512m bash -c "hostname; python3 --version" &amp;    # will background the process allowing them to run concurrently
+wait                                                                 # wait for any background processes to complete
+
+# once the end of the batch script is reached your job allocation will be revoked
+</pre>
+      <p>
+       Another useful thing to know is that you can pass additional arguments into your sbatch scripts on the command line and reference them as
+       <code>
+        ${1}
+       </code>
+       for the first argument and so on.
+      </p>
+      <h4>
+       <span class="mw-headline" id="More_Examples">
+        More Examples
+       </span>
+      </h4>
+      <ul>
+       <li>
+        <a href="/umiacs/index.php/SLURM/ArrayJobs" title="SLURM/ArrayJobs">
+         SLURM/ArrayJobs
+        </a>
+       </li>
+      </ul>
+      <h3>
+       <span class="mw-headline" id="scancel">
+        scancel
+       </span>
+      </h3>
+      <p>
+       The
+       <code>
+        scancel
+       </code>
+       command can be used to cancel job allocations or job steps that are no longer needed. It can be passed individual job IDs or an option to delete all of your jobs or jobs that meet certain criteria.
+      </p>
+      <ul>
+       <li>
+        <code>
+         scancel 255
+        </code>
+        <i>
+         cancel job 255
+        </i>
+       </li>
+       <li>
+        <code>
+         scancel 255.3
+        </code>
+        <i>
+         cancel job step 3 of job 255
+        </i>
+       </li>
+       <li>
+        <code>
+         scancel --user username --partition=tron
+        </code>
+        <i>
+         cancel all jobs for username in the tron partition
+        </i>
+       </li>
+      </ul>
+      <h1>
+       <span class="mw-headline" id="Identifying_Resources_and_Features">
+        Identifying Resources and Features
+       </span>
+      </h1>
+      <p>
+       The
+       <code>
+        sinfo
+       </code>
+       command can show you additional features of nodes in the cluster but you need to ask it to show some non-default options using a command like
+       <code>
+        sinfo -o "%40N %8c %8m %35f %35G"
+       </code>
+       .
+      </p>
+      <pre>$ sinfo -o "%40N %8c %8m %35f %35G"
+NODELIST                                 CPUS     MEMORY   AVAIL_FEATURES                      GRES
+legacy00                                 48       125940   rhel8,Zen,EPYC-7402                 (null)
+legacy[01-11,13-19,22-28,30]             12+      61804+   rhel8,Xeon,E5-2620                  (null)
+cbcb[23-24],twist[02-05]                 24       255150   rhel8,Xeon,E5-2650                  (null)
+cbcb26                                   128      513243   rhel8,Zen,EPYC-7763,Ampere          gpu:rtxa5000:8
+cbcb27                                   64       255167   rhel8,Zen,EPYC-7513,Ampere          gpu:rtxa6000:8
+cbcb[00-21]                              32       2061175  rhel8,Zen,EPYC-7313                 (null)
+cbcb22,cmlcpu[00,06-07],legacy20         24+      384270+  rhel8,Xeon,E5-2680                  (null)
+cbcb25                                   24       255278   rhel8,Xeon,E5-2650,Pascal,Turing    gpu:rtx2080ti:1,gpu:gtx1080ti:1
+legacy21                                 8        61746    rhel8,Xeon,E5-2623                  (null)
+tron[06-09,12-15,21]                     16       126214+  rhel8,Zen,EPYC-7302P,Ampere         gpu:rtxa4000:4
+tron[10-11,16-20,34]                     16       126217   rhel8,Zen,EPYC-7313P,Ampere         gpu:rtxa4000:4
+tron[22-33,35-45]                        16       126214+  rhel8,Zen,EPYC-7302,Ampere          gpu:rtxa4000:4
+clip11                                   16       126217   rhel8,Zen,EPYC-7313,Ampere          gpu:rtxa4000:4
+clip00                                   32       255276   rhel8,Xeon,E5-2683,Pascal           gpu:titanxpascal:3
+clip02                                   20       126255   rhel8,Xeon,E5-2630,Pascal           gpu:gtx1080ti:3
+clip03                                   20       126243   rhel8,Xeon,E5-2630,Pascal,Turing    gpu:rtx2080ti:1,gpu:gtx1080ti:2
+clip04                                   32       255233   rhel8,Zen,EPYC-7302,Ampere          gpu:rtx3090:4
+clip[05-06]                              24       126216   rhel8,Zen,EPYC-7352,Ampere          gpu:rtxa6000:2
+clip07                                   8        255263   rhel8,Xeon,E5-2623,Pascal           gpu:gtx1080ti:3
+clip09                                   32       383043   rhel8,Xeon,6130,Pascal,Turing       gpu:rtx2080ti:5,gpu:gtx1080ti:3
+clip13,cml30,vulcan[29-32]               32       255218+  rhel8,Zen,EPYC-7313,Ampere          gpu:rtxa6000:8
+clip08,vulcan[08-22,25]                  32       255258+  rhel8,Xeon,E5-2683,Pascal           gpu:gtx1080ti:8
+clip12,gammagpu[10-17]                   16       126203+  rhel8,Zen,EPYC-7313,Ampere          gpu:rtxa6000:4
+clip01                                   32       255276   rhel8,Xeon,E5-2683,Pascal           gpu:titanxpascal:1,gpu:titanxp:2
+clip10                                   44       1029404  rhel8,Xeon,E5-2699                  (null)
+cml[00,02-11,13-14],tron[62-63,65-66,68- 32       351530+  rhel8,Xeon,4216,Turing              gpu:rtx2080ti:8
+cml01                                    32       383030   rhel8,Xeon,4216,Turing              gpu:rtx2080ti:6
+cml12                                    32       383038   rhel8,Xeon,4216,Turing,Ampere       gpu:rtx2080ti:7,gpu:rtxa4000:1
+cml[15-16]                               32       383038   rhel8,Xeon,4216,Turing              gpu:rtx2080ti:7
+cml[17-28],gammagpu05                    32       255225+  rhel8,Zen,EPYC-7282,Ampere          gpu:rtxa4000:8
+cml31                                    32       384094   rhel8,Zen,EPYC-9124,Ampere          gpu:a100:1
+cml32                                    64       512999   rhel8,Zen,EPYC-7543,Ampere          gpu:a100:4
+cmlcpu[01-04]                            20       384271   rhel8,Xeon,E5-2660                  (null)
+gammagpu00                               32       255233   rhel8,Zen,EPYC-7302,Ampere          gpu:rtxa5000:8
+mbrc[00-01]                              20       189498   rhel8,Xeon,4114,Turing              gpu:rtx2080ti:8
+twist[00-01]                             8        61727    rhel8,Xeon,E5-1660                  (null)
+legacygpu08                              20       513327   rhel8,Xeon,E5-2640,Maxwell          gpu:m40:2
+brigid[16-17]                            48       512897   rhel8,Zen,EPYC-7443                 (null)
+brigid[18-19]                            20       61739    rhel8,Xeon,E5-2640                  (null)
+legacygpu06                              20       255249   rhel8,Xeon,E5-2699,Maxwell          gpu:gtxtitanx:4
+tron[00-05]                              32       255233   rhel8,Zen,EPYC-7302,Ampere          gpu:rtxa6000:8
+tron[46-61]                              48       255232   rhel8,Zen,EPYC-7352,Ampere          gpu:rtxa5000:8
+tron[64,67]                              32       383028+  rhel8,Xeon,4216,Turing,Ampere       gpu:rtx2080ti:7,gpu:rtx3070:1
+vulcan00                                 32       255259   rhel8,Xeon,E5-2683,Pascal           gpu:p6000:7,gpu:p100:1
+vulcan[01-04,06-07]                      32       255259   rhel8,Xeon,E5-2683,Pascal           gpu:p6000:8
+vulcan05                                 32       255259   rhel8,Xeon,E5-2683,Pascal           gpu:p6000:7
+janus[02-04]                             40       383025   rhel8,Xeon,6248,Turing              gpu:rtx2080ti:10
+legacygpu00                              20       255249   rhel8,Xeon,E5-2650,Pascal           gpu:titanxp:4
+legacygpu[01-02,07]                      20       255249+  rhel8,Xeon,E5-2650,Maxwell          gpu:gtxtitanx:4
+legacygpu[03-04]                         16       255268   rhel8,Xeon,E5-2630,Maxwell          gpu:gtxtitanx:2
+legacygpu05                              44       513193   rhel8,Xeon,E5-2699,Pascal           gpu:gtx1080ti:4
+vulcan23                                 32       383030   rhel8,Xeon,4612,Turing              gpu:rtx2080ti:8
+vulcan26                                 24       770126   rhel8,Xeon,6146,Pascal              gpu:titanxp:10
+vulcan[27-28]                            56       770093   rhel8,Xeon,8280,Turing              gpu:rtx2080ti:10
+vulcan24                                 16       126216   rhel8,Zen,7282,Ampere               gpu:rtxa6000:4
+gammagpu[01-04,06-09],vulcan[33-37]      32       255215+  rhel8,Zen,EPYC-7313,Ampere          gpu:rtxa5000:8
+vulcan[38-44]                            32       255215   rhel8,Zen,EPYC-7313,Ampere          gpu:rtxa4000:8
+</pre>
+      <p>
+       Note that all of the nodes shown by this may not necessarily be in a partition you are able to submit to.
+      </p>
+      <p>
+       You can identify further specific information about a node using
+       <a href="/umiacs/index.php/SLURM/ClusterStatus#scontrol" title="SLURM/ClusterStatus">
+        scontrol
+       </a>
+       with various flags.
+      </p>
+      <p>
+       There are also two command aliases developed by UMIACS staff to show various node information in aggregate. They are
+       <code>
+        show_nodes
+       </code>
+       and
+       <code>
+        show_available_nodes
+       </code>
+       .
+      </p>
+      <h2>
+       <span class="mw-headline" id="show_nodes">
+        show_nodes
+       </span>
+      </h2>
+      <p>
+       The
+       <code>
+        show_nodes
+       </code>
+       command alias shows each node's name, number of CPUs, memory, {OS, CPU architecture, CPU type, GPU architecture (if the node has GPUs)} (as AVAIL_FEATURES), GRES (GPUs), and State. It essentially wraps the
+       <tt>
+        sinfo
+       </tt>
+       command with some pre-determined output format options and shows each node on its own line, in alphabetical order.
+      </p>
+      <p>
+       To only view nodes in a specific partition, append
+       <code>
+        -p &lt;partition name&gt;
+       </code>
+       to the command alias.
+      </p>
+      <h3>
+       <span class="mw-headline" id="Examples">
+        Examples
+       </span>
+      </h3>
+      <pre>$ show_nodes
+NODELIST             CPUS       MEMORY     AVAIL_FEATURES                           GRES                             STATE
+brigid16             48         512897     rhel8,x86_64,Zen,EPYC-7443               (null)                           idle
+brigid17             48         512897     rhel8,x86_64,Zen,EPYC-7443               (null)                           idle
+...                  ...        ...        ...                                      ...                              ...
+vulcan45             32         513250     rhel8,x86_64,Zen,EPYC-7313,Ampere        gpu:rtxa6000:8                   idle
+</pre>
+      <p>
+       (specific partition)
+      </p>
+      <pre>$ show_nodes -p tron
+NODELIST             CPUS       MEMORY     AVAIL_FEATURES                           GRES                             STATE
+tron00               32         255233     rhel8,x86_64,Zen,EPYC-7302,Ampere        gpu:rtxa6000:8                   idle
+tron01               32         255233     rhel8,x86_64,Zen,EPYC-7302,Ampere        gpu:rtxa6000:8                   idle
+...                  ...        ...        ...                                      ...                              ...
+tron69               32         383030     rhel8,x86_64,Xeon,4216,Turing            gpu:rtx2080ti:8                  idle
+</pre>
+      <h2>
+       <span class="mw-headline" id="show_available_nodes">
+        show_available_nodes
+       </span>
+      </h2>
+      <p>
+       The
+       <code>
+        show_available_nodes
+       </code>
+       command alias takes zero or more arguments that correspond to Slurm constructs, resources, or features that you are looking to request a job with and tells you what nodes could
+       <b>
+        theoretically
+       </b>
+       [0,1] run a job with these arguments immediately. It assumes your job is a single-node job.
+      </p>
+      <p>
+       These arguments are:
+      </p>
+      <ul>
+       <li>
+        <code>
+         --partition
+        </code>
+        : Only include nodes in the specified partition(s).
+       </li>
+       <li>
+        <code>
+         --account
+        </code>
+        : Only include nodes from partitions that can use the specified account(s).
+       </li>
+       <li>
+        <code>
+         --qos
+        </code>
+        : Only include nodes from partitions that can use the specified QoS(es).
+       </li>
+       <li>
+        <code>
+         --cpus
+        </code>
+        : Only include nodes with at least this many CPUs free.
+       </li>
+       <li>
+        <code>
+         --mem
+        </code>
+        : Only include nodes with at least this much memory free. The default unit is MB if unspecified, but any of {K,M,G,T} can be suffixed to the number provided (will then be interpreted as KB, MB, GB, or TB, respectively).
+       </li>
+       <li>
+        GRES-related arguments:
+        <ul>
+         <li>
+          <code>
+           --gres
+          </code>
+          ,
+          <code>
+           --and-gres
+          </code>
+          : Only include nodes whose list of GRES contains
+          <i>
+           all
+          </i>
+          of the specified GRES type/quantity pairings.
+         </li>
+         <li>
+          <code>
+           --or-gres
+          </code>
+          : Only include nodes whose list of GRES contains
+          <i>
+           any
+          </i>
+          of the specified GRES type/quantity pairings. Functionally identical to
+          <tt>
+           --and-gres
+          </tt>
+          if only one GRES type/quantity pairing is specified.
+         </li>
+        </ul>
+       </li>
+       <li>
+        GPU-related arguments:
+        <ul>
+         <li>
+          <code>
+           --gpus
+          </code>
+          ,
+          <code>
+           --and-gpus
+          </code>
+          : Only include nodes whose list of GPUs (a subset of GRES) contains
+          <i>
+           all
+          </i>
+          of the specified GPU type/quantity pairings.
+         </li>
+         <li>
+          <code>
+           --or-gpus
+          </code>
+          : Only include nodes whose list of GPUs (a subset of GRES) contains
+          <i>
+           any
+          </i>
+          of the specified GPU type/quantity pairings. Functionally identical to
+          <tt>
+           --and-gpus
+          </tt>
+          if only one GPU type/quantity pairing is specified.
+         </li>
+        </ul>
+       </li>
+       <li>
+        Feature-related arguments:
+        <ul>
+         <li>
+          <code>
+           --feature
+          </code>
+          ,
+          <code>
+           --and-feature
+          </code>
+          : Only include nodes whose list of features contains
+          <i>
+           all
+          </i>
+          of the specified feature(s).
+         </li>
+         <li>
+          <code>
+           --or-feature
+          </code>
+          : Only include nodes whose list of features contains
+          <i>
+           any
+          </i>
+          of the specified feature(s). Functionally identical to
+          <tt>
+           --and-feature
+          </tt>
+          if only one feature is specified.
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <p>
+       These arguments are also viewable by running
+       <code>
+        show_available_nodes -h
+       </code>
+       .
+      </p>
+      <p>
+       If your passed argument set does not contain any resource-based arguments (CPUs/RAM/GRES or GPUs), a node is defined as available if it has at least 1 CPU and 1MB of RAM available.
+      </p>
+      <p>
+       If there are no nodes available that meet your passed argument set, you will receive the message
+       <tt>
+        There are no nodes that have currently free resources that meet this argument set.
+       </tt>
+      </p>
+      <h3>
+       <span class="mw-headline" id="Footnotes">
+        Footnotes
+       </span>
+      </h3>
+      <p>
+       [0] - As of now, this command alias does not factor in resources occupied by jobs that could be preempted (based on the partition(s) passed to it, if present). This is soon to come.
+      </p>
+      <p>
+       [1] - This command alias also does not factor in jobs with higher priority values requesting more resources, in the same partition(s), blocking execution of a job submitted with the arguments checked by the command alias. This is due to the complexity of calculating a job's priority value before it is actually submitted.
+      </p>
+      <h3>
+       <span class="mw-headline" id="Examples_2">
+        Examples
+       </span>
+      </h3>
+      <p>
+       Show all available nodes:
+      </p>
+      <pre>$ show_available_nodes
+brigid17
+  cpus=16,mem=414593M
+brigid18
+  cpus=8,mem=24875M
+...
+</pre>
+      <p>
+       Show nodes available in the
+       <tt>
+        tron
+       </tt>
+       partition:
+      </p>
+      <pre>$ show_available_nodes --partition tron
+tron00
+  cpus=14,mem=50433M,gres=gpu:rtxa6000:1
+tron01
+  cpus=10,mem=17665M,gres=gpu:rtxa6000:2
+...
+</pre>
+      <p>
+       Show nodes with one or more RTX A5000 or RTX A6000 GPUs available to the
+       <tt>
+        vulcan
+       </tt>
+       account:
+      </p>
+      <pre>$ show_available_nodes --account vulcan --or-gpus rtxa5000:1,rtxa6000:1
+vulcan32
+  cpus=16,mem=193778M,gres=gpu:rtxa6000:4
+vulcan33
+  cpus=15,mem=181499M,gres=gpu:rtxa5000:3
+...
+</pre>
+      <p>
+       Show nodes with 4 or more CPUs, 48G or more memory, and one or more RTX A6000 GPUs available in the
+       <tt>
+        scavenger
+       </tt>
+       partition:
+      </p>
+      <pre>$ show_available_nodes --partition=scavenger --cpus=4 --mem=48g --or-gpus=rtxa6000:1
+cbcb27
+  cpus=59,mem=218303M,gres=gpu:rtxa6000:6
+clip06
+  cpus=20,mem=93448M,gres=gpu:rtxa6000:1
+...
+</pre>
+      <p>
+       Show nodes with
+       <a class="external text" href="https://www.nvidia.com/en-us/geforce/turing" rel="nofollow">
+        Turing
+       </a>
+       or
+       <a class="external text" href="https://www.nvidia.com/en-us/data-center/ampere-architecture" rel="nofollow">
+        Ampere
+       </a>
+       architecture GPUs available in the
+       <tt>
+        scavenger
+       </tt>
+       partition:
+      </p>
+      <pre>$ show_available_nodes --partition=scavenger --or-feature=Ampere,Turing
+cbcb25
+  cpus=24,mem=255278M,gres=gpu:rtx2080ti:1,gpu:gtx1080ti:1
+cbcb26
+  cpus=127,mem=447707M,gres=gpu:rtxa5000:7
+...
+</pre>
+      <p>
+       Show nodes with
+       <a class="external text" href="https://www.amd.com/en/technologies/zen-core" rel="nofollow">
+        Zen
+       </a>
+       architecture CPUs and
+       <a class="external text" href="https://www.nvidia.com/en-us/data-center/ampere-architecture" rel="nofollow">
+        Ampere
+       </a>
+       architecture GPUs available in the
+       <tt>
+        scavenger
+       </tt>
+       partition:
+      </p>
+      <pre>$ show_available_nodes --partition=scavenger --and-feature=Zen,Ampere
+cbcb26
+  cpus=127,mem=447707M,gres=gpu:rtxa5000:7
+cbcb27
+  cpus=59,mem=218303M,gres=gpu:rtxa6000:6
+...
+</pre>
+      <p>
+       (bogus example) Attempt to show nodes available in the
+       <tt>
+        bogus
+       </tt>
+       partition:
+      </p>
+      <pre>$ show_available_nodes --partition=bogus
+There are no nodes that have currently free resources that meet this argument set.
+</pre>
+      <h1>
+       <span class="mw-headline" id="Requesting_GPUs">
+        Requesting GPUs
+       </span>
+      </h1>
+      <p>
+       If you need to do processing on a GPU, you will need to request that your job have access to GPUs just as you need to request processors or CPU cores. In SLURM, GPUs are considered "generic resources" also known as GRES. To request some number of GPUs be reserved/available for your job, you can use the flag
+       <code>
+        --gres=gpu:#
+       </code>
+       (with the actual number of GPUs you want). If there are multiple types of GPUs available in the cluster and you need a specific type, you can provide the type option to the gres flag e.g.
+       <code>
+        --gres=gpu:rtxa5000:#
+       </code>
+       . If you do not request a specific type of GPU, you are likely to be scheduled on an older, lower spec'd GPU.
+      </p>
+      <p>
+       Note that some QoSes may have limits on the number of GPUs you can request per job, so you may need to specify a different QoS to request more GPUs.
+      </p>
+      <pre>$ srun --pty --qos=medium --gres=gpu:2 nvidia-smi
+...
+Wed Mar  6 16:59:39 2024
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off | 00000000:3D:00.0 Off |                  N/A |
+| 32%   23C    P8               1W / 250W |      0MiB / 11264MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA GeForce RTX 2080 Ti     Off | 00000000:40:00.0 Off |                  N/A |
+| 32%   25C    P8               1W / 250W |      0MiB / 11264MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+</pre>
+      <p>
+       Please note that your job will only be able to see/access the GPUs you requested. If you only need 1 GPU, please only request 1 GPU. The others on the node (if any) will be left available for other users.
+      </p>
+      <pre>$ srun --pty --gres=gpu:rtxa5000:1 nvidia-smi
+Thu Aug 25 15:22:15 2022
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.129.06   Driver Version: 470.129.06   CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA RTX A5000    Off  | 00000000:01:00.0 Off |                  Off |
+| 30%   23C    P8    20W / 230W |      0MiB / 24256MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+</pre>
+      <p>
+       As with all other flags, the
+       <code>
+        --gres
+       </code>
+       flag may also be passed to
+       <a href="#sbatch">
+        sbatch
+       </a>
+       and
+       <a href="#salloc">
+        salloc
+       </a>
+       rather than directly to
+       <a href="#srun">
+        srun
+       </a>
+       .
+      </p>
+      <h1>
+       <span class="mw-headline" id="MPI_example">
+        MPI example
+       </span>
+      </h1>
+      <p>
+       To run
+       <a class="external text" href="https://en.wikipedia.org/wiki/Message_Passing_Interface" rel="nofollow">
+        MPI
+       </a>
+       jobs, you will need to include the
+       <code>
+        --mpi=pmix
+       </code>
+       flag in your submission arguments.
+      </p>
+      <pre>#!/usr/bin/bash 
+#SBATCH --job-name=mpi_test # Job name 
+#SBATCH --nodes=4 # Number of nodes 
+#SBATCH --ntasks=8 # Number of MPI ranks 
+#SBATCH --ntasks-per-node=2 # Number of MPI ranks per node 
+#SBATCH --ntasks-per-socket=1 # Number of tasks per processor socket on the node 
+#SBATCH --time=00:30:00 # Time limit hrs:min:sec 
+
+
+srun --mpi=pmix /nfshomes/username/testing/mpi/a.out 
+</pre>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM/JobSubmission&amp;oldid=11991#show_available_nodes">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM/JobSubmission&amp;oldid=11991#show_available_nodes
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SLURM%2FJobSubmission" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/SLURM/JobSubmission" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:SLURM/JobSubmission&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/SLURM/JobSubmission">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=SLURM/JobSubmission&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=SLURM/JobSubmission&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SLURM/JobSubmission" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SLURM/JobSubmission" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=SLURM/JobSubmission&amp;oldid=11991" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=SLURM/JobSubmission&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 13 August 2024, at 16:21.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.021","walltime":"0.023","ppvisitednodes":{"value":158,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":15495,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002183906","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":154});});
+  </script>
+ </body>
+</html>

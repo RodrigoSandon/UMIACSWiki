@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Apptainer - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3GuqUtu@y2Gbnn-W2aIgAAAAE","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Apptainer","wgTitle":"Apptainer","wgCurRevisionId":11997,"wgRevisionId":11997,"wgArticleId":3187,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Apptainer","wgRelevantArticleId":3187,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Singularity","wgVector2022PreviewPages":[],
+"wgInternalRedirectTargetUrl":"/umiacs/index.php/Apptainer"};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["mediawiki.action.view.redirect","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/index.php/Apptainer" rel="canonical"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Apptainer rootpage-Apptainer skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     Apptainer
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+     <span class="mw-redirectedfrom">
+      (Redirected from
+      <a class="mw-redirect" href="/umiacs/index.php?title=Singularity&amp;redirect=no" title="Singularity">
+       Singularity
+      </a>
+      )
+     </span>
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <p>
+       <a class="external text" href="https://apptainer.org" rel="nofollow">
+        Apptainer
+       </a>
+       is a container platform that doesn't elevate the privileges of a user running the container.  This is important as UMIACS runs many multi-tenant hosts (such as
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       ) and doesn't provide administrative control to users on them.  While
+       <a class="external text" href="https://www.docker.com" rel="nofollow">
+        Docker
+       </a>
+       is popular, the most typical setups require a daemon that has administrative level privileges that makes it not tenable.
+      </p>
+      <p>
+       <b>
+        Apptainer was previously branded as Singularity.  You should still be able to run commands on the system with
+        <code>
+         singularity
+        </code>
+        , however you should start migrating to using the
+        <code>
+         apptainer
+        </code>
+        command.
+       </b>
+      </p>
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Overview">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Overview
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-2">
+         <a href="#Nexus_Containers">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           Nexus Containers
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-3">
+           <a href="#Bind_Mounts">
+            <span class="tocnumber">
+             2.1
+            </span>
+            <span class="toctext">
+             Bind Mounts
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-4">
+           <a href="#Shared_Containers">
+            <span class="tocnumber">
+             2.2
+            </span>
+            <span class="toctext">
+             Shared Containers
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-5">
+         <a href="#Docker_Workflow_Example">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           Docker Workflow Example
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <h2>
+       <span class="mw-headline" id="Overview">
+        Overview
+       </span>
+      </h2>
+      <p>
+       You can find out what the current version is that we provide by running the
+       <code>
+        apptainer --version
+       </code>
+       command.  If this instead says
+       <code>
+        apptainer: command not found
+       </code>
+       and you are using a UMIACS-supported host, please
+       <a href="/umiacs/index.php/HelpDesk" title="HelpDesk">
+        contact staff
+       </a>
+       and we will ensure that the software is available on the host you are looking for it on.
+      </p>
+      <pre># apptainer --version
+apptainer version 1.2.5-1.el8
+</pre>
+      <p>
+       Apptainer can run a variety of images including its own format and
+       <a class="external text" href="https://apptainer.org/docs/user/main/docker_and_oci.html" rel="nofollow">
+        Docker images
+       </a>
+       .  To create images from definition files, you need to have administrative rights. You will need to either use
+       <a href="/umiacs/index.php/Podman" title="Podman">
+        Podman
+       </a>
+       to accomplish this on UMIACS-supported hosts, or alternatively do this on a host that you have full administrative access to (laptop or personal desktop) rather than a UMIACS-supported host.
+      </p>
+      <p>
+       If you are going to pull large images, you may run out of space in your home directory. We suggest you run the following commands to setup alternate cache and tmp directories.  We are using
+       <code>
+        /scratch0
+       </code>
+       but you can substitute any large enough local scratch directory, network scratch directory, or project directory you would like.
+      </p>
+      <pre>export WORKDIR=/scratch0/$USER
+export APPTAINER_CACHEDIR=${WORKDIR}/.cache
+export APPTAINER_TMPDIR=${WORKDIR}/.tmp
+mkdir -p $APPTAINER_CACHEDIR
+mkdir -p $APPTAINER_TMPDIR
+</pre>
+      <p>
+       <br/>
+       We do suggest you pull images down into an intermediate file (
+       <b>
+        SIF
+       </b>
+       file) as you then do not have to worry about re-caching the image.
+      </p>
+      <pre>$ apptainer pull cuda12.2.2.sif docker://nvidia/cuda:12.2.2-base-ubi8
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+Getting image source signatures
+Copying blob d5d706ce7b29 done
+Copying blob b4dc78aeafca done
+Copying blob 24a22c1b7260 done
+Copying blob 8dea37be3176 done
+Copying blob 25fa05cd42bd done
+Copying blob a57130ec8de1 done
+Copying blob 880a66924cf5 done
+Copying config db554d658b done
+Writing manifest to image destination
+Storing signatures
+2022/10/14 10:31:17  info unpack layer: sha256:25fa05cd42bd8fabb25d2a6f3f8c9f7ab34637903d00fd2ed1c1d0fa980427dd
+2022/10/14 10:31:19  info unpack layer: sha256:24a22c1b72605a4dbcec13b743ef60a6cbb43185fe46fd8a35941f9af7c11153
+2022/10/14 10:31:19  info unpack layer: sha256:8dea37be3176a88fae41c265562d5fb438d9281c356dcb4edeaa51451dbdfdb2
+2022/10/14 10:31:20  info unpack layer: sha256:b4dc78aeafca6321025300e9d3050c5ba3fb2ac743ae547c6e1efa3f9284ce0b
+2022/10/14 10:31:20  info unpack layer: sha256:a57130ec8de1e44163e965620d5aed2abe6cddf48b48272964bfd8bca101df38
+2022/10/14 10:31:20  info unpack layer: sha256:d5d706ce7b293ffb369d3bf0e3f58f959977903b82eb26433fe58645f79b778b
+2022/10/14 10:31:49  info unpack layer: sha256:880a66924cf5e11df601a4f531f3741c6867a3e05238bc9b7cebb2a68d479204
+INFO:    Creating SIF file...
+</pre>
+      <pre>$ apptainer inspect cuda12.2.2.sif
+...
+maintainer: NVIDIA CORPORATION &lt;sw-cuda-installer@nvidia.com&gt;
+name: ubi8
+org.label-schema.build-arch: amd64
+org.label-schema.build-date: Wednesday_24_January_2024_13:53:0_EST
+org.label-schema.schema-version: 1.0
+org.label-schema.usage.apptainer.version: 1.2.5-1.el8
+org.label-schema.usage.singularity.deffile.bootstrap: docker
+org.label-schema.usage.singularity.deffile.from: nvidia/cuda:12.2.2-base-ubi8
+...
+</pre>
+      <p>
+       Now you can run the local image with the
+       <b>
+        run
+       </b>
+       command or start a shell with the
+       <b>
+        shell
+       </b>
+       command.
+      </p>
+      <ul>
+       <li>
+        Please note that if you are in an environment with GPUs and you want to access them inside the container you need to specify the
+        <b>
+         --nv
+        </b>
+        flag. Nvidia has a very specific driver and libraries that are required to run CUDA programs, so this is to ensure that all appropriate devices are created inside the container and that these libraries are made available in the container .
+       </li>
+      </ul>
+      <pre>$ apptainer run --nv cuda12.2.2.sif nvidia-smi -L
+GPU 0: NVIDIA GeForce GTX 1080 Ti (UUID: GPU-8e040d17-402e-cc86-4e83-eb2b1d501f1e)
+GPU 1: NVIDIA GeForce GTX 1080 Ti (UUID: GPU-d681a21a-8cdd-e624-6bf8-5b0234584ba2)
+</pre>
+      <h2>
+       <span class="mw-headline" id="Nexus_Containers">
+        Nexus Containers
+       </span>
+      </h2>
+      <p>
+       In our
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       environment we have some example containers based on our
+       <a class="external text" href="https://gitlab.umiacs.umd.edu/derek/pytorch_docker" rel="nofollow">
+        pytorch_docker
+       </a>
+       project.  These can be found in
+       <code>
+        /fs/nexus-containers/pytorch
+       </code>
+       .
+      </p>
+      <p>
+       You can just run one of the example images by doing the following (you should have already allocated a interactive job with a GPU in
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       ).  It will use the default
+       <a class="external text" href="https://gitlab.umiacs.umd.edu/derek/pytorch_docker/-/blob/master/tensor.py" rel="nofollow">
+        script
+       </a>
+       found at
+       <code>
+        /srv/tensor.py
+       </code>
+       within the image.
+      </p>
+      <pre>$ hostname &amp;&amp; nvidia-smi -L
+tron38.umiacs.umd.edu
+GPU 0: NVIDIA RTX A4000 (UUID: GPU-4a0a5644-9fc8-84b4-5d22-65d45ca36506)
+</pre>
+      <pre>$ apptainer run --nv /fs/nexus-containers/pytorch/pytorch_1.13.0+cu117.sif
+99 984.5538940429688
+199 654.1710815429688
+299 435.662353515625
+399 291.1429138183594
+499 195.5575714111328
+599 132.3363037109375
+699 90.5206069946289
+799 62.86213684082031
+899 44.56754684448242
+999 32.466392517089844
+1099 24.461835861206055
+1199 19.166893005371094
+1299 15.6642427444458
+1399 13.347112655639648
+1499 11.814264297485352
+1599 10.800163269042969
+1699 10.129261016845703
+1799 9.685370445251465
+1899 9.391674041748047
+1999 9.19735336303711
+Result: y = 0.0022362577728927135 + 0.837898313999176 x + -0.0003857926349155605 x^2 + -0.09065020829439163 x^3
+</pre>
+      <h3>
+       <span class="mw-headline" id="Bind_Mounts">
+        Bind Mounts
+       </span>
+      </h3>
+      <p>
+       To get data into the container you need to pass some
+       <a class="external text" href="https://apptainer.org/docs/user/main/bind_paths_and_mounts.html" rel="nofollow">
+        bind mounts
+       </a>
+       .  Apptainer containers will not automatically mount data from the outside operating system other than your home directory.  Users need to manually bind mounts for other file paths.
+      </p>
+      <p>
+       <code>
+        --bind /fs/nexus-scratch/&lt;USERNAME&gt;/&lt;PROJECTNAME&gt;:/mnt
+       </code>
+      </p>
+      <p>
+       In this example, we will exec an interactive session with GPUs and binding our
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       scratch directory which allows us to specify the command we want to run inside the container.
+      </p>
+      <pre>apptainer exec --nv --bind /fs/nexus-scratch/username:/fs/nexus-scratch/username /fs/nexus-containers/pytorch/pytorch_1.13.0+cu117.sif bash
+</pre>
+      <p>
+       You can now write/run your own pytorch python code interactively within the container or just make a python script that you can call directly from the apptainer exec command for batch processing.
+      </p>
+      <p>
+       <span id="Sif_anchor">
+       </span>
+      </p>
+      <h3>
+       <span class="mw-headline" id="Shared_Containers">
+        Shared Containers
+       </span>
+      </h3>
+      <p>
+       Portable images called
+       <b>
+        Singularity Image Format
+       </b>
+       or .sif files can be copied and shared.  Nexus maintains some shared containers in
+       <code>
+        /fs/nexus-containers
+       </code>
+       .  These are arranged by the application(s) that are installed.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Docker_Workflow_Example">
+        Docker Workflow Example
+       </span>
+      </h2>
+      <p>
+       We have a
+       <a class="external text" href="https://gitlab.umiacs.umd.edu/derek/pytorch_docker" rel="nofollow">
+        pytorch_docker
+       </a>
+       example workflow using our
+       <a href="/umiacs/index.php/GitLab" title="GitLab">
+        GitLab
+       </a>
+       as a Docker registry.  You can clone the repository and further customize this to your needs. The workflow is:
+      </p>
+      <ol>
+       <li>
+        Run Docker on a laptop or personal desktop on to create the image, or use
+        <a href="/umiacs/index.php/Podman" title="Podman">
+         Podman
+        </a>
+        on a UMIACS-supported system.
+       </li>
+       <li>
+        Tag the image and and push it to your repository (this can be any docker registry)
+       </li>
+       <li>
+        Pull the image down onto one of our workstations/clusters and run it with your data.
+       </li>
+      </ol>
+      <pre>$ apptainer pull pytorch_docker.sif docker://registry.umiacs.umd.edu/derek/pytorch_docker
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+Getting image source signatures
+Copying blob 85386706b020 done
+...
+2022/10/14 10:58:36  info unpack layer: sha256:b6f46848806c8750a68edc4463bf146ed6c3c4af18f5d3f23281dcdfb1c65055
+2022/10/14 10:58:43  info unpack layer: sha256:44845dc671f759820baac0376198141ca683f554bb16a177a3cfe262c9e368ff
+INFO:    Creating SIF file...
+</pre>
+      <pre>$ apptainer exec --nv pytorch_docker.sif python3 -c 'from __future__ import print_function; import torch; print(torch.cuda.current_device()); x = torch.rand(5, 3); print(x)'
+0
+tensor([[0.3273, 0.7174, 0.3587],
+        [0.2250, 0.3896, 0.4136],
+        [0.3626, 0.0383, 0.6274],
+        [0.6241, 0.8079, 0.2950],
+        [0.0804, 0.9705, 0.0030]])
+</pre>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Apptainer&amp;oldid=11997">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=Apptainer&amp;oldid=11997
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=Apptainer" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/Apptainer" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:Apptainer&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/Apptainer">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=Apptainer&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=Apptainer&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Apptainer" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Apptainer" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=Apptainer&amp;oldid=11997" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=Apptainer&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 13 August 2024, at 17:51.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.010","walltime":"0.012","ppvisitednodes":{"value":68,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":4036,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002160936","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":147});});
+  </script>
+ </body>
+</html>

@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Rclone - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3G0aUtu@y2Gbnn-W2aLQAAAAE","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Rclone","wgTitle":"Rclone","wgCurRevisionId":11684,"wgRevisionId":11684,"wgArticleId":2848,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Rclone","wgRelevantArticleId":2848,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":
+"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Rclone rootpage-Rclone skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     Rclone
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <p>
+       Rclone is a command line program useful for syncing files and directories. Its functionality is similar to rsync, but has additional capabilities that support cloud storage services such as Dropbox, Open Drive, Amazon S3, and many more.
+      </p>
+      <p>
+       Below are directions on how to remote setup rclone on a headless machine. If you would like to set up specific Google Drive or Dropbox remotes, you can go directly to the section labeled "Google Drive" or "Dropbox".
+      </p>
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Remote_Setup_on_A_Headless_System">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Remote Setup on A Headless System
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-2">
+           <a href="#Rclone_configuration_file">
+            <span class="tocnumber">
+             1.1
+            </span>
+            <span class="toctext">
+             Rclone configuration file
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-3">
+           <a href="#Rclone_authorize">
+            <span class="tocnumber">
+             1.2
+            </span>
+            <span class="toctext">
+             Rclone authorize
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-4">
+         <a href="#Google_Drive">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           Google Drive
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-5">
+           <a href="#Common_Use">
+            <span class="tocnumber">
+             2.1
+            </span>
+            <span class="toctext">
+             Common Use
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-6">
+           <a href="#Creating_a_cronjob">
+            <span class="tocnumber">
+             2.2
+            </span>
+            <span class="toctext">
+             Creating a cronjob
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-7">
+         <a href="#Dropbox">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           Dropbox
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <h2>
+       <span class="mw-headline" id="Remote_Setup_on_A_Headless_System">
+        Remote Setup on A Headless System
+       </span>
+      </h2>
+      <p>
+       To remote setup rclone, you will first have to
+       <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">
+        SSH
+       </a>
+       into one of UMIACS' hosts and load the rclone module by typing
+       <tt>
+        module load rclone
+       </tt>
+       . If this does not work, check that the rclone module is available by running the command
+       <tt>
+        module avail rclone
+       </tt>
+       . If the module is not available, SSH to a host where it is.
+      </p>
+      <p>
+       If you are instead installing rclone on a system that you have administrative privileges on, downloads are available at
+       <a class="external free" href="https://rclone.org/downloads/" rel="nofollow">
+        https://rclone.org/downloads/
+       </a>
+       .
+      </p>
+      <p>
+       Once you have loaded the module or installed the software, there are two ways to remote configure rclone. The first is by copying the rclone config file, and the second is by using rclone authorize.
+      </p>
+      <h3>
+       <span class="mw-headline" id="Rclone_configuration_file">
+        Rclone configuration file
+       </span>
+      </h3>
+      <p>
+       To copy the rclone config file, first configure rclone on your desktop machine. This can be achieved by running the command
+       <tt>
+        rclone config
+       </tt>
+       to set up the file and then finding the location of the configuration file using the command
+       <tt>
+        rclone config file
+       </tt>
+       , which should yield output similar to what is below:
+      </p>
+      <pre>$ rclone config file
+Configuration file is stored at:
+/home/user/.rclone.conf
+</pre>
+      <p>
+       This file can then be transferred to the remote box using scp, copy/paste, ftp, sftp, etc. The command
+       <tt>
+        rclone config file
+       </tt>
+       can also be run on the remote box to find the correct location to which the file should be moved.
+      </p>
+      <h3>
+       <span class="mw-headline" id="Rclone_authorize">
+        Rclone authorize
+       </span>
+      </h3>
+      <p>
+       To configure using rclone authorize instead, run the command
+       <tt>
+        Remote config
+       </tt>
+       on your headless machine, and then select the option for working on a headless machine by answering the first prompt with an
+       <tt>
+        n
+       </tt>
+       . The resulting output should look like this:
+      </p>
+      <pre>Remote config
+Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes
+n) No
+y/n&gt; n
+
+For this to work, you will need rclone available on a machine that has a web browser available.
+Execute the following on your machine:
+	rclone authorize "amazon cloud drive"
+Then paste the result below:
+result&gt;
+</pre>
+      <p>
+       Next, on your main desktop machine, run the command
+       <tt>
+        rclone authorize "amazon cloud drive"
+       </tt>
+       . Follow the link that the output directs you to; you should now have received a secret token on your desktop machine console, in a message similar to the one below:
+      </p>
+      <pre>rclone authorize "amazon cloud drive"
+If your browser doesn't open automatically go to the following link: http://127.0.0.1:53682/auth
+Log in and authorize rclone for access
+Waiting for code...
+Got code
+Paste the following into your remote machine ---&gt;
+SECRET_TOKEN
+&lt;---End paste
+</pre>
+      <p>
+       Go back to your headless machine and paste the secret message on the console where it says
+       <tt>
+        result&gt;
+       </tt>
+       . Finally, approve the token by answering the prompts that follow:
+      </p>
+      <pre>result&gt; SECRET_TOKEN
+--------------------
+[acd12]
+client_id = 
+client_secret = 
+token = SECRET_TOKEN
+--------------------
+y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d&gt;
+</pre>
+      <p>
+       If there are any issues with the remote setup, visit
+       <a class="external free" href="https://rclone.org/remote_setup/" rel="nofollow">
+        https://rclone.org/remote_setup/
+       </a>
+       for more information.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Google_Drive">
+        Google Drive
+       </span>
+      </h2>
+      <p>
+       In order to sync files to Google Drive on Linux systems, use of the command line program Rclone is necessary. The first step is to SSH into one of UMIACS' hosts with X11 forwarding enabled (use the
+       <code>
+        -XY
+       </code>
+       flag) or (if the host is a workstation) log in over GUI and launch the terminal. If Rclone is already in the module tree, then load the Rclone module using:
+      </p>
+      <pre>module load rclone
+</pre>
+      <p>
+       If the module is NOT installed on the machine, install it from here:
+       <a class="external free" href="https://rclone.org/downloads/" rel="nofollow">
+        https://rclone.org/downloads/
+       </a>
+      </p>
+      <p>
+       Once installed, load into it using the previous command.
+      </p>
+      <p>
+       To make a new remote, run the command
+       <tt>
+        rclone config
+       </tt>
+       . This should produce output similar to what is below:
+      </p>
+      <pre>n) New remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+n/r/c/s/q&gt; 
+</pre>
+      <p>
+       Choose to make a new remote, and give it a name. There should then be prompt asking for the type of storage to configure. Input
+       <tt>
+        drive
+       </tt>
+       for Google Drive.
+      </p>
+      <pre>Type of storage to configure.
+Enter a string value. Press Enter for the default ("").
+Choose a number from below, or type in your own value
+ 1 / 1Fichier
+   \ "fichier"
+ 2 / Alias for an existing remote
+   \ "alias"
+ ...
+ ...
+37 / premiumize.me
+   \ "premiumizeme"
+38 / seafile
+   \ "seafile"
+Storage&gt; drive
+</pre>
+      <p>
+       When prompted for your Google Application Client Id and Secret, it is okay to leave those blank. Rclone will then prompt for a scope that it should use when requesting access from your drive, which you can provide by selecting one of the numbers on the screen. The suggested value for full operation is
+       <tt>
+        1
+       </tt>
+       .
+      </p>
+      <pre>Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/#making-your-own-client-id for how to create your own.
+If you leave this blank, it will use an internal key which is low performance.
+Enter a string value. Press Enter for the default ("").
+client_id&gt;
+OAuth Client Secret
+Leave blank normally.
+Enter a string value. Press Enter for the default ("").
+client_secret&gt;
+Scope that rclone should use when requesting access from drive.
+Enter a string value. Press Enter for the default ("").
+Choose a number from below, or type in your own value
+ 1 / Full access all files, excluding Application Data Folder.
+   \ "drive"
+ 2 / Read-only access to file metadata and file contents.
+   \ "drive.readonly"
+   / Access to files created by rclone only.
+ 3 | These are visible in the drive website.
+   | File authorization is revoked when the user deauthorizes the app.
+   \ "drive.file"
+   / Allows read and write access to the Application Data folder.
+ 4 | This is not visible in the drive website.
+   \ "drive.appfolder"
+   / Allows read-only access to file metadata but
+ 5 | does not allow any access to read or download file content.
+   \ "drive.metadata.readonly"
+scope&gt; 1
+</pre>
+      <p>
+       You can leave the
+       <tt>
+        root_folder_id
+       </tt>
+       and the
+       <tt>
+        service_account_file
+       </tt>
+       blank. You will then be prompted to edit the advanced config. Enter the default value unless the application requires further customization.
+      </p>
+      <pre>Edit advanced config? (y/n)
+y) Yes
+n) No (default)
+y/n&gt;
+</pre>
+      <p>
+       You will then be prompted to Use auto config. Enter
+       <tt>
+        Y
+       </tt>
+       .
+      </p>
+      <pre>Remote config
+Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes (default)
+n) No
+y/n&gt;
+</pre>
+      <p>
+       The window will then prompt for sign in with a Google account. Sign into your UMD account using your &lt;DIRECTORYID&gt;@umd.edu email. You will then be brought to the UMD CAS Dual Factor Authentication Screen. Sign in with your normal credentials and dual factor authenticate. Allow rclone to access your Google Account.
+      </p>
+      <p>
+       You will then be prompted to Configure this as a team drive. Enter the default value unless the application requires further customization.
+      </p>
+      <pre>Configure this as a team drive?
+y) Yes
+n) No (default)
+y/n&gt;
+</pre>
+      <p>
+       Finally, confirm your selections if they are correct, edit them if they are incorrect.
+      </p>
+      <pre>--------------------
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d&gt; y
+</pre>
+      <h3>
+       <span class="mw-headline" id="Common_Use">
+        Common Use
+       </span>
+      </h3>
+      <p>
+       List directories in top level of your drive
+      </p>
+      <pre>rclone lsd &lt;REMOTENAME&gt;:
+</pre>
+      <p>
+       List all the files in your drive
+      </p>
+      <pre>rclone ls &lt;REMOTENAME&gt;:
+</pre>
+      <p>
+       To copy a local directory to a drive directory called backup
+      </p>
+      <pre>rclone copy /home/source &lt;REMOTENAME&gt;:&lt;NEWBACKUPNAME&gt;
+</pre>
+      <p>
+       More commands and usage can be found at:
+       <a class="external free" href="https://rclone.org/drive/" rel="nofollow">
+        https://rclone.org/drive/
+       </a>
+      </p>
+      <h3>
+       <span class="mw-headline" id="Creating_a_cronjob">
+        Creating a cronjob
+       </span>
+      </h3>
+      <p>
+       A cronjob will allow you to automate backups. To create a cronjob for an Rclone command, first you must find the path of Rclone. This can be done using the
+       <tt>
+        which
+       </tt>
+       command.
+      </p>
+      <pre>[user@workstation ~]$ which rclone
+/opt/common/rclone-v1.53.4-linux-amd64/rclone
+</pre>
+      <p>
+       Then use
+       <tt>
+        crontab -e
+       </tt>
+       to edit your crontab. Once in the crontab, you can input your Rclone command using the command path found previously. An example of an Rclone cronjob that would occur every hour on the hour would be:
+      </p>
+      <pre>0 * * * * /opt/common/rclone-v1.53.4-linux-amd64/rclone copy /&lt;PATHTOBEBACKEDUP&gt;/ &lt;REMOTENAME&gt;:&lt;BACKUPNAME&gt;
+</pre>
+      <h2>
+       <span class="mw-headline" id="Dropbox">
+        Dropbox
+       </span>
+      </h2>
+      <p>
+       These instructions assume that you have SSH'd into one of UMIACS' hosts and have successfully been able to load the rclone module using the command
+       <tt>
+        module load rclone
+       </tt>
+       , or installed rclone yourself on a system that you have administrative privileges on. If this is not the case, please do so before proceeding with the Dropbox remote setup.
+      </p>
+      <p>
+       First, make a new remote by running the command
+       <tt>
+        rclone config
+       </tt>
+       . This should produce output similar to what is below:
+      </p>
+      <pre>n) New remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+n/r/c/s/q&gt; 
+</pre>
+      <p>
+       Choose to make a new remote, and give it a name. The setup will then prompt you to choose a type of storage to configure. You can either choose the number from the options that corresponds to "Dropbox", or simply type in
+       <tt>
+        dropbox
+       </tt>
+       . When prompted for your Dropbox App Key and Secret, it is okay to leave those blank.
+      </p>
+      <p>
+       The console will then redirect you to a browser page that will prompt you to enter a code displayed on the console and authorize rclone for access. Once you have followed the instructions on the webpage, the console will display your credentials and ask for approval to confirm the remote.
+      </p>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Rclone&amp;oldid=11684">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=Rclone&amp;oldid=11684
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=Rclone" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/Rclone" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:Rclone&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/Rclone">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=Rclone&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=Rclone&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Rclone" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Rclone" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=Rclone&amp;oldid=11684" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=Rclone&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 12 March 2024, at 13:49.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.011","walltime":"0.013","ppvisitednodes":{"value":110,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":3583,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002214057","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":146});});
+  </script>
+ </body>
+</html>

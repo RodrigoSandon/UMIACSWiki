@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Network/Troubleshooting - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3Gn@EoEezzhHwqBzxnKAAAAAA","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Network/Troubleshooting","wgTitle":"Network/Troubleshooting","wgCurRevisionId":11254,"wgRevisionId":11254,"wgArticleId":2376,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Network/Troubleshooting","wgRelevantArticleId":2376,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={
+"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Network_Troubleshooting rootpage-Network_Troubleshooting skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     Network/Troubleshooting
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <p>
+       Occasionally network related issues may arise.  The following outlines basic troubleshooting methods.
+      </p>
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Check_Network_Connection">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Check Network Connection
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-2">
+         <a href="#PING">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           PING
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-3">
+         <a href="#Trace_Route">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           Trace Route
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-4">
+         <a href="#Other_Things_to_consider">
+          <span class="tocnumber">
+           4
+          </span>
+          <span class="toctext">
+           Other Things to consider
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-5">
+         <a href="#Change_your_default_DNS_server">
+          <span class="tocnumber">
+           5
+          </span>
+          <span class="toctext">
+           Change your default DNS server
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <h2>
+       <span class="mw-headline" id="Check_Network_Connection">
+        Check Network Connection
+       </span>
+      </h2>
+      <ul>
+       <li>
+        Check that the ethernet cable is plugged in or that you are connected to a wireless network.
+       </li>
+       <li>
+        Check that you have an IP address.
+        <ul>
+         <li>
+          Windows: type
+          <code>
+           ipconfig /all
+          </code>
+          into the command prompt
+         </li>
+         <li>
+          macOS/Linux/UNIX based hosts: type
+          <code>
+           ifconfig -a
+          </code>
+          into a terminal
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <h2>
+       <span class="mw-headline" id="PING">
+        PING
+       </span>
+      </h2>
+      <p>
+       PING is a network utility that sends ICMP packets to a specified host to test network connectivity.
+      </p>
+      <ul>
+       <li>
+        Open up a command prompt / terminal and type
+        <code>
+         ping
+        </code>
+        followed by the hostname or IP address of the host you want to test connectivity to.
+       </li>
+      </ul>
+      <pre>bash$ ping google.com
+PING google.com (74.125.228.34) 56(84) bytes of data.
+64 bytes from iad23s06-in-f2.1e100.net (74.125.228.34): icmp_seq=1 ttl=52 time=4.52 ms
+64 bytes from iad23s06-in-f2.1e100.net (74.125.228.34): icmp_seq=2 ttl=52 time=4.17 ms
+64 bytes from iad23s06-in-f2.1e100.net (74.125.228.34): icmp_seq=3 ttl=52 time=4.41 ms
+64 bytes from iad23s06-in-f2.1e100.net (74.125.228.34): icmp_seq=4 ttl=52 time=4.04 ms
+</pre>
+      <ul>
+       <li>
+        On Linux/UNIX, you may want to add the
+        <code>
+         -c
+        </code>
+        flag followed by a number to specify how many times to ping the destination host.
+       </li>
+      </ul>
+      <p>
+       If you are having trouble connecting to UMIACS services, we would suggest you test against one of our publicly accessible
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       hosts like
+       <code>
+        nexuscml00.umiacs.umd.edu
+       </code>
+       or
+       <code>
+        nexuscfar00.umiacs.umd.edu
+       </code>
+       .
+      </p>
+      <pre>-bash-4.2$ ping nexuscml00.umiacs.umd.edu
+PING nexuscml00.umiacs.UMD.EDU (128.8.121.4) 56(84) bytes of data.
+64 bytes from nexuscml00.umiacs.umd.edu (128.8.121.4): icmp_seq=1 ttl=60 time=0.507 ms
+64 bytes from nexuscml00.umiacs.umd.edu (128.8.121.4): icmp_seq=2 ttl=60 time=0.335 ms
+64 bytes from nexuscml00.umiacs.umd.edu (128.8.121.4): icmp_seq=3 ttl=60 time=0.328 ms
+64 bytes from nexuscml00.umiacs.umd.edu (128.8.121.4): icmp_seq=4 ttl=60 time=0.379 ms
+</pre>
+      <h2>
+       <span class="mw-headline" id="Trace_Route">
+        Trace Route
+       </span>
+      </h2>
+      <p>
+       The traceroute tool utilizes the IP protocol to track the route one's packets take through a network.  Traceroute is useful when trying to figure out why a host is unreachable because it shows where the connection failed.
+      </p>
+      <ul>
+       <li>
+        Windows:
+        <ul>
+         <li>
+          In a command prompt type "tracert" followed by the hostname or IP address of the host you want to test the route to.
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <pre>C:\&gt;tracert google.com
+Tracing route to google.com [74.125.228.38]
+over a maximum of 30 hops:
+  1    &lt;1 ms    &lt;1 ms    &lt;1 ms  gw-486.umiacs.umd.edu [192.168.86.1] 
+  2    &lt;1 ms    &lt;1 ms    &lt;1 ms  umfirewall00.umiacs.umd.edu [128.8.120.17] 
+  3    13 ms    &lt;1 ms    &lt;1 ms  avw1hub-gw.umiacs.umd.edu [128.8.120.1] 
+  4     1 ms    &lt;1 ms    &lt;1 ms  vlan8.css-priv-r1.net.umd.edu [128.8.6.129] 
+  5    &lt;1 ms    &lt;1 ms    &lt;1 ms  gi6-1.css-core-r1.net.umd.edu [128.8.0.117] 
+  6    &lt;1 ms    &lt;1 ms    &lt;1 ms  gi3-2.css-fw-r1.net.umd.edu [128.8.0.82] 
+  7     1 ms     2 ms     2 ms  128.8.0.226 
+  8     2 ms     2 ms     2 ms  107-0-84-29-static.hfc.comcastbusiness.net [107.0.84.29] 
+  9     3 ms     2 ms     2 ms  xe-3-1-2-0-ar04.capitolhghts.md.bad.comcast.net [68.85.114.113] 
+ 10     5 ms     6 ms     4 ms  pos-5-7-0-0-cr01.ashburn.va.ibone.comcast.net [68.86.90.85] 
+ 11     4 ms     4 ms     5 ms  pos-0-2-0-0-pe01.ashburn.va.ibone.comcast.net [68.86.86.70] 
+ 12     4 ms     6 ms     4 ms  75.149.231.62 
+ 13    42 ms     4 ms     4 ms  209.85.252.80 
+ 14     5 ms     5 ms     5 ms  72.14.238.175 
+ 15     4 ms     4 ms     5 ms  iad23s06-in-f6.1e100.net [74.125.228.38] 
+Trace complete.
+</pre>
+      <ul>
+       <li>
+        macOS/Linux/UNIX:
+        <ul>
+         <li>
+          In a terminal type 'traceroute' followed by the hostname or IP address of the host you want to test the route to.
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <pre>bash$ traceroute google.com
+traceroute: Warning: google.com has multiple addresses; using 74.125.228.72
+traceroute to google.com (74.125.228.72), 64 hops max, 52 byte packets
+ 1  10.109.160.1 (10.109.160.1)  1.329 ms  1.086 ms  1.232 ms
+ 2  129-2-129-129.wireless.umd.edu (129.2.129.129)  2.780 ms  1.924 ms  2.127 ms
+ 3  te1-6.css-core-r1.net.umd.edu (128.8.0.121)  2.514 ms  2.293 ms  1.863 ms
+ 4  gi3-2.css-fw-r1.net.umd.edu (128.8.0.82)  2.429 ms  2.548 ms  2.284 ms
+ 5  128.8.0.226 (128.8.0.226)  3.838 ms  3.465 ms  3.635 ms
+ 6  107-0-84-29-static.hfc.comcastbusiness.net (107.0.84.29)  3.941 ms  3.445 ms  3.303 ms
+ 7  xe-3-1-2-0-ar04.capitolhghts.md.bad.comcast.net (68.85.114.113)  3.522 ms  4.333 ms  3.441 ms
+ 8  pos-5-1-0-0-cr01.ashburn.va.ibone.comcast.net (68.86.90.241)  7.269 ms
+    pos-4-12-0-0-cr01.newyork.ny.ibone.comcast.net (68.86.90.173)  9.025 ms  7.192 ms
+ 9  pos-0-4-0-0-pe01.ashburn.va.ibone.comcast.net (68.86.86.146)  5.236 ms  5.636 ms  6.229 ms
+10  75.149.231.62 (75.149.231.62)  5.186 ms  5.113 ms  6.725 ms
+11  209.85.252.46 (209.85.252.46)  6.836 ms  6.352 ms  78.371 ms
+12  72.14.238.247 (72.14.238.247)  7.823 ms  7.616 ms  8.331 ms
+13  iad23s07-in-f8.1e100.net (74.125.228.72)  10.798 ms  13.383 ms  7.540 ms
+</pre>
+      <p>
+       Again, if you are having trouble connecting to UMIACS services, we would suggest you test against one of our publicly accessible
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       host such as
+       <code>
+        nexuscml00.umiacs.umd.edu
+       </code>
+       or
+       <code>
+        nexuscfar00.umiacs.umd.edu
+       </code>
+       .
+      </p>
+      <h2>
+       <span class="mw-headline" id="Other_Things_to_consider">
+        Other Things to consider
+       </span>
+      </h2>
+      <ul>
+       <li>
+        Is your IP address manually set?
+        <ul>
+         <li>
+          In order for networking to function properly, a machine must have a unique IP address on its network.  In many cases IP address are assigned automatically via the DHCP protocol, but it is also possible to manually set an IP address.  If your machine happens to have a manually set IP address that conflicts with that of another host, networking issues may arise.
+         </li>
+        </ul>
+       </li>
+       <li>
+        Are you behind a firewall?
+        <ul>
+         <li>
+          Some establishments use firewalls to restrict certain types of traffic both in and out of their networks.  If you are having trouble accessing a specific service, this might be the case.  To get around this you can connect to the VPN, or use SSH tunneling.
+         </li>
+        </ul>
+       </li>
+       <li>
+        Other useful commands:
+        <ul>
+         <li>
+          <code>
+           dig
+          </code>
+          : performs DNS lookups and displays the answers that are returned from the name server(s) that were queried
+         </li>
+         <li>
+          <code>
+           host
+          </code>
+          : simple utility for performing DNS lookups
+         </li>
+         <li>
+          <code>
+           netstat
+          </code>
+          (macOS/Linux/UNIX): shows network status
+         </li>
+         <li>
+          <code>
+           route print
+          </code>
+          (Windows): shows network routing tables
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <h2>
+       <span class="mw-headline" id="Change_your_default_DNS_server">
+        Change your default DNS server
+       </span>
+      </h2>
+      <p>
+       Please see
+       <a href="/umiacs/index.php/Network/Troubleshooting/DNS" title="Network/Troubleshooting/DNS">
+        DNS troubleshooting
+       </a>
+       to change your default DNS server.
+      </p>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Network/Troubleshooting&amp;oldid=11254">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=Network/Troubleshooting&amp;oldid=11254
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=Network%2FTroubleshooting" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/Network/Troubleshooting" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:Network/Troubleshooting&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/Network/Troubleshooting">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=Network/Troubleshooting&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=Network/Troubleshooting&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Network/Troubleshooting" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Network/Troubleshooting" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=Network/Troubleshooting&amp;oldid=11254" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=Network/Troubleshooting&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 28 August 2023, at 15:00.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.009","walltime":"0.010","ppvisitednodes":{"value":22,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":469,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002214044","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":147});});
+  </script>
+ </body>
+</html>

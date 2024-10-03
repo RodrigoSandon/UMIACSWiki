@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   SecureShell - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3G0yvmTZe3NoESbiKlswAAAAI","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SecureShell","wgTitle":"SecureShell","wgCurRevisionId":12048,"wgRevisionId":12048,"wgArticleId":1642,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SecureShell","wgRelevantArticleId":1642,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":
+"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SecureShell rootpage-SecureShell skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     SecureShell
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <p>
+       Secure Shell (or
+       <a class="external text" href="http://en.wikipedia.org/wiki/Secure_Shell" rel="nofollow">
+        SSH
+       </a>
+       ) is a network protocol allowing two computers to exchange data securely over an insecure network.  By default, use of SSH brings the user to a terminal, but the protocol can be used for other types of data transfer such as
+       <a class="mw-redirect" href="/umiacs/index.php/SFTP" title="SFTP">
+        SFTP
+       </a>
+       and
+       <a class="mw-redirect" href="/umiacs/index.php/SCP" title="SCP">
+        SCP
+       </a>
+       .
+      </p>
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Connecting_to_an_SSH_Server">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Connecting to an SSH Server
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-2">
+         <a href="#X11_Forwarding">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           X11 Forwarding
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-3">
+         <a href="#SSH_Tunneling">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           SSH Tunneling
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-4">
+         <a href="#SSH_Keys_(and_Passwordless_SSH)">
+          <span class="tocnumber">
+           4
+          </span>
+          <span class="toctext">
+           SSH Keys (and Passwordless SSH)
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-5">
+         <a href="#Verify_remote_host_SSH_fingerprint">
+          <span class="tocnumber">
+           5
+          </span>
+          <span class="toctext">
+           Verify remote host SSH fingerprint
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-6">
+           <a href="#Windows_/_PuTTY_Verification">
+            <span class="tocnumber">
+             5.1
+            </span>
+            <span class="toctext">
+             Windows / PuTTY Verification
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-7">
+           <a href="#Other_Platforms">
+            <span class="tocnumber">
+             5.2
+            </span>
+            <span class="toctext">
+             Other Platforms
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-8">
+         <a href="#Long_Running_Processes">
+          <span class="tocnumber">
+           6
+          </span>
+          <span class="toctext">
+           Long Running Processes
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-9">
+         <a href="#Further_Information">
+          <span class="tocnumber">
+           7
+          </span>
+          <span class="toctext">
+           Further Information
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <h2>
+       <span class="mw-headline" id="Connecting_to_an_SSH_Server">
+        Connecting to an SSH Server
+       </span>
+      </h2>
+      <p>
+       Under Linux and macOS, the following command from a terminal will connect a client computer to the UMIACS
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       .
+      </p>
+      <pre># ssh username@nexusgroup00.umiacs.umd.edu
+<b>Note: Your Nexus submission node will vary depending on your sponsorship. See <a href="/umiacs/index.php/Nexus#Access" title="Nexus">Nexus Access</a> for more information.</b>
+</pre>
+      <p>
+       This will give you access to a terminal on any one of the
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       servers.  Note that by default you will not have access to applications that require X11 to run.
+      </p>
+      <p>
+       All UMIACS-supported Windows hosts are installed with
+       <a class="external text" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" rel="nofollow">
+        PuTTY
+       </a>
+       . If you are using a self-supported machine, you can either download and install PuTTY yourself, or if you are running a
+       <a class="external text" href="https://docs.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-and-education" rel="nofollow">
+        currently supported version of Windows
+       </a>
+       , you can install the OpenSSH client natively in Windows by following Microsoft's instructions
+       <a class="external text" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse" rel="nofollow">
+        here
+       </a>
+       . Only the client is needed and not the server.
+      </p>
+      <h2>
+       <span class="mw-headline" id="X11_Forwarding">
+        X11 Forwarding
+       </span>
+      </h2>
+      <p>
+       By default, SSH only gives the user shell access to a host.  Enabling X11 Forwarding allows users to run applications with Graphical User Interfaces.
+      </p>
+      <p>
+       Under Linux and macOS, the following command from a terminal will connect a client computer to the UMIACS
+       <a href="/umiacs/index.php/Nexus" title="Nexus">
+        Nexus
+       </a>
+       using X11 Forwarding. Please note that under macOS,
+       <a class="external text" href="http://xquartz.macosforge.org/landing/" rel="nofollow">
+        xQuartz
+       </a>
+       is required on the client machine to forward X sessions from the remote session.
+      </p>
+      <pre># ssh <b>-Y</b> username@nexusgroup00.umiacs.umd.edu
+<b>Note: Your Nexus submission node will vary depending on your sponsorship. See <a href="/umiacs/index.php/Nexus#Access" title="Nexus">Nexus Access</a> for more information.</b>
+</pre>
+      <p>
+       Under Windows, you will need to forward X through
+       <a class="external text" href="http://sourceforge.net/projects/vcxsrv/" rel="nofollow">
+        VcXsrv
+       </a>
+       or another X11 application.
+      </p>
+      <p>
+       If using PuTTY, you will need to enable X forwarding. The option is under Connection &gt; SSH &gt; X11, shown below.
+      </p>
+      <p>
+       <a class="image" href="/umiacs/index.php/File:Putty-x-forwarding.png">
+        <img alt="Putty-x-forwarding.png" decoding="async" height="437" src="/umiacs/images/8/84/Putty-x-forwarding.png" width="452"/>
+       </a>
+      </p>
+      <p>
+       If using the
+       <a class="external text" href="https://learn.microsoft.com/en-us/windows/terminal/install" rel="nofollow">
+        Windows Terminal app
+       </a>
+       , you will need to set an environment variable and then relaunch the app.
+      </p>
+      <dl>
+       <dd>
+        <pre>setx.exe DISPLAY "127.0.0.1:0.0"</pre>
+       </dd>
+      </dl>
+      <p>
+       After this has been done, every time you want to use X forwarding, you need to make sure VcXsrv or your other application has been started. If using VcXsrv, there will be an icon in your system tray.
+      </p>
+      <p>
+       You will now be able to use Xwindow programs from your SSH client.
+      </p>
+      <h2>
+       <span class="mw-headline" id="SSH_Tunneling">
+        SSH Tunneling
+       </span>
+      </h2>
+      <p>
+       You can tunnel one or more ports through an SSH connection such that your packets will look like they are coming from the host you are tunneling to.   This is helpful for services that you would be normally blocked by a firewall.
+      </p>
+      <p>
+       Please see the
+       <a href="/umiacs/index.php/SecureShellTunneling" title="SecureShellTunneling">
+        SecureShellTunneling
+       </a>
+       page for more information.
+      </p>
+      <h2>
+       <span id="SSH_Keys_.28and_Passwordless_SSH.29">
+       </span>
+       <span class="mw-headline" id="SSH_Keys_(and_Passwordless_SSH)">
+        SSH Keys (and Passwordless SSH)
+       </span>
+      </h2>
+      <p>
+       SSH can utilize public key encryption to authenticate and authorize users. This can be considered more secure especially if you secure your private key with a pass-phrase. The keys themselves are not susceptible to brute force attacks like normal passwords over SSH are.
+      </p>
+      <p>
+       Please see the
+       <a href="/umiacs/index.php/SSH/Keys" title="SSH/Keys">
+        SSH/Keys
+       </a>
+       page for more information.
+      </p>
+      <p>
+       <b>
+        Note: UMIACS still requires multi-factor authentication if you are connecting from the public internet for security reasons. If you first connect to our VPN, you should then be able to use the keys as normal.
+       </b>
+      </p>
+      <h2>
+       <span class="mw-headline" id="Verify_remote_host_SSH_fingerprint">
+        Verify remote host SSH fingerprint
+       </span>
+      </h2>
+      <p>
+       The SSH protocol relies on host keys to verify the identify of a given host.  Each host as a unique key for the various different protocols supported.
+      </p>
+      <p>
+       When connecting to a remove host for the first time, or when the remote host's local host key configuration has changed, you may see the following prompt:
+      </p>
+      <pre>$ ssh username@nexusgroup00.umiacs.umd.edu
+The authenticity of host 'nexusgroup00.umiacs.umd.edu (128.8.121.73)' can't be established.
+RSA key fingerprint is 25:83:aa:df:f5:ad:5f:08:c9:8a:a3:5d:97:8b:48:1f.
+Are you sure you want to continue connecting (yes/no)?
+</pre>
+      <p>
+       It is considered best practice to verify the key fingerprint with the actual key of the host.  UMIACS maintains a reference of SSH key fingerprints available at the following link:
+       <a class="external free" href="https://intranet.umiacs.umd.edu/hostkeys" rel="nofollow">
+        https://intranet.umiacs.umd.edu/hostkeys
+       </a>
+      </p>
+      <p>
+       It is important to note that each key type has a different fingerprint.  Depending on your local configuration, your client may prefer a specific type of key.  The following commands can be used to determine the fingerprint of a given key type on a remote host:
+      </p>
+      <pre>$ ssh-keyscan -t rsa nexusgroup00.umiacs.umd.edu &gt; key
+# nexusgroup00.umiacs.umd.edu:22 SSH-2.0-OpenSSH_8.0
+$ ssh-keygen -l -E md5 -f key
+2048 MD5:25:83:aa:df:f5:ad:5f:08:c9:8a:a3:5d:97:8b:48:1f nexusgroup00.umiacs.umd.edu (RSA)
+</pre>
+      <p>
+       If you have any questions, or notice a discrepancy, please
+       <a href="/umiacs/index.php/HelpDesk" title="HelpDesk">
+        contact staff
+       </a>
+       .
+      </p>
+      <h3>
+       <span id="Windows_.2F_PuTTY_Verification">
+       </span>
+       <span class="mw-headline" id="Windows_/_PuTTY_Verification">
+        Windows / PuTTY Verification
+       </span>
+      </h3>
+      <p>
+       If you use PuTTY to connect to remote hosts, the prompt will be similar to the following:
+      </p>
+      <p>
+       <a class="image" href="/umiacs/index.php/File:Putty_ssh_host_key_prompt.png">
+        <img alt="Putty ssh host key prompt.png" decoding="async" height="269" src="/umiacs/images/0/07/Putty_ssh_host_key_prompt.png" width="373"/>
+       </a>
+      </p>
+      <p>
+       If the host key reported by PuTTY matches the
+       <a class="external text" href="https://gitlab.umiacs.umd.edu/staff/ssh-fingerprints/blob/master/fingerprints" rel="nofollow">
+        Documented entry for that host
+       </a>
+       , it is safe to click 'yes'.  If they do not match, please report the issue to
+       <a class="external text" href="mailto:staff@umiacs.umd.edu" rel="nofollow">
+        staff@umiacs.umd.edu
+       </a>
+       .
+      </p>
+      <h3>
+       <span class="mw-headline" id="Other_Platforms">
+        Other Platforms
+       </span>
+      </h3>
+      <ul>
+       <li>
+        <a class="external text" href="https://winscp.net/eng/docs/faq_hostkey" rel="nofollow">
+         WinSCP
+        </a>
+       </li>
+       <li>
+        <a class="external text" href="https://mobaxterm.mobatek.net/" rel="nofollow">
+         MobaXterm
+        </a>
+       </li>
+      </ul>
+      <h2>
+       <span class="mw-headline" id="Long_Running_Processes">
+        Long Running Processes
+       </span>
+      </h2>
+      <p>
+       If you are dealing with a long running process that is inhibiting your ability to work regularly, you may want to run your processes inside a screen on the host that you're connecting to. This way, if the connection is dropped for any reason the screen session will automatically detach on the host and will continue running so that you can reattach it at a later time when you've connected again. Please see our documentation on
+       <a href="/umiacs/index.php/Screen" title="Screen">
+        GNU Screen
+       </a>
+       for more information.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Further_Information">
+        Further Information
+       </span>
+      </h2>
+      <ul>
+       <li>
+        <a class="external text" href="https://www.openssh.com/" rel="nofollow">
+         OpenSSH
+        </a>
+       </li>
+       <li>
+        <a class="external text" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse" rel="nofollow">
+         OpenSSH on Windows
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureShell&amp;oldid=12048">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureShell&amp;oldid=12048
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SecureShell" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/SecureShell" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:SecureShell&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/SecureShell">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=SecureShell&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=SecureShell&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SecureShell" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SecureShell" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=SecureShell&amp;oldid=12048" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=SecureShell&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 23 September 2024, at 13:02.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.018","walltime":"0.032","ppvisitednodes":{"value":55,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":561,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002073239","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":145});});
+  </script>
+ </body>
+</html>

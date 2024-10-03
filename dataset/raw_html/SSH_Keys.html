@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   SSH/Keys - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3GwLVF3Uo0ToGGyPteBgAAAAU","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SSH/Keys","wgTitle":"SSH/Keys","wgCurRevisionId":11867,"wgRevisionId":11867,"wgArticleId":2546,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SSH/Keys","wgRelevantArticleId":2546,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":
+"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SSH_Keys rootpage-SSH_Keys skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     SSH/Keys
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <p>
+       SSH can utilize public key encryption to authenticate and authorize users.  This can be considered more secure especially if you secure your private key with a pass-phrase.  The keys themselves are not susceptible to brute force attacks like normal passwords over SSH are.
+      </p>
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Overview">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Overview
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-2">
+         <a href="#Create_and_store_the_key_pair">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           Create and store the key pair
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-3">
+           <a href="#Windows">
+            <span class="tocnumber">
+             2.1
+            </span>
+            <span class="toctext">
+             Windows
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-4">
+           <a href="#Linux/MacOS/Bash_and_Git_Bash_(for_Windows)">
+            <span class="tocnumber">
+             2.2
+            </span>
+            <span class="toctext">
+             Linux/MacOS/Bash and Git Bash (for Windows)
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-5">
+         <a href="#Copy_the_public_key">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           Copy the public key
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-6">
+           <a href="#Windows_2">
+            <span class="tocnumber">
+             3.1
+            </span>
+            <span class="toctext">
+             Windows
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-7">
+           <a href="#Linux/MacOS/Bash_and_Git_Bash_(for_Windows)_2">
+            <span class="tocnumber">
+             3.2
+            </span>
+            <span class="toctext">
+             Linux/MacOS/Bash and Git Bash (for Windows)
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-8">
+         <a href="#Adding_Keys_to_SSH_Clients_(Windows_Only)">
+          <span class="tocnumber">
+           4
+          </span>
+          <span class="toctext">
+           Adding Keys to SSH Clients (Windows Only)
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-9">
+         <a href="#Batch_clusters">
+          <span class="tocnumber">
+           5
+          </span>
+          <span class="toctext">
+           Batch clusters
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-10">
+         <a href="#SSH_Agents">
+          <span class="tocnumber">
+           6
+          </span>
+          <span class="toctext">
+           SSH Agents
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <h2>
+       <span class="mw-headline" id="Overview">
+        Overview
+       </span>
+      </h2>
+      <dl>
+       <dt>
+        Prerequisites
+       </dt>
+      </dl>
+      <ol>
+       <li>
+        If using batch clusters (e.g.
+        <a href="/umiacs/index.php/SLURM" title="SLURM">
+         SLURM
+        </a>
+        ) please read
+        <a href="/umiacs/index.php/SSH/Keys#Batch_clusters" title="SSH/Keys">
+         Batch clusters
+        </a>
+        prior to creating a new key.
+       </li>
+       <li>
+        Determine your OS (and if Windows, what you will be using to create the key)
+        <ul>
+         <li>
+          Windows
+          <ul>
+           <li>
+            Git Bash: follow instructions for Linux/MacOS/Bash and Git Bash (for Windows)
+           </li>
+           <li>
+            PuTTY: follow instructions for Windows (and PuTTY subsections)
+           </li>
+           <li>
+            TTSSH2: follow instructions for Windows (and TTSSH2 subsections)
+           </li>
+           <li>
+            <a class="mw-redirect" href="/umiacs/index.php/BashForWindows10" title="BashForWindows10">
+             Windows Subsystem for Linux (WSL)
+            </a>
+            : follow instructions for 'Linux/MacOS/Bash and Git Bash (for Windows)'
+           </li>
+          </ul>
+         </li>
+         <li>
+          Linux: follow instructions for 'Linux/MacOS/Bash and Git Bash (for Windows)'
+         </li>
+         <li>
+          MacOS: follow instructions for 'Linux/MacOS/Bash and Git Bash (for Windows)'
+         </li>
+        </ul>
+       </li>
+      </ol>
+      <dl>
+       <dt>
+        Steps
+       </dt>
+      </dl>
+      <ol>
+       <li>
+        <a href="/umiacs/index.php/SSH/Keys#Create_and_store_the_key_pair" title="SSH/Keys">
+         Create and store the key pair
+        </a>
+       </li>
+       <li>
+        <a href="/umiacs/index.php/SSH/Keys#Copy_the_public_key" title="SSH/Keys">
+         Copy the public key
+        </a>
+       </li>
+       <li>
+        If Windows,
+        <a href="/umiacs/index.php/SSH/Keys#Adding_Keys_to_SSH_Clients_(Windows_Only)" title="SSH/Keys">
+         Adding Keys to SSH Clients (Windows Only)
+        </a>
+       </li>
+      </ol>
+      <p>
+       <b>
+        Note: UMIACS still requires multi-factor authentication if you are connecting from the public internet for security reasons. If you first connect to our VPN, you should then be able to use the keys as normal.
+       </b>
+      </p>
+      <dl>
+       <dt>
+        Additional Considerations
+       </dt>
+      </dl>
+      <ol>
+       <li>
+        The
+        <a href="/umiacs/index.php/SSH/Keys#SSH_Agents" title="SSH/Keys">
+         SSH Agents
+        </a>
+        section is not a required component of creating and using an SSH key, but can be very useful if you choose to create a password to protect your SSH key, but find yourself needing to enter that password many times in a session.
+        <a href="/umiacs/index.php/SSH/Keys#SSH_Agents" title="SSH/Keys">
+         SSH Agents
+        </a>
+        allow you to temporarily use your SSH key without a password for a set period of time. Please see the
+        <a href="/umiacs/index.php/SSH/Keys#SSH_Agents" title="SSH/Keys">
+         SSH Agents
+        </a>
+        section for more information.
+       </li>
+      </ol>
+      <h2>
+       <span class="mw-headline" id="Create_and_store_the_key_pair">
+        Create and store the key pair
+       </span>
+      </h2>
+      <p>
+       The first step is to generate a key which will create two files filled with long strings of characters.  A public key file that you may distribute to any machine you want to use it on and a private key that needs to be kept secure.
+       <b>
+        Allowing anyone to read this private key will compromise the security of the key and could allow someone to access any resources secured by this key without your consent.
+       </b>
+       There are a number of different key types but
+       <code>
+        rsa
+       </code>
+       is the most compatible.
+      </p>
+      <h3>
+       <span class="mw-headline" id="Windows">
+        Windows
+       </span>
+      </h3>
+      <dl>
+       <dt>
+        Git Bash
+       </dt>
+       <dd>
+        See
+        <a href="/umiacs/index.php/SSH/Keys#Linux.2FMacOS.2FBash_and_Git_Bash_.28for_Windows.29" title="SSH/Keys">
+         Linux/MacOS/Bash and Git Bash (for Windows)
+        </a>
+       </dd>
+       <dt>
+        PuTTY
+       </dt>
+      </dl>
+      <ol>
+       <li>
+        Click on the start menu and search for PuTTYgen. Open the application
+       </li>
+       <li>
+        Verify that you are attempting to create an "SSH2 RSA" key by clicking on the appropriate box
+       </li>
+       <li>
+        Click generate and follow the instructions for generating your keys
+       </li>
+       <li>
+        Add passphrase if wanted and save both the public and private keys
+       </li>
+      </ol>
+      <dl>
+       <dt>
+        TTSSH2
+       </dt>
+      </dl>
+      <ol>
+       <li>
+        Open the application
+       </li>
+       <li>
+        Cancel the first box
+       </li>
+       <li>
+        Go to setup on the menu bar and go to SSH KeyGenerator
+       </li>
+       <li>
+        Click generate and follow the instructions for generating your key
+       </li>
+       <li>
+        Add passphrase if wanted and save both the public and private keys
+       </li>
+      </ol>
+      <h3>
+       <span id="Linux.2FMacOS.2FBash_and_Git_Bash_.28for_Windows.29">
+       </span>
+       <span class="mw-headline" id="Linux/MacOS/Bash_and_Git_Bash_(for_Windows)">
+        Linux/MacOS/Bash and Git Bash (for Windows)
+       </span>
+      </h3>
+      <dl>
+       <dt>
+        Create a new key with a password
+       </dt>
+      </dl>
+      <p>
+       You can run the command
+       <code>
+        ssh-keygen -t rsa
+       </code>
+       to generate the new public and private key.  It will prompt you for a file to create the private key and then for the public key append
+       <code>
+        .pub
+       </code>
+       extension and store it in the same directory.  Pressing enter at the passphrase step twice will create a key without a pass-phrase.
+      </p>
+      <p>
+       Note: If you change the file in which to save the key, please ensure that it still starts with 'id', such as 'id_umiacs_rsa'.
+      </p>
+      <p>
+       Example:
+      </p>
+      <pre>-bash-4.2$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/username/.ssh/id_rsa):
+Created directory '/home/username/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/username/.ssh/id_rsa.
+Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+The key fingerprint is:
+32:bf:db:74:1b:7e:d7:c6:4b:b5:6f:a8:82:55:3f:bf username@localhost.localdomain
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|                 |
+|                 |
+|            .    |
+|      o S  . .  .|
+|       +  .   o o|
+|        .o. o  B.|
+|        .+.o o+ O|
+|        o...+o E+|
++-----------------+
+</pre>
+      <dl>
+       <dt>
+        Create a new key without a password
+       </dt>
+      </dl>
+      <p>
+       You can simplify the existing example above by telling it you do not want a pass-phrase and can run the command
+       <code>
+        ssh-keygen -t rsa -N ""
+       </code>
+       .
+      </p>
+      <p>
+       Note: If you change the file in which to save the key, please ensure that it still starts with 'id', such as 'id_umiacs_rsa'.
+      </p>
+      <p>
+       Example:
+      </p>
+      <pre>-bash-4.2$ ssh-keygen -t rsa -N ""
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/username/.ssh/id_rsa):
+Created directory '/home/username/.ssh'.
+Your identification has been saved in /home/username/.ssh/id_rsa.
+Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+The key fingerprint is:
+ff:7a:99:28:fc:63:d6:10:44:4c:2e:68:76:44:76:7a username@localhost.localdomain
+The key's randomart image is:
++--[ RSA 2048]----+
+|       .+++      |
+|       + +o      |
+|      + +.E      |
+|     o . o.      |
+|        S  .     |
+|         ..      |
+|       .  .+ o   |
+|        o =.=    |
+|         =o+.    |
++-----------------+
+</pre>
+      <dl>
+       <dt>
+        Modify permissions
+       </dt>
+      </dl>
+      <p>
+       Modify the permissions of your
+       <tt>
+        .ssh
+       </tt>
+       directory as well as the private key file that you just created with
+       <tt>
+        chmod
+       </tt>
+       .
+      </p>
+      <pre>chmod 700 ~/.ssh 
+chmod 600 ~/.ssh/id_rsa
+</pre>
+      <p>
+       If you named your file something other than id_rsa, change
+       <tt>
+        id_rsa
+       </tt>
+       to the name of the file.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Copy_the_public_key">
+        Copy the public key
+       </span>
+      </h2>
+      <p>
+       Once you have a generated a key pair you will want to add it to one or more computers to allow you to access them.
+      </p>
+      <h3>
+       <span class="mw-headline" id="Windows_2">
+        Windows
+       </span>
+      </h3>
+      <p>
+       For Windows hosts you can use
+       <a class="external text" href="http://winscp.net/eng/download.php" rel="nofollow">
+        WinSCP
+       </a>
+       to copy the public key file onto a remote host. The root file system for the Bash Subsystem for Windows is located under C:\Users\username&gt;\AppData\Local\lxss\
+      </p>
+      <h3>
+       <span id="Linux.2FMacOS.2FBash_and_Git_Bash_.28for_Windows.29_2">
+       </span>
+       <span class="mw-headline" id="Linux/MacOS/Bash_and_Git_Bash_(for_Windows)_2">
+        Linux/MacOS/Bash and Git Bash (for Windows)
+       </span>
+      </h3>
+      <p>
+       This can be done with the
+       <code>
+        ssh-copy-id
+       </code>
+       command and it will prompt you the first time for your current password (
+       <b>
+        NOT your pass-phrase
+       </b>
+       ). You can replace localhost with any other hostname you want to copy the key to. You can also specify an alternate user or identity file if you need to, please
+       <code>
+        man ssh-copy-id
+       </code>
+       for more information within your terminal. This command will ensure that not only it copies your key but secures the file so that no one can tamper and add additional authorized keys to the file on the remote host.
+      </p>
+      <p>
+       Example:
+      </p>
+      <pre>-bash-4.2$ ssh-copy-id localhost
+/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+username@localhost's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'localhost'"
+and check to make sure that only the key(s) you wanted were added.
+</pre>
+      <h2>
+       <span id="Adding_Keys_to_SSH_Clients_.28Windows_Only.29">
+       </span>
+       <span class="mw-headline" id="Adding_Keys_to_SSH_Clients_(Windows_Only)">
+        Adding Keys to SSH Clients (Windows Only)
+       </span>
+      </h2>
+      <dl>
+       <dt>
+        PuTTY
+       </dt>
+      </dl>
+      <ol>
+       <li>
+        Open PuTTY and enter the
+        <a class="external text" href="https://en.wikipedia.org/wiki/Fully_qualified_domain_name" rel="nofollow">
+         fully qualified domain name (FQDN)
+        </a>
+        for the host you wish to connect to.
+       </li>
+       <li>
+        Go to the Connections tab on the side panel and click on the data subsection.
+       </li>
+       <li>
+        Under data enter your default user into the first box. (Auto-login Username)
+       </li>
+       <li>
+        Go to the SSH section of the side panel and then go to the Auth Section.
+       </li>
+       <li>
+        Under Auth click on the browse and navigate to the saved private key.
+       </li>
+       <li>
+        Go back to session on the side panel and save your settings by typing in a name in saved sessions pressing the save button.
+       </li>
+      </ol>
+      <dl>
+       <dt>
+        TTSSH2
+       </dt>
+      </dl>
+      <ol>
+       <li>
+        Open the application.
+       </li>
+       <li>
+        Cancel the first box.
+       </li>
+       <li>
+        Go to setup on the menu bar and go to SSH Authentication.
+       </li>
+       <li>
+        Enter your username, Click on the option labeled "Use RSA ... key to log in", then use the private key button located next to this line to navigate to your private key file, and click Ok.
+       </li>
+      </ol>
+      <h2>
+       <span class="mw-headline" id="Batch_clusters">
+        Batch clusters
+       </span>
+      </h2>
+      <p>
+       Our
+       <a href="/umiacs/index.php/SLURM" title="SLURM">
+        SLURM
+       </a>
+       clusters process jobs in batch and require the ability to SSH without entering a password. When creating a key for use with
+       <a href="/umiacs/index.php/SLURM" title="SLURM">
+        SLURM
+       </a>
+       , follow the above instructions for creating keys without passwords.
+      </p>
+      <p>
+       After creating this key pair please make sure you follow the
+       <a href="/umiacs/index.php/SSH/Keys#Copy_the_public_key" title="SSH/Keys">
+        copy the public key
+       </a>
+       instructions above to
+       <code>
+        localhost
+       </code>
+       . This will ensure that your key will be usable on all the cluster nodes since they have a shared home directory.
+      </p>
+      <h2>
+       <span class="mw-headline" id="SSH_Agents">
+        SSH Agents
+       </span>
+      </h2>
+      <p>
+       While it is very useful to protect your SSH key pair with a pass-phrase it can very time consuming to re-type the pass-phrase over and over. SSH provides a agent that runs in the background and allow you add a key(s) to it with a time limit that they will be unlocked for.
+      </p>
+      <pre>ssh-agent bash
+ssh-add -t $TIME
+</pre>
+      <p>
+       The time specified by
+       <code>
+        -t
+       </code>
+       is specified in seconds.
+      </p>
+      <p>
+       Example:
+(The following would start a bash shell with passwordless SSH active for 30 minutes.)
+      </p>
+      <pre>ssh-agent bash
+ssh-add -t 1800
+</pre>
+      <p>
+       You will be prompted for your passphrase and, when entered correctly, you will be able to SSH without entering a password. You can check what keys are load when you are running inside a ssh-agent by using the command
+       <code>
+        ssh-add -l
+       </code>
+       .
+      </p>
+      <p>
+       Example:
+      </p>
+      <pre>bash-4.2$ ssh-add -l
+2048 ee:83:10:c8:2f:2c:17:5e:ef:80:42:7e:ff:75:9e:53 /home/username/.ssh/id_rsa (RSA)
+</pre>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SSH/Keys&amp;oldid=11867">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=SSH/Keys&amp;oldid=11867
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SSH%2FKeys" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/SSH/Keys" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:SSH/Keys&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/SSH/Keys">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=SSH/Keys&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=SSH/Keys&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SSH/Keys" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SSH/Keys" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=SSH/Keys&amp;oldid=11867" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=SSH/Keys&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 3 June 2024, at 19:04.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.013","walltime":"0.015","ppvisitednodes":{"value":72,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":2140,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002114340","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":144});});
+  </script>
+ </body>
+</html>

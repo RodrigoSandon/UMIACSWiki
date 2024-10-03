@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   BitLocker/PersonalUse - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3G2KfzSUg75bwCqhDaZAAAAAg","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"BitLocker/PersonalUse","wgTitle":"BitLocker/PersonalUse","wgCurRevisionId":10837,"wgRevisionId":10837,"wgArticleId":2855,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"BitLocker/PersonalUse","wgRelevantArticleId":2855,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={
+"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-BitLocker_PersonalUse rootpage-BitLocker_PersonalUse skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     BitLocker/PersonalUse
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Overview">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Overview
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-2">
+         <a href="#Prerequisites">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           Prerequisites
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-3">
+         <a href="#Initializing_the_YubiKey_and_hard_drive">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           Initializing the YubiKey and hard drive
+          </span>
+         </a>
+        </li>
+        <li class="toclevel-1 tocsection-4">
+         <a href="#Unlocking_the_drive">
+          <span class="tocnumber">
+           4
+          </span>
+          <span class="toctext">
+           Unlocking the drive
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-5">
+           <a href="#Unlocking_the_drive_with_the_YubiKey">
+            <span class="tocnumber">
+             4.1
+            </span>
+            <span class="toctext">
+             Unlocking the drive with the YubiKey
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-6">
+           <a href="#Unlocking_the_drive_with_the_recovery_password">
+            <span class="tocnumber">
+             4.2
+            </span>
+            <span class="toctext">
+             Unlocking the drive with the recovery password
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-7">
+         <a href="#Extra_configuration">
+          <span class="tocnumber">
+           5
+          </span>
+          <span class="toctext">
+           Extra configuration
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-8">
+           <a href="#Set_up_Auto-unlock">
+            <span class="tocnumber">
+             5.1
+            </span>
+            <span class="toctext">
+             Set up Auto-unlock
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-9">
+           <a href="#Use_an_encrypted_drive_as_a_backup_drive">
+            <span class="tocnumber">
+             5.2
+            </span>
+            <span class="toctext">
+             Use an encrypted drive as a backup drive
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </div>
+      <h2>
+       <span class="mw-headline" id="Overview">
+        Overview
+       </span>
+      </h2>
+      <p>
+       <a href="/umiacs/index.php/BitLocker" title="BitLocker">
+        BitLocker
+       </a>
+       can be used on fixed hard drives (i.e. internal to your computer) as well as on portable hard drives (i.e. USB). If you want to hold a secure, offline copy of files that you want to be preserved,
+       <a class="external text" href="https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-to-go-faq" rel="nofollow">
+        BitLocker To Go
+       </a>
+       with a portable hard drive with data to be stored and a hardware token as the key can be used together to do so.
+      </p>
+      <h2>
+       <span class="mw-headline" id="Prerequisites">
+        Prerequisites
+       </span>
+      </h2>
+      <ul>
+       <li>
+        A portable hard drive formatted with an NTFS (preferred), FAT16, FAT32, or exFAT file system.
+       </li>
+       <li>
+        Any desktop edition of Windows 10/11
+        <b>
+         except Home
+        </b>
+        . BitLocker encryption is not included as a feature of Windows 10/11 Home, though encrypted drives can still be accessed via Windows 10/11 Home.
+       </li>
+       <li>
+        A
+        <a class="external text" href="https://www.yubico.com/product/yubikey-5-nfc" rel="nofollow">
+         YubiKey security token
+        </a>
+        . Other security tokens may work, but this procedure will focus on using a YubiKey.
+       </li>
+       <li>
+        (optional) One or more (2+ strongly preferred) blank USB flash drives at least 500MB in size, formatted with any Windows-writable file system.
+       </li>
+      </ul>
+      <h2>
+       <span class="mw-headline" id="Initializing_the_YubiKey_and_hard_drive">
+        Initializing the YubiKey and hard drive
+       </span>
+      </h2>
+      <ol>
+       <li>
+        Log in locally to the machine you wish to use for encryption. This procedure will not work over
+        <a href="/umiacs/index.php/Remote_Desktop" title="Remote Desktop">
+         Remote Desktop
+        </a>
+        .
+       </li>
+       <li>
+        Download and install the
+        <a class="external text" href="https://www.yubico.com/support/download/yubikey-personalization-tools/" rel="nofollow">
+         YubiKey personalization tool
+        </a>
+        . Choose the first option (
+        <b>
+         not
+        </b>
+        the command line interface version). If you are using a UMIACS-supported workstation, please contact
+        <a href="/umiacs/index.php/HelpDesk" title="HelpDesk">
+         UMIACS Staff
+        </a>
+        to install this on your machine.
+       </li>
+       <li>
+        Insert your YubiKey into any USB slot on the machine you wish to use for encryption and launch the personalization tool. Select Static Password at the top and then Advanced.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Yubikey1.png">
+           <img alt="Yubikey1.png" decoding="async" height="742" src="/umiacs/images/9/92/Yubikey1.png" width="902"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Select Configuration Slot 2(*) and change the password length to 48 chars. Then click all three Generate buttons in order to generate the identities and the secret key and finally Write Configuration.
+        <b>
+         Click cancel (do not save) on the prompt that pops up to save the .csv file, as this saves the Public Identity, Private Identity, and Secret Key in plaintext.
+        </b>
+        Ensure that "YubiKey has been successfully configured" is output in the Results window, and then click Exit in the top right to exit the tool.
+        <dl>
+         <dd>
+          (*) NOTE: The YubiKey token has two configuration slots. These are nearly functionally identical, but the key difference for the sake of this document is that Slot 2 requires you to hold the sensor on the device down for 2 seconds in order to activate, whereas Slot 1 instantaneously activates when you touch the sensor. We recommend using Slot 2 so that you do not mistakenly emit the password configured below. If you are already using Slot 2 on your YubiKey, slot 1 can still be used.
+         </dd>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Yubikey2.png">
+           <img alt="Yubikey2.png" decoding="async" height="741" src="/umiacs/images/7/72/Yubikey2.png" width="904"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Insert your portable hard drive into any USB slot and search BitLocker in the start menu to open the Manage BitLocker control panel item.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo1.png">
+           <img alt="Bitlockertogo1.png" decoding="async" height="681" src="/umiacs/images/8/84/Bitlockertogo1.png" width="786"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Expand Removable data drives - BitLocker To Go by clicking the arrow on the right and then click Turn on BitLocker on the portable hard drive.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo2.png">
+           <img alt="Bitlockertogo2.png" decoding="async" height="633" src="/umiacs/images/c/c9/Bitlockertogo2.png" width="1126"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        BitLocker will initialize for a few seconds and then pop up with a menu asking how you want to unlock the drive. Choose Use a password to unlock the drive and physically touch the YubiKey's sensor for 3 seconds to get it to output the password you configured previously in each password field.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo3.png">
+           <img alt="Bitlockertogo3.png" decoding="async" height="487" src="/umiacs/images/2/28/Bitlockertogo3.png" width="623"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        The menu should automatically advance to asking how you want to back up the recovery key.
+        <b>
+         The recovery key is the only way to get into the encrypted drive if you lose the YubiKey.
+        </b>
+        We strongly recommend the Save to a file option for reasons that we will get into. If you choose to print out the recovery key, store it somewhere safe such as a safe deposit box.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo4.png">
+           <img alt="Bitlockertogo4.png" decoding="async" height="487" src="/umiacs/images/a/a5/Bitlockertogo4.png" width="625"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Plug in your first USB flash drive and choose to save the file on it.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo5.png">
+           <img alt="Bitlockertogo5.png" decoding="async" height="181" src="/umiacs/images/b/b8/Bitlockertogo5.png" width="945"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        If you previously had anything saved on your portable hard drive before formatting it as part of the prerequisites, choose to Encrypt entire drive. This is the safest way to ensure everything on the drive is protected. Otherwise (if this is a brand new blank drive), leave the default option of Encrypt used disk space only.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo6.png">
+           <img alt="Bitlockertogo6.png" decoding="async" height="487" src="/umiacs/images/3/3c/Bitlockertogo6.png" width="625"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Leave the default of Compatible mode to better ensure the files on the encrypted drive will be readable from other devices (which may be running earlier versions of Windows) if need be.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo7.png">
+           <img alt="Bitlockertogo7.png" decoding="async" height="486" src="/umiacs/images/5/50/Bitlockertogo7.png" width="625"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Continue through the menus and finally choose to Start encrypting.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo8.png">
+           <img alt="Bitlockertogo8.png" decoding="async" height="485" src="/umiacs/images/d/d3/Bitlockertogo8.png" width="624"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        BitLocker will begin encrypting and a separate window will pop up to show you the status. This step will either take a long time if you chose to Encrypt entire drive, or complete very quickly if you chose to Encrypt used disk space only. You do not have to wait for encryption to complete to proceed with the remaining steps, but you do need to wait for encryption to complete before disconnecting the portable hard drive from the machine.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo9.png">
+           <img alt="Bitlockertogo9.png" decoding="async" height="255" src="/umiacs/images/1/12/Bitlockertogo9.png" width="353"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Download the
+        <b>
+         portable version
+        </b>
+        of
+        <a class="external text" href="https://keepassxc.org/download/" rel="nofollow">
+         KeePassXC Password Manager
+        </a>
+        . Then extract it to your USB flash drive.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc0.png">
+           <img alt="Keepassxc0.png" decoding="async" height="633" src="/umiacs/images/6/6c/Keepassxc0.png" width="615"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Launch KeePassXC.exe from the extracted folder and choose to Create new database.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc1.png">
+           <img alt="Keepassxc1.png" decoding="async" height="633" src="/umiacs/images/e/eb/Keepassxc1.png" width="803"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Choose descriptive phrases for the Database Name and Description and click Continue.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc2.png">
+           <img alt="Keepassxc2.png" decoding="async" height="632" src="/umiacs/images/8/89/Keepassxc2.png" width="803"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Leave all the options on the next menu at default unless you know what you are doing and have good reason to change them and click Continue.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc3.png">
+           <img alt="Keepassxc3.png" decoding="async" height="632" src="/umiacs/images/0/00/Keepassxc3.png" width="803"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        <b>
+         Choose a memorable password
+        </b>
+        and click Done.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc4.png">
+           <img alt="Keepassxc4.png" decoding="async" height="633" src="/umiacs/images/b/ba/Keepassxc4.png" width="803"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Choose to save the file on your USB flash drive.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc5.png">
+           <img alt="Keepassxc5.png" decoding="async" height="178" src="/umiacs/images/d/d2/Keepassxc5.png" width="945"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        In your newly created database, choose to Add a new entry from the top pane.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc6.png">
+           <img alt="Keepassxc6.png" decoding="async" height="632" src="/umiacs/images/e/e5/Keepassxc6.png" width="803"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Make the Title something memorable. Open the recovery key text file saved earlier, copy the Identifier into the Username field and the Recovery Key into the Password/Repeat fields. Leave some descriptive text in the Notes section to help clarify which fields are which of the BitLocker attributes. Click OK and then exit out of the database back on the main menu.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc7.png">
+           <img alt="Keepassxc7.png" decoding="async" height="417" src="/umiacs/images/6/69/Keepassxc7.png" width="1164"/>
+          </a>
+          <a class="image" href="/umiacs/index.php/File:Keepassxc8.png">
+           <img alt="Keepassxc8.png" decoding="async" height="632" src="/umiacs/images/6/6a/Keepassxc8.png" width="802"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        <b>
+         Delete the recovery key text file permanently (NOT the database file you just created).
+        </b>
+        If you leave the recovery key text file on the USB drive, your encrypted portable hard drive is only as secure as that USB flash drive is, rather than needing both the USB flash drive and the password for the database to access the recovery key.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Cleanup1.png">
+           <img alt="Cleanup1.png" decoding="async" height="348" src="/umiacs/images/2/25/Cleanup1.png" width="596"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        (Optional) Copy the contents of the first USB flash drive onto one or more additional USB flash drives to safeguard against loss of both the YubiKey and any single USB flash drive.
+       </li>
+       <li>
+        Clearly label the USB flash drive(s) and store them somewhere secure, such as a safe deposit box. If you have multiple USB flash drives, store them separately.
+       </li>
+       <li>
+        Your portable hard drive is now securely BitLocker-encrypted, with one or more USB drives serving as access to the recovery key.
+       </li>
+      </ol>
+      <h2>
+       <span class="mw-headline" id="Unlocking_the_drive">
+        Unlocking the drive
+       </span>
+      </h2>
+      <h3>
+       <span class="mw-headline" id="Unlocking_the_drive_with_the_YubiKey">
+        Unlocking the drive with the YubiKey
+       </span>
+      </h3>
+      <p>
+       To later unlock the drive from the same or a different computer:
+      </p>
+      <ol>
+       <li>
+        Physically plug the drive and YubiKey in. Click on the notification you get in the notification area, which will open the unlock menu.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Cleanup3.png">
+           <img alt="Cleanup3.png" decoding="async" height="82" src="/umiacs/images/3/34/Cleanup3.png" width="366"/>
+          </a>
+          <a class="image" href="/umiacs/index.php/File:Cleanup4.png">
+           <img alt="Cleanup4.png" decoding="async" height="281" src="/umiacs/images/a/ad/Cleanup4.png" width="382"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Physically touch the YubiKey's sensor for 3 seconds to get it to emit the password. It will automatically unlock afterwards.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Cleanup5.png">
+           <img alt="Cleanup5.png" decoding="async" height="281" src="/umiacs/images/2/29/Cleanup5.png" width="383"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        The drive is now unlocked until it is unplugged again.
+       </li>
+      </ol>
+      <h3>
+       <span class="mw-headline" id="Unlocking_the_drive_with_the_recovery_password">
+        Unlocking the drive with the recovery password
+       </span>
+      </h3>
+      <p>
+       To later unlock the drive from the same or a different computer if you are not in possession of your YubiKey:
+      </p>
+      <ol>
+       <li>
+        Physically plug one of your USB flash drives containing a database with the recovery key in.
+       </li>
+       <li>
+        Open the recovery database using the password you set for it and then copy the password for the entry inside of it. This is the recovery key.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Cleanup2.png">
+           <img alt="Cleanup2.png" decoding="async" height="632" src="/umiacs/images/9/91/Cleanup2.png" width="802"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Physically plug the drive in. Click on the notification you get in the notification area, which will open the unlock menu.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Cleanup3.png">
+           <img alt="Cleanup3.png" decoding="async" height="82" src="/umiacs/images/3/34/Cleanup3.png" width="366"/>
+          </a>
+          <a class="image" href="/umiacs/index.php/File:Cleanup4.png">
+           <img alt="Cleanup4.png" decoding="async" height="281" src="/umiacs/images/a/ad/Cleanup4.png" width="382"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Click on More options and then Enter recovery key.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Cleanup6.png">
+           <img alt="Cleanup6.png" decoding="async" height="390" src="/umiacs/images/e/e5/Cleanup6.png" width="382"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Enter the copied recovery key from your database file and click Unlock.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Cleanup7.png">
+           <img alt="Cleanup7.png" decoding="async" height="250" src="/umiacs/images/1/1a/Cleanup7.png" width="472"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        The drive is now unlocked until it is unplugged again. If you have lost your YubiKey, we strongly recommend buying a new YubiKey, decrypting BitLocker on the drive, and then repeating the initial procedure to re-encrypt it with the new YubiKey.
+       </li>
+      </ol>
+      <h2>
+       <span class="mw-headline" id="Extra_configuration">
+        Extra configuration
+       </span>
+      </h2>
+      <h3>
+       <span class="mw-headline" id="Set_up_Auto-unlock">
+        Set up Auto-unlock
+       </span>
+      </h3>
+      <p>
+       BitLocker has the ability to auto-unlock an encrypted drive for a specific user(s) when plugged into a specific computer(s) if so desired. This creates an entry in the Windows registry on each computer's local data storage for each user you turn it on for. The entry stores a copy of the volume master key for the encrypted drive that is itself encrypted with a combination of the user's username and either the user's password, if there is one, or computer credentials.
+      </p>
+      <p>
+       <b>
+        We do not recommend turning this on as it undermines the concept of separation of the unlock methods for the drive from any specific computer.
+       </b>
+       If you do want to turn this on, please ensure the user account(s) that you turn it on for are secure (i.e. have sufficiently complex passwords) and the computer(s) that you turn it on for are in secure locations.
+      </p>
+      <p>
+       To enable auto-unlock for a drive (per user per computer):
+      </p>
+      <ol>
+       <li>
+        Insert your already-encrypted portable hard drive into any USB slot, unlock it, and search BitLocker in the start menu to open the Manage BitLocker control panel item.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo1.png">
+           <img alt="Bitlockertogo1.png" decoding="async" height="681" src="/umiacs/images/8/84/Bitlockertogo1.png" width="786"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        Expand Removable data drives - BitLocker To Go by clicking the arrow on the right and then click Turn on auto-unlock on the portable hard drive.
+        <dl>
+         <dd>
+          <a class="image" href="/umiacs/index.php/File:Bitlockertogo10.png">
+           <img alt="Bitlockertogo10.png" decoding="async" height="634" src="/umiacs/images/6/62/Bitlockertogo10.png" width="1126"/>
+          </a>
+         </dd>
+        </dl>
+       </li>
+       <li>
+        The drive will now auto-unlock when plugged into the computer you are currently on for your user account only. You can turn it off again by clicking on the Turn off auto-unlock option that appears in the same location after clicking the turn on button.
+       </li>
+      </ol>
+      <h3>
+       <span class="mw-headline" id="Use_an_encrypted_drive_as_a_backup_drive">
+        Use an encrypted drive as a backup drive
+       </span>
+      </h3>
+      <p>
+       One of the more useful things you may want to do with a BitLocker-encrypted portable hard drive is set up automatic backup to it. This can be done by following the procedure on
+       <a href="/umiacs/index.php/Windows_Personal_Backups" title="Windows Personal Backups">
+        this page
+       </a>
+       , though please note you will need to unlock the drive each time when plugging it into a computer, or have configured auto-unlock for that computer, before it is accessible by backup software.
+      </p>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=BitLocker/PersonalUse&amp;oldid=10837">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=BitLocker/PersonalUse&amp;oldid=10837
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=BitLocker%2FPersonalUse" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/BitLocker/PersonalUse" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:BitLocker/PersonalUse&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/BitLocker/PersonalUse">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=BitLocker/PersonalUse&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=BitLocker/PersonalUse&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/BitLocker/PersonalUse" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/BitLocker/PersonalUse" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=BitLocker/PersonalUse&amp;oldid=10837" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=BitLocker/PersonalUse&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 15 February 2023, at 16:12.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.102","walltime":"0.287","ppvisitednodes":{"value":60,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002085402","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":146});});
+  </script>
+ </body>
+</html>

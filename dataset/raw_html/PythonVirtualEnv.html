@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   PythonVirtualEnv - UMIACS
+  </title>
+  <script>
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3GuKUtu@y2Gbnn-W2aIQAAAAE","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"PythonVirtualEnv","wgTitle":"PythonVirtualEnv","wgCurRevisionId":11841,"wgRevisionId":11841,"wgArticleId":2216,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"PythonVirtualEnv","wgRelevantArticleId":2216,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
+"user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
+  </script>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
+  </script>
+  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
+  </script>
+  <meta content="" name="ResourceLoaderDynamicStyles"/>
+  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="width=1000" name="viewport"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+ </head>
+ <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-PythonVirtualEnv rootpage-PythonVirtualEnv skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+  <div class="noprint" id="mw-page-base">
+  </div>
+  <div class="noprint" id="mw-head-base">
+  </div>
+  <div class="mw-body" id="content" role="main">
+   <a id="top">
+   </a>
+   <div id="siteNotice">
+   </div>
+   <div class="mw-indicators">
+   </div>
+   <h1 class="firstHeading mw-first-heading" id="firstHeading">
+    <span class="mw-page-title-main">
+     PythonVirtualEnv
+    </span>
+   </h1>
+   <div class="vector-body" id="bodyContent">
+    <div class="noprint" id="siteSub">
+     From UMIACS
+    </div>
+    <div id="contentSub">
+    </div>
+    <div id="contentSub2">
+    </div>
+    <div id="jump-to-nav">
+    </div>
+    <a class="mw-jump-link" href="#mw-head">
+     Jump to navigation
+    </a>
+    <a class="mw-jump-link" href="#searchInput">
+     Jump to search
+    </a>
+    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+     <div class="mw-parser-output">
+      <p>
+       A virtual environment is an isolated working copy of
+       <a href="/umiacs/index.php/Python" title="Python">
+        Python
+       </a>
+       , which allows you to work on specific projects without affecting others.  It creates an environment that has its own installation directories and that does not share libraries with other virtualenv environments (and optionally doesn’t access the globally-installed libraries either).
+      </p>
+      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
+       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
+       <div class="toctitle" dir="ltr" lang="en">
+        <h2 id="mw-toc-heading">
+         Contents
+        </h2>
+        <span class="toctogglespan">
+         <label class="toctogglelabel" for="toctogglecheckbox">
+         </label>
+        </span>
+       </div>
+       <ul>
+        <li class="toclevel-1 tocsection-1">
+         <a href="#Basic_Usage">
+          <span class="tocnumber">
+           1
+          </span>
+          <span class="toctext">
+           Basic Usage
+          </span>
+         </a>
+         <ul>
+          <li class="toclevel-2 tocsection-2">
+           <a href="#Creating_the_virtual_environment_on_Python_3">
+            <span class="tocnumber">
+             1.1
+            </span>
+            <span class="toctext">
+             Creating the virtual environment on Python 3
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-3">
+           <a href="#Creating_the_virtual_environment_on_Python_2_(deprecated)">
+            <span class="tocnumber">
+             1.2
+            </span>
+            <span class="toctext">
+             Creating the virtual environment on Python 2 (deprecated)
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-4">
+           <a href="#Activating_the_VirtualEnv">
+            <span class="tocnumber">
+             1.3
+            </span>
+            <span class="toctext">
+             Activating the VirtualEnv
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-5">
+           <a href="#Installing_Python_Modules">
+            <span class="tocnumber">
+             1.4
+            </span>
+            <span class="toctext">
+             Installing Python Modules
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-6">
+           <a href="#Listing_installed_Python_Modules">
+            <span class="tocnumber">
+             1.5
+            </span>
+            <span class="toctext">
+             Listing installed Python Modules
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-7">
+           <a href="#Uninstalling_Python_Modules">
+            <span class="tocnumber">
+             1.6
+            </span>
+            <span class="toctext">
+             Uninstalling Python Modules
+            </span>
+           </a>
+          </li>
+          <li class="toclevel-2 tocsection-8">
+           <a href="#Switching_between_virtual_environments">
+            <span class="tocnumber">
+             1.7
+            </span>
+            <span class="toctext">
+             Switching between virtual environments
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="toclevel-1 tocsection-9">
+         <a href="#Using_a_different_Python_version">
+          <span class="tocnumber">
+           2
+          </span>
+          <span class="toctext">
+           Using a different Python version
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <h2>
+       <span class="mw-headline" id="Basic_Usage">
+        Basic Usage
+       </span>
+      </h2>
+      <p>
+       The following steps outline how to create a virtual environment using the system Python. Please note that Python virtual environments are not relocatable after being installed, so consider the install location carefully. Home directories may have
+       <a href="/umiacs/index.php/Quota" title="Quota">
+        quotas
+       </a>
+       that are not suited for very large environments.
+      </p>
+      <h4>
+       <span class="mw-headline" id="Creating_the_virtual_environment_on_Python_3">
+        Creating the virtual environment on Python 3
+       </span>
+      </h4>
+      <p>
+       Python 3 on RHEL comes with the virtualenv module built in. If you are running
+       <a href="/umiacs/index.php/Ubuntu" title="Ubuntu">
+        Ubuntu
+       </a>
+       on a UMIACS-supported workstation, please contact
+       <a href="/umiacs/index.php/HelpDesk" title="HelpDesk">
+        UMIACS Staff
+       </a>
+       to install venv on your machine. In the below example,
+       <tt>
+        env
+       </tt>
+       is the virtual environment name. You can substitute in any other name of your choosing.
+      </p>
+      <pre>$ python3 -m venv env
+</pre>
+      <h4>
+       <span id="Creating_the_virtual_environment_on_Python_2_.28deprecated.29">
+       </span>
+       <span class="mw-headline" id="Creating_the_virtual_environment_on_Python_2_(deprecated)">
+        Creating the virtual environment on Python 2 (deprecated)
+       </span>
+      </h4>
+      <pre>$ git clone https://github.com/pypa/virtualenv.git
+$ python virtualenv/virtualenv.py env
+New python executable in env/bin/python
+Installing setuptools.............done.
+</pre>
+      <h4>
+       <span class="mw-headline" id="Activating_the_VirtualEnv">
+        Activating the VirtualEnv
+       </span>
+      </h4>
+      <p>
+       You will need to use the 'source' command to load it into your shell environment every time you open a new shell.
+      </p>
+      <pre>$ source env/bin/activate
+</pre>
+      <pre style="width: 65%; white-space:pre-wrap; margin-left: 5%;"><table>
+<tbody><tr>
+<td><a class="image" href="/umiacs/index.php/File:Exclamation-point.png"><img alt="Exclamation-point.png" decoding="async" height="25" src="/umiacs/images/thumb/e/e9/Exclamation-point.png/25px-Exclamation-point.png" srcset="/umiacs/images/thumb/e/e9/Exclamation-point.png/38px-Exclamation-point.png 1.5x, /umiacs/images/thumb/e/e9/Exclamation-point.png/50px-Exclamation-point.png 2x" width="25"/></a>
+</td>
+<td><b>Note:</b> tcsh/csh shell users should run <code>source env/bin/activate.csh</code> instead.
+</td></tr></tbody></table></pre>
+      <p>
+       We also suggest the first thing you do is to ensure you have an updated version of pip, setuptools and wheel installed in your environment.  Make sure you have sourced your environment, and then run the following:
+      </p>
+      <pre>$ pip install --upgrade pip setuptools wheel
+</pre>
+      <p>
+       In bash and tcsh, the environment can be deactivated by typing
+       <code>
+        deactivate
+       </code>
+      </p>
+      <h4>
+       <span class="mw-headline" id="Installing_Python_Modules">
+        Installing Python Modules
+       </span>
+      </h4>
+      <p>
+       Once you have created your virtual environment and sourced it, you can install additional modules using the 'pip' command.
+      </p>
+      <pre>$ pip install nose
+Collecting nose
+  Downloading nose-1.3.7-py3-none-any.whl (154 kB)
+     |████████████████████████████████| 154 kB 12.5 MB/s
+Installing collected packages: nose
+Successfully installed nose-1.3.7
+</pre>
+      <h4>
+       <span class="mw-headline" id="Listing_installed_Python_Modules">
+        Listing installed Python Modules
+       </span>
+      </h4>
+      <pre>(env)$ pip freeze
+nose==1.3.7
+</pre>
+      <h4>
+       <span class="mw-headline" id="Uninstalling_Python_Modules">
+        Uninstalling Python Modules
+       </span>
+      </h4>
+      <p>
+       'pip' can also be used to remove a module from the environment.
+      </p>
+      <pre>$ pip uninstall nose
+Found existing installation: nose 1.3.7
+Uninstalling nose-1.3.7:
+  Would remove:
+    /nfshomes/username/env/bin/nosetests
+    /nfshomes/username/env/bin/nosetests-3.4
+    /nfshomes/username/env/lib/python3.7/site-packages/nose-1.3.7.dist-info/*
+    /nfshomes/username/env/lib/python3.7/site-packages/nose/*
+    /nfshomes/username/env/man/man1/nosetests.1
+Proceed (y/n)? y
+  Successfully uninstalled nose-1.3.7
+</pre>
+      <h3>
+       <span class="mw-headline" id="Switching_between_virtual_environments">
+        Switching between virtual environments
+       </span>
+      </h3>
+      <p>
+       To switch between different environments, simply deactivate your current virtual environment, and source another.
+      </p>
+      <pre>(env)$ which python
+~/env/bin/python
+
+(env)$ deactivate 
+
+$ source my-other-env/bin/activate
+
+(my-other-env)$ which python
+~/my-other-env/bin/python
+</pre>
+      <h2>
+       <span class="mw-headline" id="Using_a_different_Python_version">
+        Using a different Python version
+       </span>
+      </h2>
+      <p>
+       To create a virtual environment that uses a version of Python that is different than the system default, create the virtualenv with your target version of Python. This could be a Python build we provide via
+       <a href="/umiacs/index.php/Modules" title="Modules">
+        Modules
+       </a>
+       , or one you've built yourself. Virtualenv will pick up the first Python version it finds in your $PATH, or you can direct it to a specific location with the "--python" flag.
+      </p>
+      <pre>$ module load Python3
+
+$ which python3
+/opt/local/stow/Python3-3.8.1/bin/python3
+</pre>
+      <p>
+       <b>
+        Important:
+       </b>
+       virtualenv will include any modules listed in your PYTHONPATH when initializing the virtual environment.  To ensure a vanilla environment, it might be a good idea to verify your PYTHONPATH is empty.
+      </p>
+      <pre>$ echo $PYTHONPATH
+
+</pre>
+      <pre>$ python3 -m venv env36
+
+$ source env36/bin/activate
+(env36) $ which python
+~/env36/bin/python
+</pre>
+     </div>
+     <div class="printfooter" data-nosnippet="">
+      Retrieved from "
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=PythonVirtualEnv&amp;oldid=11841">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=PythonVirtualEnv&amp;oldid=11841
+      </a>
+      "
+     </div>
+    </div>
+    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
+    </div>
+   </div>
+  </div>
+  <div id="mw-navigation">
+   <h2>
+    Navigation menu
+   </h2>
+   <div id="mw-head">
+    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+     <h3 class="vector-menu-heading" id="p-personal-label">
+      <span class="vector-menu-heading-label">
+       Personal tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="pt-login">
+        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=PythonVirtualEnv" title="You are encouraged to log in; however, it is not mandatory [o]">
+         <span>
+          Log in
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div id="left-navigation">
+     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+      <h3 class="vector-menu-heading" id="p-namespaces-label">
+       <span class="vector-menu-heading-label">
+        Namespaces
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-nstab-main">
+         <a accesskey="c" href="/umiacs/index.php/PythonVirtualEnv" title="View the content page [c]">
+          <span>
+           Page
+          </span>
+         </a>
+        </li>
+        <li class="new mw-list-item" id="ca-talk">
+         <a accesskey="t" href="/umiacs/index.php?title=Talk:PythonVirtualEnv&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
+          <span>
+           Discussion
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+       <span class="vector-menu-heading-label">
+        English
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div id="right-navigation">
+     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+      <h3 class="vector-menu-heading" id="p-views-label">
+       <span class="vector-menu-heading-label">
+        Views
+       </span>
+      </h3>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+        <li class="selected mw-list-item" id="ca-view">
+         <a href="/umiacs/index.php/PythonVirtualEnv">
+          <span>
+           Read
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-viewsource">
+         <a accesskey="e" href="/umiacs/index.php?title=PythonVirtualEnv&amp;action=edit" title="This page is protected.
+You can view its source [e]">
+          <span>
+           View source
+          </span>
+         </a>
+        </li>
+        <li class="mw-list-item" id="ca-history">
+         <a accesskey="h" href="/umiacs/index.php?title=PythonVirtualEnv&amp;action=history" title="Past revisions of this page [h]">
+          <span>
+           View history
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+      <label class="vector-menu-heading" id="p-cactions-label">
+       <span class="vector-menu-heading-label">
+        More
+       </span>
+      </label>
+      <div class="vector-menu-content">
+       <ul class="vector-menu-content-list">
+       </ul>
+      </div>
+     </nav>
+     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+      <div>
+       <h3>
+        <label for="searchInput">
+         Search
+        </label>
+       </h3>
+       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+         <input name="title" type="hidden" value="Special:Search"/>
+         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="mw-panel">
+    <div id="p-logo" role="banner">
+     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
+     </a>
+    </div>
+    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+     <h3 class="vector-menu-heading" id="p-navigation-label">
+      <span class="vector-menu-heading-label">
+       Navigation
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="n-mainpage">
+        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
+         <span>
+          Main Page
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Getting-Started">
+        <a href="/umiacs/index.php/GettingStarted">
+         <span>
+          Getting Started
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Core-Services">
+        <a href="/umiacs/index.php/CoreServices">
+         <span>
+          Core Services
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Lab-Facilities">
+        <a href="/umiacs/index.php/LabFacilities">
+         <span>
+          Lab Facilities
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Placing-Orders">
+        <a href="/umiacs/index.php/Orders">
+         <span>
+          Placing Orders
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="n-Support">
+        <a href="/umiacs/index.php/HelpDesk">
+         <span>
+          Support
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+     <h3 class="vector-menu-heading" id="p-tb-label">
+      <span class="vector-menu-heading-label">
+       Tools
+      </span>
+     </h3>
+     <div class="vector-menu-content">
+      <ul class="vector-menu-content-list">
+       <li class="mw-list-item" id="t-whatlinkshere">
+        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/PythonVirtualEnv" title="A list of all wiki pages that link here [j]">
+         <span>
+          What links here
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-recentchangeslinked">
+        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/PythonVirtualEnv" rel="nofollow" title="Recent changes in pages linked from this page [k]">
+         <span>
+          Related changes
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-specialpages">
+        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
+         <span>
+          Special pages
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-print">
+        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
+         <span>
+          Printable version
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-permalink">
+        <a href="/umiacs/index.php?title=PythonVirtualEnv&amp;oldid=11841" title="Permanent link to this revision of this page">
+         <span>
+          Permanent link
+         </span>
+        </a>
+       </li>
+       <li class="mw-list-item" id="t-info">
+        <a href="/umiacs/index.php?title=PythonVirtualEnv&amp;action=info" title="More information about this page">
+         <span>
+          Page information
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+  </div>
+  <footer class="mw-footer" id="footer" role="contentinfo">
+   <ul id="footer-info">
+    <li id="footer-info-lastmod">
+     This page was last edited on 24 May 2024, at 14:27.
+    </li>
+   </ul>
+   <ul id="footer-places">
+    <li id="footer-places-privacy">
+     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
+      Privacy policy
+     </a>
+    </li>
+    <li id="footer-places-about">
+     <a href="/umiacs/index.php/UMIACS:About">
+      About UMIACS
+     </a>
+    </li>
+    <li id="footer-places-disclaimer">
+     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
+      Disclaimers
+     </a>
+    </li>
+   </ul>
+   <ul class="noprint" id="footer-icons">
+    <li id="footer-poweredbyico">
+     <a href="https://www.mediawiki.org/">
+      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+     </a>
+    </li>
+   </ul>
+  </footer>
+  <script>
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.019","ppvisitednodes":{"value":87,"limit":1000000},"postexpandincludesize":{"value":211,"limit":2097152},"templateargumentsize":{"value":94,"limit":2097152},"expansiondepth":{"value":3,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":1477,"limit":5000000},"timingprofile":["100.00%    3.385      1 Template:Note","100.00%    3.385      1 -total"]},"cachereport":{"timestamp":"20241002024413","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":145});});
+  </script>
+ </body>
+</html>

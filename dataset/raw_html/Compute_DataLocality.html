@@ -6,7 +6,7 @@
    Compute/DataLocality - UMIACS
   </title>
   <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3GmrVF3Uo0ToGGyPtd9AAAAAU","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Compute/DataLocality","wgTitle":"Compute/DataLocality","wgCurRevisionId":7418,"wgRevisionId":7418,"wgArticleId":2585,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Compute/DataLocality","wgRelevantArticleId":2585,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFW6COSfpKnsyUH-iwi9AAAAAY","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Compute/DataLocality","wgTitle":"Compute/DataLocality","wgCurRevisionId":12074,"wgRevisionId":12074,"wgArticleId":2585,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Compute/DataLocality","wgRelevantArticleId":2585,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":
 "ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
   </script>
   <script>
@@ -17,7 +17,7 @@
   </script>
   <meta content="" name="ResourceLoaderDynamicStyles"/>
   <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="MediaWiki 1.39.10" name="generator"/>
   <meta content="telephone=no" name="format-detection"/>
   <meta content="width=1000" name="viewport"/>
   <link href="/favicon.ico" rel="icon"/>
@@ -61,7 +61,11 @@
     <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
      <div class="mw-parser-output">
       <p>
-       This page covers some best practices related to data processing on UMIACS Compute resources.
+       This page covers some best practices related to data processing on UMIACS Compute resources i.e.,
+       <a href="/umiacs/index.php/SLURM" title="SLURM">
+        SLURM
+       </a>
+       .
       </p>
       <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
        <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
@@ -147,16 +151,16 @@
       </p>
       <ol>
        <li>
-        Copy the data to be processed to the local compute node.
+        Copy the data to be processed to local disk space of the compute node(s) your job is assigned.
        </li>
        <li>
         Process the data, storing results on local disk space.
        </li>
        <li>
-        Once processing is finished, transfer results to permanent storage location. (i.e. a network file share)
+        Once processing is finished, transfer results to permanent storage location. (i.e., a network file share)
        </li>
        <li>
-        Clean up data and results from compute node local disk space.
+        Clean up data and results from local disk space of the compute node(s) your job is assigned.
        </li>
       </ol>
       <h3>
@@ -165,20 +169,16 @@
        </span>
       </h3>
       <p>
-       Similar to how too many processes on a single machine can slow it down, too many users accessing a network file server can impact performance.  This issue is further compounded in the context of cluster jobs, as a single user can generate hundreds if not thousands of jobs all trying to access the same network fileserver.  By utilizing the local disks on the compute nodes, you effectively distribute the data access load and reduce the load on the central fileserver.
+       Similar to how running too many processes on a single machine can slow it down, too many users accessing shares on a network file server can impact performance of that file server.  This issue is further compounded in the context of cluster jobs, as a single user can generate hundreds if not thousands of jobs all trying to access the same network file server.  By utilizing the local disks on the compute nodes, you effectively distribute the data access load and reduce the load on the file server.
       </p>
       <p>
        Following these best practices isn't just about being a good neighbor however, they will also improve the performance of your jobs.
-       <br/>
-       <br/>
-       To further illustrate this issue, consider a service like Netflix.  While Netflix invests heavily in their data storage and supporting network, if they allowed their customers to access it directly it would quickly reach capacity resulting in performance degradation for all users.  In order to accommodate this Netflix distributes it's data into various caching tiers, which are much closer to the end user.  This distribution evens the load across multiple different devices, increasing the performance and availability for all users.
-       <br/>
       </p>
       <p>
-       While UMIACS obviously does not operate at the same scale as Netflix, the same issues are still present within the compute infrastructure.  Processing data that resides on local disk space reduces the load on the central file server and improves the performance of the process.
+       To further illustrate this issue, consider a service like Netflix.  While Netflix invests heavily in their data storage and supporting network, if they allowed their customers to access it directly it would quickly reach capacity resulting in performance degradation for all users.  In order to accommodate this, Netflix distributes its data into various caching tiers, which are much closer to the end user.  This distribution evens the load across multiple different devices, increasing the performance and availability for all users.
       </p>
       <p>
-       <br/>
+       While UMIACS obviously does not operate at the same scale as Netflix, the same concepts are still present within the compute infrastructure.  Processing data that resides on local disk space reduces the load on the central file server and improves the performance of the process.
       </p>
       <h2>
        <span class="mw-headline" id="Data_Storage">
@@ -186,7 +186,7 @@
        </span>
       </h2>
       <p>
-       When possible, it is recommended that data be stored in an archive file.
+       When possible, it is recommended that data be stored in an archive file when not actively being processed (i.e., before initiating inbound/outbound transfers to/from local disk space).
       </p>
       <p>
        Utilizing archive files provide the following benefits:
@@ -199,11 +199,11 @@
         Reduced data size
        </li>
        <li>
-        Easier data management.
+        Easier data management
        </li>
       </ul>
       <p>
-       Practically every filesystem in existence has limitations in it's ability to handle large numbers of small files.  By grouping large collections of small files into a single archive file we reduce the impact of this limitation, as well as improve the efficiency of data storage when combined with techniques such as compression.  Another advantage manifests when transferring data over the network.  In order to transfer a file a connection to the remote location has to be established and closed for each file, which can add significant overhead when dealing with large numbers of files.  When the files are collected into a single archive file we reduce the number of connections that are created and destroyed, and focus more on streaming data.
+       Practically every filesystem in existence has limitations in its ability to handle large numbers of small files.  By grouping large collections of small files into a single archive file, you can reduce the impact of this limitation, as well as improve the efficiency of data storage when combined with techniques such as compression.  Another advantage manifests when transferring data over the network.  In order to transfer a file, a connection to the remote location has to be established and closed for each file, which can add significant overhead when dealing with large numbers of files.  When the files are collected into a single archive file, you reduce the number of connections that are created and destroyed, and focus more on streaming data.
       </p>
       <p>
        Common utilities for creating archive files are
@@ -216,16 +216,13 @@
        </code>
        .
       </p>
-      <p>
-       <br/>
-      </p>
       <h2>
        <span class="mw-headline" id="Identifying_Local_Disk_Space">
         Identifying Local Disk Space
        </span>
       </h2>
       <p>
-       Local disk storage at UMIACS typically conforms to the following guidelines:
+       Local disk space at UMIACS typically conforms to the following guidelines:
       </p>
       <ul>
        <li>
@@ -241,39 +238,34 @@
         </code>
        </li>
        <li>
-        Machines with multiple local disks will have multiple
+        Machines with multiple local disks may have multiple
         <code>
          /scratchX
         </code>
-        directories, where X is a number that increases with the number of disks.
+        directories, where X is a number that increases with the number of disks
        </li>
       </ul>
-      <pre># Output shortened for brevity.
--bash-4.2$ lsblk 
+      <p>
+       Example, with output shortened for brevity:
+      </p>
+      <pre>$ lsblk 
 NAME               MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sda                  8:0    0 931.5G  0 disk 
-└─sda2               8:2    0 930.5G  0 part 
+sda                  8:0    0 931.5G  0 disk
+└─sda2               8:2    0 930.5G  0 part
   ├─vol00-scratch0 253:3    0   838G  0 lvm  /scratch0
-sdb                  8:16   0   477G  0 disk 
+sdb                  8:16   0   477G  0 disk
 └─sdb1               8:17   0   477G  0 part /scratch1
-sdc                  8:32   0 953.9G  0 disk 
+sdc                  8:32   0 953.9G  0 disk
 └─sdc1-scratch2    253:2    0 953.9G  0 lvm  /scratch2
 </pre>
-      <p>
-       As shown above, common utilities such as
-       <code>
-        lsblk
-       </code>
-       can be used to identify the specific configuration on a given node.
-      </p>
       <pre style="width: 65%; white-space:pre-wrap; margin-left: 5%;"><table>
 <tbody><tr>
 <td><a class="image" href="/umiacs/index.php/File:Exclamation-point.png"><img alt="Exclamation-point.png" decoding="async" height="25" src="/umiacs/images/thumb/e/e9/Exclamation-point.png/25px-Exclamation-point.png" srcset="/umiacs/images/thumb/e/e9/Exclamation-point.png/38px-Exclamation-point.png 1.5x, /umiacs/images/thumb/e/e9/Exclamation-point.png/50px-Exclamation-point.png 2x" width="25"/></a>
 </td>
-<td>Local data storage is considered transitory and as such is not backed up.  It is not intended for long-term storage of critical/sensitive data.
+<td>Local disk space is considered transitory and as such is not backed up.  It is not intended for long-term storage of critical/sensitive data.
 </td></tr></tbody></table></pre>
       <p>
-       If you have any questions about the available local disk storage on a given cluster please refer to the documentation specific for that cluster, or contact
+       If you have any questions about the available local disk space on a given cluster, please refer to the documentation specific for that cluster, or contact
        <a href="/umiacs/index.php/HelpDesk" title="HelpDesk">
         the UMIACS Help Desk
        </a>
@@ -282,8 +274,8 @@ sdc                  8:32   0 953.9G  0 disk
      </div>
      <div class="printfooter" data-nosnippet="">
       Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Compute/DataLocality&amp;oldid=7418">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=Compute/DataLocality&amp;oldid=7418
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Compute/DataLocality&amp;oldid=12074">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=Compute/DataLocality&amp;oldid=12074
       </a>
       "
      </div>
@@ -514,7 +506,7 @@ You can view its source [e]">
         </a>
        </li>
        <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=Compute/DataLocality&amp;oldid=7418" title="Permanent link to this revision of this page">
+        <a href="/umiacs/index.php?title=Compute/DataLocality&amp;oldid=12074" title="Permanent link to this revision of this page">
          <span>
           Permanent link
          </span>
@@ -535,7 +527,7 @@ You can view its source [e]">
   <footer class="mw-footer" id="footer" role="contentinfo">
    <ul id="footer-info">
     <li id="footer-info-lastmod">
-     This page was last edited on 25 May 2017, at 15:10.
+     This page was last edited on 15 October 2024, at 19:40.
     </li>
    </ul>
    <ul id="footer-places">
@@ -564,7 +556,7 @@ You can view its source [e]">
    </ul>
   </footer>
   <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.019","ppvisitednodes":{"value":23,"limit":1000000},"postexpandincludesize":{"value":260,"limit":2097152},"templateargumentsize":{"value":143,"limit":2097152},"expansiondepth":{"value":3,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":483,"limit":5000000},"timingprofile":["100.00%    3.575      1 Template:Note","100.00%    3.575      1 -total"]},"cachereport":{"timestamp":"20241002214019","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":143});});
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.015","walltime":"0.019","ppvisitednodes":{"value":24,"limit":1000000},"postexpandincludesize":{"value":258,"limit":2097152},"templateargumentsize":{"value":141,"limit":2097152},"expansiondepth":{"value":3,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":438,"limit":5000000},"timingprofile":["100.00%    3.523      1 Template:Note","100.00%    3.523      1 -total"]},"cachereport":{"timestamp":"20241017181851","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":148});});
   </script>
  </body>
 </html>

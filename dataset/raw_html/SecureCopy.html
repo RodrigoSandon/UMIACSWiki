@@ -6,7 +6,7 @@
    SecureCopy - UMIACS
   </title>
   <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3Gv8iGkeNxuAog7b5WLAAAAAY","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SecureCopy","wgTitle":"SecureCopy","wgCurRevisionId":10419,"wgRevisionId":10419,"wgArticleId":1644,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SecureCopy","wgRelevantArticleId":1644,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready",
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFW8Pgp4Pe2K3klBaegbgAAAAU","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SecureCopy","wgTitle":"SecureCopy","wgCurRevisionId":12090,"wgRevisionId":12090,"wgArticleId":1644,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SecureCopy","wgRelevantArticleId":1644,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready",
 "user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","skins.vector.legacy.js"];
   </script>
   <script>
@@ -17,7 +17,7 @@
   </script>
   <meta content="" name="ResourceLoaderDynamicStyles"/>
   <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="MediaWiki 1.39.10" name="generator"/>
   <meta content="telephone=no" name="format-detection"/>
   <meta content="width=1000" name="viewport"/>
   <link href="/favicon.ico" rel="icon"/>
@@ -77,17 +77,17 @@
        </span>
       </h2>
       <p>
-       SCP (secure copy) is a command-line utility that allows you to securely copy files and directories between two locations. The following commands work under Red Hat Enterprise Linux, Ubuntu Linux, and macOS.
+       SCP (secure copy) is a command-line utility that allows you to securely copy files and directories between two locations. The following commands work under Red Hat Enterprise Linux, Ubuntu Linux, macOS, and Windows.
       </p>
       <p>
-       This command, when run from a terminal, will copy the file "source_file0.txt" from the local machine to the home directory of nexusstaff00 and give it the name "target_file0.txt".
+       This command, when run from a terminal, will copy the file "source_file0.txt" from the current directory of the local machine to the home directory of the user on hostname.umiacs.umd.edu and give it the name "target_file0.txt".
       </p>
-      <pre>[jayid07@dedsec ~]$ scp source_file.txt jayid07@nexusstaff00:target_file.txt
+      <pre>[username@hostname ~]$ scp source_file0.txt username@hostname.umiacs.umd.edu:~/target_file0.txt
 </pre>
       <p>
-       This command, when run from a terminal, will copy the file "source_file1.txt" from the user's NFS homedirectory on nexustaff00 into the current local directory and give it the name "target_file1.txt".
+       This command, when run from a terminal, will copy the file "source_file1.txt" from the home directory of the user on hostname.umiacs.umd.edu into the current directory of the local machine and give it the name "target_file1.txt".
       </p>
-      <pre>[jayid07@dedsec ~]$ scp jayid07@nexusstaff00.umiacs.umd.edu:source_file1.txt target_file1.txt
+      <pre>[username@hostname ~]$ scp username@hostname.umiacs.umd.edu:~/source_file1.txt target_file1.txt
 </pre>
       <p>
        Note how the syntax of scp is very similar to that of the UNIX command cp with the addition of a hostname and username.
@@ -119,8 +119,8 @@
      </div>
      <div class="printfooter" data-nosnippet="">
       Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureCopy&amp;oldid=10419">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureCopy&amp;oldid=10419
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureCopy&amp;oldid=12090">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureCopy&amp;oldid=12090
       </a>
       "
      </div>
@@ -351,7 +351,7 @@ You can view its source [e]">
         </a>
        </li>
        <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=SecureCopy&amp;oldid=10419" title="Permanent link to this revision of this page">
+        <a href="/umiacs/index.php?title=SecureCopy&amp;oldid=12090" title="Permanent link to this revision of this page">
          <span>
           Permanent link
          </span>
@@ -372,7 +372,7 @@ You can view its source [e]">
   <footer class="mw-footer" id="footer" role="contentinfo">
    <ul id="footer-info">
     <li id="footer-info-lastmod">
-     This page was last edited on 25 April 2022, at 17:35.
+     This page was last edited on 15 October 2024, at 20:46.
     </li>
    </ul>
    <ul id="footer-places">
@@ -401,7 +401,7 @@ You can view its source [e]">
    </ul>
   </footer>
   <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.004","walltime":"0.006","ppvisitednodes":{"value":7,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002214058","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":142});});
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.004","walltime":"0.005","ppvisitednodes":{"value":7,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241016231436","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":148});});
   </script>
  </body>
 </html>

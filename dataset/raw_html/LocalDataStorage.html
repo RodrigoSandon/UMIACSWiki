@@ -6,7 +6,7 @@
    LocalDataStorage - UMIACS
   </title>
   <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"Zv3GuqfzSUg75bwCqhDaVwAAAAg","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"LocalDataStorage","wgTitle":"LocalDataStorage","wgCurRevisionId":11389,"wgRevisionId":11389,"wgArticleId":1722,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"LocalDataStorage","wgRelevantArticleId":1722,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
+   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFWxyu-2n8WBBZ7pul8CwAAAAM","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"LocalDataStorage","wgTitle":"LocalDataStorage","wgCurRevisionId":12092,"wgRevisionId":12092,"wgArticleId":1722,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"LocalDataStorage","wgRelevantArticleId":1722,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
 "user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
   </script>
   <script>
@@ -17,7 +17,7 @@
   </script>
   <meta content="" name="ResourceLoaderDynamicStyles"/>
   <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.7" name="generator"/>
+  <meta content="MediaWiki 1.39.10" name="generator"/>
   <meta content="telephone=no" name="format-detection"/>
   <meta content="width=1000" name="viewport"/>
   <link href="/favicon.ico" rel="icon"/>
@@ -61,7 +61,18 @@
     <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
      <div class="mw-parser-output">
       <p>
-       UMIACS recommends that any and all important data be stored on a redundant, backed-up file server.  However, there are a number of cases where this is not feasible.
+       Local (data) storage refers to all data that is stored physically at UMIACS, i.e., on hard drives either in a datacenter managed by
+       <a href="/umiacs/index.php/HelpDesk" title="HelpDesk">
+        UMIACS staff
+       </a>
+       , or on UMIACS-supported workstations. The opposite of this is
+       <a href="/umiacs/index.php/CloudDataStorage" title="CloudDataStorage">
+        cloud storage
+       </a>
+       which is stored on third-party providers' data hosting platforms.
+      </p>
+      <p>
+       The below sections outline the different categories of local storage available at UMIACS.
       </p>
       <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
        <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
@@ -76,113 +87,125 @@
        </div>
        <ul>
         <li class="toclevel-1 tocsection-1">
-         <a href="#Windows_Local_Storage">
+         <a href="#Network_Home_Directory_Local_Storage">
           <span class="tocnumber">
            1
           </span>
           <span class="toctext">
-           Windows Local Storage
+           Network Home Directory Local Storage
           </span>
          </a>
         </li>
         <li class="toclevel-1 tocsection-2">
-         <a href="#UNIX_Remote_Storage">
-          <span class="tocnumber">
-           2
-          </span>
-          <span class="toctext">
-           UNIX Remote Storage
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-3">
          <a href="#UNIX_Local_Storage">
           <span class="tocnumber">
-           3
+           2
           </span>
           <span class="toctext">
            UNIX Local Storage
           </span>
          </a>
         </li>
+        <li class="toclevel-1 tocsection-3">
+         <a href="#Windows_and_macOS_Local_Storage">
+          <span class="tocnumber">
+           3
+          </span>
+          <span class="toctext">
+           Windows and macOS Local Storage
+          </span>
+         </a>
+        </li>
         <li class="toclevel-1 tocsection-4">
-         <a href="#Locally_Attached_Storage">
+         <a href="#Direct-Attached_Local_Storage">
           <span class="tocnumber">
            4
           </span>
           <span class="toctext">
-           Locally Attached Storage
+           Direct-Attached Local Storage
           </span>
          </a>
         </li>
         <li class="toclevel-1 tocsection-5">
-         <a href="#Network_Scratch_Storage">
+         <a href="#Network-Attached_Local_Storage">
           <span class="tocnumber">
            5
           </span>
           <span class="toctext">
-           Network Scratch Storage
+           Network-Attached Local Storage
           </span>
          </a>
+         <ul>
+          <li class="toclevel-2 tocsection-6">
+           <a href="#Network-Attached_Local_Scratch_Storage">
+            <span class="tocnumber">
+             5.1
+            </span>
+            <span class="toctext">
+             Network-Attached Local Scratch Storage
+            </span>
+           </a>
+          </li>
+         </ul>
         </li>
-        <li class="toclevel-1 tocsection-6">
-         <a href="#UNIX_Storage_Commands">
+        <li class="toclevel-1 tocsection-7">
+         <a href="#UNIX_Local_Storage_Commands">
           <span class="tocnumber">
            6
           </span>
           <span class="toctext">
-           UNIX Storage Commands
+           UNIX Local Storage Commands
           </span>
          </a>
         </li>
        </ul>
       </div>
       <h2>
-       <span class="mw-headline" id="Windows_Local_Storage">
-        Windows Local Storage
+       <span class="mw-headline" id="Network_Home_Directory_Local_Storage">
+        Network Home Directory Local Storage
        </span>
       </h2>
       <p>
-       Windows hosts at UMIACS store user directories on their local C drives. Supported, UMIACS-managed hosts automatically back up user data on the C drive nightly using the Institute's backup system. If you have a supported, UMIACS-managed host that has other internal or external hard drives attached to it, or partitions other than C on its primary hard drive, please be aware that these drives/partitions
-       <b>
-        are not
-       </b>
-       backed up. Laptops and non-standard hosts are not automatically backed up and should be manually backed up by their users.
-      </p>
-      <h2>
-       <span class="mw-headline" id="UNIX_Remote_Storage">
-        UNIX Remote Storage
-       </span>
-      </h2>
-      <p>
-       We provide storage to each of our users in our UNIX offerings through the
+       We provide network home directory local storage to each of our users through
        <a href="/umiacs/index.php/NFShomes" title="NFShomes">
         NFShomes
        </a>
-       .
+       home directories.
       </p>
       <p>
-       This home directory,
+       This home directory can be accessed via either
       </p>
-      <pre>   /nfshomes/username
+      <pre>   /nfshomes/&lt;username&gt; (NFS)
 </pre>
       <p>
-       is backed up nightly into our
+       or
+      </p>
+      <pre>   \\isilondata.umiacs.umd.edu\nfshomes\&lt;username&gt; (CIFS)
+</pre>
+      <p>
+       and is backed up nightly using the Institute's
        <a class="mw-redirect" href="/umiacs/index.php/TSM" title="TSM">
         TSM
        </a>
-       backup system.  This volume has
+       backup system. It also has
        <a href="/umiacs/index.php/Snapshots" title="Snapshots">
         Snapshots
        </a>
        enabled for easy user restores.
       </p>
       <p>
-       Users are given a 30GB
+       Users are given a 30GB, non-expandable
        <a href="/umiacs/index.php/Quota" title="Quota">
         Quota
        </a>
-       . This quota is non-expandable and you will need to use either local or other network storage for increased space.
+       . You will need to use either platform-specific local storage, directly-attached local storage, or other network-attached local storage for increased space.
+      </p>
+      <p>
+       On user account closure, the account's NFShomes home directory goes into our
+       <a href="/umiacs/index.php/Archives" title="Archives">
+        Archives
+       </a>
+       .
       </p>
       <h2>
        <span class="mw-headline" id="UNIX_Local_Storage">
@@ -190,10 +213,18 @@
        </span>
       </h2>
       <p>
-       UNIX machines use redundant, backed-up network file shares for user directories.  Research data storage is also stored on redundant, backed-up network file shares and is generally available under /fs/
+       UNIX hosts use redundant, backed-up network file shares for user directories (
+       <a href="#Network_Home_Directory_Local_Storage">
+        above section
+       </a>
+       ). Research data storage (
+       <a href="#Network-Attached_Local_Storage">
+        below section
+       </a>
+       ) is also stored on redundant, possibly-backed-up network file shares and is generally available under /fs/
       </p>
       <p>
-       All UNIX machines also have local storage available for transitory use.  These directories may be used to store temporary, local
+       All UNIX hosts also have local storage available for transitory use. These directories may be used to store temporary, local
        <i>
         <b>
          COPIES
@@ -208,7 +239,7 @@
          under any circumstances
         </b>
        </i>
-       , be used as permanent storage for unique, important data.  UMIACS staff cannot recover damaged or deleted data from these directories and will not be responsible for data loss if they are misused. Additionally, on our
+       , be used as permanent storage for unique, important data. They are not backed up or archived by UMIACS. UMIACS staff cannot recover damaged or deleted data from these directories and will not be responsible for data loss if they are misused. Additionally, on our
        <a href="/umiacs/index.php/SLURM" title="SLURM">
         SLURM
        </a>
@@ -229,28 +260,100 @@
  - any directory named in whole or in part "tmp", "temp", or "scratch".
 </pre>
       <h2>
-       <span class="mw-headline" id="Locally_Attached_Storage">
-        Locally Attached Storage
+       <span class="mw-headline" id="Windows_and_macOS_Local_Storage">
+        Windows and macOS Local Storage
        </span>
       </h2>
       <p>
-       Locally attached storage like USB flash drives and USB hard drives are very popular.  However, these devices are significantly more vulnerable to data loss or theft than internal or networked data storage.  In general, UMIACS discourages the use of locally attached network storage when any other option is available.  Please note that these devices are prone to high rates of failure and additional steps should be taken to ensure that the data is backed up and that critical or confidential data is not lost or stolen.
+       Windows and macOS hosts at UMIACS store user directories on their primary internal drives (
+       <tt>
+        C:\Users
+       </tt>
+       for Windows,
+       <tt>
+        /Users
+       </tt>
+       for macOS). Supported, UMIACS-managed hosts automatically back up user data on these drives nightly using the Institute's
+       <a class="mw-redirect" href="/umiacs/index.php/TSM" title="TSM">
+        TSM
+       </a>
+       backup system. If you have a supported, UMIACS-managed host that has other internal or external hard drives attached to it, or other partitions on its primary internal drive, please be aware that these drives/partitions
+       <b>
+        are not
+       </b>
+       backed up. Laptops and non-standard hosts are not automatically backed up and should be manually backed up by their users.
+      </p>
+      <p>
+       On host decommission, user directories go into our
+       <a href="/umiacs/index.php/Archives" title="Archives">
+        Archives
+       </a>
+       .
       </p>
       <h2>
-       <span class="mw-headline" id="Network_Scratch_Storage">
-        Network Scratch Storage
+       <span class="mw-headline" id="Direct-Attached_Local_Storage">
+        Direct-Attached Local Storage
        </span>
       </h2>
       <p>
-       Some labs have network-attached storage dedicated for scratch/temporary storage. These shares are named in the same manner as local scratch or temporary storage (i.e. /fs/lab-scratch or /lab/scratch0) and are subject to the same policies as local scratch/tmp (discussed above.)
+       Direct-attached local storage refers to devices like USB flash drives and USB hard drives, which are very popular for easily expanding storage capacity on a host. However, these devices are significantly more vulnerable to data loss or theft than internal or networked data storage. In general, UMIACS discourages the use of direct-attached local storage when any other option is available. Please note that these devices are prone to high rates of failure and additional steps should be taken to ensure that the data is backed up and that critical or confidential data is not lost or stolen.
+      </p>
+      <p>
+       Direct-attached local storage is not backed up or archived by UMIACS.
       </p>
       <h2>
-       <span class="mw-headline" id="UNIX_Storage_Commands">
-        UNIX Storage Commands
+       <span class="mw-headline" id="Network-Attached_Local_Storage">
+        Network-Attached Local Storage
        </span>
       </h2>
       <p>
-       Below are a few different CLI commands that may prove useful for monitoring your storage usage and performance. For additional information, run
+       Some labs have network-attached local storage space dedicated for datasets, models, and project storage. These shares are typically named in the form
+       <tt>
+        /fs/&lt;lab&gt;-&lt;purpose&gt;
+       </tt>
+       (i.e.,
+       <tt>
+        /fs/cml-models
+       </tt>
+       or
+       <tt>
+        /fs/vulcan-projects
+       </tt>
+       ).
+      </p>
+      <p>
+       Network-attached local storage may or may not be backed up and/or archived by UMIACS. Details of a specific share's retention policy should be stated along with the documentation of the share's access / usage policy. If you find an  documentation network-attached local storage space in this wiki that does not state its retention policy, please
+       <a href="/umiacs/index.php/HelpDesk" title="HelpDesk">
+        contact staff
+       </a>
+       .
+      </p>
+      <h3>
+       <span class="mw-headline" id="Network-Attached_Local_Scratch_Storage">
+        Network-Attached Local Scratch Storage
+       </span>
+      </h3>
+      <p>
+       One specific sub-category of network-attached local storage is network-attached local scratch storage. These shares are named similarly to local scratch or temporary storage, but with the lab's name included (i.e.,
+       <tt>
+        /fs/cbcb-scratch
+       </tt>
+       or
+       <tt>
+        /gammascratch
+       </tt>
+       ), are intended for scratch/temporary storage, and are subject to the same policies as local scratch/tmp directories, discussed above.
+      </p>
+      <p>
+       Network-attached local scratch storage is not backed up or archived by UMIACS.
+      </p>
+      <h2>
+       <span class="mw-headline" id="UNIX_Local_Storage_Commands">
+        UNIX Local Storage Commands
+       </span>
+      </h2>
+      <p>
+       Below are a few different CLI commands that may prove useful for monitoring your local storage usage and performance. For additional information, run
        <code>
         [command] --help
        </code>
@@ -300,13 +403,12 @@ Options are:
 [ -j { ID | LABEL | PATH | UUID | ... } ]
 [ [ -T ] -g &lt;group_name&gt; ] [ -p [ &lt;device&gt; [,...] | ALL ] ]
 [ &lt;device&gt; [...] | ALL ]
-
 </pre>
      </div>
      <div class="printfooter" data-nosnippet="">
       Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=LocalDataStorage&amp;oldid=11389">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=LocalDataStorage&amp;oldid=11389
+      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=LocalDataStorage&amp;oldid=12092">
+       https://wiki.umiacs.umd.edu/umiacs/index.php?title=LocalDataStorage&amp;oldid=12092
       </a>
       "
      </div>
@@ -537,7 +639,7 @@ You can view its source [e]">
         </a>
        </li>
        <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=LocalDataStorage&amp;oldid=11389" title="Permanent link to this revision of this page">
+        <a href="/umiacs/index.php?title=LocalDataStorage&amp;oldid=12092" title="Permanent link to this revision of this page">
          <span>
           Permanent link
          </span>
@@ -558,7 +660,7 @@ You can view its source [e]">
   <footer class="mw-footer" id="footer" role="contentinfo">
    <ul id="footer-info">
     <li id="footer-info-lastmod">
-     This page was last edited on 20 October 2023, at 13:58.
+     This page was last edited on 15 October 2024, at 20:53.
     </li>
    </ul>
    <ul id="footer-places">
@@ -587,7 +689,7 @@ You can view its source [e]">
    </ul>
   </footer>
   <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.006","walltime":"0.007","ppvisitednodes":{"value":38,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":902,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241002115047","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":143});});
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.011","walltime":"0.012","ppvisitednodes":{"value":49,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":901,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241017181907","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":149});});
   </script>
  </body>
 </html>

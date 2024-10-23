@@ -14,14 +14,17 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.vectorstores import Chroma
 
-client = redis.StrictRedis(host='localhost', port=6379, db=0)
+#client = redis.StrictRedis(host='localhost', port=6379, db=0)
 
-if client.ping():
-    print("Connected to Redis")
+client = redis.Redis(
+  host='redis-16332.c263.us-east-1-2.ec2.redns.redis-cloud.com',
+  port=16332,
+  password='hKaRGxEXQa0GoWeOt6MzH7cFWT5tCAUp')
 
-model_id = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+
+model_id = "meta-llama/Llama-3.1-8B-Instruct"
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
-
+token = "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"
 
 # pipeline = transformers.pipeline(
 #   "text-generation",
@@ -43,7 +46,8 @@ time_start = time()
 model_config = transformers.AutoConfig.from_pretrained(
    model_id,
     trust_remote_code=True,
-    max_new_tokens=1024
+    max_new_tokens=1024,
+    use_auth_token=token
 )
 model = transformers.AutoModelForCausalLM.from_pretrained(
     model_id,
@@ -94,8 +98,3 @@ def test_model(tokenizer, pipeline, message):
     answer = sequences[0]['generated_text'][len(message):]
     
     return f"Question: {question}\nAnswer: {answer}\nTotal time: {total_time}"
-
-
-# response = test_model(tokenizer,
-#                     query_pipeline,
-#                    "Question")

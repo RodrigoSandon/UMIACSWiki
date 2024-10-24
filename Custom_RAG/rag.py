@@ -19,12 +19,12 @@ from langchain.vectorstores import Chroma
 client = redis.Redis(
   host='redis-16332.c263.us-east-1-2.ec2.redns.redis-cloud.com',
   port=16332,
-  password='hKaRGxEXQa0GoWeOt6MzH7cFWT5tCAUp')
+  password='')
 
 
 model_id = "meta-llama/Llama-3.1-8B-Instruct"
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
-token = "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"
+token = ""
 
 # pipeline = transformers.pipeline(
 #   "text-generation",

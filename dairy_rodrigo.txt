@@ -14,7 +14,41 @@
 - Gave presentation
 
 24th September 2024:
-- I found RAGflow and had the team start 
+- Worked on and finished project proposal report
+
+25th September 2024:
+- Was able to run RAGFlow on my local computer but have a bug with parsing docs
+
+26th September 2024:
+- Met with Derek to figure out more about what they're looking for
+
+1st October 2024:
+- Figured out the problem with my computer being unable to parse
+
+3rd October 2024:
+- Learned about Nexus and how to run it
+
+8th October 2024:
+- Learned how perceptron works
+
+10th October 2024:
+- Learned optimization methods of ML
+
+15th October 2024:
+- Reviewed manual questions made
+
+17th October 2024:
+- Reviewed vector database chosen and its now working pipeline
+
+22nd October 2024:
+- Figured out rest of to do for presentation day: 
+    - Make the current RAG pipeline opensourced (use Milvus instead of Redis and Ollama instead of OpenAI)
+    - Have RAG pipeline running on the cloud (embedding and inference): GCP storage for vector DBs and compute, will use an emulator to test, VM GPU resources will still be used and paid for
+    - Have a basic UI
+
+24th October 2024:
+ - Figured out that fine-tuning may not be needed and just prompting that we may need to adjust for RAG pipeline
+
 
 
 

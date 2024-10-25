@@ -1,745 +1,211 @@
 <!DOCTYPE html>
+
 <html class="client-nojs" dir="ltr" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   OBJ/WebHosting - UMIACS
-  </title>
-  <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFW@yOSfpKnsyUH-iwi-QAAAAY","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"OBJ/WebHosting","wgTitle":"OBJ/WebHosting","wgCurRevisionId":10661,"wgRevisionId":10661,"wgArticleId":3090,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"OBJ/WebHosting","wgRelevantArticleId":3090,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
-"user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
-  </script>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
-  </script>
-  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
-  </script>
-  <meta content="" name="ResourceLoaderDynamicStyles"/>
-  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.10" name="generator"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="width=1000" name="viewport"/>
-  <link href="/favicon.ico" rel="icon"/>
-  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
-  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
-  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
- </head>
- <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-OBJ_WebHosting rootpage-OBJ_WebHosting skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
-  <div class="noprint" id="mw-page-base">
-  </div>
-  <div class="noprint" id="mw-head-base">
-  </div>
-  <div class="mw-body" id="content" role="main">
-   <a id="top">
-   </a>
-   <div id="siteNotice">
-   </div>
-   <div class="mw-indicators">
-   </div>
-   <h1 class="firstHeading mw-first-heading" id="firstHeading">
-    <span class="mw-page-title-main">
-     OBJ/WebHosting
-    </span>
-   </h1>
-   <div class="vector-body" id="bodyContent">
-    <div class="noprint" id="siteSub">
-     From UMIACS
-    </div>
-    <div id="contentSub">
-    </div>
-    <div id="contentSub2">
-    </div>
-    <div id="jump-to-nav">
-    </div>
-    <a class="mw-jump-link" href="#mw-head">
-     Jump to navigation
-    </a>
-    <a class="mw-jump-link" href="#searchInput">
-     Jump to search
-    </a>
-    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
-     <div class="mw-parser-output">
-      <p>
-       UMIACS'
-       <a href="/umiacs/index.php/OBJ" title="OBJ">
-        Object Store
-       </a>
-       has the ability to host websites. On the settings page for each bucket, there is a section allowing you to specify a configuration for a website hosted in your bucket. You can choose keys located in your bucket to act as the index file (what will be displayed when someone visits your website) and the error file (what will be displayed when an error is encountered loading your website). These settings can be updated at any time.
-      </p>
-      <p>
-       Because hosting a website through your bucket requires others to have access to any keys associated with your website, setting up a website configuration will automatically set the visibility of your bucket to public and remove the bucket level ACLs. You will not be able to set the bucket back to private without first removing the website configuration, which can be done on the bucket settings page.
-      </p>
-      <p>
-       <b>
-        Note:
-       </b>
-       The Object Store only has the capability to support static content and client-side scripting in bucket websites.
-      </p>
-      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
-       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
-       <div class="toctitle" dir="ltr" lang="en">
-        <h2 id="mw-toc-heading">
-         Contents
-        </h2>
-        <span class="toctogglespan">
-         <label class="toctogglelabel" for="toctogglecheckbox">
-         </label>
-        </span>
-       </div>
-       <ul>
-        <li class="toclevel-1 tocsection-1">
-         <a href="#Hosting_a_Website">
-          <span class="tocnumber">
-           1
-          </span>
-          <span class="toctext">
-           Hosting a Website
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-2">
-         <a href="#Accessing_the_Website">
-          <span class="tocnumber">
-           2
-          </span>
-          <span class="toctext">
-           Accessing the Website
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-3">
-         <a href="#Setting_a_Website_as_your_personal_UMIACS_webpage">
-          <span class="tocnumber">
-           3
-          </span>
-          <span class="toctext">
-           Setting a Website as your personal UMIACS webpage
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-4">
-         <a href="#Disabling_a_Website">
-          <span class="tocnumber">
-           4
-          </span>
-          <span class="toctext">
-           Disabling a Website
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-5">
-         <a href="#Misc">
-          <span class="tocnumber">
-           5
-          </span>
-          <span class="toctext">
-           Misc
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-      <h2>
-       <span class="mw-headline" id="Hosting_a_Website">
-        Hosting a Website
-       </span>
-      </h2>
-      <p>
-       Hosting a website in OBJ is quite easy and can be done in a few simple steps. There are three different ways you can set up your OBJ bucket to host a static website.
-      </p>
-      <p>
-       <i>
-        <b>
-         First Method (Using the Web Interface):
-        </b>
-       </i>
-      </p>
-      <ol>
-       <li>
-        Log into
-        <a class="external text" href="https://obj.umiacs.umd.edu/obj/buckets/" rel="nofollow">
-         OBJ
-        </a>
-        and create a bucket. Make sure to choose a bucket name carefully since this will be part of the web URL.
-        <div class="floatright">
-         <a class="image" href="/umiacs/index.php/File:Bucket_settings01.jpg">
-          <img alt="Bucket settings01.jpg" decoding="async" height="119" src="/umiacs/images/thumb/5/5b/Bucket_settings01.jpg/400px-Bucket_settings01.jpg" srcset="/umiacs/images/thumb/5/5b/Bucket_settings01.jpg/600px-Bucket_settings01.jpg 1.5x, /umiacs/images/thumb/5/5b/Bucket_settings01.jpg/800px-Bucket_settings01.jpg 2x" width="400"/>
-         </a>
-        </div>
-       </li>
-       <li>
-        Upload your index.html file and optional error.html file (and any other required files for your website) on the bucket that you just created.
-       </li>
-       <li>
-        Once the files are uploaded, click on
-        <b>
-         Bucket Settings
-        </b>
-       </li>
-       <li>
-        On the settings page, click on the blue
-        <b>
-         Make Public
-        </b>
-        button.
-        <br/>
-        <a class="image" href="/umiacs/index.php/File:Bucket_settings.jpg">
-         <img alt="Bucket settings.jpg" decoding="async" height="375" src="/umiacs/images/thumb/5/54/Bucket_settings.jpg/600px-Bucket_settings.jpg" srcset="/umiacs/images/thumb/5/54/Bucket_settings.jpg/900px-Bucket_settings.jpg 1.5x, /umiacs/images/thumb/5/54/Bucket_settings.jpg/1200px-Bucket_settings.jpg 2x" width="600"/>
-        </a>
-       </li>
-       <li>
-        Under Website Hosting, enter the name of your index.html (and optionally error.html) file and hit Submit.
-       </li>
-      </ol>
-      <p>
-       <br/>
-       <i>
-        <b>
-         Second Method (Using the UMobj CLI):
-        </b>
-       </i>
-      </p>
-      <ol>
-       <li>
-        <a href="/umiacs/index.php/UMobj" title="UMobj">
-         Set up your environment variables
-        </a>
-        .
-       </li>
-       <li>
-        On the shell enter
-        <code>
-         mkobj &lt;bucket_name&gt;
-        </code>
-        to create a bucket. Your bucket name must be unique. You can enter
-        <code>
-         lsobj -l
-        </code>
-        to see the existing buckets.
-       </li>
-       <li>
-        Copy all the required files to the bucket:
-        <code>
-         cpobj [source_directory]/file_name &lt;bucket_name&gt;:
-        </code>
-        . For example,
-        <code>
-         cpobj /fs/www-users/jayid-test/index.html jayid-test:
-        </code>
-       </li>
-       <li>
-        Create a web configuration for your bucket:
-        <code>
-         webobj -m create -c website --index=index.html --error=error.html &lt;bucket_name&gt;
-        </code>
-       </li>
-       <li>
-        Make your bucket public:
-        <code>
-         chobj -m public &lt;bucket_name&gt;
-        </code>
-       </li>
-      </ol>
-      <p>
-       <i>
-        <b>
-         Third Method (Using a Graphical S3 Client):
-        </b>
-       </i>
-       <br/>
-       Since there are many different graphical clients available, we won't be able to cover detailed instructions for all of them. The instruction below only applies to Cyberduck.
-      </p>
-      <ol>
-       <li>
-        Please refer to
-        <a href="/umiacs/index.php/S3Clients" title="S3Clients">
-         S3Clients
-        </a>
-        to download and install Cyberduck.
-       </li>
-       <li>
-        Log into Cyberduck using the instruction from the previous step.
-       </li>
-       <li>
-        Once logged in, right-click &gt;
-        <code>
-         New Folder...
-        </code>
-        . Give a unique name to your bucket.
-       </li>
-       <li>
-        Right-click on the bucket you just created, and click on
-        <code>
-         Upload...
-        </code>
-        . You can upload multiple files at once.
-       </li>
-       <li>
-        Once all the files are uploaded, right-click on the same bucket, and click on
-        <code>
-         info
-        </code>
-        .
-       </li>
-       <li>
-        Under the
-        <b>
-         Distribution (CDN)
-        </b>
-        tab make sure to leave a checkmark next to
-        <i>
-         Enable Website Configuration (HTTP) Distribution
-        </i>
-        .
-        <br/>
-        <a class="image" href="/umiacs/index.php/File:CyberduckWeb.png">
-         <img alt="CyberduckWeb.png" decoding="async" height="380" src="/umiacs/images/thumb/1/15/CyberduckWeb.png/300px-CyberduckWeb.png" srcset="/umiacs/images/thumb/1/15/CyberduckWeb.png/450px-CyberduckWeb.png 1.5x, /umiacs/images/1/15/CyberduckWeb.png 2x" width="300"/>
-        </a>
-       </li>
-       <li>
-        Next, click on the drop-down menu next to
-        <code>
-         Index File
-        </code>
-        and select your index.html file (or whatever file you're using as your index file).
-       </li>
-       <li>
-        Under the
-        <b>
-         Permission
-        </b>
-        tab, add a permission by clicking on the cog icon on the bottom left and click on
-        <code>
-         Everyone
-        </code>
-        . Change the permission for
-        <code>
-         Everyone
-        </code>
-        to
-        <b>
-         READ
-        </b>
-        as shown on the image below.&lt;
-        <br/>
-        <a class="image" href="/umiacs/index.php/File:CyberduckWeb01.png">
-         <img alt="CyberduckWeb01.png" decoding="async" height="382" src="/umiacs/images/thumb/7/7b/CyberduckWeb01.png/300px-CyberduckWeb01.png" srcset="/umiacs/images/thumb/7/7b/CyberduckWeb01.png/450px-CyberduckWeb01.png 1.5x, /umiacs/images/7/7b/CyberduckWeb01.png 2x" width="300"/>
-        </a>
-       </li>
-      </ol>
-      <h2>
-       <span class="mw-headline" id="Accessing_the_Website">
-        Accessing the Website
-       </span>
-      </h2>
-      <p>
-       You can access the website by using the default URL which has the form
-       <code>
-        https://&lt;Bucket_name&gt;.umiacs.io
-       </code>
-       .
-      </p>
-      <h2>
-       <span class="mw-headline" id="Setting_a_Website_as_your_personal_UMIACS_webpage">
-        Setting a Website as your personal UMIACS webpage
-       </span>
-      </h2>
-      <p>
-       If you are intending to use the site as your personal UMIACS webpage, once the bucket is configured and all the required files are uploaded, please log into your
-       <a class="external text" href="https://intranet.umiacs.umd.edu/directory/info/" rel="nofollow">
-        UMIACS Directory page
-       </a>
-       and update the Home Page attribute to
-       <code>
-        https://&lt;Bucket_name&gt;.umiacs.io
-       </code>
-       . Replace &lt;Bucket_name&gt; with the name of the bucket you created.
-      </p>
-      <p>
-       Afterwards,
-       <code>
-        www.umiacs.umd.edu/~username
-       </code>
-       will also redirect to your website.
-      </p>
-      <h2>
-       <span class="mw-headline" id="Disabling_a_Website">
-        Disabling a Website
-       </span>
-      </h2>
-      <p>
-       If you no longer wish to host a website, you can disable the bucket's web configuration.
-       <br/>
-       <i>
-        <b>
-         Using the web interface:
-        </b>
-       </i>
-      </p>
-      <ol>
-       <li>
-        Click on the bucket where you are hosting your website and then click on
-        <b>
-         Bucket Settings
-        </b>
-        .
-       </li>
-       <li>
-        On the settings page you can, click on
-        <b>
-         Remove Website Configuration
-        </b>
-        . Alternatively, you can also click on the
-        <b>
-         Make Private
-        </b>
-        button to make your bucket private and remove any associated web configuration.
-       </li>
-      </ol>
-      <p>
-       <i>
-        <b>
-         Using the CLI:
-        </b>
-       </i>
-       <br/>
-       Enter the following command in the terminal:
-       <code>
-        webobj -m delete -c website &lt;bucket_name&gt;
-       </code>
-      </p>
-      <p>
-       <i>
-        <b>
-         Using a Graphical S3 Client (Cyberduck):
-        </b>
-       </i>
-       <br/>
-      </p>
-      <ol>
-       <li>
-        Right-click on the bucket where you are hosting your website and click
-        <code>
-         info
-        </code>
-        .
-       </li>
-       <li>
-        Click on the
-        <b>
-         Distribution (CDN)
-        </b>
-        tab and uncheck the box
-        <i>
-         Enable Website Configuration (HTTP) Distribution
-        </i>
-        .
-       </li>
-      </ol>
-      <h2>
-       <span class="mw-headline" id="Misc">
-        Misc
-       </span>
-      </h2>
-      <ul>
-       <li>
-        <a class="external text" href="https://gitlab.umiacs.umd.edu/staff/umobj/blob/master/README.md%7C" rel="nofollow">
-         More commands for umobj
-        </a>
-       </li>
-       <li>
-        <a href="/umiacs/index.php/S3Clients" title="S3Clients">
-         S3Clients
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="printfooter" data-nosnippet="">
-      Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=OBJ/WebHosting&amp;oldid=10661">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=OBJ/WebHosting&amp;oldid=10661
-      </a>
-      "
-     </div>
-    </div>
-    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
-    </div>
-   </div>
-  </div>
-  <div id="mw-navigation">
-   <h2>
-    Navigation menu
-   </h2>
-   <div id="mw-head">
-    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
-     <h3 class="vector-menu-heading" id="p-personal-label">
-      <span class="vector-menu-heading-label">
-       Personal tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="pt-login">
-        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=OBJ%2FWebHosting" title="You are encouraged to log in; however, it is not mandatory [o]">
-         <span>
-          Log in
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <div id="left-navigation">
-     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
-      <h3 class="vector-menu-heading" id="p-namespaces-label">
-       <span class="vector-menu-heading-label">
-        Namespaces
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-nstab-main">
-         <a accesskey="c" href="/umiacs/index.php/OBJ/WebHosting" title="View the content page [c]">
-          <span>
-           Page
-          </span>
-         </a>
-        </li>
-        <li class="new mw-list-item" id="ca-talk">
-         <a accesskey="t" href="/umiacs/index.php?title=Talk:OBJ/WebHosting&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
-          <span>
-           Discussion
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
-      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
-      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
-       <span class="vector-menu-heading-label">
-        English
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-    </div>
-    <div id="right-navigation">
-     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
-      <h3 class="vector-menu-heading" id="p-views-label">
-       <span class="vector-menu-heading-label">
-        Views
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-view">
-         <a href="/umiacs/index.php/OBJ/WebHosting">
-          <span>
-           Read
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-viewsource">
-         <a accesskey="e" href="/umiacs/index.php?title=OBJ/WebHosting&amp;action=edit" title="This page is protected.
-You can view its source [e]">
-          <span>
-           View source
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-history">
-         <a accesskey="h" href="/umiacs/index.php?title=OBJ/WebHosting&amp;action=history" title="Past revisions of this page [h]">
-          <span>
-           View history
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
-      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
-      <label class="vector-menu-heading" id="p-cactions-label">
-       <span class="vector-menu-heading-label">
-        More
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
-      <div>
-       <h3>
-        <label for="searchInput">
-         Search
-        </label>
-       </h3>
-       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
-        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
-         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
-         <input name="title" type="hidden" value="Special:Search"/>
-         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
-         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
-        </div>
-       </form>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div id="mw-panel">
-    <div id="p-logo" role="banner">
-     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
-     </a>
-    </div>
-    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
-     <h3 class="vector-menu-heading" id="p-navigation-label">
-      <span class="vector-menu-heading-label">
-       Navigation
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="n-mainpage">
-        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
-         <span>
-          Main Page
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Getting-Started">
-        <a href="/umiacs/index.php/GettingStarted">
-         <span>
-          Getting Started
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Core-Services">
-        <a href="/umiacs/index.php/CoreServices">
-         <span>
-          Core Services
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Lab-Facilities">
-        <a href="/umiacs/index.php/LabFacilities">
-         <span>
-          Lab Facilities
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Placing-Orders">
-        <a href="/umiacs/index.php/Orders">
-         <span>
-          Placing Orders
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Support">
-        <a href="/umiacs/index.php/HelpDesk">
-         <span>
-          Support
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
-     <h3 class="vector-menu-heading" id="p-tb-label">
-      <span class="vector-menu-heading-label">
-       Tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="t-whatlinkshere">
-        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/OBJ/WebHosting" title="A list of all wiki pages that link here [j]">
-         <span>
-          What links here
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-recentchangeslinked">
-        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/OBJ/WebHosting" rel="nofollow" title="Recent changes in pages linked from this page [k]">
-         <span>
-          Related changes
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-specialpages">
-        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
-         <span>
-          Special pages
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-print">
-        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
-         <span>
-          Printable version
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=OBJ/WebHosting&amp;oldid=10661" title="Permanent link to this revision of this page">
-         <span>
-          Permanent link
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-info">
-        <a href="/umiacs/index.php?title=OBJ/WebHosting&amp;action=info" title="More information about this page">
-         <span>
-          Page information
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-   </div>
-  </div>
-  <footer class="mw-footer" id="footer" role="contentinfo">
-   <ul id="footer-info">
-    <li id="footer-info-lastmod">
-     This page was last edited on 22 September 2022, at 13:30.
-    </li>
-   </ul>
-   <ul id="footer-places">
-    <li id="footer-places-privacy">
-     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
-      Privacy policy
-     </a>
-    </li>
-    <li id="footer-places-about">
-     <a href="/umiacs/index.php/UMIACS:About">
-      About UMIACS
-     </a>
-    </li>
-    <li id="footer-places-disclaimer">
-     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
-      Disclaimers
-     </a>
-    </li>
-   </ul>
-   <ul class="noprint" id="footer-icons">
-    <li id="footer-poweredbyico">
-     <a href="https://www.mediawiki.org/">
-      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
-     </a>
-    </li>
-   </ul>
-  </footer>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.021","walltime":"0.031","ppvisitednodes":{"value":22,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241017151707","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":152});});
-  </script>
- </body>
+<head>
+<meta charset="utf-8"/>
+<title>OBJ/WebHosting - UMIACS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFuw-Yy@@IhYSSXt94AgAAAAc","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"OBJ/WebHosting","wgTitle":"OBJ/WebHosting","wgCurRevisionId":10661,"wgRevisionId":10661,"wgArticleId":3090,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"OBJ/WebHosting","wgRelevantArticleId":3090,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
+"user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.39.10" name="generator"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="width=1000" name="viewport"/>
+<link href="/favicon.ico" rel="icon"/>
+<link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+<link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-OBJ_WebHosting rootpage-OBJ_WebHosting skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div id="siteNotice"></div>
+<div class="mw-indicators">
+</div>
+<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">OBJ/WebHosting</span></h1>
+<div class="vector-body" id="bodyContent">
+<div class="noprint" id="siteSub">From UMIACS</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>UMIACS' <a href="/umiacs/index.php/OBJ" title="OBJ"> Object Store</a> has the ability to host websites. On the settings page for each bucket, there is a section allowing you to specify a configuration for a website hosted in your bucket. You can choose keys located in your bucket to act as the index file (what will be displayed when someone visits your website) and the error file (what will be displayed when an error is encountered loading your website). These settings can be updated at any time.
+</p><p>Because hosting a website through your bucket requires others to have access to any keys associated with your website, setting up a website configuration will automatically set the visibility of your bucket to public and remove the bucket level ACLs. You will not be able to set the bucket back to private without first removing the website configuration, which can be done on the bucket settings page.
+</p><p><b>Note:</b> The Object Store only has the capability to support static content and client-side scripting in bucket websites.
+</p>
+<div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Hosting_a_Website"><span class="tocnumber">1</span> <span class="toctext">Hosting a Website</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Accessing_the_Website"><span class="tocnumber">2</span> <span class="toctext">Accessing the Website</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Setting_a_Website_as_your_personal_UMIACS_webpage"><span class="tocnumber">3</span> <span class="toctext">Setting a Website as your personal UMIACS webpage</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Disabling_a_Website"><span class="tocnumber">4</span> <span class="toctext">Disabling a Website</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Misc"><span class="tocnumber">5</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Hosting_a_Website">Hosting a Website</span></h2>
+<p>Hosting a website in OBJ is quite easy and can be done in a few simple steps. There are three different ways you can set up your OBJ bucket to host a static website.
+</p><p><i><b>First Method (Using the Web Interface):</b></i>
+</p>
+<ol><li>Log into <a class="external text" href="https://obj.umiacs.umd.edu/obj/buckets/" rel="nofollow">OBJ</a> and create a bucket. Make sure to choose a bucket name carefully since this will be part of the web URL. <div class="floatright"><a class="image" href="/umiacs/index.php/File:Bucket_settings01.jpg"><img alt="Bucket settings01.jpg" decoding="async" height="119" src="/umiacs/images/thumb/5/5b/Bucket_settings01.jpg/400px-Bucket_settings01.jpg" srcset="/umiacs/images/thumb/5/5b/Bucket_settings01.jpg/600px-Bucket_settings01.jpg 1.5x, /umiacs/images/thumb/5/5b/Bucket_settings01.jpg/800px-Bucket_settings01.jpg 2x" width="400"/></a></div></li>
+<li>Upload your index.html file and optional error.html file (and any other required files for your website) on the bucket that you just created.</li>
+<li>Once the files are uploaded, click on <b>Bucket Settings</b></li>
+<li>On the settings page, click on the blue <b>Make Public</b> button. <br/><a class="image" href="/umiacs/index.php/File:Bucket_settings.jpg"><img alt="Bucket settings.jpg" decoding="async" height="375" src="/umiacs/images/thumb/5/54/Bucket_settings.jpg/600px-Bucket_settings.jpg" srcset="/umiacs/images/thumb/5/54/Bucket_settings.jpg/900px-Bucket_settings.jpg 1.5x, /umiacs/images/thumb/5/54/Bucket_settings.jpg/1200px-Bucket_settings.jpg 2x" width="600"/></a></li>
+<li>Under Website Hosting, enter the name of your index.html (and optionally error.html) file and hit Submit.</li></ol>
+<p><br/>
+<i><b>Second Method (Using the UMobj CLI):</b></i>
+</p>
+<ol><li><a href="/umiacs/index.php/UMobj" title="UMobj">Set up your environment variables</a>.</li>
+<li>On the shell enter <code>mkobj &lt;bucket_name&gt;</code> to create a bucket. Your bucket name must be unique. You can enter <code>lsobj -l</code> to see the existing buckets.</li>
+<li>Copy all the required files to the bucket: <code>cpobj [source_directory]/file_name &lt;bucket_name&gt;:</code>. For example, <code>cpobj /fs/www-users/jayid-test/index.html jayid-test:</code></li>
+<li>Create a web configuration for your bucket: <code> webobj -m create -c website --index=index.html --error=error.html &lt;bucket_name&gt;</code></li>
+<li>Make your bucket public: <code>chobj -m public &lt;bucket_name&gt;</code></li></ol>
+<p><i><b>Third Method (Using a Graphical S3 Client):</b></i><br/>
+Since there are many different graphical clients available, we won't be able to cover detailed instructions for all of them. The instruction below only applies to Cyberduck.
+</p>
+<ol><li>Please refer to <a href="/umiacs/index.php/S3Clients" title="S3Clients">S3Clients</a> to download and install Cyberduck.</li>
+<li>Log into Cyberduck using the instruction from the previous step.</li>
+<li>Once logged in, right-click &gt; <code>New Folder...</code>. Give a unique name to your bucket.</li>
+<li>Right-click on the bucket you just created, and click on <code>Upload...</code>. You can upload multiple files at once.</li>
+<li>Once all the files are uploaded, right-click on the same bucket, and click on <code>info</code>.</li>
+<li>Under the <b>Distribution (CDN)</b> tab make sure to leave a checkmark next to <i>Enable Website Configuration (HTTP) Distribution</i>.<br/><a class="image" href="/umiacs/index.php/File:CyberduckWeb.png"><img alt="CyberduckWeb.png" decoding="async" height="380" src="/umiacs/images/thumb/1/15/CyberduckWeb.png/300px-CyberduckWeb.png" srcset="/umiacs/images/thumb/1/15/CyberduckWeb.png/450px-CyberduckWeb.png 1.5x, /umiacs/images/1/15/CyberduckWeb.png 2x" width="300"/></a></li>
+<li>Next, click on the drop-down menu next to <code>Index File</code> and select your index.html file (or whatever file you're using as your index file).</li>
+<li>Under the <b>Permission</b> tab, add a permission by clicking on the cog icon on the bottom left and click on <code>Everyone</code>. Change the permission for <code>Everyone</code> to <b>READ</b> as shown on the image below.&lt;<br/><a class="image" href="/umiacs/index.php/File:CyberduckWeb01.png"><img alt="CyberduckWeb01.png" decoding="async" height="382" src="/umiacs/images/thumb/7/7b/CyberduckWeb01.png/300px-CyberduckWeb01.png" srcset="/umiacs/images/thumb/7/7b/CyberduckWeb01.png/450px-CyberduckWeb01.png 1.5x, /umiacs/images/7/7b/CyberduckWeb01.png 2x" width="300"/></a></li></ol>
+<h2><span class="mw-headline" id="Accessing_the_Website">Accessing the Website</span></h2>
+<p>You can access the website by using the default URL which has the form <code>https://&lt;Bucket_name&gt;.umiacs.io</code>.
+</p>
+<h2><span class="mw-headline" id="Setting_a_Website_as_your_personal_UMIACS_webpage">Setting a Website as your personal UMIACS webpage</span></h2>
+<p>If you are intending to use the site as your personal UMIACS webpage, once the bucket is configured and all the required files are uploaded, please log into your <a class="external text" href="https://intranet.umiacs.umd.edu/directory/info/" rel="nofollow">UMIACS Directory page</a> and update the Home Page attribute to <code>https://&lt;Bucket_name&gt;.umiacs.io</code>. Replace &lt;Bucket_name&gt; with the name of the bucket you created.
+</p><p>Afterwards, <code>www.umiacs.umd.edu/~username</code> will also redirect to your website.
+</p>
+<h2><span class="mw-headline" id="Disabling_a_Website">Disabling a Website</span></h2>
+<p>If you no longer wish to host a website, you can disable the bucket's web configuration.<br/>
+<i><b>Using the web interface:</b></i>
+</p>
+<ol><li>Click on the bucket where you are hosting your website and then click on <b>Bucket Settings</b>.</li>
+<li>On the settings page you can, click on <b>Remove Website Configuration</b>. Alternatively, you can also click on the <b>Make Private</b> button to make your bucket private and remove any associated web configuration.</li></ol>
+<p><i><b>Using the CLI:</b></i><br/>
+Enter the following command in the terminal: <code>webobj -m delete -c website &lt;bucket_name&gt;</code>
+</p><p><i><b>Using a Graphical S3 Client (Cyberduck):</b></i><br/>
+</p>
+<ol><li>Right-click on the bucket where you are hosting your website and click <code>info</code>.</li>
+<li>Click on the <b>Distribution (CDN)</b> tab and uncheck the box <i>Enable Website Configuration (HTTP) Distribution</i>.</li></ol>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li><a class="external text" href="https://gitlab.umiacs.umd.edu/staff/umobj/blob/master/README.md%7C" rel="nofollow">More commands for umobj</a></li>
+<li><a href="/umiacs/index.php/S3Clients" title="S3Clients">S3Clients</a></li></ul>
+
+
+
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=OBJ/WebHosting&amp;oldid=10661">https://wiki.umiacs.umd.edu/umiacs/index.php?title=OBJ/WebHosting&amp;oldid=10661</a>"</div></div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+<h3 class="vector-menu-heading" id="p-personal-label">
+<span class="vector-menu-heading-label">Personal tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=OBJ%2FWebHosting" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
+</div>
+</nav>
+<div id="left-navigation">
+<nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+<h3 class="vector-menu-heading" id="p-namespaces-label">
+<span class="vector-menu-heading-label">Namespaces</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/OBJ/WebHosting" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:OBJ/WebHosting&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+<input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+<label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+<span class="vector-menu-heading-label">English</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+</div>
+<div id="right-navigation">
+<nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+<h3 class="vector-menu-heading" id="p-views-label">
+<span class="vector-menu-heading-label">Views</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/OBJ/WebHosting"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=OBJ/WebHosting&amp;action=edit" title="This page is protected.
+You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=OBJ/WebHosting&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+<input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+<label class="vector-menu-heading" id="p-cactions-label">
+<span class="vector-menu-heading-label">More</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+<div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+<div>
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+<div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+<input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+<input name="title" type="hidden" value="Special:Search"/>
+<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+<input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner">
+<a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page"></a>
+</div>
+<nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+<h3 class="vector-menu-heading" id="p-navigation-label">
+<span class="vector-menu-heading-label">Navigation</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="n-mainpage"><a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]"><span>Main Page</span></a></li><li class="mw-list-item" id="n-Getting-Started"><a href="/umiacs/index.php/GettingStarted"><span>Getting Started</span></a></li><li class="mw-list-item" id="n-Core-Services"><a href="/umiacs/index.php/CoreServices"><span>Core Services</span></a></li><li class="mw-list-item" id="n-Lab-Facilities"><a href="/umiacs/index.php/LabFacilities"><span>Lab Facilities</span></a></li><li class="mw-list-item" id="n-Placing-Orders"><a href="/umiacs/index.php/Orders"><span>Placing Orders</span></a></li><li class="mw-list-item" id="n-Support"><a href="/umiacs/index.php/HelpDesk"><span>Support</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+<h3 class="vector-menu-heading" id="p-tb-label">
+<span class="vector-menu-heading-label">Tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/OBJ/WebHosting" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/OBJ/WebHosting" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=OBJ/WebHosting&amp;oldid=10661" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=OBJ/WebHosting&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+</div>
+</nav>
+</div>
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 22 September 2022, at 13:30.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/umiacs/index.php/UMIACS:About">About UMIACS</a></li>
+<li id="footer-places-disclaimer"><a href="/umiacs/index.php/UMIACS:General_disclaimer">Disclaimers</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+</ul>
+</footer>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.023","walltime":"0.031","ppvisitednodes":{"value":22,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024233453","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":147});});</script>
+</body>
 </html>

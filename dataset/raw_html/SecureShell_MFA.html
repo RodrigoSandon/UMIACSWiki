@@ -1,266 +1,72 @@
 <!DOCTYPE html>
+
 <html class="client-nojs" dir="ltr" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   SecureShell/MFA - UMIACS
-  </title>
-  <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFW7dgCXNwNCsQYHRPTagAAAAQ","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SecureShell/MFA","wgTitle":"SecureShell/MFA","wgCurRevisionId":11513,"wgRevisionId":11513,"wgArticleId":2849,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SecureShell/MFA","wgRelevantArticleId":2849,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
-"user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
-  </script>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
-  </script>
-  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
-  </script>
-  <meta content="" name="ResourceLoaderDynamicStyles"/>
-  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.10" name="generator"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="width=1000" name="viewport"/>
-  <link href="/favicon.ico" rel="icon"/>
-  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
-  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
-  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
- </head>
- <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SecureShell_MFA rootpage-SecureShell_MFA skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
-  <div class="noprint" id="mw-page-base">
-  </div>
-  <div class="noprint" id="mw-head-base">
-  </div>
-  <div class="mw-body" id="content" role="main">
-   <a id="top">
-   </a>
-   <div id="siteNotice">
-   </div>
-   <div class="mw-indicators">
-   </div>
-   <h1 class="firstHeading mw-first-heading" id="firstHeading">
-    <span class="mw-page-title-main">
-     SecureShell/MFA
-    </span>
-   </h1>
-   <div class="vector-body" id="bodyContent">
-    <div class="noprint" id="siteSub">
-     From UMIACS
-    </div>
-    <div id="contentSub">
-    </div>
-    <div id="contentSub2">
-    </div>
-    <div id="jump-to-nav">
-    </div>
-    <a class="mw-jump-link" href="#mw-head">
-     Jump to navigation
-    </a>
-    <a class="mw-jump-link" href="#searchInput">
-     Jump to search
-    </a>
-    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
-     <div class="mw-parser-output">
-      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
-       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
-       <div class="toctitle" dir="ltr" lang="en">
-        <h2 id="mw-toc-heading">
-         Contents
-        </h2>
-        <span class="toctogglespan">
-         <label class="toctogglelabel" for="toctogglecheckbox">
-         </label>
-        </span>
-       </div>
-       <ul>
-        <li class="toclevel-1 tocsection-1">
-         <a href="#Overview">
-          <span class="tocnumber">
-           1
-          </span>
-          <span class="toctext">
-           Overview
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-2">
-         <a href="#Example">
-          <span class="tocnumber">
-           2
-          </span>
-          <span class="toctext">
-           Example
-          </span>
-         </a>
-         <ul>
-          <li class="toclevel-2 tocsection-3">
-           <a href="#Duo_Push_to">
-            <span class="tocnumber">
-             2.1
-            </span>
-            <span class="toctext">
-             Duo Push to ___
-            </span>
-           </a>
-          </li>
-          <li class="toclevel-2 tocsection-4">
-           <a href="#Phone_call_to_XXX-XXX-XXXX">
-            <span class="tocnumber">
-             2.2
-            </span>
-            <span class="toctext">
-             Phone call to XXX-XXX-XXXX
-            </span>
-           </a>
-          </li>
-          <li class="toclevel-2 tocsection-5">
-           <a href="#SMS_passcodes_to_XXX-XXX-XXXX">
-            <span class="tocnumber">
-             2.3
-            </span>
-            <span class="toctext">
-             SMS passcodes to XXX-XXX-XXXX
-            </span>
-           </a>
-          </li>
-          <li class="toclevel-2 tocsection-6">
-           <a href="#Enter_passcode_or_tap_YubiKey">
-            <span class="tocnumber">
-             2.4
-            </span>
-            <span class="toctext">
-             Enter passcode or tap YubiKey
-            </span>
-           </a>
-           <ul>
-            <li class="toclevel-3 tocsection-7">
-             <a href="#Code_shown_in_Duo_app_or_hardware_token">
-              <span class="tocnumber">
-               2.4.1
-              </span>
-              <span class="toctext">
-               Code shown in Duo app or hardware token
-              </span>
-             </a>
-            </li>
-            <li class="toclevel-3 tocsection-8">
-             <a href="#YubiKey_tap">
-              <span class="tocnumber">
-               2.4.2
-              </span>
-              <span class="toctext">
-               YubiKey tap
-              </span>
-             </a>
-            </li>
-           </ul>
-          </li>
-         </ul>
-        </li>
-        <li class="toclevel-1 tocsection-9">
-         <a href="#Wrapping_up">
-          <span class="tocnumber">
-           3
-          </span>
-          <span class="toctext">
-           Wrapping up
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-10">
-         <a href="#Considerations">
-          <span class="tocnumber">
-           4
-          </span>
-          <span class="toctext">
-           Considerations
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-      <h2>
-       <span class="mw-headline" id="Overview">
-        Overview
-       </span>
-      </h2>
-      <p>
-       UMIACS has rolled out multi-factor authentication requirements when using
-       <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">
-        SSH
-       </a>
-       to connect to our public-facing hosts to provide better account and data security. Public-facing hosts are hosts that are reachable via the Internet (e.g. via
-       <a class="external text" href="https://en.wikipedia.org/wiki/Ping_(networking_utility)" rel="nofollow">
-        ping
-       </a>
-       ) without first establishing a connection to our
-       <a class="mw-redirect" href="/umiacs/index.php/VPN" title="VPN">
-        VPN
-       </a>
-       .
-       <b>
-        If you first connect to our VPN, you will not need to additionally multi-factor authenticate when using SSH.
-       </b>
-       This is because our VPN already requires multi-factor authentication to establish a connection, and all subsequent SSH attempts after connecting to our VPN will pass through the tunnel created (already within the UMIACS border).
-      </p>
-      <p>
-       SSH has two different authentication methods that we currently support on all of our internal hosts: interactive password authentication and
-       <a href="/umiacs/index.php/SSH/Keys" title="SSH/Keys">
-        public key authentication
-       </a>
-       . Multi-factor authentication-enabled SSH on our public-facing hosts only supports interactive password authentication, with the secondary factor coming from our
-       <a href="/umiacs/index.php/Duo" title="Duo">
-        Duo
-       </a>
-       instance. We do not currently support public key based authentication and
-       <a href="/umiacs/index.php/Duo" title="Duo">
-        Duo
-       </a>
-       multi-factor authentication on our public-facing hosts. Please note that unfortunately
-       <a class="external text" href="https://en.wikipedia.org/wiki/Universal_2nd_Factor" rel="nofollow">
-        U2F
-       </a>
-       hardware tokens registered with Duo are not supported for SSH login specifically. Other hardware tokens such as a
-       <a class="external text" href="https://www.yubico.com/products/yubikey-5-overview/" rel="nofollow">
-        YubiKey
-       </a>
-       or
-       <a class="external text" href="https://guide.duo.com/tokens" rel="nofollow">
-        Duo's own hardware token
-       </a>
-       will still work.
-      </p>
-      <h2>
-       <span class="mw-headline" id="Example">
-        Example
-       </span>
-      </h2>
-      <p>
-       The initial command or session setup for connecting to a host with multi-factor authentication enabled over SSH is the same as one that does not have it enabled. Our example for connecting to a host over SSH can be found
-       <a href="/umiacs/index.php/SecureShell#Connecting_to_an_SSH_Server" title="SecureShell">
-        here
-       </a>
-       . In the below example, we are also SSH-ing to a
-       <a href="/umiacs/index.php/Nexus" title="Nexus">
-        Nexus
-       </a>
-       node e.g.
-       <code>
-        ssh username@nexusgroup00.umiacs.umd.edu
-       </code>
-      </p>
-      <p>
-       Once you enter the command (if using a native terminal) or start the session (PuTTY or other terminal emulators), you will be presented with the following prompt:
-      </p>
-      <pre>Password:
+<head>
+<meta charset="utf-8"/>
+<title>SecureShell/MFA - UMIACS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFtA-Yy@@IhYSSXt93-wAAAAc","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SecureShell/MFA","wgTitle":"SecureShell/MFA","wgCurRevisionId":11513,"wgRevisionId":11513,"wgArticleId":2849,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SecureShell/MFA","wgRelevantArticleId":2849,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
+"user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.39.10" name="generator"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="width=1000" name="viewport"/>
+<link href="/favicon.ico" rel="icon"/>
+<link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+<link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SecureShell_MFA rootpage-SecureShell_MFA skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div id="siteNotice"></div>
+<div class="mw-indicators">
+</div>
+<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">SecureShell/MFA</span></h1>
+<div class="vector-body" id="bodyContent">
+<div class="noprint" id="siteSub">From UMIACS</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Example"><span class="tocnumber">2</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Duo_Push_to"><span class="tocnumber">2.1</span> <span class="toctext">Duo Push to ___</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Phone_call_to_XXX-XXX-XXXX"><span class="tocnumber">2.2</span> <span class="toctext">Phone call to XXX-XXX-XXXX</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#SMS_passcodes_to_XXX-XXX-XXXX"><span class="tocnumber">2.3</span> <span class="toctext">SMS passcodes to XXX-XXX-XXXX</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Enter_passcode_or_tap_YubiKey"><span class="tocnumber">2.4</span> <span class="toctext">Enter passcode or tap YubiKey</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Code_shown_in_Duo_app_or_hardware_token"><span class="tocnumber">2.4.1</span> <span class="toctext">Code shown in Duo app or hardware token</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#YubiKey_tap"><span class="tocnumber">2.4.2</span> <span class="toctext">YubiKey tap</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Wrapping_up"><span class="tocnumber">3</span> <span class="toctext">Wrapping up</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Considerations"><span class="tocnumber">4</span> <span class="toctext">Considerations</span></a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>UMIACS has rolled out multi-factor authentication requirements when using <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">SSH</a> to connect to our public-facing hosts to provide better account and data security. Public-facing hosts are hosts that are reachable via the Internet (e.g. via <a class="external text" href="https://en.wikipedia.org/wiki/Ping_(networking_utility)" rel="nofollow">ping</a>) without first establishing a connection to our <a class="mw-redirect" href="/umiacs/index.php/VPN" title="VPN">VPN</a>. <b>If you first connect to our VPN, you will not need to additionally multi-factor authenticate when using SSH.</b> This is because our VPN already requires multi-factor authentication to establish a connection, and all subsequent SSH attempts after connecting to our VPN will pass through the tunnel created (already within the UMIACS border).
+</p><p>SSH has two different authentication methods that we currently support on all of our internal hosts: interactive password authentication and <a href="/umiacs/index.php/SSH/Keys" title="SSH/Keys"> public key authentication</a>. Multi-factor authentication-enabled SSH on our public-facing hosts only supports interactive password authentication, with the secondary factor coming from our <a href="/umiacs/index.php/Duo" title="Duo">Duo</a> instance. We do not currently support public key based authentication and <a href="/umiacs/index.php/Duo" title="Duo">Duo</a> multi-factor authentication on our public-facing hosts. Please note that unfortunately <a class="external text" href="https://en.wikipedia.org/wiki/Universal_2nd_Factor" rel="nofollow">U2F</a> hardware tokens registered with Duo are not supported for SSH login specifically. Other hardware tokens such as a <a class="external text" href="https://www.yubico.com/products/yubikey-5-overview/" rel="nofollow">YubiKey</a> or <a class="external text" href="https://guide.duo.com/tokens" rel="nofollow">Duo's own hardware token</a> will still work.
+</p>
+<h2><span class="mw-headline" id="Example">Example</span></h2>
+<p>The initial command or session setup for connecting to a host with multi-factor authentication enabled over SSH is the same as one that does not have it enabled. Our example for connecting to a host over SSH can be found <a href="/umiacs/index.php/SecureShell#Connecting_to_an_SSH_Server" title="SecureShell"> here</a>. In the below example, we are also SSH-ing to a <a href="/umiacs/index.php/Nexus" title="Nexus">Nexus</a> node e.g. <code>ssh username@nexusgroup00.umiacs.umd.edu</code>
+</p><p>Once you enter the command (if using a native terminal) or start the session (PuTTY or other terminal emulators), you will be presented with the following prompt:
+</p>
+<pre>Password:
 </pre>
-      <p>
-       Enter your UMIACS password here (the same as if you were using interactive password authentication to connect to an internal host). After correctly entering your password, you will be taken to the following prompt.
-       <b>
-        Please note: The options shown here will vary depending on what/how many devices you have registered with our Duo instance.
-       </b>
-       In this example, we have a mobile phone that has the Duo app installed, a tablet (iPad) that has the Duo app installed, a Duo hardware token, and a YubiKey all registered against our UMIACS Duo instance.
-      </p>
-      <pre>Password:
+<p>Enter your UMIACS password here (the same as if you were using interactive password authentication to connect to an internal host). After correctly entering your password, you will be taken to the following prompt. <b>Please note: The options shown here will vary depending on what/how many devices you have registered with our Duo instance.</b> In this example, we have a mobile phone that has the Duo app installed, a tablet (iPad) that has the Duo app installed, a Duo hardware token, and a YubiKey all registered against our UMIACS Duo instance.
+</p>
+<pre>Password:
 Duo two-factor login for username
 
 Enter a passcode or select one of the following options:
@@ -272,54 +78,31 @@ Enter a passcode or select one of the following options:
 
 Passcode or option (1-4):
 </pre>
-      <p>
-       (if you have a registered phone, the last 4 digits shown will be replaced with the last 4 digits of the phone number you specifically have registered)
-      </p>
-      <p>
-       The numbered options here correspond to different methods that Duo can take to authenticate you, and are more or less identical to the options that would be presented to you via a GUI if you were attempting to sign into another of our multi-factor authentication secured services, such as our
-       <a class="external text" href="https://intranet.umiacs.umd.edu/directory/auth/login" rel="nofollow">
-        Directory application
-       </a>
-       . You can also enter the passcode
-      </p>
-      <h3>
-       <span class="mw-headline" id="Duo_Push_to">
-        Duo Push to ___
-       </span>
-      </h3>
-      <p>
-       This will send a push notification to the Duo app on whichever device you chose for you to accept to proceed.
-      </p>
-      <pre>Passcode or option (1-4): 1
+<p>(if you have a registered phone, the last 4 digits shown will be replaced with the last 4 digits of the phone number you specifically have registered)
+</p><p>The numbered options here correspond to different methods that Duo can take to authenticate you, and are more or less identical to the options that would be presented to you via a GUI if you were attempting to sign into another of our multi-factor authentication secured services, such as our <a class="external text" href="https://intranet.umiacs.umd.edu/directory/auth/login" rel="nofollow">Directory application</a>. You can also enter the passcode 
+</p>
+<h3><span class="mw-headline" id="Duo_Push_to">Duo Push to ___</span></h3>
+<p>This will send a push notification to the Duo app on whichever device you chose for you to accept to proceed.
+</p>
+<pre>Passcode or option (1-4): 1
 
 Pushed a login request to your device...
 </pre>
-      <h3>
-       <span class="mw-headline" id="Phone_call_to_XXX-XXX-XXXX">
-        Phone call to XXX-XXX-XXXX
-       </span>
-      </h3>
-      <p>
-       This will call your registered phone and ask you to press any key on your phone to proceed.
-      </p>
-      <pre>Passcode or option (1-4): 3
+<h3><span class="mw-headline" id="Phone_call_to_XXX-XXX-XXXX">Phone call to XXX-XXX-XXXX</span></h3>
+<p>This will call your registered phone and ask you to press any key on your phone to proceed.
+</p>
+<pre>Passcode or option (1-4): 3
 
 Calling your phone...
 Dialing XXX-XXX-1234...
 </pre>
-      <p>
-       (After answering)
-      </p>
-      <pre>Answered. Press any key on your phone to log in.</pre>
-      <h3>
-       <span class="mw-headline" id="SMS_passcodes_to_XXX-XXX-XXXX">
-        SMS passcodes to XXX-XXX-XXXX
-       </span>
-      </h3>
-      <p>
-       This will send a one time passcode to your registered phone via SMS and then redisplay the prompt. Type the passcode received at the new prompt (which will show the first number of the passcode sent as a hint) to proceed.
-      </p>
-      <pre>Passcode or option (1-4): 4
+<p>(After answering) 
+</p>
+<pre>Answered. Press any key on your phone to log in.</pre>
+<h3><span class="mw-headline" id="SMS_passcodes_to_XXX-XXX-XXXX">SMS passcodes to XXX-XXX-XXXX</span></h3>
+<p>This will send a one time passcode to your registered phone via SMS and then redisplay the prompt. Type the passcode received at the new prompt (which will show the first number of the passcode sent as a hint) to proceed.
+</p>
+<pre>Passcode or option (1-4): 4
 
 New SMS passcodes sent.
 
@@ -334,28 +117,14 @@ Enter a passcode or select one of the following options:
 
 Passcode or option (1-4): 1234567
 </pre>
-      <h3>
-       <span class="mw-headline" id="Enter_passcode_or_tap_YubiKey">
-        Enter passcode or tap YubiKey
-       </span>
-      </h3>
-      <p>
-       In addition, you can also enter the code shown in your Duo app for UMIACS, the code shown on a registered hardware token, or tap your YubiKey to emit a code:
-      </p>
-      <h4>
-       <span class="mw-headline" id="Code_shown_in_Duo_app_or_hardware_token">
-        Code shown in Duo app or hardware token
-       </span>
-      </h4>
-      <p>
-       <a class="image" href="/umiacs/index.php/File:Duo_app_code.jpg">
-        <img alt="Duo app code.jpg" decoding="async" height="227" src="/umiacs/images/3/31/Duo_app_code.jpg" width="386"/>
-       </a>
-      </p>
-      <p>
-       (if in the Duo app)
-      </p>
-      <pre>Enter a passcode or select one of the following options:
+<h3><span class="mw-headline" id="Enter_passcode_or_tap_YubiKey">Enter passcode or tap YubiKey</span></h3>
+<p>In addition, you can also enter the code shown in your Duo app for UMIACS, the code shown on a registered hardware token, or tap your YubiKey to emit a code:
+</p>
+<h4><span class="mw-headline" id="Code_shown_in_Duo_app_or_hardware_token">Code shown in Duo app or hardware token</span></h4>
+<p><a class="image" href="/umiacs/index.php/File:Duo_app_code.jpg"><img alt="Duo app code.jpg" decoding="async" height="227" src="/umiacs/images/3/31/Duo_app_code.jpg" width="386"/></a>
+</p><p>(if in the Duo app)
+</p>
+<pre>Enter a passcode or select one of the following options:
 
  1. Duo Push to XXX-XXX-1234
  2. Duo Push to iPad (iOS)
@@ -364,15 +133,10 @@ Passcode or option (1-4): 1234567
 
 Passcode or option (1-4): 672239
 </pre>
-      <p>
-       <a class="image" href="/umiacs/index.php/File:Duo_token.png">
-        <img alt="Duo token.png" decoding="async" height="169" src="/umiacs/images/a/a6/Duo_token.png" width="400"/>
-       </a>
-      </p>
-      <p>
-       (if using a hardware token)
-      </p>
-      <pre>Enter a passcode or select one of the following options:
+<p><a class="image" href="/umiacs/index.php/File:Duo_token.png"><img alt="Duo token.png" decoding="async" height="169" src="/umiacs/images/a/a6/Duo_token.png" width="400"/></a>
+</p><p>(if using a hardware token)
+</p>
+<pre>Enter a passcode or select one of the following options:
 
  1. Duo Push to XXX-XXX-1234
  2. Duo Push to iPad (iOS)
@@ -381,15 +145,10 @@ Passcode or option (1-4): 672239
 
 Passcode or option (1-4): 123456
 </pre>
-      <h4>
-       <span class="mw-headline" id="YubiKey_tap">
-        YubiKey tap
-       </span>
-      </h4>
-      <p>
-       Simply tap the sensor on your YubiKey plugged into the device you are using to SSH to have it emit a string of characters and automatically hit Enter.
-      </p>
-      <pre>Enter a passcode or select one of the following options:
+<h4><span class="mw-headline" id="YubiKey_tap">YubiKey tap</span></h4>
+<p>Simply tap the sensor on your YubiKey plugged into the device you are using to SSH to have it emit a string of characters and automatically hit Enter.
+</p>
+<pre>Enter a passcode or select one of the following options:
 
  1. Duo Push to XXX-XXX-1234
  2. Duo Push to iPad (iOS)
@@ -398,339 +157,133 @@ Passcode or option (1-4): 123456
 
 Passcode or option (1-4): kffuastenhldrhfhadafdarivuntddugrvjvllddjjuget
 </pre>
-      <h2>
-       <span class="mw-headline" id="Wrapping_up">
-        Wrapping up
-       </span>
-      </h2>
-      <p>
-       After finishing your method of choice for using Duo to multi-factor authenticate, you will be logged in and can operate as normal.
-      </p>
-      <pre>Success. Logging you in...
+<h2><span class="mw-headline" id="Wrapping_up">Wrapping up</span></h2>
+<p>After finishing your method of choice for using Duo to multi-factor authenticate, you will be logged in and can operate as normal.
+</p>
+<pre>Success. Logging you in...
 Last login: Wed Feb 17 12:00:00 2021 from ...
 [username@nexusgroup00 ~]$
 </pre>
-      <p>
-       Subsequent SSH attempts from the window you have already connected via will not require multi-factor authentication, even if the host you are trying to SSH to is another public-facing host. This is because at this point the point of origin for the network traffic behind the connection attempt is coming from within the UMIACS border, rather than the rest of the Internet.
-      </p>
-      <pre>[username@nexusgroup00 ~]$ ssh nexusgroup01.umiacs.umd.edu
+<p>Subsequent SSH attempts from the window you have already connected via will not require multi-factor authentication, even if the host you are trying to SSH to is another public-facing host. This is because at this point the point of origin for the network traffic behind the connection attempt is coming from within the UMIACS border, rather than the rest of the Internet.
+</p>
+<pre>[username@nexusgroup00 ~]$ ssh nexusgroup01.umiacs.umd.edu
 username@nexusgroup01.umiacs.umd.edu's password:
 Last login: Wed Feb 17 11:59:00 2021 from ...
 [username@nexusgroup01 ~]$
 </pre>
-      <h2>
-       <span class="mw-headline" id="Considerations">
-        Considerations
-       </span>
-      </h2>
-      <p>
-       Since there is now an additional step to log in to our public-facing hosts if not using our
-       <a class="mw-redirect" href="/umiacs/index.php/VPN" title="VPN">
-        VPN
-       </a>
-       , we would recommend first establishing a connection over our VPN if you anticipate needing to SSH to several different hosts or need to open several different terminal windows concurrently. As mentioned previously, you do not need an additional multi-factor authentication step when using SSH if you first connect to our VPN since it is already secured by multi-factor authentication.
-      </p>
-      <p>
-       An alternative would be to use a
-       <a class="external text" href="https://en.wikipedia.org/wiki/Terminal_multiplexer" rel="nofollow">
-        terminal multiplexer
-       </a>
-       such as
-       <a href="/umiacs/index.php/Screen" title="Screen">
-        Screen
-       </a>
-       or
-       <a href="/umiacs/index.php/Tmux" title="Tmux">
-        Tmux
-       </a>
-       to minimize the number of times you need to multi-factor authenticate. Terminal multiplexers allow you to start several different processes out of one terminal display, and also detach from and later reattach to each of the processes.
-      </p>
-     </div>
-     <div class="printfooter" data-nosnippet="">
-      Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureShell/MFA&amp;oldid=11513">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureShell/MFA&amp;oldid=11513
-      </a>
-      "
-     </div>
-    </div>
-    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
-    </div>
-   </div>
-  </div>
-  <div id="mw-navigation">
-   <h2>
-    Navigation menu
-   </h2>
-   <div id="mw-head">
-    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
-     <h3 class="vector-menu-heading" id="p-personal-label">
-      <span class="vector-menu-heading-label">
-       Personal tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="pt-login">
-        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SecureShell%2FMFA" title="You are encouraged to log in; however, it is not mandatory [o]">
-         <span>
-          Log in
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <div id="left-navigation">
-     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
-      <h3 class="vector-menu-heading" id="p-namespaces-label">
-       <span class="vector-menu-heading-label">
-        Namespaces
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-nstab-main">
-         <a accesskey="c" href="/umiacs/index.php/SecureShell/MFA" title="View the content page [c]">
-          <span>
-           Page
-          </span>
-         </a>
-        </li>
-        <li class="new mw-list-item" id="ca-talk">
-         <a accesskey="t" href="/umiacs/index.php?title=Talk:SecureShell/MFA&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
-          <span>
-           Discussion
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
-      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
-      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
-       <span class="vector-menu-heading-label">
-        English
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-    </div>
-    <div id="right-navigation">
-     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
-      <h3 class="vector-menu-heading" id="p-views-label">
-       <span class="vector-menu-heading-label">
-        Views
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-view">
-         <a href="/umiacs/index.php/SecureShell/MFA">
-          <span>
-           Read
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-viewsource">
-         <a accesskey="e" href="/umiacs/index.php?title=SecureShell/MFA&amp;action=edit" title="This page is protected.
-You can view its source [e]">
-          <span>
-           View source
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-history">
-         <a accesskey="h" href="/umiacs/index.php?title=SecureShell/MFA&amp;action=history" title="Past revisions of this page [h]">
-          <span>
-           View history
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
-      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
-      <label class="vector-menu-heading" id="p-cactions-label">
-       <span class="vector-menu-heading-label">
-        More
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
-      <div>
-       <h3>
-        <label for="searchInput">
-         Search
-        </label>
-       </h3>
-       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
-        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
-         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
-         <input name="title" type="hidden" value="Special:Search"/>
-         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
-         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
-        </div>
-       </form>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div id="mw-panel">
-    <div id="p-logo" role="banner">
-     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
-     </a>
-    </div>
-    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
-     <h3 class="vector-menu-heading" id="p-navigation-label">
-      <span class="vector-menu-heading-label">
-       Navigation
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="n-mainpage">
-        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
-         <span>
-          Main Page
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Getting-Started">
-        <a href="/umiacs/index.php/GettingStarted">
-         <span>
-          Getting Started
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Core-Services">
-        <a href="/umiacs/index.php/CoreServices">
-         <span>
-          Core Services
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Lab-Facilities">
-        <a href="/umiacs/index.php/LabFacilities">
-         <span>
-          Lab Facilities
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Placing-Orders">
-        <a href="/umiacs/index.php/Orders">
-         <span>
-          Placing Orders
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Support">
-        <a href="/umiacs/index.php/HelpDesk">
-         <span>
-          Support
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
-     <h3 class="vector-menu-heading" id="p-tb-label">
-      <span class="vector-menu-heading-label">
-       Tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="t-whatlinkshere">
-        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SecureShell/MFA" title="A list of all wiki pages that link here [j]">
-         <span>
-          What links here
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-recentchangeslinked">
-        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SecureShell/MFA" rel="nofollow" title="Recent changes in pages linked from this page [k]">
-         <span>
-          Related changes
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-specialpages">
-        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
-         <span>
-          Special pages
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-print">
-        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
-         <span>
-          Printable version
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=SecureShell/MFA&amp;oldid=11513" title="Permanent link to this revision of this page">
-         <span>
-          Permanent link
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-info">
-        <a href="/umiacs/index.php?title=SecureShell/MFA&amp;action=info" title="More information about this page">
-         <span>
-          Page information
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-   </div>
-  </div>
-  <footer class="mw-footer" id="footer" role="contentinfo">
-   <ul id="footer-info">
-    <li id="footer-info-lastmod">
-     This page was last edited on 8 January 2024, at 14:51.
-    </li>
-   </ul>
-   <ul id="footer-places">
-    <li id="footer-places-privacy">
-     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
-      Privacy policy
-     </a>
-    </li>
-    <li id="footer-places-about">
-     <a href="/umiacs/index.php/UMIACS:About">
-      About UMIACS
-     </a>
-    </li>
-    <li id="footer-places-disclaimer">
-     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
-      Disclaimers
-     </a>
-    </li>
-   </ul>
-   <ul class="noprint" id="footer-icons">
-    <li id="footer-poweredbyico">
-     <a href="https://www.mediawiki.org/">
-      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
-     </a>
-    </li>
-   </ul>
-  </footer>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.018","walltime":"0.030","ppvisitednodes":{"value":93,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":1875,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241017123940","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":145});});
-  </script>
- </body>
+<h2><span class="mw-headline" id="Considerations">Considerations</span></h2>
+<p>Since there is now an additional step to log in to our public-facing hosts if not using our <a class="mw-redirect" href="/umiacs/index.php/VPN" title="VPN">VPN</a>, we would recommend first establishing a connection over our VPN if you anticipate needing to SSH to several different hosts or need to open several different terminal windows concurrently. As mentioned previously, you do not need an additional multi-factor authentication step when using SSH if you first connect to our VPN since it is already secured by multi-factor authentication.
+</p><p>An alternative would be to use a <a class="external text" href="https://en.wikipedia.org/wiki/Terminal_multiplexer" rel="nofollow">terminal multiplexer</a> such as <a href="/umiacs/index.php/Screen" title="Screen">Screen</a> or <a href="/umiacs/index.php/Tmux" title="Tmux">Tmux</a> to minimize the number of times you need to multi-factor authenticate. Terminal multiplexers allow you to start several different processes out of one terminal display, and also detach from and later reattach to each of the processes.
+</p>
+
+
+
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureShell/MFA&amp;oldid=11513">https://wiki.umiacs.umd.edu/umiacs/index.php?title=SecureShell/MFA&amp;oldid=11513</a>"</div></div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+<h3 class="vector-menu-heading" id="p-personal-label">
+<span class="vector-menu-heading-label">Personal tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SecureShell%2FMFA" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
+</div>
+</nav>
+<div id="left-navigation">
+<nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+<h3 class="vector-menu-heading" id="p-namespaces-label">
+<span class="vector-menu-heading-label">Namespaces</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/SecureShell/MFA" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:SecureShell/MFA&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+<input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+<label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+<span class="vector-menu-heading-label">English</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+</div>
+<div id="right-navigation">
+<nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+<h3 class="vector-menu-heading" id="p-views-label">
+<span class="vector-menu-heading-label">Views</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/SecureShell/MFA"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=SecureShell/MFA&amp;action=edit" title="This page is protected.
+You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=SecureShell/MFA&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+<input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+<label class="vector-menu-heading" id="p-cactions-label">
+<span class="vector-menu-heading-label">More</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+<div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+<div>
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+<div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+<input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+<input name="title" type="hidden" value="Special:Search"/>
+<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+<input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner">
+<a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page"></a>
+</div>
+<nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+<h3 class="vector-menu-heading" id="p-navigation-label">
+<span class="vector-menu-heading-label">Navigation</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="n-mainpage"><a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]"><span>Main Page</span></a></li><li class="mw-list-item" id="n-Getting-Started"><a href="/umiacs/index.php/GettingStarted"><span>Getting Started</span></a></li><li class="mw-list-item" id="n-Core-Services"><a href="/umiacs/index.php/CoreServices"><span>Core Services</span></a></li><li class="mw-list-item" id="n-Lab-Facilities"><a href="/umiacs/index.php/LabFacilities"><span>Lab Facilities</span></a></li><li class="mw-list-item" id="n-Placing-Orders"><a href="/umiacs/index.php/Orders"><span>Placing Orders</span></a></li><li class="mw-list-item" id="n-Support"><a href="/umiacs/index.php/HelpDesk"><span>Support</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+<h3 class="vector-menu-heading" id="p-tb-label">
+<span class="vector-menu-heading-label">Tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SecureShell/MFA" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SecureShell/MFA" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=SecureShell/MFA&amp;oldid=11513" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=SecureShell/MFA&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+</div>
+</nav>
+</div>
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 8 January 2024, at 14:51.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/umiacs/index.php/UMIACS:About">About UMIACS</a></li>
+<li id="footer-places-disclaimer"><a href="/umiacs/index.php/UMIACS:General_disclaimer">Disclaimers</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+</ul>
+</footer>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.020","walltime":"0.033","ppvisitednodes":{"value":93,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":1875,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024233522","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":148});});</script>
+</body>
 </html>

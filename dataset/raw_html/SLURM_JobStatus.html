@@ -1,198 +1,81 @@
 <!DOCTYPE html>
+
 <html class="client-nojs" dir="ltr" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   SLURM/JobStatus - UMIACS
-  </title>
-  <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFWyK8Vdn2lxVg3HabLNwAAAAc","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SLURM/JobStatus","wgTitle":"SLURM/JobStatus","wgCurRevisionId":12005,"wgRevisionId":12005,"wgArticleId":2505,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SLURM/JobStatus","wgRelevantArticleId":2505,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
-"user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
-  </script>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
-  </script>
-  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
-  </script>
-  <meta content="" name="ResourceLoaderDynamicStyles"/>
-  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.10" name="generator"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="width=1000" name="viewport"/>
-  <link href="/favicon.ico" rel="icon"/>
-  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
-  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
-  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
- </head>
- <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SLURM_JobStatus rootpage-SLURM_JobStatus skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
-  <div class="noprint" id="mw-page-base">
-  </div>
-  <div class="noprint" id="mw-head-base">
-  </div>
-  <div class="mw-body" id="content" role="main">
-   <a id="top">
-   </a>
-   <div id="siteNotice">
-   </div>
-   <div class="mw-indicators">
-   </div>
-   <h1 class="firstHeading mw-first-heading" id="firstHeading">
-    <span class="mw-page-title-main">
-     SLURM/JobStatus
-    </span>
-   </h1>
-   <div class="vector-body" id="bodyContent">
-    <div class="noprint" id="siteSub">
-     From UMIACS
-    </div>
-    <div id="contentSub">
-    </div>
-    <div id="contentSub2">
-    </div>
-    <div id="jump-to-nav">
-    </div>
-    <a class="mw-jump-link" href="#mw-head">
-     Jump to navigation
-    </a>
-    <a class="mw-jump-link" href="#searchInput">
-     Jump to search
-    </a>
-    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
-     <div class="mw-parser-output">
-      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
-       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
-       <div class="toctitle" dir="ltr" lang="en">
-        <h2 id="mw-toc-heading">
-         Contents
-        </h2>
-        <span class="toctogglespan">
-         <label class="toctogglelabel" for="toctogglecheckbox">
-         </label>
-        </span>
-       </div>
-       <ul>
-        <li class="toclevel-1 tocsection-1">
-         <a href="#Job_Status">
-          <span class="tocnumber">
-           1
-          </span>
-          <span class="toctext">
-           Job Status
-          </span>
-         </a>
-         <ul>
-          <li class="toclevel-2 tocsection-2">
-           <a href="#squeue">
-            <span class="tocnumber">
-             1.1
-            </span>
-            <span class="toctext">
-             squeue
-            </span>
-           </a>
-          </li>
-          <li class="toclevel-2 tocsection-3">
-           <a href="#sstat">
-            <span class="tocnumber">
-             1.2
-            </span>
-            <span class="toctext">
-             sstat
-            </span>
-           </a>
-          </li>
-          <li class="toclevel-2 tocsection-4">
-           <a href="#sacct">
-            <span class="tocnumber">
-             1.3
-            </span>
-            <span class="toctext">
-             sacct
-            </span>
-           </a>
-          </li>
-         </ul>
-        </li>
-        <li class="toclevel-1 tocsection-5">
-         <a href="#Job_Codes">
-          <span class="tocnumber">
-           2
-          </span>
-          <span class="toctext">
-           Job Codes
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-      <h1>
-       <span class="mw-headline" id="Job_Status">
-        Job Status
-       </span>
-      </h1>
-      <p>
-       SLURM offers a variety of tools to check the status of your jobs before, during, and after execution. When you first submit your job, SLURM should give you a job ID which represents the resources allocated to your job. Individual calls to srun will spawn job steps which can also be queried individually.
-      </p>
-      <h2>
-       <span class="mw-headline" id="squeue">
-        squeue
-       </span>
-      </h2>
-      <p>
-       The squeue command shows job status in the queue. Helpful flags:
-      </p>
-      <ul>
-       <li>
-        <code>
-         -u username
-        </code>
-        to show only your jobs (replace
-        <tt>
-         username
-        </tt>
-        with your UMIACS username)
-       </li>
-       <li>
-        <code>
-         --start
-        </code>
-        to estimate start time for a job that has not yet started and the reason why it is waiting
-       </li>
-       <li>
-        <code>
-         -s
-        </code>
-        to show the status of individual job steps for a job (e.g. batch jobs)
-       </li>
-      </ul>
-      <p>
-       Examples:
-      </p>
-      <pre>[username@nexusclip00 ~]$ squeue -u username
+<head>
+<meta charset="utf-8"/>
+<title>SLURM/JobStatus - UMIACS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFnu83HFqKxj2aLEdaqQAAAAM","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SLURM/JobStatus","wgTitle":"SLURM/JobStatus","wgCurRevisionId":12005,"wgRevisionId":12005,"wgArticleId":2505,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SLURM/JobStatus","wgRelevantArticleId":2505,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
+"user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.39.10" name="generator"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="width=1000" name="viewport"/>
+<link href="/favicon.ico" rel="icon"/>
+<link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+<link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SLURM_JobStatus rootpage-SLURM_JobStatus skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div id="siteNotice"></div>
+<div class="mw-indicators">
+</div>
+<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">SLURM/JobStatus</span></h1>
+<div class="vector-body" id="bodyContent">
+<div class="noprint" id="siteSub">From UMIACS</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Job_Status"><span class="tocnumber">1</span> <span class="toctext">Job Status</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#squeue"><span class="tocnumber">1.1</span> <span class="toctext">squeue</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#sstat"><span class="tocnumber">1.2</span> <span class="toctext">sstat</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#sacct"><span class="tocnumber">1.3</span> <span class="toctext">sacct</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Job_Codes"><span class="tocnumber">2</span> <span class="toctext">Job Codes</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Job_Status">Job Status</span></h1>
+<p>SLURM offers a variety of tools to check the status of your jobs before, during, and after execution. When you first submit your job, SLURM should give you a job ID which represents the resources allocated to your job. Individual calls to srun will spawn job steps which can also be queried individually.
+</p>
+<h2><span class="mw-headline" id="squeue">squeue</span></h2>
+<p>The squeue command shows job status in the queue. Helpful flags:
+</p>
+<ul><li><code>-u username</code> to show only your jobs (replace <tt>username</tt> with your UMIACS username)</li>
+<li><code>--start</code> to estimate start time for a job that has not yet started and the reason why it is waiting</li>
+<li><code>-s</code> to show the status of individual job steps for a job (e.g. batch jobs)</li></ul>
+<p>Examples:
+</p>
+<pre>[username@nexusclip00 ~]$ squeue -u username
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                162      tron helloWor username  R       0:03      2 tron[00-01]
 </pre>
-      <pre>[username@nexusclip00 ~]$ squeue --start -u username
+<pre>[username@nexusclip00 ~]$ squeue --start -u username
              JOBID PARTITION     NAME     USER ST          START_TIME  NODES SCHEDNODES           NODELIST(REASON)
                163      tron helloWo2 username PD 2020-05-11T18:36:49      1 tron02               (Priority)
 </pre>
-      <pre>[username@nexusclip00 ~]$ squeue -s -u username
+<pre>[username@nexusclip00 ~]$ squeue -s -u username
          STEPID     NAME PARTITION     USER      TIME NODELIST
           162.0    sleep      tron username      0:05 tron00
           162.1    sleep      tron username      0:05 tron01
 </pre>
-      <h2>
-       <span class="mw-headline" id="sstat">
-        sstat
-       </span>
-      </h2>
-      <p>
-       The sstat command shows metrics from currently running job steps. If you don't specify a job step, the lowest job step is displayed.
-      </p>
-      <pre>sstat --format JobID,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize &lt;$JOBID&gt;.&lt;$JOBSTEP&gt;
+<h2><span class="mw-headline" id="sstat">sstat</span></h2>
+<p>The sstat command shows metrics from currently running job steps. If you don't specify a job step, the lowest job step is displayed.
+</p>
+<pre>sstat --format JobID,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize &lt;$JOBID&gt;.&lt;$JOBSTEP&gt;
 </pre>
-      <pre>[username@nexusclip00 ~]$ sstat --format JobID,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize 171
+<pre>[username@nexusclip00 ~]$ sstat --format JobID,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize 171
        JobID   NTasks             Nodelist     MaxRSS  MaxVMSize     AveRSS  AveVMSize 
 ------------ -------- -------------------- ---------- ---------- ---------- ---------- 
 171.0               1               tron00          0    186060K          0    107900K 
@@ -201,18 +84,16 @@
 ------------ -------- -------------------- ---------- ---------- ---------- ---------- 
 171.1               1               tron01          0    186060K          0    107900K 
 </pre>
-      <p>
-       Note that if you do not have any jobsteps, sstat will return an error.
-      </p>
-      <pre>[username@nexusclip00 ~]$ sstat --format JobID,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize 172
+<p>Note that if you do not have any jobsteps, sstat will return an error.
+</p>
+<pre>[username@nexusclip00 ~]$ sstat --format JobID,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize 172
        JobID   NTasks             Nodelist     MaxRSS  MaxVMSize     AveRSS  AveVMSize 
 ------------ -------- -------------------- ---------- ---------- ---------- ----------
 sstat: error: no steps running for job 237
 </pre>
-      <p>
-       If you do not run any srun commands, you will not create any job steps and metrics will not be available for your job. Your batch scripts should follow this format:
-      </p>
-      <pre>#!/bin/bash
+<p>If you do not run any srun commands, you will not create any job steps and metrics will not be available for your job. Your batch scripts should follow this format:
+</p>
+<pre>#!/bin/bash
 #SBATCH ...
 #SBATCH ...
 # set environment up
@@ -222,15 +103,10 @@ module load ...
 srun &lt;command to run&gt; # that would be step 1
 srun &lt;command to run&gt; # that would be step 2
 </pre>
-      <h2>
-       <span class="mw-headline" id="sacct">
-        sacct
-       </span>
-      </h2>
-      <p>
-       The sacct command shows metrics from past jobs.
-      </p>
-      <pre>[username@nexusclip00 ~]$ sacct
+<h2><span class="mw-headline" id="sacct">sacct</span></h2>
+<p>The sacct command shows metrics from past jobs.
+</p>
+<pre>[username@nexusclip00 ~]$ sacct
        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
 162          helloWorld       tron      nexus          2  COMPLETED      0:0 
@@ -241,11 +117,10 @@ srun &lt;command to run&gt; # that would be step 2
 163.batch         batch                 nexus          1  COMPLETED      0:0 
 163.0             sleep                 nexus          1  COMPLETED      0:0 
 </pre>
-      <p>
-       To check one specific job, you can run something like the following (if you omit .&lt;$JOBSTEP&gt;, all jobsteps will be shown):
-      </p>
-      <pre>sacct  --format JobID,jobname,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize,Elapsed -j &lt;$JOBID&gt;.&lt;$JOBSTEP&gt;</pre>
-      <pre>[username@nexusclip00 ~]$ sacct --format JobID,jobname,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize,Elapsed -j 171
+<p>To check one specific job, you can run something like the following (if you omit .&lt;$JOBSTEP&gt;, all jobsteps will be shown):
+</p>
+<pre>sacct  --format JobID,jobname,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize,Elapsed -j &lt;$JOBID&gt;.&lt;$JOBSTEP&gt;</pre>
+<pre>[username@nexusclip00 ~]$ sacct --format JobID,jobname,NTasks,nodelist,MaxRSS,MaxVMSize,AveRSS,AveVMSize,Elapsed -j 171
        JobID    JobName   NTasks        NodeList     MaxRSS  MaxVMSize     AveRSS  AveVMSize    Elapsed 
 ------------ ---------- -------- --------------- ---------- ---------- ---------- ---------- ---------- 
 171          helloWorld              tron[00-01]                                               00:00:30 
@@ -253,23 +128,10 @@ srun &lt;command to run&gt; # that would be step 2
 171.0             sleep        1          tron00          0    186060K          0    107900K   00:00:30 
 171.1             sleep        1          tron01          0    186060K          0    107900K   00:00:30 
 </pre>
-      <h1>
-       <span class="mw-headline" id="Job_Codes">
-        Job Codes
-       </span>
-      </h1>
-      <p>
-       If you list the current running jobs and your job is in
-       <code>
-        PD
-       </code>
-       (Pending), SLURM will provide you some information on what the reason for this in the NODELIST parameter.  You can use
-       <code>
-        scontrol show job &lt;jobid&gt;
-       </code>
-       to get all the parameters for your job to help identify why your job is not running.
-      </p>
-      <pre>[username@nexusclip00 ~]$ squeue -u username
+<h1><span class="mw-headline" id="Job_Codes">Job Codes</span></h1>
+<p>If you list the current running jobs and your job is in <code>PD</code> (Pending), SLURM will provide you some information on what the reason for this in the NODELIST parameter.  You can use <code>scontrol show job &lt;jobid&gt;</code> to get all the parameters for your job to help identify why your job is not running.
+</p>
+<pre>[username@nexusclip00 ~]$ squeue -u username
 JOBID  PARTITION     NAME     USER     ST       TIME  NODES NODELIST(REASON)
 1           tron     bash     username PD       0:00      1 (AssocGrpGRES)
 2           tron     bash     username PD       0:00      1 (Resources)
@@ -277,382 +139,124 @@ JOBID  PARTITION     NAME     USER     ST       TIME  NODES NODELIST(REASON)
 4           tron     bash     username PD       0:00      1 (QOSMaxGRESPerUser)
 5           tron     bash     username PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
 </pre>
-      <p>
-       Some common ones are as follows:
-      </p>
-      <ul>
-       <li>
-        <code>
-         Resources
-        </code>
-        - The cluster does not currently have the resources to fit your job in your selected partition.
-       </li>
-       <li>
-        <code>
-         Priority
-        </code>
-        - The cluster has reserved resources for higher
-        <a href="/umiacs/index.php/SLURM/Priority" title="SLURM/Priority">
-         priority
-        </a>
-        jobs in your selected partition.
-       </li>
-       <li>
-        <code>
-         QOSMax*PerUser
-        </code>
-        or
-        <code>
-         QOSMax*PerUserLimit
-        </code>
-        - The quality of service (QoS) your job is requesting to use has some limit per user (CPU, mem, GRES, etc.).  Use
-        <code>
-         show_qos
-        </code>
-        and
-        <code>
-         show_partition_qos
-        </code>
-        to identify the limit(s) and then use
-        <code>
-         scontrol show job &lt;jobid&gt;
-        </code>
-        for each of your jobs running in that QoS to see the resources they are currently consuming.
-       </li>
-       <li>
-        <code>
-         AssocGrpBilling
-        </code>
-        - The SLURM account you are using has a limit on the overall billing amount available in total for the account.  Use
-        <code>
-         sacctmgr show assoc account=&lt;accountname&gt; where user=
-        </code>
-        to identify the limit, replacing
-        <tt>
-         &lt;accountname&gt;
-        </tt>
-        with the account you are submitting your job with.  You can see all jobs running under the account and their billing values by running
-        <code>
-         squeue -A &lt;accountname&gt; -O "JobId:.18 ,Partition:.9 ,Name:.8 ,UserName:.8 ,StateCompact:.2 ,TimeUsed:.10 ,NumNodes:.6 ,ReasonList:45 ,tres-alloc:80"
-        </code>
-        . The billing value will be part of the
-        <tt>
-         tres-alloc
-        </tt>
-        string for each job.
-       </li>
-       <li>
-        <code>
-         ReqNodeNotAvail
-        </code>
-        - None of the nodes that could run your job (based on requested partition/resources) currently have the resources to fit your job.  Alternatively, if you also see
-        <code>
-         Reserved for maintenance
-        </code>
-        , there is a reservation in place (often for a
-        <a href="/umiacs/index.php/MonthlyMaintenanceWindow" title="MonthlyMaintenanceWindow">
-         maintenance window
-        </a>
-        ).  You can see the current reservations by running
-        <code>
-         scontrol show reservation
-        </code>
-        .  Often the culprit is that you have requested a TimeLimit that will conflict with the reservation.  You can either lower your TimeLimit such that the job will complete before the reservation begins, or leave your job to wait until the reservation completes.
-       </li>
-      </ul>
-      <p>
-       SLURM's full list of reasons/explanations can be found
-       <a class="external text" href="https://slurm.schedmd.com/job_reason_codes.html" rel="nofollow">
-        here
-       </a>
-       .
-      </p>
-     </div>
-     <div class="printfooter" data-nosnippet="">
-      Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM/JobStatus&amp;oldid=12005">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM/JobStatus&amp;oldid=12005
-      </a>
-      "
-     </div>
-    </div>
-    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
-    </div>
-   </div>
-  </div>
-  <div id="mw-navigation">
-   <h2>
-    Navigation menu
-   </h2>
-   <div id="mw-head">
-    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
-     <h3 class="vector-menu-heading" id="p-personal-label">
-      <span class="vector-menu-heading-label">
-       Personal tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="pt-login">
-        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SLURM%2FJobStatus" title="You are encouraged to log in; however, it is not mandatory [o]">
-         <span>
-          Log in
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <div id="left-navigation">
-     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
-      <h3 class="vector-menu-heading" id="p-namespaces-label">
-       <span class="vector-menu-heading-label">
-        Namespaces
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-nstab-main">
-         <a accesskey="c" href="/umiacs/index.php/SLURM/JobStatus" title="View the content page [c]">
-          <span>
-           Page
-          </span>
-         </a>
-        </li>
-        <li class="new mw-list-item" id="ca-talk">
-         <a accesskey="t" href="/umiacs/index.php?title=Talk:SLURM/JobStatus&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
-          <span>
-           Discussion
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
-      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
-      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
-       <span class="vector-menu-heading-label">
-        English
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-    </div>
-    <div id="right-navigation">
-     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
-      <h3 class="vector-menu-heading" id="p-views-label">
-       <span class="vector-menu-heading-label">
-        Views
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-view">
-         <a href="/umiacs/index.php/SLURM/JobStatus">
-          <span>
-           Read
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-viewsource">
-         <a accesskey="e" href="/umiacs/index.php?title=SLURM/JobStatus&amp;action=edit" title="This page is protected.
-You can view its source [e]">
-          <span>
-           View source
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-history">
-         <a accesskey="h" href="/umiacs/index.php?title=SLURM/JobStatus&amp;action=history" title="Past revisions of this page [h]">
-          <span>
-           View history
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
-      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
-      <label class="vector-menu-heading" id="p-cactions-label">
-       <span class="vector-menu-heading-label">
-        More
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
-      <div>
-       <h3>
-        <label for="searchInput">
-         Search
-        </label>
-       </h3>
-       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
-        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
-         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
-         <input name="title" type="hidden" value="Special:Search"/>
-         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
-         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
-        </div>
-       </form>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div id="mw-panel">
-    <div id="p-logo" role="banner">
-     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
-     </a>
-    </div>
-    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
-     <h3 class="vector-menu-heading" id="p-navigation-label">
-      <span class="vector-menu-heading-label">
-       Navigation
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="n-mainpage">
-        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
-         <span>
-          Main Page
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Getting-Started">
-        <a href="/umiacs/index.php/GettingStarted">
-         <span>
-          Getting Started
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Core-Services">
-        <a href="/umiacs/index.php/CoreServices">
-         <span>
-          Core Services
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Lab-Facilities">
-        <a href="/umiacs/index.php/LabFacilities">
-         <span>
-          Lab Facilities
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Placing-Orders">
-        <a href="/umiacs/index.php/Orders">
-         <span>
-          Placing Orders
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Support">
-        <a href="/umiacs/index.php/HelpDesk">
-         <span>
-          Support
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
-     <h3 class="vector-menu-heading" id="p-tb-label">
-      <span class="vector-menu-heading-label">
-       Tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="t-whatlinkshere">
-        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SLURM/JobStatus" title="A list of all wiki pages that link here [j]">
-         <span>
-          What links here
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-recentchangeslinked">
-        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SLURM/JobStatus" rel="nofollow" title="Recent changes in pages linked from this page [k]">
-         <span>
-          Related changes
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-specialpages">
-        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
-         <span>
-          Special pages
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-print">
-        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
-         <span>
-          Printable version
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=SLURM/JobStatus&amp;oldid=12005" title="Permanent link to this revision of this page">
-         <span>
-          Permanent link
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-info">
-        <a href="/umiacs/index.php?title=SLURM/JobStatus&amp;action=info" title="More information about this page">
-         <span>
-          Page information
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-   </div>
-  </div>
-  <footer class="mw-footer" id="footer" role="contentinfo">
-   <ul id="footer-info">
-    <li id="footer-info-lastmod">
-     This page was last edited on 22 August 2024, at 19:12.
-    </li>
-   </ul>
-   <ul id="footer-places">
-    <li id="footer-places-privacy">
-     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
-      Privacy policy
-     </a>
-    </li>
-    <li id="footer-places-about">
-     <a href="/umiacs/index.php/UMIACS:About">
-      About UMIACS
-     </a>
-    </li>
-    <li id="footer-places-disclaimer">
-     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
-      Disclaimers
-     </a>
-    </li>
-   </ul>
-   <ul class="noprint" id="footer-icons">
-    <li id="footer-poweredbyico">
-     <a href="https://www.mediawiki.org/">
-      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
-     </a>
-    </li>
-   </ul>
-  </footer>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.010","walltime":"0.011","ppvisitednodes":{"value":67,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":4330,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241017040950","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":150});});
-  </script>
- </body>
+<p>Some common ones are as follows:
+</p>
+<ul><li><code>Resources</code> - The cluster does not currently have the resources to fit your job in your selected partition.</li>
+<li><code>Priority</code> - The cluster has reserved resources for higher <a href="/umiacs/index.php/SLURM/Priority" title="SLURM/Priority"> priority</a> jobs in your selected partition.</li>
+<li><code>QOSMax*PerUser</code> or <code>QOSMax*PerUserLimit</code> - The quality of service (QoS) your job is requesting to use has some limit per user (CPU, mem, GRES, etc.).  Use <code>show_qos</code> and <code>show_partition_qos</code> to identify the limit(s) and then use <code>scontrol show job &lt;jobid&gt;</code> for each of your jobs running in that QoS to see the resources they are currently consuming.</li>
+<li><code>AssocGrpBilling</code> - The SLURM account you are using has a limit on the overall billing amount available in total for the account.  Use <code>sacctmgr show assoc account=&lt;accountname&gt; where user=</code> to identify the limit, replacing <tt>&lt;accountname&gt;</tt> with the account you are submitting your job with.  You can see all jobs running under the account and their billing values by running <code>squeue -A &lt;accountname&gt; -O "JobId:.18 ,Partition:.9 ,Name:.8 ,UserName:.8 ,StateCompact:.2 ,TimeUsed:.10 ,NumNodes:.6 ,ReasonList:45 ,tres-alloc:80"</code>. The billing value will be part of the <tt>tres-alloc</tt> string for each job.</li>
+<li><code>ReqNodeNotAvail</code> - None of the nodes that could run your job (based on requested partition/resources) currently have the resources to fit your job.  Alternatively, if you also see <code>Reserved for maintenance</code>, there is a reservation in place (often for a <a href="/umiacs/index.php/MonthlyMaintenanceWindow" title="MonthlyMaintenanceWindow"> maintenance window</a>).  You can see the current reservations by running <code>scontrol show reservation</code>.  Often the culprit is that you have requested a TimeLimit that will conflict with the reservation.  You can either lower your TimeLimit such that the job will complete before the reservation begins, or leave your job to wait until the reservation completes.</li></ul>
+<p>SLURM's full list of reasons/explanations can be found <a class="external text" href="https://slurm.schedmd.com/job_reason_codes.html" rel="nofollow">here</a>.
+</p>
+
+
+
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM/JobStatus&amp;oldid=12005">https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM/JobStatus&amp;oldid=12005</a>"</div></div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+<h3 class="vector-menu-heading" id="p-personal-label">
+<span class="vector-menu-heading-label">Personal tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SLURM%2FJobStatus" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
+</div>
+</nav>
+<div id="left-navigation">
+<nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+<h3 class="vector-menu-heading" id="p-namespaces-label">
+<span class="vector-menu-heading-label">Namespaces</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/SLURM/JobStatus" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:SLURM/JobStatus&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+<input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+<label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+<span class="vector-menu-heading-label">English</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+</div>
+<div id="right-navigation">
+<nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+<h3 class="vector-menu-heading" id="p-views-label">
+<span class="vector-menu-heading-label">Views</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/SLURM/JobStatus"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=SLURM/JobStatus&amp;action=edit" title="This page is protected.
+You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=SLURM/JobStatus&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+<input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+<label class="vector-menu-heading" id="p-cactions-label">
+<span class="vector-menu-heading-label">More</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+<div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+<div>
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+<div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+<input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+<input name="title" type="hidden" value="Special:Search"/>
+<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+<input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner">
+<a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page"></a>
+</div>
+<nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+<h3 class="vector-menu-heading" id="p-navigation-label">
+<span class="vector-menu-heading-label">Navigation</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="n-mainpage"><a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]"><span>Main Page</span></a></li><li class="mw-list-item" id="n-Getting-Started"><a href="/umiacs/index.php/GettingStarted"><span>Getting Started</span></a></li><li class="mw-list-item" id="n-Core-Services"><a href="/umiacs/index.php/CoreServices"><span>Core Services</span></a></li><li class="mw-list-item" id="n-Lab-Facilities"><a href="/umiacs/index.php/LabFacilities"><span>Lab Facilities</span></a></li><li class="mw-list-item" id="n-Placing-Orders"><a href="/umiacs/index.php/Orders"><span>Placing Orders</span></a></li><li class="mw-list-item" id="n-Support"><a href="/umiacs/index.php/HelpDesk"><span>Support</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+<h3 class="vector-menu-heading" id="p-tb-label">
+<span class="vector-menu-heading-label">Tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SLURM/JobStatus" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SLURM/JobStatus" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=SLURM/JobStatus&amp;oldid=12005" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=SLURM/JobStatus&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+</div>
+</nav>
+</div>
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 22 August 2024, at 19:12.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/umiacs/index.php/UMIACS:About">About UMIACS</a></li>
+<li id="footer-places-disclaimer"><a href="/umiacs/index.php/UMIACS:General_disclaimer">Disclaimers</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+</ul>
+</footer>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.009","walltime":"0.011","ppvisitednodes":{"value":67,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":4330,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241025063712","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":146});});</script>
+</body>
 </html>

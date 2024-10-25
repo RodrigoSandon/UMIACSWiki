@@ -1,1099 +1,423 @@
 <!DOCTYPE html>
+
 <html class="client-nojs" dir="ltr" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   SLURM - UMIACS
-  </title>
-  <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFWxa8Vdn2lxVg3HabLNQAAAAc","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SLURM","wgTitle":"SLURM","wgCurRevisionId":12073,"wgRevisionId":12073,"wgArticleId":2374,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SLURM","wgRelevantArticleId":2374,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready",
-"user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
-  </script>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
-  </script>
-  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
-  </script>
-  <meta content="" name="ResourceLoaderDynamicStyles"/>
-  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.10" name="generator"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="width=1000" name="viewport"/>
-  <link href="/favicon.ico" rel="icon"/>
-  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
-  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
-  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
- </head>
- <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SLURM rootpage-SLURM skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
-  <div class="noprint" id="mw-page-base">
-  </div>
-  <div class="noprint" id="mw-head-base">
-  </div>
-  <div class="mw-body" id="content" role="main">
-   <a id="top">
-   </a>
-   <div id="siteNotice">
-   </div>
-   <div class="mw-indicators">
-   </div>
-   <h1 class="firstHeading mw-first-heading" id="firstHeading">
-    <span class="mw-page-title-main">
-     SLURM
-    </span>
-   </h1>
-   <div class="vector-body" id="bodyContent">
-    <div class="noprint" id="siteSub">
-     From UMIACS
-    </div>
-    <div id="contentSub">
-    </div>
-    <div id="contentSub2">
-    </div>
-    <div id="jump-to-nav">
-    </div>
-    <a class="mw-jump-link" href="#mw-head">
-     Jump to navigation
-    </a>
-    <a class="mw-jump-link" href="#searchInput">
-     Jump to search
-    </a>
-    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
-     <div class="mw-parser-output">
-      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
-       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
-       <div class="toctitle" dir="ltr" lang="en">
-        <h2 id="mw-toc-heading">
-         Contents
-        </h2>
-        <span class="toctogglespan">
-         <label class="toctogglelabel" for="toctogglecheckbox">
-         </label>
-        </span>
-       </div>
-       <ul>
-        <li class="toclevel-1 tocsection-1">
-         <a href="#Simple_Linux_Utility_for_Resource_Management_(SLURM)">
-          <span class="tocnumber">
-           1
-          </span>
-          <span class="toctext">
-           Simple Linux Utility for Resource Management (SLURM)
-          </span>
-         </a>
-         <ul>
-          <li class="toclevel-2 tocsection-2">
-           <a href="#Documentation">
-            <span class="tocnumber">
-             1.1
-            </span>
-            <span class="toctext">
-             Documentation
-            </span>
-           </a>
-          </li>
-          <li class="toclevel-2 tocsection-3">
-           <a href="#Commands">
-            <span class="tocnumber">
-             1.2
-            </span>
-            <span class="toctext">
-             Commands
-            </span>
-           </a>
-           <ul>
-            <li class="toclevel-3 tocsection-4">
-             <a href="#srun">
-              <span class="tocnumber">
-               1.2.1
-              </span>
-              <span class="toctext">
-               srun
-              </span>
-             </a>
-            </li>
-            <li class="toclevel-3 tocsection-5">
-             <a href="#salloc">
-              <span class="tocnumber">
-               1.2.2
-              </span>
-              <span class="toctext">
-               salloc
-              </span>
-             </a>
-            </li>
-            <li class="toclevel-3 tocsection-6">
-             <a href="#sbatch">
-              <span class="tocnumber">
-               1.2.3
-              </span>
-              <span class="toctext">
-               sbatch
-              </span>
-             </a>
-            </li>
-            <li class="toclevel-3 tocsection-7">
-             <a href="#squeue">
-              <span class="tocnumber">
-               1.2.4
-              </span>
-              <span class="toctext">
-               squeue
-              </span>
-             </a>
-            </li>
-            <li class="toclevel-3 tocsection-8">
-             <a href="#scancel">
-              <span class="tocnumber">
-               1.2.5
-              </span>
-              <span class="toctext">
-               scancel
-              </span>
-             </a>
-            </li>
-            <li class="toclevel-3 tocsection-9">
-             <a href="#sacct">
-              <span class="tocnumber">
-               1.2.6
-              </span>
-              <span class="toctext">
-               sacct
-              </span>
-             </a>
-            </li>
-            <li class="toclevel-3 tocsection-10">
-             <a href="#sstat">
-              <span class="tocnumber">
-               1.2.7
-              </span>
-              <span class="toctext">
-               sstat
-              </span>
-             </a>
-            </li>
-           </ul>
-          </li>
-          <li class="toclevel-2 tocsection-11">
-           <a href="#Modules">
-            <span class="tocnumber">
-             1.3
-            </span>
-            <span class="toctext">
-             Modules
-            </span>
-           </a>
-          </li>
-          <li class="toclevel-2 tocsection-12">
-           <a href="#Running_Jupyter_Notebook_on_a_Compute_Node">
-            <span class="tocnumber">
-             1.4
-            </span>
-            <span class="toctext">
-             Running Jupyter Notebook on a Compute Node
-            </span>
-           </a>
-           <ul>
-            <li class="toclevel-3">
-             <a href="#Setting_up_your_Python_Virtual_Environment">
-              <span class="tocnumber">
-               1.4.1
-              </span>
-              <span class="toctext">
-               Setting up your Python Virtual Environment
-              </span>
-             </a>
-            </li>
-            <li class="toclevel-3">
-             <a href="#Running_Jupyter_Notebook">
-              <span class="tocnumber">
-               1.4.2
-              </span>
-              <span class="toctext">
-               Running Jupyter Notebook
-              </span>
-             </a>
-            </li>
-           </ul>
-          </li>
-         </ul>
-        </li>
-        <li class="toclevel-1 tocsection-13">
-         <a href="#Quick_Guide_to_translate_PBS/TORQUE_to_SLURM">
-          <span class="tocnumber">
-           2
-          </span>
-          <span class="toctext">
-           Quick Guide to translate PBS/TORQUE to SLURM
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-      <h1>
-       <span id="Simple_Linux_Utility_for_Resource_Management_.28SLURM.29">
-       </span>
-       <span class="mw-headline" id="Simple_Linux_Utility_for_Resource_Management_(SLURM)">
-        Simple Linux Utility for Resource Management (SLURM)
-       </span>
-      </h1>
-      <p>
-       SLURM is an open-source workload manager designed for Linux clusters of all sizes. It provides three key functions. First, it allocates exclusive or non-exclusive access to resources (computer nodes) to users for some duration of time so they can perform work. Second, it provides a framework for starting, executing, and monitoring work (typically a parallel job) on a set of allocated nodes. Finally, it arbitrates contention for resources by managing a queue of pending work.
-      </p>
-      <h2>
-       <span class="mw-headline" id="Documentation">
-        Documentation
-       </span>
-      </h2>
-      <dl>
-       <dd>
-        <a href="/umiacs/index.php/SLURM/JobSubmission" title="SLURM/JobSubmission">
-         Submitting Jobs
-        </a>
-       </dd>
-       <dd>
-        <a href="/umiacs/index.php/SLURM/JobStatus" title="SLURM/JobStatus">
-         Checking Job Status
-        </a>
-       </dd>
-       <dd>
-        <a href="/umiacs/index.php/SLURM/ClusterStatus" title="SLURM/ClusterStatus">
-         Checking Cluster Status
-        </a>
-       </dd>
-       <dd>
-        <a href="/umiacs/index.php/SLURM/Priority" title="SLURM/Priority">
-         Understanding Job Priority
-        </a>
-       </dd>
-       <dd>
-        <a href="/umiacs/index.php/SLURM/Preemption" title="SLURM/Preemption">
-         Job Preemption Overview
-        </a>
-       </dd>
-       <dd>
-        <a class="external text" href="http://slurm.schedmd.com/documentation.html" rel="nofollow">
-         Official Documentation
-        </a>
-       </dd>
-       <dd>
-        <a class="external text" href="http://slurm.schedmd.com/faq.html" rel="nofollow">
-         FAQ
-        </a>
-       </dd>
-      </dl>
-      <p>
-       Related documentation:
-      </p>
-      <dl>
-       <dd>
-        <a href="/umiacs/index.php/Compute/DataLocality" title="Compute/DataLocality">
-         Optimizing Storage Performance
-        </a>
-       </dd>
-       <dd>
-        <a href="/umiacs/index.php/VS_Code#Cluster_Usage" title="VS Code">
-         Using VS Code
-        </a>
-       </dd>
-      </dl>
-      <h2>
-       <span class="mw-headline" id="Commands">
-        Commands
-       </span>
-      </h2>
-      <p>
-       Below are some of the common commands used in SLURM. Further information on how to use these commands is found in the documentation linked above. To see all flags available for a command, please check the command's manual by using
-       <code>
-        man &lt;COMMAND&gt;
-       </code>
-       on the command line.
-      </p>
-      <h4>
-       <span class="mw-headline" id="srun">
-        <a class="external text" href="https://slurm.schedmd.com/srun.html" rel="nofollow">
-         srun
-        </a>
-       </span>
-      </h4>
-      <p>
-       srun runs a parallel job on a cluster managed by SLURM.  If necessary, it will first create a resource allocation in which to run the parallel job.
-      </p>
-      <h4>
-       <span class="mw-headline" id="salloc">
-        <a class="external text" href="https://slurm.schedmd.com/salloc.html" rel="nofollow">
-         salloc
-        </a>
-       </span>
-      </h4>
-      <p>
-       salloc allocates a SLURM job allocation, which is a set of resources (nodes), possibly with some set of constraints (e.g. number of processors per node).  When salloc successfully obtains the requested allocation, it then runs the command specified by the user.  Finally, when the user specified command is complete, salloc relinquishes the job allocation.  If no command is specified, salloc runs the user's default shell.
-      </p>
-      <h4>
-       <span class="mw-headline" id="sbatch">
-        <a class="external text" href="https://slurm.schedmd.com/sbatch.html" rel="nofollow">
-         sbatch
-        </a>
-       </span>
-      </h4>
-      <p>
-       sbatch submits a batch script to SLURM.  The batch script may be given to sbatch through a file name on the command line, or if no file name is specified, sbatch will read in a script from standard input.  The batch script may contain options preceded with
-       <code>
-        #SBATCH
-       </code>
-       before any executable commands in the script.
-      </p>
-      <h4>
-       <span class="mw-headline" id="squeue">
-        <a class="external text" href="https://slurm.schedmd.com/squeue.html" rel="nofollow">
-         squeue
-        </a>
-       </span>
-      </h4>
-      <p>
-       squeue views job and job step information for jobs managed by SLURM.
-      </p>
-      <h4>
-       <span class="mw-headline" id="scancel">
-        <a class="external text" href="https://slurm.schedmd.com/scancel.html" rel="nofollow">
-         scancel
-        </a>
-       </span>
-      </h4>
-      <p>
-       scancel signals or cancels jobs, job arrays, or job steps.  An arbitrary number of jobs or job steps may be signaled using job specification filters or a space separated list of specific job and/or job step IDs.
-      </p>
-      <h4>
-       <span class="mw-headline" id="sacct">
-        <a class="external text" href="https://slurm.schedmd.com/sacct.html" rel="nofollow">
-         sacct
-        </a>
-       </span>
-      </h4>
-      <p>
-       sacct displays job accounting data stored in the job accounting log file or SLURM database in a variety of forms for your analysis.  The sacct command displays information on jobs, job steps, status, and exitcodes by default.  You can tailor the output with the use of the
-       <code>
-        --format=
-       </code>
-       option to specify the fields to be shown.
-      </p>
-      <h4>
-       <span class="mw-headline" id="sstat">
-        <a class="external text" href="https://slurm.schedmd.com/sstat.html" rel="nofollow">
-         sstat
-        </a>
-       </span>
-      </h4>
-      <p>
-       sstat displays job status information for your analysis.  The sstat command displays information pertaining to CPU, Task, Node, Resident Set Size (RSS) and Virtual Memory (VM).  You can tailor the output with the use of the
-       <code>
-        --fields=
-       </code>
-       option to specify the fields to be shown.
-      </p>
-      <h2>
-       <span class="mw-headline" id="Modules">
-        Modules
-       </span>
-      </h2>
-      <p>
-       If you are trying to use
-       <a href="/umiacs/index.php/Modules" title="Modules">
-        GNU Modules
-       </a>
-       in a Slurm job, please read the section of our
-       <a href="/umiacs/index.php/Modules" title="Modules">
-        Modules
-       </a>
-       documentation on
-       <a href="/umiacs/index.php/Modules#Modules_in_Non-Interactive_Shell_Sessions" title="Modules">
-        non-interactive shell sessions
-       </a>
-       .  This also needs to be done if the OS version of the compute node you are scheduled on is different from the OS version of the submission node you are submitting the job from.
-      </p>
-      <h2>
-       <span class="mw-headline" id="Running_Jupyter_Notebook_on_a_Compute_Node">
-        Running Jupyter Notebook on a Compute Node
-       </span>
-      </h2>
-      <p>
-       The steps to run a Jupyter Notebook from a compute node are listed below.
-      </p>
-      <h6>
-       <span class="mw-headline" id="Setting_up_your_Python_Virtual_Environment">
-        Setting up your Python Virtual Environment
-       </span>
-      </h6>
-      <p>
-       <a href="/umiacs/index.php/PythonVirtualEnv" title="PythonVirtualEnv">
-        Create a Python virtual environment
-       </a>
-       on the compute node you are assigned and
-       <a href="/umiacs/index.php/PythonVirtualEnv#Activating_the_VirtualEnv" title="PythonVirtualEnv">
-        activate it
-       </a>
-       . Next, install Jupyter using pip by following the steps
-       <a class="external text" href="https://jupyter.readthedocs.io/en/latest/install/notebook-classic.html#alternative-for-experienced-python-users-installing-jupyter-with-pip" rel="nofollow">
-        here
-       </a>
-       . You may also use other environment management systems such as
-       <a class="external text" href="https://docs.conda.io/en/latest/" rel="nofollow">
-        Conda
-       </a>
-       if desired.
-      </p>
-      <h6>
-       <span class="mw-headline" id="Running_Jupyter_Notebook">
-        Running Jupyter Notebook
-       </span>
-      </h6>
-      <p>
-       After you've set up the Python virtual environment, submit a job, activate the environment within the job, and run the following command on the compute node you are assigned:
-      </p>
-      <pre>jupyter notebook --no-browser --port=8889 --ip=0.0.0.0
+<head>
+<meta charset="utf-8"/>
+<title>SLURM - UMIACS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFyjg5AYitRHq9IQgk@AAAAAQ","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SLURM","wgTitle":"SLURM","wgCurRevisionId":12148,"wgRevisionId":12148,"wgArticleId":2374,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"SLURM","wgRelevantArticleId":2374,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready",
+"user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.39.10" name="generator"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="width=1000" name="viewport"/>
+<link href="/favicon.ico" rel="icon"/>
+<link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+<link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SLURM rootpage-SLURM skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div id="siteNotice"></div>
+<div class="mw-indicators">
+</div>
+<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">SLURM</span></h1>
+<div class="vector-body" id="bodyContent">
+<div class="noprint" id="siteSub">From UMIACS</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Slurm_Workload_Manager"><span class="tocnumber">1</span> <span class="toctext">Slurm Workload Manager</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Documentation"><span class="tocnumber">1.1</span> <span class="toctext">Documentation</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Commands"><span class="tocnumber">1.2</span> <span class="toctext">Commands</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#srun"><span class="tocnumber">1.2.1</span> <span class="toctext">srun</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#salloc"><span class="tocnumber">1.2.2</span> <span class="toctext">salloc</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#sbatch"><span class="tocnumber">1.2.3</span> <span class="toctext">sbatch</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#squeue"><span class="tocnumber">1.2.4</span> <span class="toctext">squeue</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#scancel"><span class="tocnumber">1.2.5</span> <span class="toctext">scancel</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#sacct"><span class="tocnumber">1.2.6</span> <span class="toctext">sacct</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#sstat"><span class="tocnumber">1.2.7</span> <span class="toctext">sstat</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#Modules"><span class="tocnumber">1.3</span> <span class="toctext">Modules</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Running_Jupyter_Notebook_on_a_Compute_Node"><span class="tocnumber">1.4</span> <span class="toctext">Running Jupyter Notebook on a Compute Node</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Setting_up_your_Python_Virtual_Environment"><span class="tocnumber">1.4.1</span> <span class="toctext">Setting up your Python Virtual Environment</span></a></li>
+<li class="toclevel-3"><a href="#Running_Jupyter_Notebook"><span class="tocnumber">1.4.2</span> <span class="toctext">Running Jupyter Notebook</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Quick_Guide_to_translate_PBS/TORQUE_to_Slurm"><span class="tocnumber">2</span> <span class="toctext">Quick Guide to translate PBS/TORQUE to Slurm</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Slurm_Workload_Manager">Slurm Workload Manager</span></h1>
+<p>Slurm is an open-source workload manager designed for Linux clusters of all sizes. It provides three key functions. First, it allocates exclusive or non-exclusive access to resources (computer nodes) to users for some duration of time so they can perform work. Second, it provides a framework for starting, executing, and monitoring work (typically a parallel job) on a set of allocated nodes. Finally, it arbitrates contention for resources by managing a queue of pending work.
+</p>
+<h2><span class="mw-headline" id="Documentation">Documentation</span></h2>
+<dl><dd><a href="/umiacs/index.php/SLURM/JobSubmission" title="SLURM/JobSubmission"> Submitting Jobs</a></dd>
+<dd><a href="/umiacs/index.php/SLURM/JobStatus" title="SLURM/JobStatus"> Checking Job Status</a></dd>
+<dd><a href="/umiacs/index.php/SLURM/ClusterStatus" title="SLURM/ClusterStatus"> Checking Cluster Status</a></dd>
+<dd><a href="/umiacs/index.php/SLURM/Priority" title="SLURM/Priority"> Understanding Job Priority</a></dd>
+<dd><a href="/umiacs/index.php/SLURM/Preemption" title="SLURM/Preemption"> Job Preemption Overview</a></dd>
+<dd><a class="external text" href="http://slurm.schedmd.com/documentation.html" rel="nofollow">Official Documentation</a></dd>
+<dd><a class="external text" href="http://slurm.schedmd.com/faq.html" rel="nofollow">FAQ</a></dd></dl>
+<p>Related documentation:
+</p>
+<dl><dd><a href="/umiacs/index.php/Compute/DataLocality" title="Compute/DataLocality"> Optimizing Storage Performance</a></dd>
+<dd><a href="/umiacs/index.php/VS_Code#Cluster_Usage" title="VS Code"> Using VS Code</a></dd></dl>
+<h2><span class="mw-headline" id="Commands">Commands</span></h2>
+<p>Below are some of the common commands used in Slurm. Further information on how to use these commands is found in the documentation linked above. To see all flags available for a command, please check the command's manual by using <code>man &lt;COMMAND&gt;</code> on the command line.
+</p>
+<h4><span class="mw-headline" id="srun"><a class="external text" href="https://slurm.schedmd.com/srun.html" rel="nofollow">srun</a></span></h4>
+<p>srun runs a parallel job on a cluster managed by Slurm.  If necessary, it will first create a resource allocation in which to run the parallel job.
+</p>
+<h4><span class="mw-headline" id="salloc"><a class="external text" href="https://slurm.schedmd.com/salloc.html" rel="nofollow">salloc</a></span></h4>
+<p>salloc allocates a Slurm job allocation, which is a set of resources (nodes), possibly with some set of constraints (e.g. number of processors per node).  When salloc successfully obtains the requested allocation, it then runs the command specified by the user.  Finally, when the user specified command is complete, salloc relinquishes the job allocation.  If no command is specified, salloc runs the user's default shell.
+</p>
+<h4><span class="mw-headline" id="sbatch"><a class="external text" href="https://slurm.schedmd.com/sbatch.html" rel="nofollow">sbatch</a></span></h4>
+<p>sbatch submits a batch script to Slurm.  The batch script may be given to sbatch through a file name on the command line, or if no file name is specified, sbatch will read in a script from standard input.  The batch script may contain options preceded with <code>#SBATCH</code> before any executable commands in the script.
+</p>
+<h4><span class="mw-headline" id="squeue"><a class="external text" href="https://slurm.schedmd.com/squeue.html" rel="nofollow">squeue</a></span></h4>
+<p>squeue views job and job step information for jobs managed by Slurm.
+</p>
+<h4><span class="mw-headline" id="scancel"><a class="external text" href="https://slurm.schedmd.com/scancel.html" rel="nofollow">scancel</a></span></h4>
+<p>scancel signals or cancels jobs, job arrays, or job steps.  An arbitrary number of jobs or job steps may be signaled using job specification filters or a space separated list of specific job and/or job step IDs.
+</p>
+<h4><span class="mw-headline" id="sacct"><a class="external text" href="https://slurm.schedmd.com/sacct.html" rel="nofollow">sacct</a></span></h4>
+<p>sacct displays job accounting data stored in the job accounting log file or Slurm database in a variety of forms for your analysis.  The sacct command displays information on jobs, job steps, status, and exitcodes by default.  You can tailor the output with the use of the <code>--format=</code> option to specify the fields to be shown.
+</p>
+<h4><span class="mw-headline" id="sstat"><a class="external text" href="https://slurm.schedmd.com/sstat.html" rel="nofollow">sstat</a></span></h4>
+<p>sstat displays job status information for your analysis.  The sstat command displays information pertaining to CPU, Task, Node, Resident Set Size (RSS) and Virtual Memory (VM).  You can tailor the output with the use of the <code>--fields=</code> option to specify the fields to be shown.
+</p>
+<h2><span class="mw-headline" id="Modules">Modules</span></h2>
+<p>If you are trying to use <a href="/umiacs/index.php/Modules" title="Modules"> GNU Modules</a> in a Slurm job, please read the section of our <a href="/umiacs/index.php/Modules" title="Modules">Modules</a> documentation on <a href="/umiacs/index.php/Modules#Modules_in_Non-Interactive_Shell_Sessions" title="Modules"> non-interactive shell sessions</a>.  This also needs to be done if the OS version of the compute node you are scheduled on is different from the OS version of the submission node you are submitting the job from.
+</p>
+<h2><span class="mw-headline" id="Running_Jupyter_Notebook_on_a_Compute_Node">Running Jupyter Notebook on a Compute Node</span></h2>
+<p>The steps to run a Jupyter Notebook from a compute node are listed below.
+</p>
+<h6><span class="mw-headline" id="Setting_up_your_Python_Virtual_Environment">Setting up your Python Virtual Environment</span></h6>
+<p><a href="/umiacs/index.php/PythonVirtualEnv" title="PythonVirtualEnv"> Create a Python virtual environment</a> on the compute node you are assigned and <a href="/umiacs/index.php/PythonVirtualEnv#Activating_the_VirtualEnv" title="PythonVirtualEnv"> activate it</a>. Next, install Jupyter using pip by following the steps <a class="external text" href="https://jupyter.readthedocs.io/en/latest/install/notebook-classic.html#alternative-for-experienced-python-users-installing-jupyter-with-pip" rel="nofollow">here</a>. You may also use other environment management systems such as <a class="external text" href="https://docs.conda.io/en/latest/" rel="nofollow">Conda</a> if desired.
+</p>
+<h6><span class="mw-headline" id="Running_Jupyter_Notebook">Running Jupyter Notebook</span></h6>
+<p>After you've set up the Python virtual environment, submit a job, activate the environment within the job, and run the following command on the compute node you are assigned:
+</p>
+<pre>jupyter notebook --no-browser --port=8889 --ip=0.0.0.0
 </pre>
-      <p>
-       This will start running the notebook on port 8889.
-       <b>
-        Note:
-       </b>
-       You must keep this shell window open to be able to connect. If the submission node for the cluster you are using is not accessible via the public internet, you must also be on a machine connected to the UMIACS network or connected to our
-       <a href="/umiacs/index.php/Network/VPN" title="Network/VPN">
-        VPN
-       </a>
-       in order to access the Jupyter notebook once you start the SSH tunnel, so ensure this is the case before starting the tunnel. Then, on your local machine, run
-      </p>
-      <pre>ssh -N -f -L localhost:8888:&lt;NODENAME&gt;:8889 &lt;USERNAME&gt;@&lt;SUBMISSIONNODE&gt;.umiacs.umd.edu
+<p>This will start running the notebook on port 8889. <b>Note:</b> You must keep this shell window open to be able to connect. If the submission node for the cluster you are using is not accessible via the public internet, you must also be on a machine connected to the UMIACS network or connected to our <a href="/umiacs/index.php/Network/VPN" title="Network/VPN"> VPN</a> in order to access the Jupyter notebook once you start the SSH tunnel, so ensure this is the case before starting the tunnel. Then, on your local machine, run
+</p>
+<pre>ssh -N -f -L localhost:8888:&lt;NODENAME&gt;:8889 &lt;USERNAME&gt;@&lt;SUBMISSIONNODE&gt;.umiacs.umd.edu
 </pre>
-      <p>
-       This will tunnel port 8889 from the compute node to port 8888 on your local machine, using &lt;SUBMISSIONNODE&gt; as an intermediate node. Make sure to replace &lt;USERNAME&gt; with your username, &lt;SUBMISSIONNODE&gt; with the name of the submission node you want to use, and &lt;NODENAME&gt; with the name of the compute node you are assigned. Note that this command will not display any output if the connection is successful due to the included ssh flags. You must also keep this shell window open to be able to connect.
-      </p>
-      <p>
-       For example, assuming your username is
-       <code>
-        username
-       </code>
-       and that you are using the
-       <a href="/umiacs/index.php/Nexus" title="Nexus">
-        Nexus
-       </a>
-       cluster, have been
-       <a href="/umiacs/index.php/Nexus#Access" title="Nexus">
-        assigned
-       </a>
-       the nexusgroup submission nodes, and are assigned compute node tron00.umiacs.umd.edu:
-      </p>
-      <pre>ssh -N -f -L localhost:8888:tron00.umiacs.umd.edu:8889 username@nexusgroup.umiacs.umd.edu
+<p>This will tunnel port 8889 from the compute node to port 8888 on your local machine, using &lt;SUBMISSIONNODE&gt; as an intermediate node. Make sure to replace &lt;USERNAME&gt; with your username, &lt;SUBMISSIONNODE&gt; with the name of the submission node you want to use, and &lt;NODENAME&gt; with the name of the compute node you are assigned. Note that this command will not display any output if the connection is successful due to the included ssh flags. You must also keep this shell window open to be able to connect.
+</p><p>For example, assuming your username is <code>username</code> and that you are using the <a href="/umiacs/index.php/Nexus" title="Nexus">Nexus</a> cluster, have been <a href="/umiacs/index.php/Nexus#Access" title="Nexus"> assigned</a> the nexusgroup submission nodes, and are assigned compute node tron00.umiacs.umd.edu:
+</p>
+<pre>ssh -N -f -L localhost:8888:tron00.umiacs.umd.edu:8889 username@nexusgroup.umiacs.umd.edu
 </pre>
-      <p>
-       You can then open a web browser and type in
-       <code>
-        localhost:8888
-       </code>
-       to access the notebook.
-      </p>
-      <p>
-       Notes:
-      </p>
-      <ul>
-       <li>
-        Later versions of Jupyter have token authentication enabled by default - you will need to prepend the
-        <code>
-         /?token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        </code>
-        part of the URL provided by the terminal output after starting the notebook in order to connect if this is the case. e.g.
-        <code>
-         localhost:8888/?token=fcc6bd0f996e7aa89376c33cb34f7b80890502aacc97d98e
-        </code>
-       </li>
-       <li>
-        If the port on the compute node mentioned in the example above (8889) is not working, it may be that someone else has already started a process (Jupyter notebook or otherwise) using that specific port number on that specific compute node. The port number can be replaced with any other
-        <a class="external text" href="https://en.wikipedia.org/wiki/Ephemeral_port" rel="nofollow">
-         ephemeral port
-        </a>
-        number you'd like, just make sure to change it in both the command you run on the compute node and the ssh command from your local machine.
-       </li>
-      </ul>
-      <h1>
-       <span id="Quick_Guide_to_translate_PBS.2FTORQUE_to_SLURM">
-       </span>
-       <span class="mw-headline" id="Quick_Guide_to_translate_PBS/TORQUE_to_SLURM">
-        Quick Guide to translate PBS/TORQUE to SLURM
-       </span>
-      </h1>
-      <p>
-       <a class="external text" href="https://en.wikipedia.org/wiki/TORQUE" rel="nofollow">
-        PBS/TORQUE
-       </a>
-       was the previous workload manager and job submission framework used at UMIACS prior to SLURM's adoption. Below is a quick guide of how to translate some common PBS/TORQUE commands to SLURM ones.
-      </p>
-      <table class="wikitable">
-       <caption>
-        User commands
-       </caption>
-       <tbody>
-        <tr>
-         <th>
-         </th>
-         <th>
-          PBS/TORQUE
-         </th>
-         <th>
-          SLURM
-         </th>
-        </tr>
-        <tr>
-         <th>
-          Job submission
-         </th>
-         <td>
-          qsub [filename]
-         </td>
-         <td>
-          sbatch [filename]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Job deletion
-         </th>
-         <td>
-          qdel [job_id]
-         </td>
-         <td>
-          scancel [job_id]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Job status (by job)
-         </th>
-         <td>
-          qstat [job_id]
-         </td>
-         <td>
-          squeue --job [job_id]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Full job status (by job)
-         </th>
-         <td>
-          qstat -f [job_id]
-         </td>
-         <td>
-          scontrol show job [job_id]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Job status (by user)
-         </th>
-         <td>
-          qstat -u [username]
-         </td>
-         <td>
-          squeue --user=[username]
-         </td>
-        </tr>
-       </tbody>
-      </table>
-      <table class="wikitable">
-       <caption>
-        Environment variables
-       </caption>
-       <tbody>
-        <tr>
-         <th>
-         </th>
-         <th>
-          PBS/TORQUE
-         </th>
-         <th>
-          SLURM
-         </th>
-        </tr>
-        <tr>
-         <th>
-          Job ID
-         </th>
-         <td>
-          $PBS_JOBID
-         </td>
-         <td>
-          $SLURM_JOBID
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Submit Directory
-         </th>
-         <td>
-          $PBS_O_WORKDIR
-         </td>
-         <td>
-          $SLURM_SUBMIT_DIR
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Node List
-         </th>
-         <td>
-          $PBS_NODEFILE
-         </td>
-         <td>
-          $SLURM_JOB_NODELIST
-         </td>
-        </tr>
-       </tbody>
-      </table>
-      <table class="wikitable">
-       <caption>
-        Job specification
-       </caption>
-       <tbody>
-        <tr>
-         <th>
-         </th>
-         <th>
-          PBS/TORQUE
-         </th>
-         <th>
-          SLURM
-         </th>
-        </tr>
-        <tr>
-         <th>
-          Script directive
-         </th>
-         <td>
-          #PBS
-         </td>
-         <td>
-          #SBATCH
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Job Name
-         </th>
-         <td>
-          -N [name]
-         </td>
-         <td>
-          --job-name=[name] OR -J [name]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Node Count
-         </th>
-         <td>
-          -l nodes=[count]
-         </td>
-         <td>
-          --nodes=[min[-max]] OR -N [min[-max]]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          CPU Count
-         </th>
-         <td>
-          -l ppn=[count]
-         </td>
-         <td>
-          --ntasks-per-node=[count]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          CPUs Per Task
-         </th>
-         <td>
-         </td>
-         <td>
-          --cpus-per-task=[count]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Memory Size
-         </th>
-         <td>
-          -l mem=[MB]
-         </td>
-         <td>
-          --mem=[MB] OR --mem-per-cpu=[MB]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Wall Clock Limit
-         </th>
-         <td>
-          -l walltime=[hh:mm:ss]
-         </td>
-         <td>
-          --time=[min] OR --time=[days-hh:mm:ss]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Node Properties
-         </th>
-         <td>
-          -l nodes=4:ppn=8:[property]
-         </td>
-         <td>
-          --constraint=[list]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Standard Output File
-         </th>
-         <td>
-          -o [file_name]
-         </td>
-         <td>
-          --output=[file_name] OR -o [file_name]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Standard Error File
-         </th>
-         <td>
-          -e [file_name]
-         </td>
-         <td>
-          --error=[file_name] OR -e [file_name]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Combine stdout/stderr
-         </th>
-         <td>
-          -j oe (both to stdout)
-         </td>
-         <td>
-          (Default if you don't specify --error)
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Job Arrays
-         </th>
-         <td>
-          -t [array_spec]
-         </td>
-         <td>
-          --array=[array_spec] OR -a [array_spec]
-         </td>
-        </tr>
-        <tr>
-         <th>
-          Delay Job Start
-         </th>
-         <td>
-          -a [time]
-         </td>
-         <td>
-          --begin=[time]
-         </td>
-        </tr>
-       </tbody>
-      </table>
-     </div>
-     <div class="printfooter" data-nosnippet="">
-      Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM&amp;oldid=12073">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM&amp;oldid=12073
-      </a>
-      "
-     </div>
-    </div>
-    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
-    </div>
-   </div>
-  </div>
-  <div id="mw-navigation">
-   <h2>
-    Navigation menu
-   </h2>
-   <div id="mw-head">
-    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
-     <h3 class="vector-menu-heading" id="p-personal-label">
-      <span class="vector-menu-heading-label">
-       Personal tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="pt-login">
-        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SLURM" title="You are encouraged to log in; however, it is not mandatory [o]">
-         <span>
-          Log in
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <div id="left-navigation">
-     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
-      <h3 class="vector-menu-heading" id="p-namespaces-label">
-       <span class="vector-menu-heading-label">
-        Namespaces
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-nstab-main">
-         <a accesskey="c" href="/umiacs/index.php/SLURM" title="View the content page [c]">
-          <span>
-           Page
-          </span>
-         </a>
-        </li>
-        <li class="new mw-list-item" id="ca-talk">
-         <a accesskey="t" href="/umiacs/index.php?title=Talk:SLURM&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
-          <span>
-           Discussion
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
-      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
-      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
-       <span class="vector-menu-heading-label">
-        English
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-    </div>
-    <div id="right-navigation">
-     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
-      <h3 class="vector-menu-heading" id="p-views-label">
-       <span class="vector-menu-heading-label">
-        Views
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-view">
-         <a href="/umiacs/index.php/SLURM">
-          <span>
-           Read
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-viewsource">
-         <a accesskey="e" href="/umiacs/index.php?title=SLURM&amp;action=edit" title="This page is protected.
-You can view its source [e]">
-          <span>
-           View source
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-history">
-         <a accesskey="h" href="/umiacs/index.php?title=SLURM&amp;action=history" title="Past revisions of this page [h]">
-          <span>
-           View history
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
-      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
-      <label class="vector-menu-heading" id="p-cactions-label">
-       <span class="vector-menu-heading-label">
-        More
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
-      <div>
-       <h3>
-        <label for="searchInput">
-         Search
-        </label>
-       </h3>
-       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
-        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
-         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
-         <input name="title" type="hidden" value="Special:Search"/>
-         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
-         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
-        </div>
-       </form>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div id="mw-panel">
-    <div id="p-logo" role="banner">
-     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
-     </a>
-    </div>
-    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
-     <h3 class="vector-menu-heading" id="p-navigation-label">
-      <span class="vector-menu-heading-label">
-       Navigation
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="n-mainpage">
-        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
-         <span>
-          Main Page
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Getting-Started">
-        <a href="/umiacs/index.php/GettingStarted">
-         <span>
-          Getting Started
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Core-Services">
-        <a href="/umiacs/index.php/CoreServices">
-         <span>
-          Core Services
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Lab-Facilities">
-        <a href="/umiacs/index.php/LabFacilities">
-         <span>
-          Lab Facilities
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Placing-Orders">
-        <a href="/umiacs/index.php/Orders">
-         <span>
-          Placing Orders
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Support">
-        <a href="/umiacs/index.php/HelpDesk">
-         <span>
-          Support
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
-     <h3 class="vector-menu-heading" id="p-tb-label">
-      <span class="vector-menu-heading-label">
-       Tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="t-whatlinkshere">
-        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SLURM" title="A list of all wiki pages that link here [j]">
-         <span>
-          What links here
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-recentchangeslinked">
-        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SLURM" rel="nofollow" title="Recent changes in pages linked from this page [k]">
-         <span>
-          Related changes
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-specialpages">
-        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
-         <span>
-          Special pages
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-print">
-        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
-         <span>
-          Printable version
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=SLURM&amp;oldid=12073" title="Permanent link to this revision of this page">
-         <span>
-          Permanent link
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-info">
-        <a href="/umiacs/index.php?title=SLURM&amp;action=info" title="More information about this page">
-         <span>
-          Page information
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-   </div>
-  </div>
-  <footer class="mw-footer" id="footer" role="contentinfo">
-   <ul id="footer-info">
-    <li id="footer-info-lastmod">
-     This page was last edited on 15 October 2024, at 19:36.
-    </li>
-   </ul>
-   <ul id="footer-places">
-    <li id="footer-places-privacy">
-     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
-      Privacy policy
-     </a>
-    </li>
-    <li id="footer-places-about">
-     <a href="/umiacs/index.php/UMIACS:About">
-      About UMIACS
-     </a>
-    </li>
-    <li id="footer-places-disclaimer">
-     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
-      Disclaimers
-     </a>
-    </li>
-   </ul>
-   <ul class="noprint" id="footer-icons">
-    <li id="footer-poweredbyico">
-     <a href="https://www.mediawiki.org/">
-      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
-     </a>
-    </li>
-   </ul>
-  </footer>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.019","walltime":"0.021","ppvisitednodes":{"value":68,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":286,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241016194254","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":153});});
-  </script>
- </body>
+<p>You can then open a web browser and type in <code>localhost:8888</code> to access the notebook.
+</p><p>Notes:
+</p>
+<ul><li>Later versions of Jupyter have token authentication enabled by default - you will need to prepend the <code>/?token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</code> part of the URL provided by the terminal output after starting the notebook in order to connect if this is the case. e.g. <code>localhost:8888/?token=fcc6bd0f996e7aa89376c33cb34f7b80890502aacc97d98e</code></li>
+<li>If the port on the compute node mentioned in the example above (8889) is not working, it may be that someone else has already started a process (Jupyter notebook or otherwise) using that specific port number on that specific compute node. The port number can be replaced with any other <a class="external text" href="https://en.wikipedia.org/wiki/Ephemeral_port" rel="nofollow">ephemeral port</a> number you'd like, just make sure to change it in both the command you run on the compute node and the ssh command from your local machine.</li></ul>
+<h1><span id="Quick_Guide_to_translate_PBS.2FTORQUE_to_Slurm"></span><span class="mw-headline" id="Quick_Guide_to_translate_PBS/TORQUE_to_Slurm">Quick Guide to translate PBS/TORQUE to Slurm</span></h1>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/TORQUE" rel="nofollow">PBS/TORQUE</a> was the previous workload manager and job submission framework used at UMIACS prior to Slurm's adoption. Below is a quick guide of how to translate some common PBS/TORQUE commands to Slurm ones.
+</p>
+<table class="wikitable">
+<caption>User commands
+</caption>
+<tbody><tr>
+<th>
+</th>
+<th>PBS/TORQUE
+</th>
+<th>Slurm
+</th></tr>
+<tr>
+<th>Job submission
+</th>
+<td>qsub [filename]
+</td>
+<td>sbatch [filename]
+</td></tr>
+<tr>
+<th>Job deletion
+</th>
+<td>qdel [job_id]
+</td>
+<td>scancel [job_id]
+</td></tr>
+<tr>
+<th>Job status (by job)
+</th>
+<td>qstat [job_id]
+</td>
+<td>squeue --job [job_id]
+</td></tr>
+<tr>
+<th>Full job status (by job)
+</th>
+<td>qstat -f [job_id]
+</td>
+<td>scontrol show job [job_id]
+</td></tr>
+<tr>
+<th>Job status (by user)
+</th>
+<td>qstat -u [username]
+</td>
+<td>squeue --user=[username]
+</td></tr></tbody></table>
+<table class="wikitable">
+<caption>Environment variables
+</caption>
+<tbody><tr>
+<th>
+</th>
+<th>PBS/TORQUE
+</th>
+<th>Slurm
+</th></tr>
+<tr>
+<th>Job ID
+</th>
+<td>$PBS_JOBID
+</td>
+<td>$SLURM_JOBID
+</td></tr>
+<tr>
+<th>Submit Directory
+</th>
+<td>$PBS_O_WORKDIR
+</td>
+<td>$SLURM_SUBMIT_DIR
+</td></tr>
+<tr>
+<th>Node List
+</th>
+<td>$PBS_NODEFILE
+</td>
+<td>$SLURM_JOB_NODELIST
+</td></tr></tbody></table>
+<table class="wikitable">
+<caption>Job specification
+</caption>
+<tbody><tr>
+<th>
+</th>
+<th>PBS/TORQUE
+</th>
+<th>Slurm
+</th></tr>
+<tr>
+<th>Script directive
+</th>
+<td>#PBS
+</td>
+<td>#SBATCH
+</td></tr>
+<tr>
+<th>Job Name
+</th>
+<td>-N [name]
+</td>
+<td>--job-name=[name] OR -J [name]
+</td></tr>
+<tr>
+<th>Node Count
+</th>
+<td>-l nodes=[count]
+</td>
+<td>--nodes=[min[-max]] OR -N [min[-max]]
+</td></tr>
+<tr>
+<th>CPU Count
+</th>
+<td>-l ppn=[count]
+</td>
+<td>--ntasks-per-node=[count]
+</td></tr>
+<tr>
+<th>CPUs Per Task
+</th>
+<td>
+</td>
+<td>--cpus-per-task=[count]
+</td></tr>
+<tr>
+<th>Memory Size
+</th>
+<td>-l mem=[MB]
+</td>
+<td>--mem=[MB] OR --mem-per-cpu=[MB]
+</td></tr>
+<tr>
+<th>Wall Clock Limit
+</th>
+<td>-l walltime=[hh:mm:ss]
+</td>
+<td>--time=[min] OR --time=[days-hh:mm:ss]
+</td></tr>
+<tr>
+<th>Node Properties
+</th>
+<td>-l nodes=4:ppn=8:[property]
+</td>
+<td>--constraint=[list]
+</td></tr>
+<tr>
+<th>Standard Output File
+</th>
+<td>-o [file_name]
+</td>
+<td>--output=[file_name] OR -o [file_name]
+</td></tr>
+<tr>
+<th>Standard Error File
+</th>
+<td>-e [file_name]
+</td>
+<td>--error=[file_name] OR -e [file_name]
+</td></tr>
+<tr>
+<th>Combine stdout/stderr
+</th>
+<td>-j oe (both to stdout)
+</td>
+<td>(Default if you don't specify --error)
+</td></tr>
+<tr>
+<th>Job Arrays
+</th>
+<td>-t [array_spec]
+</td>
+<td>--array=[array_spec] OR -a [array_spec]
+</td></tr>
+<tr>
+<th>Delay Job Start
+</th>
+<td>-a [time]
+</td>
+<td>--begin=[time]
+</td></tr></tbody></table>
+
+
+
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM&amp;oldid=12148">https://wiki.umiacs.umd.edu/umiacs/index.php?title=SLURM&amp;oldid=12148</a>"</div></div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+<h3 class="vector-menu-heading" id="p-personal-label">
+<span class="vector-menu-heading-label">Personal tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=SLURM" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
+</div>
+</nav>
+<div id="left-navigation">
+<nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+<h3 class="vector-menu-heading" id="p-namespaces-label">
+<span class="vector-menu-heading-label">Namespaces</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/SLURM" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:SLURM&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+<input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+<label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+<span class="vector-menu-heading-label">English</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+</div>
+<div id="right-navigation">
+<nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+<h3 class="vector-menu-heading" id="p-views-label">
+<span class="vector-menu-heading-label">Views</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/SLURM"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=SLURM&amp;action=edit" title="This page is protected.
+You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=SLURM&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+<input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+<label class="vector-menu-heading" id="p-cactions-label">
+<span class="vector-menu-heading-label">More</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+<div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+<div>
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+<div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+<input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+<input name="title" type="hidden" value="Special:Search"/>
+<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+<input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner">
+<a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page"></a>
+</div>
+<nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+<h3 class="vector-menu-heading" id="p-navigation-label">
+<span class="vector-menu-heading-label">Navigation</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="n-mainpage"><a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]"><span>Main Page</span></a></li><li class="mw-list-item" id="n-Getting-Started"><a href="/umiacs/index.php/GettingStarted"><span>Getting Started</span></a></li><li class="mw-list-item" id="n-Core-Services"><a href="/umiacs/index.php/CoreServices"><span>Core Services</span></a></li><li class="mw-list-item" id="n-Lab-Facilities"><a href="/umiacs/index.php/LabFacilities"><span>Lab Facilities</span></a></li><li class="mw-list-item" id="n-Placing-Orders"><a href="/umiacs/index.php/Orders"><span>Placing Orders</span></a></li><li class="mw-list-item" id="n-Support"><a href="/umiacs/index.php/HelpDesk"><span>Support</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+<h3 class="vector-menu-heading" id="p-tb-label">
+<span class="vector-menu-heading-label">Tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/SLURM" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/SLURM" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=SLURM&amp;oldid=12148" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=SLURM&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+</div>
+</nav>
+</div>
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 23 October 2024, at 21:25.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/umiacs/index.php/UMIACS:About">About UMIACS</a></li>
+<li id="footer-places-disclaimer"><a href="/umiacs/index.php/UMIACS:General_disclaimer">Disclaimers</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+</ul>
+</footer>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.017","ppvisitednodes":{"value":68,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":286,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024215414","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":147});});</script>
+</body>
 </html>

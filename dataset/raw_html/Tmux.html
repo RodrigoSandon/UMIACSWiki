@@ -1,567 +1,236 @@
 <!DOCTYPE html>
+
 <html class="client-nojs" dir="ltr" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Tmux - UMIACS
-  </title>
-  <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFW4yu-2n8WBBZ7pul8HwAAAAM","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tmux","wgTitle":"Tmux","wgCurRevisionId":10330,"wgRevisionId":10330,"wgArticleId":3000,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Tmux","wgRelevantArticleId":3000,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready",
-"user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
-  </script>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
-  </script>
-  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
-  </script>
-  <meta content="" name="ResourceLoaderDynamicStyles"/>
-  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.10" name="generator"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="width=1000" name="viewport"/>
-  <link href="/favicon.ico" rel="icon"/>
-  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
-  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
-  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
- </head>
- <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tmux rootpage-Tmux skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
-  <div class="noprint" id="mw-page-base">
-  </div>
-  <div class="noprint" id="mw-head-base">
-  </div>
-  <div class="mw-body" id="content" role="main">
-   <a id="top">
-   </a>
-   <div id="siteNotice">
-   </div>
-   <div class="mw-indicators">
-   </div>
-   <h1 class="firstHeading mw-first-heading" id="firstHeading">
-    <span class="mw-page-title-main">
-     Tmux
-    </span>
-   </h1>
-   <div class="vector-body" id="bodyContent">
-    <div class="noprint" id="siteSub">
-     From UMIACS
-    </div>
-    <div id="contentSub">
-    </div>
-    <div id="contentSub2">
-    </div>
-    <div id="jump-to-nav">
-    </div>
-    <a class="mw-jump-link" href="#mw-head">
-     Jump to navigation
-    </a>
-    <a class="mw-jump-link" href="#searchInput">
-     Jump to search
-    </a>
-    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
-     <div class="mw-parser-output">
-      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
-       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
-       <div class="toctitle" dir="ltr" lang="en">
-        <h2 id="mw-toc-heading">
-         Contents
-        </h2>
-        <span class="toctogglespan">
-         <label class="toctogglelabel" for="toctogglecheckbox">
-         </label>
-        </span>
-       </div>
-       <ul>
-        <li class="toclevel-1 tocsection-1">
-         <a href="#Introduction">
-          <span class="tocnumber">
-           1
-          </span>
-          <span class="toctext">
-           Introduction
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-2">
-         <a href="#Usage">
-          <span class="tocnumber">
-           2
-          </span>
-          <span class="toctext">
-           Usage
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-3">
-         <a href="#Window_Management">
-          <span class="tocnumber">
-           3
-          </span>
-          <span class="toctext">
-           Window Management
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-4">
-         <a href="#Copy_Mode">
-          <span class="tocnumber">
-           4
-          </span>
-          <span class="toctext">
-           Copy Mode
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-5">
-         <a href="#Prefix_Key">
-          <span class="tocnumber">
-           5
-          </span>
-          <span class="toctext">
-           Prefix Key
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-      <h3>
-       <span class="mw-headline" id="Introduction">
-        Introduction
-       </span>
-      </h3>
-      <p>
-       tmux is a
-       <a class="external text" href="https://en.wikipedia.org/wiki/Terminal_multiplexer" rel="nofollow">
-        terminal multiplexer
-       </a>
-       for Unix-like operating systems. It allows multiple terminal sessions to be accessed simultaneously in a single window. It is useful for running more than one command-line program at the same time. It can also be used to detach processes from their controlling terminals, allowing remote sessions to remain active without being visible.
-      </p>
-      <h3>
-       <span class="mw-headline" id="Usage">
-        Usage
-       </span>
-      </h3>
-      <p>
-       To invoke a new tmux session, simply use the following command in a terminal:
-      </p>
-      <pre># tmux new
+<head>
+<meta charset="utf-8"/>
+<title>Tmux - UMIACS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFsTg5AYitRHq9IQgk7AAAAAQ","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tmux","wgTitle":"Tmux","wgCurRevisionId":10330,"wgRevisionId":10330,"wgArticleId":3000,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Tmux","wgRelevantArticleId":3000,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready",
+"user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.39.10" name="generator"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="width=1000" name="viewport"/>
+<link href="/favicon.ico" rel="icon"/>
+<link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+<link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tmux rootpage-Tmux skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div id="siteNotice"></div>
+<div class="mw-indicators">
+</div>
+<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">Tmux</span></h1>
+<div class="vector-body" id="bodyContent">
+<div class="noprint" id="siteSub">From UMIACS</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Usage"><span class="tocnumber">2</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Window_Management"><span class="tocnumber">3</span> <span class="toctext">Window Management</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Copy_Mode"><span class="tocnumber">4</span> <span class="toctext">Copy Mode</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Prefix_Key"><span class="tocnumber">5</span> <span class="toctext">Prefix Key</span></a></li>
+</ul>
+</div>
+<h3><span class="mw-headline" id="Introduction">Introduction</span></h3>
+<p>tmux is a <a class="external text" href="https://en.wikipedia.org/wiki/Terminal_multiplexer" rel="nofollow">terminal multiplexer</a> for Unix-like operating systems. It allows multiple terminal sessions to be accessed simultaneously in a single window. It is useful for running more than one command-line program at the same time. It can also be used to detach processes from their controlling terminals, allowing remote sessions to remain active without being visible.
+</p>
+<h3><span class="mw-headline" id="Usage">Usage</span></h3>
+<p>To invoke a new tmux session, simply use the following command in a terminal:
+</p>
+<pre># tmux new
 </pre>
-      <p>
-       You can also name the session using the -s flag. In this example, the session is named
-       <i>
-        mysession
-       </i>
-       :
-      </p>
-      <pre># tmux new -s mysession
+<p>You can also name the session using the -s flag. In this example, the session is named <i>mysession</i>:
+</p>
+<pre># tmux new -s mysession
 </pre>
-      <p>
-       If you need to end your
-       <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">
-        SSH
-       </a>
-       session but want your processes to keep running, you can detach the tmux session by using:
-      </p>
-      <pre># Ctrl-b + d
+<p>If you need to end your <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">SSH</a> session but want your processes to keep running, you can detach the tmux session by using:
+</p>
+<pre># Ctrl-b + d
 </pre>
-      <p>
-       Then exit as normal.
-      </p>
-      <p>
-       If you have multiple tmux sessions you can detach and reattach them at any time. To list the current tmux sessions running, use:
-      </p>
-      <pre># tmux ls
+<p>Then exit as normal.
+</p><p>If you have multiple tmux sessions you can detach and reattach them at any time. To list the current tmux sessions running, use:
+</p>
+<pre># tmux ls
 </pre>
-      <p>
-       The output will be similar to this:
-      </p>
-      <pre># user@machine:~$ tmux ls
+<p>The output will be similar to this:
+</p>
+<pre># user@machine:~$ tmux ls
 # mysession: 1 windows (created Thu Oct 22 10:11:44 2020)
 # session2: 1 windows (created Thu Oct 22 10:11:52 2020)
 # session3: 1 windows (created Thu Oct 22 10:11:58 2020)
 </pre>
-      <p>
-       To reconnect to a specific tmux session you may use the attach command:
-      </p>
-      <pre># user@machine:~$ tmux attach -t mysession
+<p>To reconnect to a specific tmux session you may use the attach command:
+</p>
+<pre># user@machine:~$ tmux attach -t mysession
 </pre>
-      <h3>
-       <span class="mw-headline" id="Window_Management">
-        Window Management
-       </span>
-      </h3>
-      <p>
-       In tmux, windows show up at the bottom of your session with a name and a sort number.
-      </p>
-      <p>
-       You can create a new window in your session by using:
-      </p>
-      <pre># Ctrl-b c
+<h3><span class="mw-headline" id="Window_Management">Window Management</span></h3>
+<p>In tmux, windows show up at the bottom of your session with a name and a sort number.
+</p><p>You can create a new window in your session by using:
+</p>
+<pre># Ctrl-b c
 </pre>
-      <p>
-       You can navigate to the next window using:
-      </p>
-      <pre># Ctrl-b n
+<p>You can navigate to the next window using:
+</p>
+<pre># Ctrl-b n
 </pre>
-      <p>
-       You can navigate to the previous window using:
-      </p>
-      <pre># Ctrl-b p
+<p>You can navigate to the previous window using:
+</p>
+<pre># Ctrl-b p
 </pre>
-      <p>
-       You can rename the current window using:
-      </p>
-      <pre># Ctrl-b ,
+<p>You can rename the current window using:
+</p>
+<pre># Ctrl-b ,
 </pre>
-      <p>
-       You can close the current window using:
-      </p>
-      <pre># Ctrl-b &amp;
+<p>You can close the current window using:
+</p>
+<pre># Ctrl-b &amp;
 </pre>
-      <h3>
-       <span class="mw-headline" id="Copy_Mode">
-        Copy Mode
-       </span>
-      </h3>
-      <p>
-       In order to navigate around a page in tmux, You must first enter
-       <i>
-        Copy Mode
-       </i>
-       and then you can start navigating:
-      </p>
-      <p>
-       To enter Copy Mode use:
-      </p>
-      <pre># Ctrl-b [
+<h3><span class="mw-headline" id="Copy_Mode">Copy Mode</span></h3>
+<p>In order to navigate around a page in tmux, You must first enter <i>Copy Mode</i> and then you can start navigating:  
+</p><p>To enter Copy Mode use:
+</p>
+<pre># Ctrl-b [
 </pre>
-      <p>
-       Once in Copy Mode, you can navigate normally using the arrow keys as well as other functions.
-      </p>
-      <p>
-       To go to the top of the page type:
-      </p>
-      <pre># g
+<p>Once in Copy Mode, you can navigate normally using the arrow keys as well as other functions.
+</p><p>To go to the top of the page type:
+</p>
+<pre># g
 </pre>
-      <p>
-       To go to the bottom of the page type:
-      </p>
-      <pre># G
+<p>To go to the bottom of the page type:
+</p>
+<pre># G
 </pre>
-      <p>
-       <br/>
-      </p>
-      <h3>
-       <span class="mw-headline" id="Prefix_Key">
-        Prefix Key
-       </span>
-      </h3>
-      <p>
-       You can change the prefix keystrok from
-       <code>
-        &lt;ctrl&gt;-b
-       </code>
-       to
-       <code>
-        &lt;ctrl&gt;-a
-       </code>
-       for example by adding the following to your
-       <code>
-        ~/.tmux.conf
-       </code>
-       .
-      </p>
-      <pre># remap prefix from 'C-b' to 'C-a'
+<p><br/>
+</p>
+<h3><span class="mw-headline" id="Prefix_Key">Prefix Key</span></h3>
+<p>You can change the prefix keystrok from <code>&lt;ctrl&gt;-b</code> to <code>&lt;ctrl&gt;-a</code> for example by adding the following to your <code>~/.tmux.conf</code>.
+</p>
+<pre># remap prefix from 'C-b' to 'C-a'
 unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 </pre>
-     </div>
-     <div class="printfooter" data-nosnippet="">
-      Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Tmux&amp;oldid=10330">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=Tmux&amp;oldid=10330
-      </a>
-      "
-     </div>
-    </div>
-    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
-    </div>
-   </div>
-  </div>
-  <div id="mw-navigation">
-   <h2>
-    Navigation menu
-   </h2>
-   <div id="mw-head">
-    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
-     <h3 class="vector-menu-heading" id="p-personal-label">
-      <span class="vector-menu-heading-label">
-       Personal tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="pt-login">
-        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=Tmux" title="You are encouraged to log in; however, it is not mandatory [o]">
-         <span>
-          Log in
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <div id="left-navigation">
-     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
-      <h3 class="vector-menu-heading" id="p-namespaces-label">
-       <span class="vector-menu-heading-label">
-        Namespaces
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-nstab-main">
-         <a accesskey="c" href="/umiacs/index.php/Tmux" title="View the content page [c]">
-          <span>
-           Page
-          </span>
-         </a>
-        </li>
-        <li class="new mw-list-item" id="ca-talk">
-         <a accesskey="t" href="/umiacs/index.php?title=Talk:Tmux&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
-          <span>
-           Discussion
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
-      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
-      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
-       <span class="vector-menu-heading-label">
-        English
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-    </div>
-    <div id="right-navigation">
-     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
-      <h3 class="vector-menu-heading" id="p-views-label">
-       <span class="vector-menu-heading-label">
-        Views
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-view">
-         <a href="/umiacs/index.php/Tmux">
-          <span>
-           Read
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-viewsource">
-         <a accesskey="e" href="/umiacs/index.php?title=Tmux&amp;action=edit" title="This page is protected.
-You can view its source [e]">
-          <span>
-           View source
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-history">
-         <a accesskey="h" href="/umiacs/index.php?title=Tmux&amp;action=history" title="Past revisions of this page [h]">
-          <span>
-           View history
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
-      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
-      <label class="vector-menu-heading" id="p-cactions-label">
-       <span class="vector-menu-heading-label">
-        More
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
-      <div>
-       <h3>
-        <label for="searchInput">
-         Search
-        </label>
-       </h3>
-       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
-        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
-         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
-         <input name="title" type="hidden" value="Special:Search"/>
-         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
-         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
-        </div>
-       </form>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div id="mw-panel">
-    <div id="p-logo" role="banner">
-     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
-     </a>
-    </div>
-    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
-     <h3 class="vector-menu-heading" id="p-navigation-label">
-      <span class="vector-menu-heading-label">
-       Navigation
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="n-mainpage">
-        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
-         <span>
-          Main Page
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Getting-Started">
-        <a href="/umiacs/index.php/GettingStarted">
-         <span>
-          Getting Started
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Core-Services">
-        <a href="/umiacs/index.php/CoreServices">
-         <span>
-          Core Services
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Lab-Facilities">
-        <a href="/umiacs/index.php/LabFacilities">
-         <span>
-          Lab Facilities
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Placing-Orders">
-        <a href="/umiacs/index.php/Orders">
-         <span>
-          Placing Orders
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Support">
-        <a href="/umiacs/index.php/HelpDesk">
-         <span>
-          Support
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
-     <h3 class="vector-menu-heading" id="p-tb-label">
-      <span class="vector-menu-heading-label">
-       Tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="t-whatlinkshere">
-        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Tmux" title="A list of all wiki pages that link here [j]">
-         <span>
-          What links here
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-recentchangeslinked">
-        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Tmux" rel="nofollow" title="Recent changes in pages linked from this page [k]">
-         <span>
-          Related changes
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-specialpages">
-        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
-         <span>
-          Special pages
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-print">
-        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
-         <span>
-          Printable version
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=Tmux&amp;oldid=10330" title="Permanent link to this revision of this page">
-         <span>
-          Permanent link
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-info">
-        <a href="/umiacs/index.php?title=Tmux&amp;action=info" title="More information about this page">
-         <span>
-          Page information
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-   </div>
-  </div>
-  <footer class="mw-footer" id="footer" role="contentinfo">
-   <ul id="footer-info">
-    <li id="footer-info-lastmod">
-     This page was last edited on 24 March 2022, at 15:39.
-    </li>
-   </ul>
-   <ul id="footer-places">
-    <li id="footer-places-privacy">
-     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
-      Privacy policy
-     </a>
-    </li>
-    <li id="footer-places-about">
-     <a href="/umiacs/index.php/UMIACS:About">
-      About UMIACS
-     </a>
-    </li>
-    <li id="footer-places-disclaimer">
-     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
-      Disclaimers
-     </a>
-    </li>
-   </ul>
-   <ul class="noprint" id="footer-icons">
-    <li id="footer-poweredbyico">
-     <a href="https://www.mediawiki.org/">
-      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
-     </a>
-    </li>
-   </ul>
-  </footer>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.007","walltime":"0.009","ppvisitednodes":{"value":18,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":108,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241017181936","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":149});});
-  </script>
- </body>
+
+
+
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Tmux&amp;oldid=10330">https://wiki.umiacs.umd.edu/umiacs/index.php?title=Tmux&amp;oldid=10330</a>"</div></div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+<h3 class="vector-menu-heading" id="p-personal-label">
+<span class="vector-menu-heading-label">Personal tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=Tmux" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
+</div>
+</nav>
+<div id="left-navigation">
+<nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+<h3 class="vector-menu-heading" id="p-namespaces-label">
+<span class="vector-menu-heading-label">Namespaces</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/Tmux" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:Tmux&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+<input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+<label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+<span class="vector-menu-heading-label">English</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+</div>
+<div id="right-navigation">
+<nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+<h3 class="vector-menu-heading" id="p-views-label">
+<span class="vector-menu-heading-label">Views</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/Tmux"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=Tmux&amp;action=edit" title="This page is protected.
+You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=Tmux&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+<input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+<label class="vector-menu-heading" id="p-cactions-label">
+<span class="vector-menu-heading-label">More</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+<div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+<div>
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+<div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+<input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+<input name="title" type="hidden" value="Special:Search"/>
+<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+<input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner">
+<a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page"></a>
+</div>
+<nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+<h3 class="vector-menu-heading" id="p-navigation-label">
+<span class="vector-menu-heading-label">Navigation</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="n-mainpage"><a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]"><span>Main Page</span></a></li><li class="mw-list-item" id="n-Getting-Started"><a href="/umiacs/index.php/GettingStarted"><span>Getting Started</span></a></li><li class="mw-list-item" id="n-Core-Services"><a href="/umiacs/index.php/CoreServices"><span>Core Services</span></a></li><li class="mw-list-item" id="n-Lab-Facilities"><a href="/umiacs/index.php/LabFacilities"><span>Lab Facilities</span></a></li><li class="mw-list-item" id="n-Placing-Orders"><a href="/umiacs/index.php/Orders"><span>Placing Orders</span></a></li><li class="mw-list-item" id="n-Support"><a href="/umiacs/index.php/HelpDesk"><span>Support</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+<h3 class="vector-menu-heading" id="p-tb-label">
+<span class="vector-menu-heading-label">Tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Tmux" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Tmux" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=Tmux&amp;oldid=10330" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=Tmux&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+</div>
+</nav>
+</div>
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 24 March 2022, at 15:39.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/umiacs/index.php/UMIACS:About">About UMIACS</a></li>
+<li id="footer-places-disclaimer"><a href="/umiacs/index.php/UMIACS:General_disclaimer">Disclaimers</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+</ul>
+</footer>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.006","walltime":"0.008","ppvisitednodes":{"value":18,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":108,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024134200","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":150});});</script>
+</body>
 </html>

@@ -1,656 +1,211 @@
 <!DOCTYPE html>
+
 <html class="client-nojs" dir="ltr" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Data Transfer - UMIACS
-  </title>
-  <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFW3Pgp4Pe2K3klBaegYgAAAAU","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Data_Transfer","wgTitle":"Data Transfer","wgCurRevisionId":11737,"wgRevisionId":11737,"wgArticleId":2010,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Data_Transfer","wgRelevantArticleId":2010,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":
-"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
-  </script>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
-  </script>
-  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
-  </script>
-  <meta content="" name="ResourceLoaderDynamicStyles"/>
-  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.10" name="generator"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="width=1000" name="viewport"/>
-  <link href="/favicon.ico" rel="icon"/>
-  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
-  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
-  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
- </head>
- <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Data_Transfer rootpage-Data_Transfer skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
-  <div class="noprint" id="mw-page-base">
-  </div>
-  <div class="noprint" id="mw-head-base">
-  </div>
-  <div class="mw-body" id="content" role="main">
-   <a id="top">
-   </a>
-   <div id="siteNotice">
-   </div>
-   <div class="mw-indicators">
-   </div>
-   <h1 class="firstHeading mw-first-heading" id="firstHeading">
-    <span class="mw-page-title-main">
-     Data Transfer
-    </span>
-   </h1>
-   <div class="vector-body" id="bodyContent">
-    <div class="noprint" id="siteSub">
-     From UMIACS
-    </div>
-    <div id="contentSub">
-    </div>
-    <div id="contentSub2">
-    </div>
-    <div id="jump-to-nav">
-    </div>
-    <a class="mw-jump-link" href="#mw-head">
-     Jump to navigation
-    </a>
-    <a class="mw-jump-link" href="#searchInput">
-     Jump to search
-    </a>
-    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
-     <div class="mw-parser-output">
-      <p>
-       Depending on the amount of data you are trying to transfer there are different commands that you should use.  The classic
-       <code>
-        cp
-       </code>
-       command has a number of edge cases in which it will not copy everything that is expected, so the
-       <b>
-        only time
-       </b>
-       that one should use the
-       <code>
-        cp
-       </code>
-       command is if the copy can be verified, such as if you are moving a single file. The better choice for transferring data is by using
-       <code>
-        tar
-       </code>
-       or
-       <code>
-        gtar
-       </code>
-       .  After transferring files or directories, you can use
-       <code>
-        rsync
-       </code>
-       to check that everything moved correctly and to perform a final sync on changed files.
-      </p>
-      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
-       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
-       <div class="toctitle" dir="ltr" lang="en">
-        <h2 id="mw-toc-heading">
-         Contents
-        </h2>
-        <span class="toctogglespan">
-         <label class="toctogglelabel" for="toctogglecheckbox">
-         </label>
-        </span>
-       </div>
-       <ul>
-        <li class="toclevel-1 tocsection-1">
-         <a href="#Transfer_a_single_file">
-          <span class="tocnumber">
-           1
-          </span>
-          <span class="toctext">
-           Transfer a single file
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-2">
-         <a href="#Transfer_a_directory_or_large_amounts_of_data_to_another_location">
-          <span class="tocnumber">
-           2
-          </span>
-          <span class="toctext">
-           Transfer a directory or large amounts of data to another location
-          </span>
-         </a>
-         <ul>
-          <li class="toclevel-2 tocsection-3">
-           <a href="#Transfer_between_two_different_hosts">
-            <span class="tocnumber">
-             2.1
-            </span>
-            <span class="toctext">
-             Transfer between two different hosts
-            </span>
-           </a>
-          </li>
-         </ul>
-        </li>
-        <li class="toclevel-1 tocsection-4">
-         <a href="#Verifying_transfer">
-          <span class="tocnumber">
-           3
-          </span>
-          <span class="toctext">
-           Verifying transfer
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-      <h2>
-       <span class="mw-headline" id="Transfer_a_single_file">
-        Transfer a single file
-       </span>
-      </h2>
-      <p>
-       If you want to transfer a single file into another directory you can use the
-       <code>
-        cp
-       </code>
-       command.  The format for the
-       <code>
-        cp
-       </code>
-       command is:
-       <code>
-        cp Source Destination
-       </code>
-       . If destination is omitted, it will make a copy of the file(s) in the current directory.
-      </p>
-      <ul>
-       <li>
-        To copy the file foo.txt into your home directory's Documents directory
-       </li>
-      </ul>
-      <pre>cp foo.txt ~/Documents</pre>
-      <ul>
-       <li>
-        To transfer the file foo.txt from your current directory to another host use
-        <b>
-         <tt>
-          scp
-         </tt>
-        </b>
-        (secure copy) with &lt;USERNAME&gt;@&lt;FQDN&gt;:&lt;PATH&gt;
-       </li>
-      </ul>
-      <pre>scp foo.txt USERNAME@example1.umiacs.umd.edu:~/Documents</pre>
-      <p>
-       This command will copy the file foo from your current directory to the folder Documents located in your home directory on the host example1.
-      </p>
-      <ul>
-       <li>
-        To transfer back the file foo.txt from the host example1 to another directory in your current host
-       </li>
-      </ul>
-      <pre>scp USERNAME@example1.umiacs.umd.edu:~/Documents/foo.txt ~/Videos</pre>
-      <p>
-       <b>
-        Important:
-       </b>
-       The
-       <code>
-        cp
-       </code>
-       command should only be used for small file transfers.  If you try to transfer a large amount it is possible that
-       <code>
-        cp
-       </code>
-       will not copy all the files over properly. To learn more about the
-       <code>
-        cp
-       </code>
-       command type
-       <code>
-        man cp
-       </code>
-       on the in the terminal.
-      </p>
-      <h2>
-       <span class="mw-headline" id="Transfer_a_directory_or_large_amounts_of_data_to_another_location">
-        Transfer a directory or large amounts of data to another location
-       </span>
-      </h2>
-      <p>
-       If you want to transfer a whole directory or a large amount of data to another location you can use the
-       <code>
-        gtar
-       </code>
-       command.
-      </p>
-      <ul>
-       <li>
-        To combine two files in your current directory in an archive:
-        <pre>gtar -cpvf archive.tar file1 file2</pre>
-       </li>
-       <li>
-        To re-archive the data back in a different directory, for example Documents in your home directory:
-        <pre>gtar -C ~/Documents/ -xpvf archive.tar</pre>
-       </li>
-      </ul>
-      <p>
-       This command will archive all files (including those in subdirectories) within the current directory and re-create the files in the directory that you specify.
-      </p>
-      <p>
-       The format for the
-       <code>
-        gtar
-       </code>
-       command for data transfer is:
-      </p>
-      <pre>gtar -cpf -  . | gtar -C /dir -xpvf -</pre>
-      <p>
-       In this command, the target is a dash
-       <tt>
-        '-'
-       </tt>
-       which stands for standard output, and the source is a period
-       <tt>
-        '.'
-       </tt>
-       which is interpreted as all files in your current directory. The standard output is piped to the second command, which has as a source a dash
-       <tt>
-        '-'
-       </tt>
-       (which the shell interprets as standard input). The output of the first command is piped and becomes the input of the second command. The target directory in your second command is
-       <tt>
-        /dir
-       </tt>
-       .
-      </p>
-      <ul>
-       <li>
-        To transfer all files from your documents to a folder in your home directory called foo:
-        <pre>cd ~/Documents
-gtar -cpf - . | gtar -C ~/foo -xpvf -</pre>
-       </li>
-      </ul>
-      <p>
-       When you use this command it will display a list of the files it has transferred.
-      </p>
-      <p>
-       This command will leave Documents the same, but create a full copy of all files and folders from Documents in foo.
-      </p>
-      <p>
-       <b>
-        Note:
-       </b>
-       This command will preserve permissions, attributes, and meta-data of all files transferred.
-      </p>
-      <h3>
-       <span class="mw-headline" id="Transfer_between_two_different_hosts">
-        Transfer between two different hosts
-       </span>
-      </h3>
-      <ul>
-       <li>
-        To transfer files from the
-        <tt>
-         tmp
-        </tt>
-        directory on example1.umiacs.umd.edu to the
-        <tt>
-         foo
-        </tt>
-        directory on your current host:
-       </li>
-      </ul>
-      <pre>ssh USERNAME@example1.umiacs.umd.edu gtar -cpf - /tmp | gtar -C /foo -xpvf -</pre>
-      <ul>
-       <li>
-        To transfer files from
-        <tt>
-         foo
-        </tt>
-        directory on your current host to the
-        <tt>
-         tmp
-        </tt>
-        directory on example1.umiacs.umd.edu:
-       </li>
-      </ul>
-      <pre>gtar -cpf - /foo/ | ssh USERNAME@example1.umiacs.umd.edu gtar -C /tmp -xpvf -</pre>
-      <p>
-       If your data transfer is interrupted, you can use the
-       <code>
-        rsync
-       </code>
-       command listed below to copy the rest of the files without creating doubles of files that have already been transferred.
-      </p>
-      <p>
-       <code>
-        rsync
-       </code>
-       can also be used for the initial transfer of data if you expect the transfer to be interrupted.  Otherwise, this method should not be used as it takes more time and memory.
-      </p>
-      <p>
-       To run rsync to copy files, the format for the command is the same as written below under "Verifying transfer."
-      </p>
-      <h2>
-       <span class="mw-headline" id="Verifying_transfer">
-        Verifying transfer
-       </span>
-      </h2>
-      <p>
-       To verify that your transfer copied everything you can use the
-       <code>
-        rsync
-       </code>
-       command, which will compare the two directories' contents and will update the files in which it sees differences.
-      </p>
-      <p>
-       The format for the
-       <code>
-        rsync
-       </code>
-       command is:
-      </p>
-      <pre>rsync -aH /source/ /target</pre>
-      <p>
-       To ensure that the files are the same in Documents and foo from the previous example:
-      </p>
-      <pre>rsync -aH ~/Documents/ ~/foo</pre>
-      <p>
-       This command will compare the files and directories within Documents to the files and directories within foo.  If there are files within Documents and its subdirectories that do not appear in foo, this command will copy the missing files from Documents to foo.
-      </p>
-      <p>
-       <b>
-        Important:
-       </b>
-       Make sure to include the slash after the name of the source directory, if you do not include it, it will copy the directory folder over as well.
-      </p>
-     </div>
-     <div class="printfooter" data-nosnippet="">
-      Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Data_Transfer&amp;oldid=11737">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=Data_Transfer&amp;oldid=11737
-      </a>
-      "
-     </div>
-    </div>
-    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
-    </div>
-   </div>
-  </div>
-  <div id="mw-navigation">
-   <h2>
-    Navigation menu
-   </h2>
-   <div id="mw-head">
-    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
-     <h3 class="vector-menu-heading" id="p-personal-label">
-      <span class="vector-menu-heading-label">
-       Personal tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="pt-login">
-        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=Data+Transfer" title="You are encouraged to log in; however, it is not mandatory [o]">
-         <span>
-          Log in
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <div id="left-navigation">
-     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
-      <h3 class="vector-menu-heading" id="p-namespaces-label">
-       <span class="vector-menu-heading-label">
-        Namespaces
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-nstab-main">
-         <a accesskey="c" href="/umiacs/index.php/Data_Transfer" title="View the content page [c]">
-          <span>
-           Page
-          </span>
-         </a>
-        </li>
-        <li class="new mw-list-item" id="ca-talk">
-         <a accesskey="t" href="/umiacs/index.php?title=Talk:Data_Transfer&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
-          <span>
-           Discussion
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
-      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
-      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
-       <span class="vector-menu-heading-label">
-        English
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-    </div>
-    <div id="right-navigation">
-     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
-      <h3 class="vector-menu-heading" id="p-views-label">
-       <span class="vector-menu-heading-label">
-        Views
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-view">
-         <a href="/umiacs/index.php/Data_Transfer">
-          <span>
-           Read
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-viewsource">
-         <a accesskey="e" href="/umiacs/index.php?title=Data_Transfer&amp;action=edit" title="This page is protected.
-You can view its source [e]">
-          <span>
-           View source
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-history">
-         <a accesskey="h" href="/umiacs/index.php?title=Data_Transfer&amp;action=history" title="Past revisions of this page [h]">
-          <span>
-           View history
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
-      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
-      <label class="vector-menu-heading" id="p-cactions-label">
-       <span class="vector-menu-heading-label">
-        More
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
-      <div>
-       <h3>
-        <label for="searchInput">
-         Search
-        </label>
-       </h3>
-       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
-        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
-         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
-         <input name="title" type="hidden" value="Special:Search"/>
-         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
-         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
-        </div>
-       </form>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div id="mw-panel">
-    <div id="p-logo" role="banner">
-     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
-     </a>
-    </div>
-    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
-     <h3 class="vector-menu-heading" id="p-navigation-label">
-      <span class="vector-menu-heading-label">
-       Navigation
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="n-mainpage">
-        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
-         <span>
-          Main Page
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Getting-Started">
-        <a href="/umiacs/index.php/GettingStarted">
-         <span>
-          Getting Started
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Core-Services">
-        <a href="/umiacs/index.php/CoreServices">
-         <span>
-          Core Services
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Lab-Facilities">
-        <a href="/umiacs/index.php/LabFacilities">
-         <span>
-          Lab Facilities
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Placing-Orders">
-        <a href="/umiacs/index.php/Orders">
-         <span>
-          Placing Orders
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Support">
-        <a href="/umiacs/index.php/HelpDesk">
-         <span>
-          Support
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
-     <h3 class="vector-menu-heading" id="p-tb-label">
-      <span class="vector-menu-heading-label">
-       Tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="t-whatlinkshere">
-        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Data_Transfer" title="A list of all wiki pages that link here [j]">
-         <span>
-          What links here
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-recentchangeslinked">
-        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Data_Transfer" rel="nofollow" title="Recent changes in pages linked from this page [k]">
-         <span>
-          Related changes
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-specialpages">
-        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
-         <span>
-          Special pages
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-print">
-        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
-         <span>
-          Printable version
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=Data_Transfer&amp;oldid=11737" title="Permanent link to this revision of this page">
-         <span>
-          Permanent link
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-info">
-        <a href="/umiacs/index.php?title=Data_Transfer&amp;action=info" title="More information about this page">
-         <span>
-          Page information
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-   </div>
-  </div>
-  <footer class="mw-footer" id="footer" role="contentinfo">
-   <ul id="footer-info">
-    <li id="footer-info-lastmod">
-     This page was last edited on 8 April 2024, at 15:45.
-    </li>
-   </ul>
-   <ul id="footer-places">
-    <li id="footer-places-privacy">
-     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
-      Privacy policy
-     </a>
-    </li>
-    <li id="footer-places-about">
-     <a href="/umiacs/index.php/UMIACS:About">
-      About UMIACS
-     </a>
-    </li>
-    <li id="footer-places-disclaimer">
-     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
-      Disclaimers
-     </a>
-    </li>
-   </ul>
-   <ul class="noprint" id="footer-icons">
-    <li id="footer-poweredbyico">
-     <a href="https://www.mediawiki.org/">
-      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
-     </a>
-    </li>
-   </ul>
-  </footer>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.007","walltime":"0.008","ppvisitednodes":{"value":63,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":636,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241017034148","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":149});});
-  </script>
- </body>
+<head>
+<meta charset="utf-8"/>
+<title>Data Transfer - UMIACS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFrGT@@bTH7rp5JJ-qYAAAAAY","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Data_Transfer","wgTitle":"Data Transfer","wgCurRevisionId":11737,"wgRevisionId":11737,"wgArticleId":2010,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Data_Transfer","wgRelevantArticleId":2010,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":
+"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.39.10" name="generator"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="width=1000" name="viewport"/>
+<link href="/favicon.ico" rel="icon"/>
+<link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+<link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Data_Transfer rootpage-Data_Transfer skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div id="siteNotice"></div>
+<div class="mw-indicators">
+</div>
+<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">Data Transfer</span></h1>
+<div class="vector-body" id="bodyContent">
+<div class="noprint" id="siteSub">From UMIACS</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>Depending on the amount of data you are trying to transfer there are different commands that you should use.  The classic <code>cp</code> command has a number of edge cases in which it will not copy everything that is expected, so the <b>only time</b> that one should use the <code>cp</code> command is if the copy can be verified, such as if you are moving a single file. The better choice for transferring data is by using <code>tar</code> or <code>gtar</code>.  After transferring files or directories, you can use <code>rsync</code> to check that everything moved correctly and to perform a final sync on changed files.
+</p>
+<div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Transfer_a_single_file"><span class="tocnumber">1</span> <span class="toctext">Transfer a single file</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Transfer_a_directory_or_large_amounts_of_data_to_another_location"><span class="tocnumber">2</span> <span class="toctext">Transfer a directory or large amounts of data to another location</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Transfer_between_two_different_hosts"><span class="tocnumber">2.1</span> <span class="toctext">Transfer between two different hosts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Verifying_transfer"><span class="tocnumber">3</span> <span class="toctext">Verifying transfer</span></a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Transfer_a_single_file">Transfer a single file</span></h2>
+<p>If you want to transfer a single file into another directory you can use the <code>cp</code> command.  The format for the <code>cp</code> command is: <code>cp Source Destination</code>. If destination is omitted, it will make a copy of the file(s) in the current directory.
+</p>
+<ul><li>To copy the file foo.txt into your home directory's Documents directory</li></ul>
+<pre>cp foo.txt ~/Documents</pre>
+<ul><li>To transfer the file foo.txt from your current directory to another host use <b><tt>scp</tt></b> (secure copy) with &lt;USERNAME&gt;@&lt;FQDN&gt;:&lt;PATH&gt;</li></ul>
+<pre>scp foo.txt USERNAME@example1.umiacs.umd.edu:~/Documents</pre>
+<p>This command will copy the file foo from your current directory to the folder Documents located in your home directory on the host example1. 
+</p>
+<ul><li>To transfer back the file foo.txt from the host example1 to another directory in your current host</li></ul>
+<pre>scp USERNAME@example1.umiacs.umd.edu:~/Documents/foo.txt ~/Videos</pre>
+<p><b>Important:</b> The <code>cp</code> command should only be used for small file transfers.  If you try to transfer a large amount it is possible that <code>cp</code> will not copy all the files over properly. To learn more about the <code>cp</code> command type <code>man cp</code> on the in the terminal.
+</p>
+<h2><span class="mw-headline" id="Transfer_a_directory_or_large_amounts_of_data_to_another_location">Transfer a directory or large amounts of data to another location</span></h2>
+<p>If you want to transfer a whole directory or a large amount of data to another location you can use the <code>gtar</code> command.
+</p>
+<ul><li>To combine two files in your current directory in an archive: <pre>gtar -cpvf archive.tar file1 file2</pre></li>
+<li>To re-archive the data back in a different directory, for example Documents in your home directory: <pre>gtar -C ~/Documents/ -xpvf archive.tar</pre></li></ul>
+<p>This command will archive all files (including those in subdirectories) within the current directory and re-create the files in the directory that you specify.
+</p><p>The format for the <code>gtar</code> command for data transfer is:
+</p>
+<pre>gtar -cpf -  . | gtar -C /dir -xpvf -</pre>
+<p>In this command, the target is a dash <tt>'-'</tt> which stands for standard output, and the source is a period <tt>'.'</tt> which is interpreted as all files in your current directory. The standard output is piped to the second command, which has as a source a dash <tt>'-'</tt> (which the shell interprets as standard input). The output of the first command is piped and becomes the input of the second command. The target directory in your second command is <tt>/dir</tt>. 
+</p>
+<ul><li>To transfer all files from your documents to a folder in your home directory called foo: <pre>cd ~/Documents
+gtar -cpf - . | gtar -C ~/foo -xpvf -</pre></li></ul>
+<p>When you use this command it will display a list of the files it has transferred.
+</p><p>This command will leave Documents the same, but create a full copy of all files and folders from Documents in foo.
+</p><p><b>Note:</b> This command will preserve permissions, attributes, and meta-data of all files transferred.
+</p>
+<h3><span class="mw-headline" id="Transfer_between_two_different_hosts">Transfer between two different hosts</span></h3>
+<ul><li>To transfer files from the <tt>tmp</tt> directory on example1.umiacs.umd.edu to the <tt>foo</tt> directory on your current host:</li></ul>
+<pre>ssh USERNAME@example1.umiacs.umd.edu gtar -cpf - /tmp | gtar -C /foo -xpvf -</pre>
+<ul><li>To transfer files from <tt>foo</tt> directory on your current host to the <tt>tmp</tt> directory on example1.umiacs.umd.edu:</li></ul>
+<pre>gtar -cpf - /foo/ | ssh USERNAME@example1.umiacs.umd.edu gtar -C /tmp -xpvf -</pre>
+<p>If your data transfer is interrupted, you can use the <code>rsync</code> command listed below to copy the rest of the files without creating doubles of files that have already been transferred.
+</p><p><code>rsync</code> can also be used for the initial transfer of data if you expect the transfer to be interrupted.  Otherwise, this method should not be used as it takes more time and memory.
+</p><p>To run rsync to copy files, the format for the command is the same as written below under "Verifying transfer."
+</p>
+<h2><span class="mw-headline" id="Verifying_transfer">Verifying transfer</span></h2>
+<p>To verify that your transfer copied everything you can use the <code>rsync</code> command, which will compare the two directories' contents and will update the files in which it sees differences.
+</p><p>The format for the <code>rsync</code> command is:
+</p>
+<pre>rsync -aH /source/ /target</pre>
+<p>To ensure that the files are the same in Documents and foo from the previous example:
+</p>
+<pre>rsync -aH ~/Documents/ ~/foo</pre>
+<p>This command will compare the files and directories within Documents to the files and directories within foo.  If there are files within Documents and its subdirectories that do not appear in foo, this command will copy the missing files from Documents to foo.
+</p><p><b>Important:</b> Make sure to include the slash after the name of the source directory, if you do not include it, it will copy the directory folder over as well.
+</p>
+
+
+
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Data_Transfer&amp;oldid=11737">https://wiki.umiacs.umd.edu/umiacs/index.php?title=Data_Transfer&amp;oldid=11737</a>"</div></div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+<h3 class="vector-menu-heading" id="p-personal-label">
+<span class="vector-menu-heading-label">Personal tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=Data+Transfer" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
+</div>
+</nav>
+<div id="left-navigation">
+<nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+<h3 class="vector-menu-heading" id="p-namespaces-label">
+<span class="vector-menu-heading-label">Namespaces</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/Data_Transfer" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:Data_Transfer&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+<input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+<label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+<span class="vector-menu-heading-label">English</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+</div>
+<div id="right-navigation">
+<nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+<h3 class="vector-menu-heading" id="p-views-label">
+<span class="vector-menu-heading-label">Views</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/Data_Transfer"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=Data_Transfer&amp;action=edit" title="This page is protected.
+You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=Data_Transfer&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+<input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+<label class="vector-menu-heading" id="p-cactions-label">
+<span class="vector-menu-heading-label">More</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+<div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+<div>
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+<div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+<input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+<input name="title" type="hidden" value="Special:Search"/>
+<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+<input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner">
+<a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page"></a>
+</div>
+<nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+<h3 class="vector-menu-heading" id="p-navigation-label">
+<span class="vector-menu-heading-label">Navigation</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="n-mainpage"><a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]"><span>Main Page</span></a></li><li class="mw-list-item" id="n-Getting-Started"><a href="/umiacs/index.php/GettingStarted"><span>Getting Started</span></a></li><li class="mw-list-item" id="n-Core-Services"><a href="/umiacs/index.php/CoreServices"><span>Core Services</span></a></li><li class="mw-list-item" id="n-Lab-Facilities"><a href="/umiacs/index.php/LabFacilities"><span>Lab Facilities</span></a></li><li class="mw-list-item" id="n-Placing-Orders"><a href="/umiacs/index.php/Orders"><span>Placing Orders</span></a></li><li class="mw-list-item" id="n-Support"><a href="/umiacs/index.php/HelpDesk"><span>Support</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+<h3 class="vector-menu-heading" id="p-tb-label">
+<span class="vector-menu-heading-label">Tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Data_Transfer" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Data_Transfer" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=Data_Transfer&amp;oldid=11737" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=Data_Transfer&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+</div>
+</nav>
+</div>
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 8 April 2024, at 15:45.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/umiacs/index.php/UMIACS:About">About UMIACS</a></li>
+<li id="footer-places-disclaimer"><a href="/umiacs/index.php/UMIACS:General_disclaimer">Disclaimers</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+</ul>
+</footer>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.010","ppvisitednodes":{"value":63,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":636,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024144134","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":146});});</script>
+</body>
 </html>

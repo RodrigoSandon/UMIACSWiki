@@ -1,593 +1,198 @@
 <!DOCTYPE html>
+
 <html class="client-nojs" dir="ltr" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   R - UMIACS
-  </title>
-  <script>
-   document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxFW2COSfpKnsyUH-iwi7QAAAAY","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"R","wgTitle":"R","wgCurRevisionId":7861,"wgRevisionId":7861,"wgArticleId":2309,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"R","wgRelevantArticleId":2309,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":
-"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];
-  </script>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});
-  </script>
-  <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector">
-  </script>
-  <meta content="" name="ResourceLoaderDynamicStyles"/>
-  <link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
-  <meta content="MediaWiki 1.39.10" name="generator"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="width=1000" name="viewport"/>
-  <link href="/favicon.ico" rel="icon"/>
-  <link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
-  <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
-  <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
- </head>
- <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-R rootpage-R skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
-  <div class="noprint" id="mw-page-base">
-  </div>
-  <div class="noprint" id="mw-head-base">
-  </div>
-  <div class="mw-body" id="content" role="main">
-   <a id="top">
-   </a>
-   <div id="siteNotice">
-   </div>
-   <div class="mw-indicators">
-   </div>
-   <h1 class="firstHeading mw-first-heading" id="firstHeading">
-    <span class="mw-page-title-main">
-     R
-    </span>
-   </h1>
-   <div class="vector-body" id="bodyContent">
-    <div class="noprint" id="siteSub">
-     From UMIACS
-    </div>
-    <div id="contentSub">
-    </div>
-    <div id="contentSub2">
-    </div>
-    <div id="jump-to-nav">
-    </div>
-    <a class="mw-jump-link" href="#mw-head">
-     Jump to navigation
-    </a>
-    <a class="mw-jump-link" href="#searchInput">
-     Jump to search
-    </a>
-    <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
-     <div class="mw-parser-output">
-      <p>
-       This page contains steps for installing R on Windows.
-      </p>
-      <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation">
-       <input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/>
-       <div class="toctitle" dir="ltr" lang="en">
-        <h2 id="mw-toc-heading">
-         Contents
-        </h2>
-        <span class="toctogglespan">
-         <label class="toctogglelabel" for="toctogglecheckbox">
-         </label>
-        </span>
-       </div>
-       <ul>
-        <li class="toclevel-1 tocsection-1">
-         <a href="#Basic_Installation">
-          <span class="tocnumber">
-           1
-          </span>
-          <span class="toctext">
-           Basic Installation
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-2">
-         <a href="#Customized_Options">
-          <span class="tocnumber">
-           2
-          </span>
-          <span class="toctext">
-           Customized Options
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-3">
-         <a href="#Customized_Startup_Environment">
-          <span class="tocnumber">
-           3
-          </span>
-          <span class="toctext">
-           Customized Startup Environment
-          </span>
-         </a>
-        </li>
-        <li class="toclevel-1 tocsection-4">
-         <a href="#Opening_R_scripts_with_RScript">
-          <span class="tocnumber">
-           4
-          </span>
-          <span class="toctext">
-           Opening R scripts with RScript
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-      <h2>
-       <span class="mw-headline" id="Basic_Installation">
-        Basic Installation
-       </span>
-      </h2>
-      <ol>
-       <li>
-        To retrieve the latest version of R from here:
-        <a class="external free" href="http://cran.r-project.org/" rel="nofollow">
-         http://cran.r-project.org/
-        </a>
-       </li>
-       <li>
-        Select "Download R for Windows" from the top of the screen
-       </li>
-       <li>
-        Then click "Install R for the first time" on the first line
-       </li>
-       <li>
-        This will take you to a download page, click "Download R&lt;version number&gt; for Windows" to begin the installation
-       </li>
-       <li>
-        Navigate to the directory you downloaded the installer to.
-       </li>
-       <li>
-        Run the .exe and step through the installer.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_1.PNG">
-           <img alt="R Install 1.PNG" decoding="async" height="388" src="/umiacs/images/a/a9/R_Install_1.PNG" width="503"/>
-          </a>
-         </li>
-         <li>
-          Note: There will be a warning when you start the installer that says the full installation requires administrative privileges, disregard this message.
-         </li>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_2.PNG">
-           <img alt="R Install 2.PNG" decoding="async" height="388" src="/umiacs/images/6/65/R_Install_2.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        Accept the License Agreement and continue.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_3.PNG">
-           <img alt="R Install 3.PNG" decoding="async" height="388" src="/umiacs/images/6/6a/R_Install_3.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        When prompted, choose an installation folder wherever you would like it within your home directory.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_4.PNG">
-           <img alt="R Install 4.PNG" decoding="async" height="388" src="/umiacs/images/8/8e/R_Install_4.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        Select the components that you wish to install, the defaults for this is fine.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_5.PNG">
-           <img alt="R Install 5.PNG" decoding="async" height="388" src="/umiacs/images/4/4e/R_Install_5.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        If you wish to customize the options for the startup environment then click Yes when prompted and proceed to the below section. If you are unsure what these are, select "No" (can still be changed later).
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_6.PNG">
-           <img alt="R Install 6.PNG" decoding="async" height="388" src="/umiacs/images/d/d0/R_Install_6.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ol>
-      <h2>
-       <span class="mw-headline" id="Customized_Options">
-        Customized Options
-       </span>
-      </h2>
-      <ol>
-       <li>
-        Name the folder that will appear in the start menu. The default "R" is acceptable for this.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_10.PNG">
-           <img alt="R Install 10.PNG" decoding="async" height="388" src="/umiacs/images/0/01/R_Install_10.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        Finalize your installation options and hit Next to begin the installation.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_11.PNG">
-           <img alt="R Install 11.PNG" decoding="async" height="388" src="/umiacs/images/0/0d/R_Install_11.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        After stepping through the dialog, R will install itself to the folder you specified.
-       </li>
-       <li>
-        Finish and close the setup. R is now installed locally on your account.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_12.PNG">
-           <img alt="R Install 12.PNG" decoding="async" height="388" src="/umiacs/images/6/63/R_Install_12.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ol>
-      <h2>
-       <span class="mw-headline" id="Customized_Startup_Environment">
-        Customized Startup Environment
-       </span>
-      </h2>
-      <ol>
-       <li>
-        From the customized startup environment options prompt, if you wish to go through the customized startup environment dialog, select "Yes" here. Any of these options can be altered at a later time after installation if you decide you have a change in preference.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_6.PNG">
-           <img alt="R Install 6.PNG" decoding="async" height="388" src="/umiacs/images/d/d0/R_Install_6.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        The first prompt will determine which interface you wish to use. MDI (one main window for all R programs) or SDI (separate windows for each R program) If you have a preference, select which option you prefer.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_7.PNG">
-           <img alt="R Install 7.PNG" decoding="async" height="388" src="/umiacs/images/a/a0/R_Install_7.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        Next, determine how you wish the help format to be displayed. You can choose from either plain text format or HTML formatted.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_8.PNG">
-           <img alt="R Install 8.PNG" decoding="async" height="388" src="/umiacs/images/b/bc/R_Install_8.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        Finally, determine how you would like R to handle the proxy settings in Internet Explorer, whether you would like to use the standard settings or make use of internet2.dll.
-        <ul>
-         <li>
-          <a class="image" href="/umiacs/index.php/File:R_Install_9.PNG">
-           <img alt="R Install 9.PNG" decoding="async" height="388" src="/umiacs/images/1/11/R_Install_9.PNG" width="503"/>
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li>
-        The startup environment customization for R is now finished. See the above sections for the following steps.
-       </li>
-      </ol>
-      <h2>
-       <span class="mw-headline" id="Opening_R_scripts_with_RScript">
-        Opening R scripts with RScript
-       </span>
-      </h2>
-      <p>
-       Users can open a file with R to a command terminal window via RScript.
-      </p>
-      <p>
-       From within the \bin\x64 folder at the location that you installed R to you can run:
-      </p>
-      <pre>Rscript path\to\file\test.R</pre>
-     </div>
-     <div class="printfooter" data-nosnippet="">
-      Retrieved from "
-      <a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=R&amp;oldid=7861">
-       https://wiki.umiacs.umd.edu/umiacs/index.php?title=R&amp;oldid=7861
-      </a>
-      "
-     </div>
-    </div>
-    <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks">
-    </div>
-   </div>
-  </div>
-  <div id="mw-navigation">
-   <h2>
-    Navigation menu
-   </h2>
-   <div id="mw-head">
-    <nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
-     <h3 class="vector-menu-heading" id="p-personal-label">
-      <span class="vector-menu-heading-label">
-       Personal tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="pt-login">
-        <a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=R" title="You are encouraged to log in; however, it is not mandatory [o]">
-         <span>
-          Log in
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <div id="left-navigation">
-     <nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
-      <h3 class="vector-menu-heading" id="p-namespaces-label">
-       <span class="vector-menu-heading-label">
-        Namespaces
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-nstab-main">
-         <a accesskey="c" href="/umiacs/index.php/R" title="View the content page [c]">
-          <span>
-           Page
-          </span>
-         </a>
-        </li>
-        <li class="new mw-list-item" id="ca-talk">
-         <a accesskey="t" href="/umiacs/index.php?title=Talk:R&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]">
-          <span>
-           Discussion
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
-      <input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
-      <label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
-       <span class="vector-menu-heading-label">
-        English
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-    </div>
-    <div id="right-navigation">
-     <nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
-      <h3 class="vector-menu-heading" id="p-views-label">
-       <span class="vector-menu-heading-label">
-        Views
-       </span>
-      </h3>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-        <li class="selected mw-list-item" id="ca-view">
-         <a href="/umiacs/index.php/R">
-          <span>
-           Read
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-viewsource">
-         <a accesskey="e" href="/umiacs/index.php?title=R&amp;action=edit" title="This page is protected.
-You can view its source [e]">
-          <span>
-           View source
-          </span>
-         </a>
-        </li>
-        <li class="mw-list-item" id="ca-history">
-         <a accesskey="h" href="/umiacs/index.php?title=R&amp;action=history" title="Past revisions of this page [h]">
-          <span>
-           View history
-          </span>
-         </a>
-        </li>
-       </ul>
-      </div>
-     </nav>
-     <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
-      <input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
-      <label class="vector-menu-heading" id="p-cactions-label">
-       <span class="vector-menu-heading-label">
-        More
-       </span>
-      </label>
-      <div class="vector-menu-content">
-       <ul class="vector-menu-content-list">
-       </ul>
-      </div>
-     </nav>
-     <div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
-      <div>
-       <h3>
-        <label for="searchInput">
-         Search
-        </label>
-       </h3>
-       <form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
-        <div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
-         <input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
-         <input name="title" type="hidden" value="Special:Search"/>
-         <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
-         <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
-        </div>
-       </form>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div id="mw-panel">
-    <div id="p-logo" role="banner">
-     <a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page">
-     </a>
-    </div>
-    <nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
-     <h3 class="vector-menu-heading" id="p-navigation-label">
-      <span class="vector-menu-heading-label">
-       Navigation
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="n-mainpage">
-        <a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]">
-         <span>
-          Main Page
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Getting-Started">
-        <a href="/umiacs/index.php/GettingStarted">
-         <span>
-          Getting Started
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Core-Services">
-        <a href="/umiacs/index.php/CoreServices">
-         <span>
-          Core Services
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Lab-Facilities">
-        <a href="/umiacs/index.php/LabFacilities">
-         <span>
-          Lab Facilities
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Placing-Orders">
-        <a href="/umiacs/index.php/Orders">
-         <span>
-          Placing Orders
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="n-Support">
-        <a href="/umiacs/index.php/HelpDesk">
-         <span>
-          Support
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-    <nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
-     <h3 class="vector-menu-heading" id="p-tb-label">
-      <span class="vector-menu-heading-label">
-       Tools
-      </span>
-     </h3>
-     <div class="vector-menu-content">
-      <ul class="vector-menu-content-list">
-       <li class="mw-list-item" id="t-whatlinkshere">
-        <a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/R" title="A list of all wiki pages that link here [j]">
-         <span>
-          What links here
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-recentchangeslinked">
-        <a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/R" rel="nofollow" title="Recent changes in pages linked from this page [k]">
-         <span>
-          Related changes
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-specialpages">
-        <a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]">
-         <span>
-          Special pages
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-print">
-        <a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]">
-         <span>
-          Printable version
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-permalink">
-        <a href="/umiacs/index.php?title=R&amp;oldid=7861" title="Permanent link to this revision of this page">
-         <span>
-          Permanent link
-         </span>
-        </a>
-       </li>
-       <li class="mw-list-item" id="t-info">
-        <a href="/umiacs/index.php?title=R&amp;action=info" title="More information about this page">
-         <span>
-          Page information
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </nav>
-   </div>
-  </div>
-  <footer class="mw-footer" id="footer" role="contentinfo">
-   <ul id="footer-info">
-    <li id="footer-info-lastmod">
-     This page was last edited on 23 July 2018, at 18:09.
-    </li>
-   </ul>
-   <ul id="footer-places">
-    <li id="footer-places-privacy">
-     <a href="/umiacs/index.php/UMIACS:Privacy_policy">
-      Privacy policy
-     </a>
-    </li>
-    <li id="footer-places-about">
-     <a href="/umiacs/index.php/UMIACS:About">
-      About UMIACS
-     </a>
-    </li>
-    <li id="footer-places-disclaimer">
-     <a href="/umiacs/index.php/UMIACS:General_disclaimer">
-      Disclaimers
-     </a>
-    </li>
-   </ul>
-   <ul class="noprint" id="footer-icons">
-    <li id="footer-poweredbyico">
-     <a href="https://www.mediawiki.org/">
-      <img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
-     </a>
-    </li>
-   </ul>
-  </footer>
-  <script>
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.046","walltime":"0.116","ppvisitednodes":{"value":28,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":38,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241017024303","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":147});});
-  </script>
- </body>
+<head>
+<meta charset="utf-8"/>
+<title>R - UMIACS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFokzhi@zIuREpXU2zTwAAAAI","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"R","wgTitle":"R","wgCurRevisionId":7861,"wgRevisionId":7861,"wgArticleId":2309,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"R","wgRelevantArticleId":2309,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":
+"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/umiacs/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.39.10" name="generator"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="width=1000" name="viewport"/>
+<link href="/favicon.ico" rel="icon"/>
+<link href="/umiacs/opensearch_desc.php" rel="search" title="UMIACS (en)" type="application/opensearchdescription+xml"/>
+<link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-R rootpage-R skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div id="siteNotice"></div>
+<div class="mw-indicators">
+</div>
+<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">R</span></h1>
+<div class="vector-body" id="bodyContent">
+<div class="noprint" id="siteSub">From UMIACS</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>This page contains steps for installing R on Windows.
+</p>
+<div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Basic_Installation"><span class="tocnumber">1</span> <span class="toctext">Basic Installation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Customized_Options"><span class="tocnumber">2</span> <span class="toctext">Customized Options</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Customized_Startup_Environment"><span class="tocnumber">3</span> <span class="toctext">Customized Startup Environment</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Opening_R_scripts_with_RScript"><span class="tocnumber">4</span> <span class="toctext">Opening R scripts with RScript</span></a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Basic_Installation">Basic Installation</span></h2>
+<ol><li>To retrieve the latest version of R from here: <a class="external free" href="http://cran.r-project.org/" rel="nofollow">http://cran.r-project.org/</a></li>
+<li>Select "Download R for Windows" from the top of the screen</li>
+<li>Then click "Install R for the first time" on the first line</li>
+<li>This will take you to a download page, click "Download R&lt;version number&gt; for Windows" to begin the installation</li>
+<li>Navigate to the directory you downloaded the installer to.</li>
+<li>Run the .exe and step through the installer.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_1.PNG"><img alt="R Install 1.PNG" decoding="async" height="388" src="/umiacs/images/a/a9/R_Install_1.PNG" width="503"/></a></li>
+<li>Note: There will be a warning when you start the installer that says the full installation requires administrative privileges, disregard this message.</li>
+<li><a class="image" href="/umiacs/index.php/File:R_Install_2.PNG"><img alt="R Install 2.PNG" decoding="async" height="388" src="/umiacs/images/6/65/R_Install_2.PNG" width="503"/></a></li></ul></li>
+<li>Accept the License Agreement and continue.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_3.PNG"><img alt="R Install 3.PNG" decoding="async" height="388" src="/umiacs/images/6/6a/R_Install_3.PNG" width="503"/></a></li></ul></li>
+<li>When prompted, choose an installation folder wherever you would like it within your home directory.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_4.PNG"><img alt="R Install 4.PNG" decoding="async" height="388" src="/umiacs/images/8/8e/R_Install_4.PNG" width="503"/></a></li></ul></li>
+<li>Select the components that you wish to install, the defaults for this is fine.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_5.PNG"><img alt="R Install 5.PNG" decoding="async" height="388" src="/umiacs/images/4/4e/R_Install_5.PNG" width="503"/></a></li></ul></li>
+<li>If you wish to customize the options for the startup environment then click Yes when prompted and proceed to the below section. If you are unsure what these are, select "No" (can still be changed later).
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_6.PNG"><img alt="R Install 6.PNG" decoding="async" height="388" src="/umiacs/images/d/d0/R_Install_6.PNG" width="503"/></a></li></ul></li></ol>
+<h2><span class="mw-headline" id="Customized_Options">Customized Options</span></h2>
+<ol><li>Name the folder that will appear in the start menu. The default "R" is acceptable for this.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_10.PNG"><img alt="R Install 10.PNG" decoding="async" height="388" src="/umiacs/images/0/01/R_Install_10.PNG" width="503"/></a></li></ul></li>
+<li>Finalize your installation options and hit Next to begin the installation.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_11.PNG"><img alt="R Install 11.PNG" decoding="async" height="388" src="/umiacs/images/0/0d/R_Install_11.PNG" width="503"/></a></li></ul></li>
+<li>After stepping through the dialog, R will install itself to the folder you specified.</li>
+<li>Finish and close the setup. R is now installed locally on your account.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_12.PNG"><img alt="R Install 12.PNG" decoding="async" height="388" src="/umiacs/images/6/63/R_Install_12.PNG" width="503"/></a></li></ul></li></ol>
+<h2><span class="mw-headline" id="Customized_Startup_Environment">Customized Startup Environment</span></h2>
+<ol><li>From the customized startup environment options prompt, if you wish to go through the customized startup environment dialog, select "Yes" here. Any of these options can be altered at a later time after installation if you decide you have a change in preference.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_6.PNG"><img alt="R Install 6.PNG" decoding="async" height="388" src="/umiacs/images/d/d0/R_Install_6.PNG" width="503"/></a></li></ul></li>
+<li>The first prompt will determine which interface you wish to use. MDI (one main window for all R programs) or SDI (separate windows for each R program) If you have a preference, select which option you prefer.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_7.PNG"><img alt="R Install 7.PNG" decoding="async" height="388" src="/umiacs/images/a/a0/R_Install_7.PNG" width="503"/></a></li></ul></li>
+<li>Next, determine how you wish the help format to be displayed. You can choose from either plain text format or HTML formatted.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_8.PNG"><img alt="R Install 8.PNG" decoding="async" height="388" src="/umiacs/images/b/bc/R_Install_8.PNG" width="503"/></a></li></ul></li>
+<li>Finally, determine how you would like R to handle the proxy settings in Internet Explorer, whether you would like to use the standard settings or make use of internet2.dll.
+<ul><li><a class="image" href="/umiacs/index.php/File:R_Install_9.PNG"><img alt="R Install 9.PNG" decoding="async" height="388" src="/umiacs/images/1/11/R_Install_9.PNG" width="503"/></a></li></ul></li>
+<li>The startup environment customization for R is now finished. See the above sections for the following steps.</li></ol>
+<h2><span class="mw-headline" id="Opening_R_scripts_with_RScript">Opening R scripts with RScript</span></h2>
+<p>Users can open a file with R to a command terminal window via RScript.
+</p><p>
+From within the \bin\x64 folder at the location that you installed R to you can run: </p><pre>Rscript path\to\file\test.R</pre>
+
+
+
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=R&amp;oldid=7861">https://wiki.umiacs.umd.edu/umiacs/index.php?title=R&amp;oldid=7861</a>"</div></div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<nav aria-labelledby="p-personal-label" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu-legacy" id="p-personal" role="navigation">
+<h3 class="vector-menu-heading" id="p-personal-label">
+<span class="vector-menu-heading-label">Personal tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=R" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
+</div>
+</nav>
+<div id="left-navigation">
+<nav aria-labelledby="p-namespaces-label" class="vector-menu mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy" id="p-namespaces" role="navigation">
+<h3 class="vector-menu-heading" id="p-namespaces-label">
+<span class="vector-menu-heading-label">Namespaces</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/R" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:R&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
+<input aria-haspopup="true" aria-labelledby="p-variants-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-variants" id="p-variants-checkbox" role="button" type="checkbox"/>
+<label aria-label="Change language variant" class="vector-menu-heading" id="p-variants-label">
+<span class="vector-menu-heading-label">English</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+</div>
+<div id="right-navigation">
+<nav aria-labelledby="p-views-label" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy" id="p-views" role="navigation">
+<h3 class="vector-menu-heading" id="p-views-label">
+<span class="vector-menu-heading-label">Views</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/R"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=R&amp;action=edit" title="This page is protected.
+You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=R&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
+<input aria-haspopup="true" aria-labelledby="p-cactions-label" class="vector-menu-checkbox" data-event-name="ui.dropdown-p-cactions" id="p-cactions-checkbox" role="button" type="checkbox"/>
+<label class="vector-menu-heading" id="p-cactions-label">
+<span class="vector-menu-heading-label">More</span>
+</label>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"></ul>
+</div>
+</nav>
+<div class="vector-search-box-vue vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box" id="p-search" role="search">
+<div>
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/umiacs/index.php" class="vector-search-box-form" id="searchform">
+<div class="vector-search-box-inner" data-search-loc="header-navigation" id="simpleSearch">
+<input accesskey="f" aria-label="Search UMIACS" autocapitalize="sentences" class="vector-search-box-input" id="searchInput" name="search" placeholder="Search UMIACS" title="Search UMIACS [f]" type="search"/>
+<input name="title" type="hidden" value="Special:Search"/>
+<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+<input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner">
+<a class="mw-wiki-logo" href="/umiacs/index.php/Main_Page" title="Visit the main page"></a>
+</div>
+<nav aria-labelledby="p-navigation-label" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal" id="p-navigation" role="navigation">
+<h3 class="vector-menu-heading" id="p-navigation-label">
+<span class="vector-menu-heading-label">Navigation</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="n-mainpage"><a accesskey="z" href="/umiacs/index.php/Main_Page" title="Visit the main page [z]"><span>Main Page</span></a></li><li class="mw-list-item" id="n-Getting-Started"><a href="/umiacs/index.php/GettingStarted"><span>Getting Started</span></a></li><li class="mw-list-item" id="n-Core-Services"><a href="/umiacs/index.php/CoreServices"><span>Core Services</span></a></li><li class="mw-list-item" id="n-Lab-Facilities"><a href="/umiacs/index.php/LabFacilities"><span>Lab Facilities</span></a></li><li class="mw-list-item" id="n-Placing-Orders"><a href="/umiacs/index.php/Orders"><span>Placing Orders</span></a></li><li class="mw-list-item" id="n-Support"><a href="/umiacs/index.php/HelpDesk"><span>Support</span></a></li></ul>
+</div>
+</nav>
+<nav aria-labelledby="p-tb-label" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal" id="p-tb" role="navigation">
+<h3 class="vector-menu-heading" id="p-tb-label">
+<span class="vector-menu-heading-label">Tools</span>
+</h3>
+<div class="vector-menu-content">
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/R" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/R" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=R&amp;oldid=7861" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=R&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+</div>
+</nav>
+</div>
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 23 July 2018, at 18:09.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/umiacs/index.php/UMIACS:About">About UMIACS</a></li>
+<li id="footer-places-disclaimer"><a href="/umiacs/index.php/UMIACS:General_disclaimer">Disclaimers</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+</ul>
+</footer>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.044","walltime":"0.107","ppvisitednodes":{"value":28,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":38,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024233503","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":146});});</script>
+</body>
 </html>

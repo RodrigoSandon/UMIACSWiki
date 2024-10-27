@@ -49,6 +49,11 @@
 24th October 2024:
  - Figured out that fine-tuning may not be needed and just prompting that we may need to adjust for RAG pipeline
 
-
+26th October 2024:
+- Running current implementation on open-sourced material
+- But can't run it on my local machine, need to host it on the cloud
+- Have a VM running on the cloud to run this pipeline
+- Test Questions: List the file systems I can format a hard drive with?
+- Turns out I need A100s/V100s but none are avaliable
 
 

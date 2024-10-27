@@ -1,0 +1,10 @@
+torch
+transformers
+qdrant-client
+numpy
+bitsandbytes
+accelerate
+
+
+
+

@@ -11,18 +11,15 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.llms import HuggingFacePipeline
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
+from huggingface_hub import login
 
-# Initialize Redis connection
-client = redis.Redis(
-    host='redis-16332.c263.us-east-1-2.ec2.redns.redis-cloud.com',
-    port=16332,
-    password='*'
-)
 
 # HuggingFace model and tokenizer setup
 model_id = "meta-llama/Llama-3.1-8B-Instruct"
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
-token = "*"
+token = "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"
+
+login(token=token)
 
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -59,12 +56,25 @@ query_pipeline = transformers.pipeline(
         device_map="auto"
 )
 
+# redis connection
+redis_host = "redis-18847.c16.us-east-1-2.ec2.redns.redis-cloud.com"
+redis_port = 18847  # Replace with your port
+redis_password = "ZhIcpw65p96DNC1wtxiftOuGwLI73Qpm"  # Replace with your password
+
+redis_conn = redis.StrictRedis(
+    host=redis_host,
+    port=redis_port,
+    password=redis_password,
+    decode_responses=True
+)
+redis_url = f"redis://:{redis_password}@{redis_host}:{redis_port}"
+
 # Wrap the model pipeline for LangChain
 llm = HuggingFacePipeline(pipeline=query_pipeline)
 
 # Initialize LangChain Redis retriever for querying Redis-based vectorstore
-embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-vectorstore = Redis(client=client, embedding_function=embeddings.embed_query)
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+vectorstore = Redis(redis_url=redis_url, index_name="umiacs", embedding=embeddings)
 
 # Define a prompt template (can adjust for more complex query)
 template = """
@@ -79,6 +89,6 @@ prompt = PromptTemplate(input_variables=["context", "question"], template=templa
 qa_chain = RetrievalQA.from_llm(llm=llm, retriever=vectorstore.as_retriever(), prompt=prompt)
 
 # Test the system
-message = "What is UMIACS?"
+message = "How to use the printer?"
 result = qa_chain.run(message)
 print(result)

@@ -1,0 +1,75 @@
+Question: What is Nexus?
+Answer: Nexus is the combined scheduler of resources in UMiacs. It is managed by Slurm, which is a resource manager. Resources are arranged into partitions where users can schedule computational jobs. Users are arranged into Slurm accounts based on faculty, lab, or center investments. Nexus is used to manage access to resources, including computing nodes, storage, and other resources. It provides a way for users to schedule jobs, including interactive and batch jobs. Nexus also provides a way to manage quality of service (QoS) and storage. Users can submit jobs to Nexus using the Slurm command-line interface, specifying resources such as time, CPUs, RAM, and GPUs as needed. Nexus has a reservation system in place to prevent jobs from being scheduled on compute nodes during a monthly maintenance window, which typically occurs on the Thursday between the 17th and 23rd of each month. During this window, Nexus will have a reservation in place from 4:45pm to 8pm to prevent jobs from being scheduled on compute nodes. Nexus is a powerful tool for managing resources and scheduling jobs in UMiacs. It provides a flexible and efficient way for users to access and utilize the resources available to them. Nexus is a critical component of the UMiacs infrastructure, enabling researchers and students to perform complex computations and simulations. It is an essential tool for anyone working with computational resources in UMiacs. Nexus is a key part of the UMiacs ecosystem, providing a way for users to access and utilize the resources they need to perform their research and projects. Nexus is a powerful and flexible tool that is well-suited to the needs of researchers and students in UMiacs. It provides a high degree of control and flexibility, allowing users to schedule jobs and access resources in a way that meets their specific needs. Nexus is an essential part of the UMiacs infrastructure, and it is widely used by researchers and students across the university. Nexus is a key component of the UMiacs computing environment, providing a way for users to access and utilize the resources they need to perform their research and projects. Nexus is a powerful tool that is well-suited to the needs of researchers and students in UMiacs.
+
+Question: How to write an sbatch script?
+Answer: To write an sbatch script, you can use the `sbatch` command with the `-o` option to specify the output file and the `-e` option to specify the error file. For example:
+
+```bash
+#!/bin/bash
+
+#SBATCH -o output_%j.txt
+#SBATCH -e error_%j.txt
+
+# Your script here
+```
+
+Note: `%j` is a special variable that will be replaced with the job ID. You can also use other options such as `-t` for the runtime, `-p` for the partition, `-n` for the number of tasks, etc.
+
+Also, you can use `sbatch` command with the `-c` option to specify the number of cores, `-m` option to specify the memory, etc.
+
+For example:
+
+```bash
+#!/bin/bash
+
+#SBATCH -o output_%j.txt
+#SBATCH -e error_%j.txt
+#SBATCH -t 00:05:00
+#SBATCH -p partition_name
+#SBATCH -n 16
+#SBATCH -c 4
+#SBATCH -m 16gb
+```
+
+You can also use `sbatch` command with the `-J` option to specify the job name, `-A` option to specify the account, etc.
+
+For example:
+
+```bash
+#!/bin/bash
+
+#SBATCH -o output_%j.txt
+#SBATCH -e error_%j.txt
+#SBATCH -J job_name
+#SBATCH -A account_name
+```
+
+You can also use `sbatch` command with the `-p` option to specify the partition, `-t` option to specify the runtime, etc.
+
+For example:
+
+```bash
+#!/bin/bash
+
+#SBATCH -o output_%j.txt
+#SBATCH -e error_%j.txt
+#SBATCH -p partition_name
+#SBATCH -t 00:05:00
+```
+
+Note: You can also use `sbatch` command with the `--` option to specify the job name, `--account` option to specify the account, etc.
+
+For example:
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name job_name
+#SBATCH --account account_name
+```
+
+You can also use `sbatch` command with the `--output` option to specify the output file, `--error` option to specify the error file
+
+
+Question: How to use the printer?
+Answer: To use the printer, follow these steps: click "forward". You will now see a list of printer models. From that list, select the brand of the printer as noted in step 4, and click forward. Select the specific model of the printer as noted in step 4. Then click forward. Select any additional features available for the printer (i.e. duplexing, trays), and then click forward. Give a short name to the printer or leave everything default and hit apply. Verify this process by printing a test page. You should get the default Ubuntu test page. If you just get a page with a string of text, then the printer is not properly configured. To print, go to the "Printers & Scanners" page, create a new local printer by clicking the "Add Printer, Scanner, or Fax..." button, and follow the steps outlined in the "Add Printer" dialog. If you want to enable all the advanced options for the printer, jump to "Enabling Advanced Printer Options". Jump over to the "IP" tab, set the protocol to "Internet Printing Protocol - IPP", set the address to "print.umiacs.umd.edu", and set the queue to "Printers/Queue". Note: If you just want basic printing, use these steps. If you would like to enable all the advanced options for the printer, jump over this section to "Enabling Advanced Printer Options". Jump over to the "IP" tab, set the protocol to "Internet Printing Protocol - IPP", set the address to "print.umiacs.umd.edu", and set the queue to "Printers/Queue". To print, go to the "Printers & Scanners" page, create a new local printer by clicking the "Add Printer, Scanner, or Fax..." button, and follow the steps outlined in the "Add Printer" dialog. If you want to enable all the advanced options for the printer, jump to "Enabling Advanced Printer Options". Jump over to the "IP" tab, set the protocol to "Internet Printing Protocol - IPP", set the address to "print.umiacs.umd.edu", and set the queue to "Printers/Queue". Note: If you just want basic printing, use these steps. If you would like to enable all the advanced options for the printer, jump over this section to "Enabling Advanced Printer Options". Jump over to the "IP" tab, set

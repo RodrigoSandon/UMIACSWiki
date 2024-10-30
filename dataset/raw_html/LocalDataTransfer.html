@@ -3,9 +3,9 @@
 <html class="client-nojs" dir="ltr" lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Data Transfer - UMIACS</title>
-<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFrGT@@bTH7rp5JJ-qYAAAAAY","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Data_Transfer","wgTitle":"Data Transfer","wgCurRevisionId":11737,"wgRevisionId":11737,"wgArticleId":2010,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Data_Transfer","wgRelevantArticleId":2010,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":
-"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<title>LocalDataTransfer - UMIACS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZyGb89inx6OngwP2xv86RQAAAAo","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"LocalDataTransfer","wgTitle":"LocalDataTransfer","wgCurRevisionId":12159,"wgRevisionId":12159,"wgArticleId":2010,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"LocalDataTransfer","wgRelevantArticleId":2010,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready",
+"user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
 <script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
 <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
 <script async="" src="/umiacs/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
@@ -19,14 +19,14 @@
 <link href="https://wiki.umiacs.umd.edu/umiacs/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
 <link href="/umiacs/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="UMIACS Atom feed" type="application/atom+xml"/>
 </head>
-<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Data_Transfer rootpage-Data_Transfer skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-LocalDataTransfer rootpage-LocalDataTransfer skin-vector action-view skin-vector-legacy vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled"><div class="noprint" id="mw-page-base"></div>
 <div class="noprint" id="mw-head-base"></div>
 <div class="mw-body" id="content" role="main">
 <a id="top"></a>
 <div id="siteNotice"></div>
 <div class="mw-indicators">
 </div>
-<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">Data Transfer</span></h1>
+<h1 class="firstHeading mw-first-heading" id="firstHeading"><span class="mw-page-title-main">LocalDataTransfer</span></h1>
 <div class="vector-body" id="bodyContent">
 <div class="noprint" id="siteSub">From UMIACS</div>
 <div id="contentSub"></div>
@@ -34,7 +34,7 @@
 <div id="jump-to-nav"></div>
 <a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
 <a class="mw-jump-link" href="#searchInput">Jump to search</a>
-<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>Depending on the amount of data you are trying to transfer there are different commands that you should use.  The classic <code>cp</code> command has a number of edge cases in which it will not copy everything that is expected, so the <b>only time</b> that one should use the <code>cp</code> command is if the copy can be verified, such as if you are moving a single file. The better choice for transferring data is by using <code>tar</code> or <code>gtar</code>.  After transferring files or directories, you can use <code>rsync</code> to check that everything moved correctly and to perform a final sync on changed files.
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>Depending on the amount of data you are trying to transfer, there are different commands that you should use.  The classic <code>cp</code> command has a number of edge cases in which it will not copy everything that is expected, so the <b>only time</b> that one should use the <code>cp</code> command is if the copy can be verified, such as if you are moving a single file. The better choice for transferring data is by using <code>tar</code> or <code>gtar</code>.  After transferring files or directories, you can use <code>rsync</code> to check that everything moved correctly and to perform a final sync on changed files.
 </p>
 <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
@@ -71,8 +71,9 @@
 <pre>gtar -cpf -  . | gtar -C /dir -xpvf -</pre>
 <p>In this command, the target is a dash <tt>'-'</tt> which stands for standard output, and the source is a period <tt>'.'</tt> which is interpreted as all files in your current directory. The standard output is piped to the second command, which has as a source a dash <tt>'-'</tt> (which the shell interprets as standard input). The output of the first command is piped and becomes the input of the second command. The target directory in your second command is <tt>/dir</tt>. 
 </p>
-<ul><li>To transfer all files from your documents to a folder in your home directory called foo: <pre>cd ~/Documents
-gtar -cpf - . | gtar -C ~/foo -xpvf -</pre></li></ul>
+<ul><li>To transfer all files from your documents to a folder in your home directory called foo:</li></ul>
+<pre>cd ~/Documents
+gtar -cpf - . | gtar -C ~/foo -xpvf -</pre>
 <p>When you use this command it will display a list of the files it has transferred.
 </p><p>This command will leave Documents the same, but create a full copy of all files and folders from Documents in foo.
 </p><p><b>Note:</b> This command will preserve permissions, attributes, and meta-data of all files transferred.
@@ -83,7 +84,7 @@ gtar -cpf - . | gtar -C ~/foo -xpvf -</pre></li></ul>
 <ul><li>To transfer files from <tt>foo</tt> directory on your current host to the <tt>tmp</tt> directory on example1.umiacs.umd.edu:</li></ul>
 <pre>gtar -cpf - /foo/ | ssh USERNAME@example1.umiacs.umd.edu gtar -C /tmp -xpvf -</pre>
 <p>If your data transfer is interrupted, you can use the <code>rsync</code> command listed below to copy the rest of the files without creating doubles of files that have already been transferred.
-</p><p><code>rsync</code> can also be used for the initial transfer of data if you expect the transfer to be interrupted.  Otherwise, this method should not be used as it takes more time and memory.
+</p><p><code>rsync</code> can also be used for the initial transfer of data if you expect the transfer to be interrupted.  Otherwise, this method should not be used as the overhead takes more time and memory.
 </p><p>To run rsync to copy files, the format for the command is the same as written below under "Verifying transfer."
 </p>
 <h2><span class="mw-headline" id="Verifying_transfer">Verifying transfer</span></h2>
@@ -101,7 +102,7 @@ gtar -cpf - . | gtar -C ~/foo -xpvf -</pre></li></ul>
 
 
 </div>
-<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Data_Transfer&amp;oldid=11737">https://wiki.umiacs.umd.edu/umiacs/index.php?title=Data_Transfer&amp;oldid=11737</a>"</div></div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=LocalDataTransfer&amp;oldid=12159">https://wiki.umiacs.umd.edu/umiacs/index.php?title=LocalDataTransfer&amp;oldid=12159</a>"</div></div>
 <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
 </div>
 </div>
@@ -113,7 +114,7 @@ gtar -cpf - . | gtar -C ~/foo -xpvf -</pre></li></ul>
 <span class="vector-menu-heading-label">Personal tools</span>
 </h3>
 <div class="vector-menu-content">
-<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=Data+Transfer" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="pt-login"><a accesskey="o" href="/umiacs/index.php?title=Special:UserLogin&amp;returnto=LocalDataTransfer" title="You are encouraged to log in; however, it is not mandatory [o]"><span>Log in</span></a></li></ul>
 </div>
 </nav>
 <div id="left-navigation">
@@ -122,7 +123,7 @@ gtar -cpf - . | gtar -C ~/foo -xpvf -</pre></li></ul>
 <span class="vector-menu-heading-label">Namespaces</span>
 </h3>
 <div class="vector-menu-content">
-<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/Data_Transfer" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:Data_Transfer&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-nstab-main"><a accesskey="c" href="/umiacs/index.php/LocalDataTransfer" title="View the content page [c]"><span>Page</span></a></li><li class="new mw-list-item" id="ca-talk"><a accesskey="t" href="/umiacs/index.php?title=Talk:LocalDataTransfer&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]"><span>Discussion</span></a></li></ul>
 </div>
 </nav>
 <nav aria-labelledby="p-variants-label" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown" id="p-variants" role="navigation">
@@ -141,8 +142,8 @@ gtar -cpf - . | gtar -C ~/foo -xpvf -</pre></li></ul>
 <span class="vector-menu-heading-label">Views</span>
 </h3>
 <div class="vector-menu-content">
-<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/Data_Transfer"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=Data_Transfer&amp;action=edit" title="This page is protected.
-You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=Data_Transfer&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
+<ul class="vector-menu-content-list"><li class="selected mw-list-item" id="ca-view"><a href="/umiacs/index.php/LocalDataTransfer"><span>Read</span></a></li><li class="mw-list-item" id="ca-viewsource"><a accesskey="e" href="/umiacs/index.php?title=LocalDataTransfer&amp;action=edit" title="This page is protected.
+You can view its source [e]"><span>View source</span></a></li><li class="mw-list-item" id="ca-history"><a accesskey="h" href="/umiacs/index.php?title=LocalDataTransfer&amp;action=history" title="Past revisions of this page [h]"><span>View history</span></a></li></ul>
 </div>
 </nav>
 <nav aria-labelledby="p-cactions-label" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown" id="p-cactions" role="navigation" title="More options">
@@ -188,14 +189,14 @@ You can view its source [e]"><span>View source</span></a></li><li class="mw-list
 <span class="vector-menu-heading-label">Tools</span>
 </h3>
 <div class="vector-menu-content">
-<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Data_Transfer" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Data_Transfer" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=Data_Transfer&amp;oldid=11737" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=Data_Transfer&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/LocalDataTransfer" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/LocalDataTransfer" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=LocalDataTransfer&amp;oldid=12159" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=LocalDataTransfer&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
 </div>
 </nav>
 </div>
 </div>
 <footer class="mw-footer" id="footer" role="contentinfo">
 <ul id="footer-info">
-<li id="footer-info-lastmod"> This page was last edited on 8 April 2024, at 15:45.</li>
+<li id="footer-info-lastmod"> This page was last edited on 25 October 2024, at 16:23.</li>
 </ul>
 <ul id="footer-places">
 <li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
@@ -206,6 +207,6 @@ You can view its source [e]"><span>View source</span></a></li><li class="mw-list
 <li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
 </ul>
 </footer>
-<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.010","ppvisitednodes":{"value":63,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":636,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024144134","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":146});});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.010","ppvisitednodes":{"value":63,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":636,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241029060654","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":146});});</script>
 </body>
 </html>

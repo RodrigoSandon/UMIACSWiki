@@ -1,2 +1,3 @@
 .env
 *.pt
+.DS_STORE

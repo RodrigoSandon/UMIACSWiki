@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>VS Code - UMIACS</title>
-<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFqGT@@bTH7rp5JJ-qXgAAAAY","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"VS_Code","wgTitle":"VS Code","wgCurRevisionId":11945,"wgRevisionId":11945,"wgArticleId":3230,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"VS_Code","wgRelevantArticleId":3230,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZyGb58fCmjCExw6WaI9yugAAAAY","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"VS_Code","wgTitle":"VS Code","wgCurRevisionId":12162,"wgRevisionId":12162,"wgArticleId":3230,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"VS_Code","wgRelevantArticleId":3230,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":
 "ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
 <script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
 <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
@@ -61,11 +61,11 @@
 </p>
 <h4><span class="mw-headline" id="Use_only_as_a_code_editor">Use only as a code editor</span></h4>
 <p>VS Code can perform many common file management operations, such as moving, copying, or deleting files or directories. However, the overhead of providing progress updates / status messages through VS Code's UI can cause load spikes that result in other processes on the submission node (both system-level and other users') slowing down. This is especially the case if operating on thousands to millions of small image or video files. In extreme cases, it can seem as though the submission node is wholly unresponsive.
-</p><p>The best way to combat this is to use VS Code as just a code editor as strictly as you can (meaning creating new and/or editing existing source code files only). Use standard command-line programs such as <code>mv</code>/<code>cp</code>/<code>rm</code> in VS Code's terminal window or a separate application's terminal window for local file management instead, or use the techniques advertised <a href="/umiacs/index.php/Data_Transfer" title="Data Transfer"> here</a> for larger data transfers between nodes.
+</p><p>The best way to combat this is to use VS Code as just a code editor as strictly as you can (meaning creating new and/or editing existing source code files only). Use standard command-line programs such as <code>mv</code>/<code>cp</code>/<code>rm</code> in VS Code's terminal window or a separate application's terminal window for local file management instead, or use the techniques advertised <a href="/umiacs/index.php/LocalDataTransfer" title="LocalDataTransfer"> here</a> for larger data transfers between nodes.
 </p>
 <h4><span class="mw-headline" id="Do_not_open_large_files">Do not open large files</span></h4>
 <p>Files that you open in VS Code's text editor on a remote machine through the Remote - SSH extension are loaded entirely into RAM on the remote machine. Because of the persistence of VS Code Server processes, opening several unique files may result in them all remaining in RAM for extended periods of time even if you no longer have tabs open for them in the Tab Bar.
-</p><p>As such, please refrain from opening large files (more than a few MB) in VS Code itself on submission nodes. Either use a lighter-weight command-line based text editor such as <a class="external text" href="https://www.vim.org/" rel="nofollow">vim</a> or otherwise on the submission node itself, or first <a href="/umiacs/index.php/Data_Transfer" title="Data Transfer"> transfer</a> the files that you would like to open to either a less-used remote machine or your local machine before opening them.
+</p><p>As such, please refrain from opening large files (more than a few MB) in VS Code itself on submission nodes. Either use a lighter-weight command-line based text editor such as <a class="external text" href="https://www.vim.org/" rel="nofollow">vim</a> or otherwise on the submission node itself, or first <a href="/umiacs/index.php/LocalDataTransfer" title="LocalDataTransfer"> transfer</a> the files that you would like to open to either a less-used remote machine or your local machine before opening them.
 </p><p>If you absolutely need to open one or more large files for a very brief period of time on a submission node, please clean up your server session on that node (see below section) as soon as possible when done.
 </p>
 <h4><span class="mw-headline" id="Clean_up_when_done">Clean up when done</span></h4>
@@ -84,8 +84,7 @@
 <h2><span class="mw-headline" id="Common_Issues">Common Issues</span></h2>
 <p>If you are having trouble <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">SSH</a>'ing to a submission node with VS Code, check if your home directory is full.
 </p>
-<ol><li>Connect to one of your Nexus submission nodes via SSH <b>not</b> using VS Code.
-<dl><dd><a href="/umiacs/index.php/SecureShell" title="SecureShell"> Remote connect to a server</a></dd></dl></li>
+<ol><li>Connect to one of your Nexus submission nodes via <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">SSH</a> <b>not</b> using VS Code.</li>
 <li>Navigate to your home directory. <pre>cd ~</pre></li>
 <li>Check if it is full. <pre>df -h .</pre></li>
 <li>If it is full (Avail 0), delete some files to free up at least ~100MB of space. <pre>Filesystem                                    Size  Used Avail Use% Mounted on
@@ -95,7 +94,7 @@ data.isilon.umiacs.umd.edu:/ifs/umiacs/homes   30G   30G     0 100% /fs/nfshomes
 
 
 </div>
-<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=VS_Code&amp;oldid=11945">https://wiki.umiacs.umd.edu/umiacs/index.php?title=VS_Code&amp;oldid=11945</a>"</div></div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=VS_Code&amp;oldid=12162">https://wiki.umiacs.umd.edu/umiacs/index.php?title=VS_Code&amp;oldid=12162</a>"</div></div>
 <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
 </div>
 </div>
@@ -182,14 +181,14 @@ You can view its source [e]"><span>View source</span></a></li><li class="mw-list
 <span class="vector-menu-heading-label">Tools</span>
 </h3>
 <div class="vector-menu-content">
-<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/VS_Code" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/VS_Code" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=VS_Code&amp;oldid=11945" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=VS_Code&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/VS_Code" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/VS_Code" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=VS_Code&amp;oldid=12162" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=VS_Code&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
 </div>
 </nav>
 </div>
 </div>
 <footer class="mw-footer" id="footer" role="contentinfo">
 <ul id="footer-info">
-<li id="footer-info-lastmod"> This page was last edited on 16 July 2024, at 14:26.</li>
+<li id="footer-info-lastmod"> This page was last edited on 25 October 2024, at 16:25.</li>
 </ul>
 <ul id="footer-places">
 <li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
@@ -200,6 +199,6 @@ You can view its source [e]"><span>View source</span></a></li><li class="mw-list
 <li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
 </ul>
 </footer>
-<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.021","walltime":"0.037","ppvisitednodes":{"value":34,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":207,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024135344","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":150});});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.020","walltime":"0.037","ppvisitednodes":{"value":34,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":207,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241029124102","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":146});});</script>
 </body>
 </html>

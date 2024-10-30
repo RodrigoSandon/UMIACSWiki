@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Rclone - UMIACS</title>
-<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZxtFpywSHsBW8OpGNc5-RwAAAAU","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Rclone","wgTitle":"Rclone","wgCurRevisionId":11684,"wgRevisionId":11684,"wgArticleId":2848,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Rclone","wgRelevantArticleId":2848,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ZyGbynsf0YrBlKZCBrcW7gAAAAU","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Rclone","wgTitle":"Rclone","wgCurRevisionId":12173,"wgRevisionId":12173,"wgArticleId":2848,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Rclone","wgRelevantArticleId":2848,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":
 "ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
 <script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
 <link href="/umiacs/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
@@ -34,7 +34,7 @@
 <div id="jump-to-nav"></div>
 <a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
 <a class="mw-jump-link" href="#searchInput">Jump to search</a>
-<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>Rclone is a command line program useful for syncing files and directories. Its functionality is similar to rsync, but has additional capabilities that support cloud storage services such as Dropbox, Open Drive, Amazon S3, and many more. 
+<div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><a class="external text" href="https://rclone.org" rel="nofollow">Rclone</a> is a command line program useful for syncing files and directories. Its functionality is similar to <a href="/umiacs/index.php/LocalDataTransfer#Verifying_transfer" title="LocalDataTransfer"> rsync</a>, but has additional capabilities that support cloud storage services such as Google Drive, Dropbox, Box, OneDrive, Open Drive, Amazon S3, and many more. 
 </p><p>Below are directions on how to remote setup rclone on a headless machine. If you would like to set up specific Google Drive or Dropbox remotes, you can go directly to the section labeled "Google Drive" or "Dropbox".
 </p>
 <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
@@ -55,7 +55,7 @@
 </ul>
 </div>
 <h2><span class="mw-headline" id="Remote_Setup_on_A_Headless_System">Remote Setup on A Headless System</span></h2>
-<p>To remote setup rclone, you will first have to <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">SSH</a> into one of UMIACS' hosts and load the rclone module by typing <tt>module load rclone</tt>. If this does not work, check that the rclone module is available by running the command <tt>module avail rclone</tt>. If the module is not available, SSH to a host where it is.
+<p>To remote setup rclone, you will first have to <a class="mw-redirect" href="/umiacs/index.php/SSH" title="SSH">SSH</a> into one a UMIACS-supported host and load the rclone module by typing <tt>module load rclone</tt>. If this does not work, check that the rclone module is available by running the command <tt>module avail rclone</tt>. If the module is not available, SSH to a host where it is.
 </p><p>If you are instead installing rclone on a system that you have administrative privileges on, downloads are available at <a class="external free" href="https://rclone.org/downloads/" rel="nofollow">https://rclone.org/downloads/</a>.
 </p><p>Once you have loaded the module or installed the software, there are two ways to remote configure rclone. The first is by copying the rclone config file, and the second is by using rclone authorize.
 </p>
@@ -252,7 +252,7 @@ n/r/c/s/q&gt;
 
 
 </div>
-<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Rclone&amp;oldid=11684">https://wiki.umiacs.umd.edu/umiacs/index.php?title=Rclone&amp;oldid=11684</a>"</div></div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.umiacs.umd.edu/umiacs/index.php?title=Rclone&amp;oldid=12173">https://wiki.umiacs.umd.edu/umiacs/index.php?title=Rclone&amp;oldid=12173</a>"</div></div>
 <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
 </div>
 </div>
@@ -339,14 +339,14 @@ You can view its source [e]"><span>View source</span></a></li><li class="mw-list
 <span class="vector-menu-heading-label">Tools</span>
 </h3>
 <div class="vector-menu-content">
-<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Rclone" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Rclone" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=Rclone&amp;oldid=11684" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=Rclone&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+<ul class="vector-menu-content-list"><li class="mw-list-item" id="t-whatlinkshere"><a accesskey="j" href="/umiacs/index.php/Special:WhatLinksHere/Rclone" title="A list of all wiki pages that link here [j]"><span>What links here</span></a></li><li class="mw-list-item" id="t-recentchangeslinked"><a accesskey="k" href="/umiacs/index.php/Special:RecentChangesLinked/Rclone" rel="nofollow" title="Recent changes in pages linked from this page [k]"><span>Related changes</span></a></li><li class="mw-list-item" id="t-specialpages"><a accesskey="q" href="/umiacs/index.php/Special:SpecialPages" title="A list of all special pages [q]"><span>Special pages</span></a></li><li class="mw-list-item" id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Printable version of this page [p]"><span>Printable version</span></a></li><li class="mw-list-item" id="t-permalink"><a href="/umiacs/index.php?title=Rclone&amp;oldid=12173" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li class="mw-list-item" id="t-info"><a href="/umiacs/index.php?title=Rclone&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
 </div>
 </nav>
 </div>
 </div>
 <footer class="mw-footer" id="footer" role="contentinfo">
 <ul id="footer-info">
-<li id="footer-info-lastmod"> This page was last edited on 12 March 2024, at 13:49.</li>
+<li id="footer-info-lastmod"> This page was last edited on 25 October 2024, at 16:54.</li>
 </ul>
 <ul id="footer-places">
 <li id="footer-places-privacy"><a href="/umiacs/index.php/UMIACS:Privacy_policy">Privacy policy</a></li>
@@ -357,6 +357,6 @@ You can view its source [e]"><span>View source</span></a></li><li class="mw-list
 <li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/umiacs/resources/assets/poweredby_mediawiki_88x31.png" srcset="/umiacs/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /umiacs/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
 </ul>
 </footer>
-<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.009","walltime":"0.010","ppvisitednodes":{"value":110,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":3583,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241024140129","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":149});});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.011","walltime":"0.013","ppvisitednodes":{"value":111,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":3583,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241030022652","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":168});});</script>
 </body>
 </html>

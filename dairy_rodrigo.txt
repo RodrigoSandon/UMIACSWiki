@@ -56,4 +56,8 @@
 - Test Questions: List the file systems I can format a hard drive with?
 - Turns out I need A100s/V100s but none are avaliable
 
+29th October 2024:
+- Started making the midterm presentation
+- Partially developed a multiclass decision tree
+
 

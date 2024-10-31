@@ -5,9 +5,10 @@ from transformers import AutoTokenizer, pipeline
 import torch
 import transformers
 from config import get_llama_token, get_qdrant_api_key, get_qdrant_endpoint_url, get_local_folder_path, get_collection_name
+import numpy as np
 
 # Init Llama
-model_id = "meta-llama/Llama-3.1-8B"
+model_id = "meta-llama/Llama-3.1-8B-Instruct"
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
 
 # Read the Llama token from the env folder
@@ -69,13 +70,26 @@ model_config = transformers.AutoConfig.from_pretrained(
     token=token
 )
 
+# Function to check available GPU memory
+def is_gpu_overloaded(threshold=0.9):
+    if torch.cuda.is_available():
+        total_memory = torch.cuda.get_device_properties(0).total_memory
+        reserved_memory = torch.cuda.memory_reserved(0)
+        return reserved_memory / total_memory > threshold
+    return False
+
+# Use mixed precision for the model
 model = transformers.AutoModelForCausalLM.from_pretrained(
     model_id,
     trust_remote_code=True,
     config=model_config,
     device_map='auto',
     token=token
-)
+).half()  # Use half precision
+
+# Check if GPU is overloaded and switch to CPU if necessary
+device = 'cuda' if torch.cuda.is_available() and not is_gpu_overloaded() else 'cpu'
+model.to(device)
 
 tokenizer = AutoTokenizer.from_pretrained(model_id,token=token)
 
@@ -106,14 +120,23 @@ def find_most_similar_docs(qdrant_client, query_embedding, top_k=5):
     return [hit.id for hit in search_result]
 
 message = input("Enter your message: ")
+# Tokenize in smaller batches
+def tokenize_in_batches(texts, batch_size=8):
+    for i in range(0, len(texts), batch_size):
+        yield tokenizer(texts[i:i + batch_size], return_tensors="pt", padding=True, truncation=True).to(device)
 
-# Generate the query embedding
-print("Tokenizing the message...")
-inputs = tokenizer(message, return_tensors="pt")
-print("Generating query embedding...")
-outputs = query_pipeline.model(**inputs, output_hidden_states=True)
-query_embedding = outputs.hidden_states[-1].mean(dim=1).squeeze().cpu().detach().numpy()
-print("Query embedding generated.")
+# Example usage of batch tokenization
+message_batches = list(tokenize_in_batches([message]))
+
+# Generate the query embedding in batches
+query_embeddings = []
+for batch in message_batches:
+    outputs = query_pipeline.model(**batch, output_hidden_states=True)
+    query_embedding = outputs.hidden_states[-1].mean(dim=1).squeeze().cpu().detach().numpy()
+    query_embeddings.append(query_embedding)
+
+# Combine embeddings if necessary
+query_embedding = np.mean(query_embeddings, axis=0)
 
 # Retrieve most similar documents from Qdrant
 print("Searching for most similar documents...")

@@ -6,19 +6,104 @@ class OurParentDocumentRetriever(ParentDocumentRetriever):
     # just use the built in one except for retrieval
     # retrieval is just wrapper around langchain vectorstore methods
 
-    def __init__(self, vectorstore, docstore, child_splitter=CharacterTextSplitter()):
+    def __init__(
+        self,
+        vectorstore,
+        docstore,
+        child_splitter=CharacterTextSplitter(),
+    ):
         """child_splitter is ONLY optional if using for retrieval"""
         super().__init__(
             vectorstore=vectorstore, docstore=docstore, child_splitter=child_splitter
         )
-        self.docstore = docstore
-        self.vectorstore = vectorstore
+        # self.docstore = docstore
+        # self.vectorstore = vectorstore
+
+        if type(vectorstore).__name__ == "RedisVectorStore":
+            self.redisfix = True
+
+        if type(vectorstore).__name__ == "QdrantVectorStore":
+            from types import MethodType
+            from typing import (
+                Any,
+                Callable,
+                Dict,
+                Generator,
+                Iterable,
+                List,
+                Optional,
+                Sequence,
+                Tuple,
+                Type,
+                Union,
+            )
+            from qdrant_client import QdrantClient, models
+            from langchain_core.documents import Document
+
+            def implant(
+                self,
+                embedding: List[float],
+                k: int = 4,
+                filter: Optional[models.Filter] = None,
+                search_params: Optional[models.SearchParams] = None,
+                offset: int = 0,
+                score_threshold: Optional[float] = None,
+                consistency: Optional[models.ReadConsistency] = None,
+                **kwargs: Any,
+            ) -> List[Document]:
+                """Return docs most similar to embedding vector.
+
+                Returns:
+                    List of Documents most similar to the query.
+                """
+                qdrant_filter = filter
+
+                self._validate_collection_for_dense(
+                    client=self.client,
+                    collection_name=self.collection_name,
+                    vector_name=self.vector_name,
+                    distance=self.distance,
+                    dense_embeddings=embedding,
+                )
+                results = self.client.query_points(
+                    collection_name=self.collection_name,
+                    query=embedding,
+                    using=self.vector_name,
+                    query_filter=qdrant_filter,
+                    search_params=search_params,
+                    limit=k,
+                    offset=offset,
+                    with_payload=True,
+                    with_vectors=False,
+                    score_threshold=score_threshold,
+                    consistency=consistency,
+                    **kwargs,
+                ).points
+
+                return [
+                    (
+                        self._document_from_point(
+                            result,
+                            self.collection_name,
+                            self.content_payload_key,
+                            self.metadata_payload_key,
+                        ),
+                        result.score,
+                    )
+                    for result in results
+                ]
+
+            self.vectorstore.similarity_search_with_score_by_vector = MethodType(
+                implant, self.vectorstore
+            )
 
     def _get_id_doc_map(self, sub_docs):
         # map so we can add scores or something idk
         ids = {}
         for doc in sub_docs:
-            del doc.metadata["embedding"]
+            # if type(self.vectorstore).__name__ == "RedisVectorStore":  # ?
+            if "embedding" in doc.metadata:
+                del doc.metadata["embedding"]
             # assumes super().id_key is doc_id ... everything here does actually
             if "doc_id" in doc.metadata and doc.metadata["doc_id"] not in ids:
                 id = doc.metadata["doc_id"]
@@ -41,9 +126,14 @@ class OurParentDocumentRetriever(ParentDocumentRetriever):
                 - return_metadata: Whether to return metadata. Defaults to True.
                 - distance_threshold: Optional distance threshold for filtering results.
         """
-        sub_docs = self.vectorstore.similarity_search(
-            query, k, return_all=True, **kwargs
-        )
+        sub_docs = None
+        if type(self.vectorstore).__name__ == "RedisVectorStore":  # idk
+            sub_docs = self.vectorstore.similarity_search(
+                query, k, return_all=True, **kwargs
+            )
+        else:
+            sub_docs = self.vectorstore.similarity_search(query, k, **kwargs)
+
         id_docs = self._get_id_doc_map(sub_docs)
         return list(id_docs.values())
 
@@ -61,9 +151,13 @@ class OurParentDocumentRetriever(ParentDocumentRetriever):
         Returns:
             List of Documents most similar to the query vector.
         """
-        sub_docs = self.vectorstore.similarity_search_by_vector(
-            query, k, return_all=True, **kwargs
-        )
+        sub_docs = None
+        if type(self.vectorstore).__name__ == "RedisVectorStore":  # idk
+            sub_docs = self.vectorstore.similarity_search_by_vector(
+                query, k, return_all=True, **kwargs
+            )
+        else:
+            sub_docs = self.vectorstore.similarity_search_by_vector(query, k, **kwargs)
         id_docs = self._get_id_doc_map(sub_docs)
         return list(id_docs.values())
 
@@ -81,9 +175,14 @@ class OurParentDocumentRetriever(ParentDocumentRetriever):
                 - return_metadata: Whether to return metadata. Defaults to True.
                 - distance_threshold: Optional distance threshold for filtering results.
         """
-        sub_docs = self.vectorstore.similarity_search_with_score(
-            query, k, return_all=True, **kwargs
-        )
+        sub_docs = None
+        if type(self.vectorstore).__name__ == "RedisVectorStore":  # idk
+            sub_docs = self.vectorstore.similarity_search_with_score(
+                query, k, return_all=True, **kwargs
+            )
+        else:
+            sub_docs = self.vectorstore.similarity_search_with_score(query, k, **kwargs)
+
         id_docs = self._get_id_doc_map([d[0] for d in sub_docs])
         for sub in sub_docs:
             if sub[0].metadata["doc_id"] in id_docs:
@@ -110,9 +209,15 @@ class OurParentDocumentRetriever(ParentDocumentRetriever):
                 - return_metadata: Whether to return metadata. Defaults to True.
                 - distance_threshold: Optional distance threshold for filtering results.
         """
-        sub_docs = self.vectorstore.similarity_search_with_score_by_vector(
-            query, k, return_all=True, **kwargs
-        )
+        sub_docs = None
+        if type(self.vectorstore).__name__ == "RedisVectorStore":  # idk
+            sub_docs = self.vectorstore.similarity_search_with_score_by_vector(
+                query, k, return_all=True, **kwargs
+            )
+        else:
+            sub_docs = self.vectorstore.similarity_search_with_score_by_vector(
+                query, k, **kwargs
+            )
         id_docs = self._get_id_doc_map([d[0] for d in sub_docs])
         for sub in sub_docs:
             if sub[0].metadata["doc_id"] in id_docs:

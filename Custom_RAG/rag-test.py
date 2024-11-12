@@ -64,16 +64,22 @@ store = None
 with open("parentdoc.pkl", "rb") as f:
     store = pkl.load(f)
 
+embedding_model = HuggingFaceEmbeddings(
+    model_name="dunzhang/stella_en_1.5B_v5",
+    model_kwargs={
+        "trust_remote_code": True,
+    },
+)
+
 vector_store = QdrantVectorStore.from_existing_collection(
     embedding=embedding_model,
     collection_name="parentdoc",
-    path="./qdrant"  # This should be the path where your Qdrant data is stored
+    path="./qdrant" 
 )
 
-# Initialize your custom retriever
 retriever = OurParentDocumentRetriever(
-    vectorstore=vector_store,  # Qdrant-based vector store from your setup
-    docstore=store  # Loaded from the pickle file
+    vectorstore=vector_store,
+    docstore=store
 )
 
 # Define a prompt template

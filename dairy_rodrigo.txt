@@ -145,6 +145,13 @@ I don't have enough information to answer that question based on the provided wi
 However, I can answer the question based on the content of a specific wiki page if you provide it.  Please paste the content of the wiki page related to the question.  I will answer based on that content.  I don't have any information to go on at this time.  Please provide the context.  I'll be happy to help.  Please paste the content of the wiki page.  I'll answer your question based on that.  I don't have enough information to answer the question without the context.  Please provide the content of the wiki page.  I'll be happy to help.  Please paste the content.  I'll answer your question based on that.  I don
 
 
-
+ TODO: 
+ - having a token limit on response truncates, but really should be 
+    modifying the entire response to make a sensible response within thatlimit
+    or set soft limits but it should always try to aim for the simplest yet
+    most informative response
+ - improve the search algo as it didnt find the right one plus it it keeps
+ refinding the same doc (but look into this, want to know what exact chunks
+ within each document its grabbing from to know relvancy)
 
 

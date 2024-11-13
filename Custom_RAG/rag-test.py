@@ -12,7 +12,7 @@ from langchain_groq import ChatGroq
 os.environ["GROQ_API_KEY"]="*"
 
 llm = ChatGroq(
-    model="mixtral-8x7b-32768",
+    model="llama-3.1-8b-instant",
     temperature=0,
     max_tokens=None,
     timeout=None,
@@ -76,6 +76,30 @@ def qa_chain(query):
     
     return result
 
-query = "What is UMIACS?"
-result = qa_chain(query)
-print(result)
+# query = "What is UMIACS?"
+# result = qa_chain(query)
+# print(result)
+
+def run_qa_pipeline(input_file, output_file):
+    with open(input_file, "r") as infile, open(output_file, "w") as outfile:
+        for line in infile:
+            question = line.strip()
+            
+            if not question:
+                continue
+            
+            try:
+                answer = qa_chain(question)
+            except Exception as e:
+                answer = f"Error: {str(e)}"
+            
+            outfile.write(f"Question: {question}\n")
+            outfile.write(f"Answer: {answer}\n")
+            outfile.write("\n")
+
+input_file = "questions.txt" 
+output_file = "rag-test-results.txt" 
+
+# Run the QA pipeline and save the results
+run_qa_pipeline(input_file, output_file)
+print("Results saved to rag-test-results.txt")

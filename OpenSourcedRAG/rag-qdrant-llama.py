@@ -92,6 +92,7 @@ device = 'cuda' if torch.cuda.is_available() and not is_gpu_overloaded() else 'c
 model.to(device)
 
 tokenizer = AutoTokenizer.from_pretrained(model_id,token=token)
+tokenizer.pad_token = tokenizer.eos_token  # or another appropriate token
 
 query_pipeline = pipeline(
     "text-generation",
@@ -101,6 +102,9 @@ query_pipeline = pipeline(
     max_length=1024,
     device_map="auto",
 )
+
+# Ensure the model is on the GPU
+query_pipeline.model.to('cuda')
 
 def find_most_similar_docs(qdrant_client, query_embedding, top_k=5):
     """
@@ -119,45 +123,55 @@ def find_most_similar_docs(qdrant_client, query_embedding, top_k=5):
     )
     return [hit.id for hit in search_result]
 
-message = input("Enter your message: ")
-# Tokenize in smaller batches
-def tokenize_in_batches(texts, batch_size=8):
-    for i in range(0, len(texts), batch_size):
-        yield tokenizer(texts[i:i + batch_size], return_tensors="pt", padding=True, truncation=True).to(device)
+# Define the wiki prompt to append to each question
+wiki_prompt = (
+    "You are an AI assistant specifically trained to answer questions based ONLY on the provided wiki page content. "
+    "Your knowledge is limited to the information given in the context. Follow these rules strictly:\n\n"
+    "- Only use information explicitly stated in the provided context.\n"
+    "- If the context doesn't contain relevant information to answer the question, say, 'I don't have enough information to answer that question based on the provided wiki page content.'\n"
+    "- Do not use any external knowledge or make assumptions beyond what's in the context.\n"
+    "- If asked about topics not covered in the context, state that the wiki page content doesn't cover that topic.\n"
+    "- Be precise and concise in your answers, citing specific parts of the context when possible.\n"
+    "- If the question is ambiguous or unclear based on the context, ask for clarification.\n"
+    "- Never claim to know more than what's provided in the context.\n"
+    "- If the context contains conflicting information, point out the inconsistency without resolving it.\n"
+    "- Remember, your role is to interpret and relay the information from the wiki page content, not to provide additional knowledge or opinions.\n\n"
+)
 
-# Example usage of batch tokenization
-message_batches = list(tokenize_in_batches([message]))
+message = input("Enter your question: ")
 
-# Generate the query embedding in batches
-query_embeddings = []
-for batch in message_batches:
-    outputs = query_pipeline.model(**batch, output_hidden_states=True)
-    query_embedding = outputs.hidden_states[-1].mean(dim=1).squeeze().cpu().detach().numpy()
-    query_embeddings.append(query_embedding)
+# Tokenize the full message
+inputs = tokenizer(message, return_tensors="pt", padding=True, truncation=True).to('cuda')
 
-# Combine embeddings if necessary
-query_embedding = np.mean(query_embeddings, axis=0)
+# Run the model
+outputs = query_pipeline.model(**inputs, output_hidden_states=True)
+query_embedding = outputs.hidden_states[-1].mean(dim=1).squeeze().cpu().detach().numpy()[:768]
 
 # Retrieve most similar documents from Qdrant
 print("Searching for most similar documents...")
 relevant_docs = find_most_similar_docs(client, query_embedding, top_k=5)
 print(f"Found {len(relevant_docs)} similar documents.")
 
-# Concatenate the retrieved documents with the message
+# Concatenate the retrieved documents with the wiki prompt and question
 print("Concatenating retrieved documents with the message...")
-context = " ".join([client.get_document(get_collection_name(), doc_id).payload["content"] for doc_id in relevant_docs])
-full_message = context + "\n" + message
+context = " ".join([
+    (lambda doc_id: (
+        print(f"Payload for doc_id {doc_id}: {client.query_points(collection_name=get_collection_name(), query=doc_id, with_payload=True).points[0].payload}") or
+        client.query_points(collection_name=get_collection_name(), query=doc_id, with_payload=True).points[0].payload.get("content", "")
+    ))(doc_id) for doc_id in relevant_docs
+])
+full_message_with_context = wiki_prompt + context + "\n" + message  # Include context and question
 print("Full message prepared.")
 
 # Generate the response using the full context and message
 print("Generating response...")
 sequences = query_pipeline(
-    full_message,
+    full_message_with_context,
     do_sample=True,
     top_k=10,
     num_return_sequences=1,
     eos_token_id=tokenizer.eos_token_id,
-    max_length=200,
+    max_length=400,
 )
 
 question = sequences[0]['generated_text'][:len(message)]

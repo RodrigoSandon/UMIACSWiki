@@ -53,7 +53,9 @@
 - Running current implementation on open-sourced material
 - But can't run it on my local machine, need to host it on the cloud
 - Have a VM running on the cloud to run this pipeline
-- Test Questions: List the file systems I can format a hard drive with?
+- Test Questions: 
+    - List the file systems I can format a hard drive with?
+      file:///Users/rodrigosandon/Documents/CMSC/473/UMIACSWiki/dataset/raw_html/BitLocker_PersonalUse.html
 - Turns out I need A100s/V100s but none are avaliable
 
 29th October 2024:
@@ -64,6 +66,92 @@
 - Presented
 - Need to come up with figures, how?
 
+Nov 7th 2024:
+- Finding a A100 to work with
 
+Nov 13th 2024:
+- was able to run RAG on GCP!
+
+    - List the file systems I can format a hard drive with?
+      file:///Users/rodrigosandon/Documents/CMSC/473/UMIACSWiki/dataset/raw_html/BitLocker_PersonalUse.html
+    Answer with no prompt engineering:
+    (pytorch-cuda-rag) rodrigosandon@gpu-machine-us-east1-b:~/personalTA$ python3 rag_3.py
+cuda:0
+Collection 'umiacs_wiki' already exists.
+Loading checkpoint shards: 100%|████████████| 4/4 [00:09<00:00,  2.43s/it]
+Enter your message: List the file systems I can format a hard drive with?
+Searching for most similar documents...
+Found 5 similar documents.
+Concatenating retrieved documents with the message...
+Payload for doc_id 5: {'file_name': 'Ubuntu_SoftwareCenter.html'}
+Payload for doc_id 7: {'file_name': 'Email_Barracuda.html'}
+Payload for doc_id 9: {'file_name': 'Email_Barracuda.html'}
+Payload for doc_id 1: {'file_name': 'Ubuntu_SoftwareCenter.html'}
+Payload for doc_id 3: {'file_name': 'Ubuntu_SoftwareCenter.html'}
+Full message prepared.
+Generating response...
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+Question:     
+List the file systems I can format a hard drive 
+Answer: with? 
+
+Here is the list of file systems I can format a hard drive with:
+
+1. **NTFS** (NT File System): This is the default file system for Windows operating systems. It supports file sizes up to 256 terabytes, supports file permissions and access control lists (ACLs), and has built-in compression.
+
+2. **FAT32**: This is a file system that supports file sizes up to 4 GB, is widely supported by various operating systems, and is often used for flash drives and other portable storage devices.
+
+3. **HFS+ (Mac OS Extended)**: This is the default file system for macOS operating systems. It supports file sizes up to 8 exabytes, has built-in journaling, and supports file permissions and ACLs.
+
+4. **Ext4**: This is a file system that supports file sizes up to 1 exabyte, has built-in journaling, and
+
+
+    ****With prompt engineering:****
+
+    (pytorch-cuda-rag) rodrigosandon@gpu-machine-us-east1-b:~/personalTA$ python3 rag_4.py
+cuda:0
+Collection 'umiacs_wiki' already exists.
+Loading checkpoint shards: 100%|████████████| 4/4 [00:09<00:00,  2.43s/it]
+Enter your question: List the file systems I can format a hard drive with?
+Searching for most similar documents...
+Found 5 similar documents.
+Concatenating retrieved documents with the message...
+Payload for doc_id 5: {'file_name': 'Ubuntu_SoftwareCenter.html'}
+Payload for doc_id 7: {'file_name': 'Email_Barracuda.html'}
+Payload for doc_id 9: {'file_name': 'Email_Barracuda.html'}
+Payload for doc_id 1: {'file_name': 'Ubuntu_SoftwareCenter.html'}
+Payload for doc_id 3: {'file_name': 'Ubuntu_SoftwareCenter.html'}
+Full message prepared.
+Generating response...
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+Question: You are an AI assistant specifically trained to answe
+Answer: r questions based ONLY on the provided wiki page content. Your knowledge is limited to the information given in the context. Follow these rules strictly:
+
+- Only use information explicitly stated in the provided context.
+- If the context doesn't contain relevant information to answer the question, say, 'I don't have enough information to answer that question based on the provided wiki page content.'
+- Do not use any external knowledge or make assumptions beyond what's in the context.
+- If asked about topics not covered in the context, state that the wiki page content doesn't cover that topic.
+- Be precise and concise in your answers, citing specific parts of the context when possible.
+- If the question is ambiguous or unclear based on the context, ask for clarification.
+- Never claim to know more than what's provided in the context.
+- If the context contains conflicting information, point out the inconsistency without resolving it.
+- Remember, your role is to interpret and relay the information from the wiki page content, not to provide additional knowledge or opinions.
+
+    
+List the file systems I can format a hard drive with? 
+
+I don't have enough information to answer that question based on the provided wiki page content.  Please provide the context for this question. 
+
+However, I can answer the question based on the content of a specific wiki page if you provide it.  Please paste the content of the wiki page related to the question.  I will answer based on that content.  I don't have any information to go on at this time.  Please provide the context.  I'll be happy to help.  Please paste the content of the wiki page.  I'll answer your question based on that.  I don't have enough information to answer the question without the context.  Please provide the content of the wiki page.  I'll be happy to help.  Please paste the content.  I'll answer your question based on that.  I don
+
+
+ TODO: 
+ - having a token limit on response truncates, but really should be 
+    modifying the entire response to make a sensible response within thatlimit
+    or set soft limits but it should always try to aim for the simplest yet
+    most informative response
+ - improve the search algo as it didnt find the right one plus it it keeps
+ refinding the same doc (but look into this, want to know what exact chunks
+ within each document its grabbing from to know relvancy)
 
 

@@ -154,6 +154,5 @@ However, I can answer the question based on the content of a specific wiki page 
  refinding the same doc (but look into this, want to know what exact chunks
  within each document its grabbing from to know relvancy)
 
-
 Nov 14th 2024:
 - Looking into an embedding model in langchain and dynamic response forming

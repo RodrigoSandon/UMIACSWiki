@@ -9,7 +9,7 @@ from langchain_qdrant import QdrantVectorStore
 from OurParentDocumentRetriever import OurParentDocumentRetriever
 from langchain_groq import ChatGroq
 
-os.environ["GROQ_API_KEY"]="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"
+os.environ["GROQ_API_KEY"]="*"
 
 llm = ChatGroq(
     model="llama-3.1-70b-versatile",

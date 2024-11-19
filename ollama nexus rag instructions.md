@@ -28,7 +28,9 @@ by default ollama models are quantized so look for the tags that aren't
 
 # i havent tested anything after this
 
-`run` is interactive, so for running a script you can use:
+running the model isn't necessary if using langchain i think, because it does it for you.
+
+`run` is interactive so if you do need to run it you can use, which will also preload the model or something:
 ```
 echo "" | /fs/nexus-projects/umiacs-wiki-chatbot/ollama/bin/ollama run llama3.1:8b-instruct-fp16
 ```

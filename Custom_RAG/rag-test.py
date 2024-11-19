@@ -8,17 +8,63 @@ import pickle as pkl
 from langchain_qdrant import QdrantVectorStore
 from OurParentDocumentRetriever import OurParentDocumentRetriever
 from langchain_groq import ChatGroq
+import torch
 
-os.environ["GROQ_API_KEY"]="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"
+# os.environ["GROQ_API_KEY"]="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"
 
-llm = ChatGroq(
-    model="llama-3.1-70b-versatile",
-    temperature=0,
-    max_tokens=None,
-    timeout=None,
-    max_retries=2,
+# llm = ChatGroq(
+#     model="llama-3.1-70b-versatile",
+#     temperature=0,
+#     max_tokens=None,
+#     timeout=None,
+#     max_retries=2,
+# )
+# print("llm")
+
+# HuggingFace model and tokenizer setup
+model_id = "meta-llama/Llama-3.1-8B-Instruct"
+device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
+token = "*"
+
+login(token=token)
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type='nf4',
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_compute_dtype=bfloat16
 )
-print("llm")
+
+# Load model
+model_config = AutoConfig.from_pretrained(
+    model_id,
+    trust_remote_code=True,
+    max_new_tokens=1024,
+    use_auth_token=token
+)
+
+model = transformers.AutoModelForCausalLM.from_pretrained(
+    model_id,
+    trust_remote_code=True,
+    config=model_config,
+    quantization_config=bnb_config,
+    device_map='auto',
+)
+
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+# Create HuggingFace pipeline
+query_pipeline = transformers.pipeline(
+        "text-generation",
+        model=model,
+        tokenizer=tokenizer,
+        torch_dtype=torch.float16,
+        max_length=1024,
+        device_map="auto"
+)
+
+# Wrap the model pipeline for LangChain
+llm = HuggingFacePipeline(pipeline=query_pipeline)
 
 store = None
 with open("parentdoc.pkl", "rb") as f:

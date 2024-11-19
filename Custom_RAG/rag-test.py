@@ -8,17 +8,63 @@ import pickle as pkl
 from langchain_qdrant import QdrantVectorStore
 from OurParentDocumentRetriever import OurParentDocumentRetriever
 from langchain_groq import ChatGroq
+import torch
 
-os.environ["GROQ_API_KEY"]="*"
+# os.environ["GROQ_API_KEY"]="*"
 
-llm = ChatGroq(
-    model="llama-3.1-8b-instant",
-    temperature=0,
-    max_tokens=None,
-    timeout=None,
-    max_retries=2,
+# llm = ChatGroq(
+#     model="llama-3.1-70b-versatile",
+#     temperature=0,
+#     max_tokens=None,
+#     timeout=None,
+#     max_retries=2,
+# )
+# print("llm")
+
+# HuggingFace model and tokenizer setup
+model_id = "meta-llama/Llama-3.1-8B-Instruct"
+device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
+token = "*"
+
+login(token=token)
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type='nf4',
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_compute_dtype=bfloat16
 )
-print("llm")
+
+# Load model
+model_config = AutoConfig.from_pretrained(
+    model_id,
+    trust_remote_code=True,
+    max_new_tokens=1024,
+    use_auth_token=token
+)
+
+model = transformers.AutoModelForCausalLM.from_pretrained(
+    model_id,
+    trust_remote_code=True,
+    config=model_config,
+    quantization_config=bnb_config,
+    device_map='auto',
+)
+
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+# Create HuggingFace pipeline
+query_pipeline = transformers.pipeline(
+        "text-generation",
+        model=model,
+        tokenizer=tokenizer,
+        torch_dtype=torch.float16,
+        max_length=1024,
+        device_map="auto"
+)
+
+# Wrap the model pipeline for LangChain
+llm = HuggingFacePipeline(pipeline=query_pipeline)
 
 store = None
 with open("parentdoc.pkl", "rb") as f:
@@ -50,9 +96,15 @@ prompt = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "You are given a question and some relevant context. Use the context to generate a response.",
+            '''
+            You are given a question along with relevant background information to guide your answer. 
+            Use the context to create a response that is clear, concise, and accurate, incorporating specific details as needed.
+            - If the question is informational, respond directly, ensuring alignment with the context.
+            - If the question is a request, include a clear response and outline the steps or considerations involved in filing or fulfilling that request.
+            - If additional details or assumptions are needed to provide a complete answer, acknowledge these respectfully to maintain clarity and transparency.
+            ''',
         ),
-        ("human", "Context: {context}\nQuestion: {question}"),
+        ("human", "Context: {context}\nQuestion: {question}, \n\n Answer the question, remember to only use facts from the context provided. If the question is a request, include a clear response and outline the steps or considerations involved in filing or fulfilling that request."),
     ]
 )
 
@@ -63,7 +115,8 @@ def qa_chain(query):
     embedding = embedding.tolist()
     res = retriever.similarity_search_with_score_by_vector(embedding, k=4)
     print("s2p embedding:", [(x[0].metadata["name"], x[1]) for x in res])
-    context = [x[0].page_content for x in res]
+    # context = [x[0].page_content for x in res]
+    context = res[0][0].page_content
     
     chain = prompt | llm
     
@@ -76,30 +129,30 @@ def qa_chain(query):
     
     return result
 
-# query = "What is UMIACS?"
-# result = qa_chain(query)
-# print(result)
+query = "I am writing to request additional storage upto 100 GB for the CMSC848F\ncourse I am taking this semester. I have CC'd the TAs for this course and\nmy UMIACS account id is mentioned in the subject line of this email"
+result = qa_chain(query)
+print(result)
 
-def run_qa_pipeline(input_file, output_file):
-    with open(input_file, "r") as infile, open(output_file, "w") as outfile:
-        for line in infile:
-            question = line.strip()
+# def run_qa_pipeline(input_file, output_file):
+#     with open(input_file, "r") as infile, open(output_file, "w") as outfile:
+#         for line in infile:
+#             question = line.strip()
             
-            if not question:
-                continue
+#             if not question:
+#                 continue
             
-            try:
-                answer = qa_chain(question)
-            except Exception as e:
-                answer = f"Error: {str(e)}"
+#             try:
+#                 answer = qa_chain(question)
+#             except Exception as e:
+#                 answer = f"Error: {str(e)}"
             
-            outfile.write(f"Question: {question}\n")
-            outfile.write(f"Answer: {answer}\n")
-            outfile.write("\n")
+#             outfile.write(f"Question: {question}\n")
+#             outfile.write(f"Answer: {answer}\n")
+#             outfile.write("\n")
 
-input_file = "questions.txt" 
-output_file = "rag-test-results.txt" 
+# input_file = "questions.txt" 
+# output_file = "rag-test-results.txt" 
 
-# Run the QA pipeline and save the results
-run_qa_pipeline(input_file, output_file)
-print("Results saved to rag-test-results.txt")
+# # Run the QA pipeline and save the results
+# run_qa_pipeline(input_file, output_file)
+# print("Results saved to rag-test-results.txt")

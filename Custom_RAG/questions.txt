@@ -1,0 +1,60 @@
+Why can’t I login to nexusgroup00.umiacs.umd.edu?
+How do I configure the UMIACS VPN for my computer?
+My UMIACS VPN doesn’t work. Why?
+What do I need to do to get a UMIACS account?
+What resources does my PI/lab provide me access to in UMIACS?
+Where is the HDMI cable for my desk?
+What is the Nexus?
+Where can I store my files?
+How do I change my password?
+What is Duo and why do I need to enroll?
+Where are data sets located?
+What software is available?
+How do I use the cluster?
+What is SLURM and how to use it?
+What GPU's are available in UMIACS?
+How do I get access to the printer room?
+How do I get access to GitLab?
+How do I get access to a lab/conference room?
+How do I print from my laptop?
+How do I get more space for my homedirectory?
+What options are there for hosting webpages (statically generated? Custom backend?)
+How do I get sudo access to run docker?
+How to access an object store?
+How do I access my scratch or project directory?
+How do I install software on my UMIACS computer?
+How do I convert my workstation to self-support?
+How do I get physical equipment for my desk?
+Can I borrow <x> item from the UMIACS Help Desk?
+How do I get the internet on my personal device from the jacks?
+How to contact Staff?
+Where is the Help Desk?
+I want to order <something>. What should I do? 
+What Operating Systems do you support?
+How do I download my UMIACS data?
+How do I change my desk?
+How long can I borrow a laptop for?
+How to restore accidentally deleted files?
+What C/C++ compilers are available?
+How to install Java on my machine?
+How to create Python virtual environment? 
+I submitted an account request but can’t login, how do I fix this?
+Can I give someone access to my project directory?
+Where can I save files?
+What is a scratch directory?
+What is the difference between a scratch directory and a project directory?
+How do I update my Pi/sponsor?
+Can I upload a dataset to a dataset directory?
+How do I request a project directory?
+What is the difference between a UMIACS supported host and a self-supported host?
+Can I convert my desktop to self-supported?
+How do I see my directory’s quota?
+How do I check how much free space is in my directory?
+How do I restore a file from a snapshot?
+What happens to my UMIACS account after I graduate?
+My UMIACS account was deleted, how do I get my files?
+Why isn’t my SLURM job running?
+How do I check the status of my SLURM job?
+Why did my SLURM job fail?
+How do I request an interactive SLURM job?
+How do I request a job with a _____ GPU?

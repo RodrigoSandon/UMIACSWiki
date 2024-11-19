@@ -156,3 +156,7 @@ However, I can answer the question based on the content of a specific wiki page 
 
 Nov 14th 2024:
 - Looking into an embedding model in langchain and dynamic response forming
+
+Nov 19th 2024
+- Figured out next steps, I said that I will self host everything
+- and 20 questions 

@@ -1,32 +1,26 @@
-from transformers import AutoTokenizer, AutoConfig, BitsAndBytesConfig
 import os
+os.environ["HF_HOME"] = "/fs/nexus-projects/umiacs-wiki-chatbot/.cache/huggingfacehub/hub"
+from transformers import AutoTokenizer, AutoConfig, BitsAndBytesConfig
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain_huggingface import HuggingFaceEmbeddings
 import pickle as pkl
 from langchain_qdrant import QdrantVectorStore
 from OurParentDocumentRetriever import OurParentDocumentRetriever
-from langchain_groq import ChatGroq
 import json
+from langchain_ollama import ChatOllama
 
 
 def load():
-    os.environ["GROQ_API_KEY"] = (
-        "your key"
-    )
 
-    llm = ChatGroq(
-        model="llama-3.1-8b-instant",
-        temperature=0,
-        max_tokens=None,
-        timeout=None,
-        max_retries=2,
-    )
+    llm = ChatOllama(model="llama3.1:8b-instruct-fp16", temperature=.5, num_ctx=32768, keep_alive=-1)
+    llm.invoke("") # force ollama to load it asap, shouldn't block the script anyways
     print("llm")
 
     store = None
     with open("parentdoc.pkl", "rb") as f:
         store = pkl.load(f)
+    print("name:content map")
 
     embedding_model = HuggingFaceEmbeddings(
         model_name="dunzhang/stella_en_1.5B_v5",
@@ -34,10 +28,12 @@ def load():
             "trust_remote_code": True,
         },
     )
+    print("embedding model")
 
     vector_store = QdrantVectorStore.from_existing_collection(
         embedding=embedding_model, collection_name="parentdoc", path="./qdrant"
     )
+    print("vectorstore")
 
     retriever = OurParentDocumentRetriever(vectorstore=vector_store, docstore=store)
 
@@ -59,9 +55,15 @@ def run(cache):
         [
             (
                 "system",
-                "You are given a question and some relevant context. Use the context to generate a response.",
+                '''
+                You are given a question along with relevant background information to guide your answer. 
+                Use the context to create a response that is clear, concise, and accurate, incorporating specific details as needed.
+                - If the question is informational, respond directly, ensuring alignment with the context.
+                - If the question is a request, include a clear response and outline the steps or considerations involved in filing or fulfilling that request.
+                - If additional details or assumptions are needed to provide a complete answer, acknowledge these respectfully to maintain clarity and transparency.
+                ''',
             ),
-            ("human", "Context: {context}\nQuestion: {question}"),
+            ("human", "Context: {context}\nQuestion: {question}, \n\n Answer the question, remember to only use facts from the context provided. If the question is a request, include a clear response and outline the steps or considerations involved in filing or fulfilling that request."),
         ]
     )
 
@@ -99,11 +101,14 @@ def run(cache):
                     outdata[line] = answer.content
                 except Exception as e:
                     print(e)
+                    outfile.seek(0)
                     json.dump(outdata, outfile, indent=4)
+                    outfile.truncate()
                     answer = f"Error: {str(e)}"
-                break
-            print(outdata)
-            # json.dump(outdata, outfile, indent=4)
+            print(f"{len(outdata.keys())} QA pairs")
+            outfile.seek(0)
+            json.dump(outdata, outfile, indent=4)
+            outfile.truncate()
 
     input_file = "/fs/nexus-projects/umiacs-wiki-chatbot/tickets-20241031.json"
     output_file = "/fs/nexus-projects/umiacs-wiki-chatbot/ticketresponses1.json"

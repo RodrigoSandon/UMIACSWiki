@@ -35,8 +35,8 @@ running the model isn't necessary if using langchain i think, because it does it
 echo "" | /fs/nexus-projects/umiacs-wiki-chatbot/ollama/bin/ollama run llama3.1:8b-instruct-fp16
 ```
 
-ollama uses gpu 0 by default, so in order to run python scripts use:
+ollama uses gpu 0 by default, so to run python scripts on gpu 1 use:
 ```
 CUDA_VISIBLE_DEVICES=1 script.py
 ```
-this is necessary as langchain and most libraries seem to just use the first available device with no way to change that
+HOWEVER ollama only puts the model in vram when a chat request is made, so if you do that after loading the embedding model, ollama will put the model on the other gpu anyways (?)

@@ -111,7 +111,7 @@ def run(cache):
             outfile.truncate()
 
     input_file = "/fs/nexus-projects/umiacs-wiki-chatbot/tickets-20241031.json"
-    output_file = "/fs/nexus-projects/umiacs-wiki-chatbot/ticketresponses1.json"
+    output_file = "/fs/nexus-projects/umiacs-wiki-chatbot/dummyname.json"
 
     # Run the QA pipeline and save the results
     run_qa_pipeline(input_file, output_file)

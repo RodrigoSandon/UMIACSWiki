@@ -2,3 +2,4 @@
 *.pt
 .DS_STORE
 /ignore
+*.pyc

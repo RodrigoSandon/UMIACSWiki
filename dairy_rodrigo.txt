@@ -160,3 +160,6 @@ Nov 14th 2024:
 Nov 19th 2024
 - Figured out next steps, I said that I will self host everything
 - and 20 questions 
+
+Nov 21st 2024:
+- Started thinking about the cost estimate for running our pipeline

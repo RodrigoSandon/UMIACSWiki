@@ -9,6 +9,11 @@ from langchain_qdrant import QdrantVectorStore
 from OurParentDocumentRetriever import OurParentDocumentRetriever
 from langchain_groq import ChatGroq
 import torch
+from huggingface_hub import login
+from langchain.llms import HuggingFacePipeline
+import transformers
+from transformers import AutoModelForCausalLM
+
 
 # os.environ["GROQ_API_KEY"]="*"
 
@@ -39,7 +44,7 @@ bnb_config = BitsAndBytesConfig(
 model_config = AutoConfig.from_pretrained(
     model_id,
     trust_remote_code=True,
-    max_new_tokens=1024,
+    max_new_tokens=2048,
     use_auth_token=token
 )
 
@@ -55,13 +60,14 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 
 # Create HuggingFace pipeline
 query_pipeline = transformers.pipeline(
-        "text-generation",
-        model=model,
-        tokenizer=tokenizer,
-        torch_dtype=torch.float16,
-        max_length=1024,
-        device_map="auto"
+    "text-generation",
+    model=model,
+    tokenizer=tokenizer,
+    torch_dtype=torch.float16,
+    max_new_tokens=200,  # Limit the number of tokens to generate
+    device_map="auto"
 )
+
 
 # Wrap the model pipeline for LangChain
 llm = HuggingFacePipeline(pipeline=query_pipeline)

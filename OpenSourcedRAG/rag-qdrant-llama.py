@@ -6,6 +6,7 @@ import torch
 import transformers
 from config import get_llama_token, get_qdrant_api_key, get_qdrant_endpoint_url, get_local_folder_path, get_collection_name
 import numpy as np
+from langchain_huggingface import HuggingFaceEmbeddings
 
 # Init Llama
 model_id = "meta-llama/Llama-3.1-8B-Instruct"
@@ -44,9 +45,22 @@ except Exception as e:
 from qdrant_client.models import PointStruct
 
 def embed_document(file_path):
-    # Dummy function to convert a document to a vector
-    # Replace with your actual embedding logic
-    return [0.0] * 768  # Example vector of size 768
+    # Load the document content
+    with open(file_path, 'r') as file:
+        document_content = file.read()
+    
+    # Initialize the embedding model
+    embedding_model = HuggingFaceEmbeddings(
+        model_name="dunzhang/stella_en_1.5B_v5",
+        model_kwargs={
+            "trust_remote_code": True,
+        },
+    )
+    
+    # Encode the document content to get the embedding
+    embedding = embedding_model._client.encode(document_content, prompt_name="s2p_query")
+    
+    return embedding.tolist()  # Convert to list if needed
 
 # Iterate over files in the local folder and upload them
 for idx, file_name in enumerate(os.listdir(local_folder_path)):

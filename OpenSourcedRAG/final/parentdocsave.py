@@ -151,7 +151,7 @@ def get_html(file, sep=" "):
     return "?"
 
 
-dataset_path = "../dataset/raw_html"
+dataset_path = "../raw_html"
 files = os.listdir(dataset_path)
 pages = []
 

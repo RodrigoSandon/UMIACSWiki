@@ -1,62 +1,56 @@
-from transformers import AutoTokenizer, AutoConfig, BitsAndBytesConfig
-from torch import bfloat16
+from transformers import AutoTokenizer, AutoConfig
 import os
-from langchain.chains import RetrievalQA
-from langchain.prompts import PromptTemplate
 from langchain_huggingface import HuggingFaceEmbeddings
 import pickle as pkl
 from langchain_qdrant import QdrantVectorStore
 from OurParentDocumentRetriever import OurParentDocumentRetriever
-from langchain_groq import ChatGroq
 import torch
-from huggingface_hub import login
-from langchain.llms import HuggingFacePipeline
+from langchain_community.llms import HuggingFacePipeline
 import transformers
-from transformers import AutoModelForCausalLM
+from dotenv import load_dotenv
+from langchain_core.prompts import ChatPromptTemplate
+import warnings
+import logging
 
 
-# os.environ["GROQ_API_KEY"]="*"
-
-# llm = ChatGroq(
-#     model="llama-3.1-70b-versatile",
-#     temperature=0,
-#     max_tokens=None,
-#     timeout=None,
-#     max_retries=2,
-# )
-# print("llm")
+# Load environment variables from a .env file
+load_dotenv()
 
 # HuggingFace model and tokenizer setup
 model_id = "meta-llama/Llama-3.1-8B-Instruct"
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
-token = "*"
+#print("device:", device)
+token = os.getenv("llama_instruct_token")
 
-login(token=token)
+# Suppress HuggingFace warnings
+warnings.filterwarnings('ignore')
+logging.getLogger("transformers").setLevel(logging.ERROR)
 
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_quant_type='nf4',
-    bnb_4bit_use_double_quant=True,
-    bnb_4bit_compute_dtype=bfloat16
-)
-
-# Load model
+# Load model (add quiet=True)
 model_config = AutoConfig.from_pretrained(
     model_id,
     trust_remote_code=True,
     max_new_tokens=2048,
-    use_auth_token=token
+    token=token,
+    quiet=True
 )
 
+# Use mixed precision for the model
 model = transformers.AutoModelForCausalLM.from_pretrained(
     model_id,
     trust_remote_code=True,
     config=model_config,
-    quantization_config=bnb_config,
-    device_map='auto',
+    token=token,
+    torch_dtype=torch.float16 # Use float16 instead of calling .half()
 )
 
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+model.to(device)
+
+tokenizer = AutoTokenizer.from_pretrained(
+    model_id,
+    token=token,
+    trust_remote_code=True
+)
 
 # Create HuggingFace pipeline
 query_pipeline = transformers.pipeline(
@@ -68,6 +62,8 @@ query_pipeline = transformers.pipeline(
     device_map="auto"
 )
 
+# Ensure the model is on the GPU
+query_pipeline.model.to('cuda')
 
 # Wrap the model pipeline for LangChain
 llm = HuggingFacePipeline(pipeline=query_pipeline)
@@ -96,36 +92,30 @@ retriever = OurParentDocumentRetriever(
 
 print("retriever")
 
-from langchain_core.prompts import ChatPromptTemplate
-
-prompt = ChatPromptTemplate.from_messages(
-    [
-        (
-            "system",
-            '''
-            You are given a question along with relevant background information to guide your answer. 
-            Use the context to create a response that is clear, concise, and accurate, incorporating specific details as needed.
-            - If the question is informational, respond directly, ensuring alignment with the context.
-            - If the question is a request, include a clear response and outline the steps or considerations involved in filing or fulfilling that request.
-            - If additional details or assumptions are needed to provide a complete answer, acknowledge these respectfully to maintain clarity and transparency.
-            ''',
-        ),
-        ("human", "Context: {context}\nQuestion: {question}, \n\n Answer the question, remember to only use facts from the context provided. If the question is a request, include a clear response and outline the steps or considerations involved in filing or fulfilling that request."),
-    ]
-)
+prompt = ChatPromptTemplate.from_messages([
+    (
+        "system",
+        '''
+        You are a helpful assistant. Provide direct, concise answers based on the given context.
+        Do not repeat or reference the context in your response.
+        
+        Context: {context}
+        ''',
+    ),
+    ("human", "Answer the question: {question}"),
+])
 
 # Create the QA chain using the retriever to get the context dynamically
 def qa_chain(query):
-    # Retrieve relevant context from the retriever
     embedding = embedding_model._client.encode(query, prompt_name="s2p_query")
     embedding = embedding.tolist()
-    res = retriever.similarity_search_with_score_by_vector(embedding, k=4)
-    print("s2p embedding:", [(x[0].metadata["name"], x[1]) for x in res])
-    # context = [x[0].page_content for x in res]
-    context = res[0][0].page_content
+    res = retriever.similarity_search_with_score_by_vector(embedding, k=3)
     
+    # Only use the top document for context
+    context = res[0][0].page_content
     chain = prompt | llm
     
+    # Now include both context and question in the chain invocation
     result = chain.invoke(
         {
             "context": context,
@@ -133,32 +123,22 @@ def qa_chain(query):
         }
     )
     
-    return result
+    # Extract just the answer part after "Answer:"
+    answer = str(result)
+    if "Answer:" in answer:
+        answer = answer.split("Answer:")[-1].strip()
+    
+    # Print the similarity scores and document names for each document
+    print("\nRetrieved documents (similarity scores):")
+    for i, (doc, score) in enumerate(res, 1):
+        doc_name = doc.metadata.get('name', 'Unknown document')
+        print(f"Doc {i}: {doc_name} (score: {str(score)})")
+    
+    return answer
 
-query = "I am writing to request additional storage upto 100 GB for the CMSC848F\ncourse I am taking this semester. I have CC'd the TAs for this course and\nmy UMIACS account id is mentioned in the subject line of this email"
-result = qa_chain(query)
-print(result)
-
-# def run_qa_pipeline(input_file, output_file):
-#     with open(input_file, "r") as infile, open(output_file, "w") as outfile:
-#         for line in infile:
-#             question = line.strip()
-            
-#             if not question:
-#                 continue
-            
-#             try:
-#                 answer = qa_chain(question)
-#             except Exception as e:
-#                 answer = f"Error: {str(e)}"
-            
-#             outfile.write(f"Question: {question}\n")
-#             outfile.write(f"Answer: {answer}\n")
-#             outfile.write("\n")
-
-# input_file = "questions.txt" 
-# output_file = "rag-test-results.txt" 
-
-# # Run the QA pipeline and save the results
-# run_qa_pipeline(input_file, output_file)
-# print("Results saved to rag-test-results.txt")
+while True:
+    query = input("Enter your query (or type 'exit' to quit): ")
+    if query.lower() == 'exit':
+        break
+    result = qa_chain(query)  # Removed top_docs
+    print("\nAnswer:", result)  # Only print the answer

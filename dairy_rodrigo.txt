@@ -55,6 +55,7 @@
 - Have a VM running on the cloud to run this pipeline
 - Test Questions: 
     - List the file systems I can format a hard drive with?
+    - What are some other requirements for bitlocker?
       file:///Users/rodrigosandon/Documents/CMSC/473/UMIACSWiki/dataset/raw_html/BitLocker_PersonalUse.html
 - Turns out I need A100s/V100s but none are avaliable
 

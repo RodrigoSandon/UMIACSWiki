@@ -30,7 +30,6 @@ logging.getLogger("transformers").setLevel(logging.ERROR)
 model_config = AutoConfig.from_pretrained(
     model_id,
     trust_remote_code=True,
-    max_new_tokens=2048,
     token=token,
     quiet=True
 )
@@ -58,8 +57,8 @@ query_pipeline = transformers.pipeline(
     model=model,
     tokenizer=tokenizer,
     torch_dtype=torch.float16,
-    max_new_tokens=200,  # Limit the number of tokens to generate
-    device_map="auto"
+    device_map="auto",
+    max_new_tokens=400  # Increase the maximum number of tokens generated
 )
 
 # Ensure the model is on the GPU
@@ -95,14 +94,14 @@ print("retriever")
 prompt = ChatPromptTemplate.from_messages([
     (
         "system",
-        '''
-        You are a helpful assistant. Provide direct, concise answers based on the given context.
-        Do not repeat or reference the context in your response.
+        '''You are a helpful assistant that gives direct, concise answers.
+        Use the following context to answer the question, but do not repeat or reference the context.
+        Keep your answer short and to the point.
         
         Context: {context}
         ''',
     ),
-    ("human", "Answer the question: {question}"),
+    ("human", "{question}"),
 ])
 
 # Create the QA chain using the retriever to get the context dynamically
@@ -111,26 +110,41 @@ def qa_chain(query):
     embedding = embedding.tolist()
     res = retriever.similarity_search_with_score_by_vector(embedding, k=3)
     
-    # Only use the top document for context
-    context = res[0][0].page_content
-    chain = prompt | llm
+    # Use the top 2 documents for context
+    context = "\n\n".join([doc.page_content for doc, score in res[:2]])
     
-    # Now include both context and question in the chain invocation
-    result = chain.invoke(
-        {
-            "context": context,
-            "question": query,
-        }
-    )
+    # Define the prompt template
+    prompt_template = """
+        You are a helpful assistant that gives direct, concise answers.
+        Use the following context to answer the question, but do not repeat or reference the context.
+        Keep your answer short and to the point.
+        
+        Context:
+        {context}
+
+        Question:
+        {question}
+
+        Answer:
+        """.strip()
     
-    # Extract just the answer part after "Answer:"
-    answer = str(result)
-    if "Answer:" in answer:
-        answer = answer.split("Answer:")[-1].strip()
+    # Format the prompt with context and question
+    prompt_text = prompt_template.format(context=context, question=query)
     
-    # Print the similarity scores and document names for each document
+    # Generate the answer
+    result = llm(prompt_text)
+    
+    # Check if the result contains the expected answer
+    if "Answer:" in result:
+        # Extract the answer after the "Answer:" keyword
+        answer_start = result.index("Answer:") + len("Answer:")
+        answer = result[answer_start:].strip().split('\n')[0]
+    else:
+        answer = "No answer found."
+    
+    # Print the similarity scores and document names for the top 2 documents
     print("\nRetrieved documents (similarity scores):")
-    for i, (doc, score) in enumerate(res, 1):
+    for i, (doc, score) in enumerate(res[:2], 1):
         doc_name = doc.metadata.get('name', 'Unknown document')
         print(f"Doc {i}: {doc_name} (score: {str(score)})")
     

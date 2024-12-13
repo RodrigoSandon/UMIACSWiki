@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.2
+regex==2023.10.3
+sentence-transformers==2.2.2
+matplotlib==3.7.1
+

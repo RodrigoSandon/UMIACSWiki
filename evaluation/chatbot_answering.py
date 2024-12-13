@@ -9,8 +9,10 @@ context using similarity search, and then uses the retrieved context along with 
 appropriate answers. 
 
 The system uses a prompt template that instructs the model to 
-provide direct, concise answers based on the given context. 
-The code uses transformers, langchain, and Qdrant for vector storage, and runs on GPU if available. 
+provide direct answers. 
+
+The code uses transformers, langchain, and Qdrant for
+ vector storage, and runs on GPU if available. 
 """
 import json
 import os

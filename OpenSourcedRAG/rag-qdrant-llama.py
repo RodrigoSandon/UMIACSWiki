@@ -8,34 +8,31 @@ from config import get_llama_token, get_qdrant_api_key, get_qdrant_endpoint_url,
 import numpy as np
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# Init Llama
+# init llama
 model_id = "meta-llama/Llama-3.1-8B-Instruct"
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
 
-# Read the Llama token from the env folder
+# read the llama token from the env folder
 token = get_llama_token()
 
 print(device)
 
-# Define the path to your local folder containing documents
 local_folder_path = get_local_folder_path()
 
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams
 
-# Initialize the Qdrant client for the cluster with API key
 client = QdrantClient(
     url=get_qdrant_endpoint_url(),
     api_key=get_qdrant_api_key()
 )
 
-# Check if the collection already exists
 collection_name = get_collection_name()
 try:
     client.get_collection(collection_name)
     print(f"Collection '{collection_name}' already exists.")
 except Exception as e:
-    # If the collection does not exist, create it
+    # if the collection does not exist, create it
     client.create_collection(
         collection_name=collection_name,
         vectors_config=VectorParams(size=768, distance=Distance.COSINE)
@@ -45,11 +42,10 @@ except Exception as e:
 from qdrant_client.models import PointStruct
 
 def embed_document(file_path):
-    # Load the document content
+    # load the document content
     with open(file_path, 'r') as file:
         document_content = file.read()
     
-    # Initialize the embedding model
     embedding_model = HuggingFaceEmbeddings(
         model_name="dunzhang/stella_en_1.5B_v5",
         model_kwargs={
@@ -57,18 +53,18 @@ def embed_document(file_path):
         },
     )
     
-    # Encode the document content to get the embedding
+    # encode the document content to get the embedding
     embedding = embedding_model._client.encode(document_content, prompt_name="s2p_query")
     
-    return embedding.tolist()  # Convert to list if needed
+    return embedding.tolist()  # convert to list if needed
 
-# Iterate over files in the local folder and upload them
+# iterate over files in the local folder and upload them
 for idx, file_name in enumerate(os.listdir(local_folder_path)):
     file_path = os.path.join(local_folder_path, file_name)
     vector = embed_document(file_path)
     payload = {"file_name": file_name}
 
-    # Upsert the document vector into the collection
+    # upsert the document vector into the collection
     client.upsert(
         collection_name=get_collection_name(),
         wait=True,
@@ -77,14 +73,14 @@ for idx, file_name in enumerate(os.listdir(local_folder_path)):
         ]
     )
 
-model_config = transformers.AutoConfig.from_pretrained(
+    model_config = transformers.AutoConfig.from_pretrained(
     model_id,
     trust_remote_code=True,
     max_new_tokens=1024,
     token=token
 )
 
-# Function to check available GPU memory
+# gpu available check
 def is_gpu_overloaded(threshold=0.9):
     if torch.cuda.is_available():
         total_memory = torch.cuda.get_device_properties(0).total_memory
@@ -92,7 +88,7 @@ def is_gpu_overloaded(threshold=0.9):
         return reserved_memory / total_memory > threshold
     return False
 
-# Use mixed precision for the model
+# use mixed precision for the model
 model = transformers.AutoModelForCausalLM.from_pretrained(
     model_id,
     trust_remote_code=True,
@@ -101,7 +97,7 @@ model = transformers.AutoModelForCausalLM.from_pretrained(
     token=token
 ).half()  # Use half precision
 
-# Check if GPU is overloaded and switch to CPU if necessary
+# check if gpu is overloaded and switch to cpu if necessary
 device = 'cuda' if torch.cuda.is_available() and not is_gpu_overloaded() else 'cpu'
 model.to(device)
 
@@ -117,7 +113,7 @@ query_pipeline = pipeline(
     device_map="auto",
 )
 
-# Ensure the model is on the GPU
+# ensure the model is on the gpu
 query_pipeline.model.to('cuda')
 
 def find_most_similar_docs(qdrant_client, query_embedding, top_k=5):
@@ -137,7 +133,7 @@ def find_most_similar_docs(qdrant_client, query_embedding, top_k=5):
     )
     return [hit.id for hit in search_result]
 
-# Define the wiki prompt to append to each question
+# define the wiki prompt to append to each question
 wiki_prompt = (
     "You are an AI assistant specifically trained to answer questions based ONLY on the provided wiki page content. "
     "Your knowledge is limited to the information given in the context. Follow these rules strictly:\n\n"
@@ -154,19 +150,17 @@ wiki_prompt = (
 
 message = input("Enter your question: ")
 
-# Tokenize the full message
 inputs = tokenizer(message, return_tensors="pt", padding=True, truncation=True).to('cuda')
 
-# Run the model
 outputs = query_pipeline.model(**inputs, output_hidden_states=True)
 query_embedding = outputs.hidden_states[-1].mean(dim=1).squeeze().cpu().detach().numpy()[:768]
 
-# Retrieve most similar documents from Qdrant
+# retrieve most similar documents from qdrant
 print("Searching for most similar documents...")
 relevant_docs = find_most_similar_docs(client, query_embedding, top_k=5)
 print(f"Found {len(relevant_docs)} similar documents.")
 
-# Concatenate the retrieved documents with the wiki prompt and question
+# concatenate the retrieved documents with the wiki prompt and question
 print("Concatenating retrieved documents with the message...")
 context = " ".join([
     (lambda doc_id: (
@@ -177,7 +171,7 @@ context = " ".join([
 full_message_with_context = wiki_prompt + context + "\n" + message  # Include context and question
 print("Full message prepared.")
 
-# Generate the response using the full context and message
+# generate the response using the full context and message
 print("Generating response...")
 sequences = query_pipeline(
     full_message_with_context,

@@ -1,4 +1,5 @@
 # scripts/get_html.py
+# I do not claim the total ownership of this code, help with AI
 import re
 from bs4 import BeautifulSoup
 
@@ -20,9 +21,9 @@ def html_to_text(text, preserve_new_lines=True, strip_tags=["style", "script"]):
         for element in soup.find_all():
             strings = element.find_all(string=True, recursive=False)
             if strings:
-                # If the element is not a non-breaking element and has strings
+                # if the element is not a non-breaking element and has strings
                 if element.name not in NON_BREAKING_ELEMENTS:
-                    # Add new lines to separate block elements
+                    # add new lines to separate block elements
                     if element.name == "br":
                         element.append("\n")
                     else:
@@ -38,7 +39,7 @@ def get_html(file):
         soup = BeautifulSoup(f, "html.parser")
         iwant = soup.find_all("div", {"id": "content"})
         if len(iwant) != 1:
-            # Fallback: If "div#content" not found, use entire page
+            # fallback: if "div#content" not found, use entire page
             text = html_to_text(str(soup))
         else:
             text = html_to_text(str(iwant[0]))

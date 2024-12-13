@@ -1,3 +1,4 @@
+# I do not claim the total ownership of this code, help with AI
 from transformers import AutoTokenizer, AutoConfig
 import os
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -12,21 +13,19 @@ from langchain_core.prompts import ChatPromptTemplate
 import warnings
 import logging
 
-
-# Load environment variables from a .env file
 load_dotenv()
 
-# HuggingFace model and tokenizer setup
+# huggingFace model and tokenizer setup
 model_id = "meta-llama/Llama-3.1-8B-Instruct"
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
 #print("device:", device)
 token = os.getenv("llama_instruct_token")
 
-# Suppress HuggingFace warnings
+# suppress huggingFace warnings
 warnings.filterwarnings('ignore')
 logging.getLogger("transformers").setLevel(logging.ERROR)
 
-# Load model (add quiet=True)
+# load model (add quiet=True)
 model_config = AutoConfig.from_pretrained(
     model_id,
     trust_remote_code=True,
@@ -34,7 +33,7 @@ model_config = AutoConfig.from_pretrained(
     quiet=True
 )
 
-# Use mixed precision for the model
+# use mixed precision for the model
 model = transformers.AutoModelForCausalLM.from_pretrained(
     model_id,
     trust_remote_code=True,
@@ -51,7 +50,7 @@ tokenizer = AutoTokenizer.from_pretrained(
     trust_remote_code=True
 )
 
-# Create HuggingFace pipeline
+# create huggingFace pipeline
 query_pipeline = transformers.pipeline(
     "text-generation",
     model=model,
@@ -61,10 +60,10 @@ query_pipeline = transformers.pipeline(
     max_new_tokens=400  # Increase the maximum number of tokens generated
 )
 
-# Ensure the model is on the GPU
+# ensure the model is on the GPU
 query_pipeline.model.to('cuda')
 
-# Wrap the model pipeline for LangChain
+# wrap the model pipeline for LangChain
 llm = HuggingFacePipeline(pipeline=query_pipeline)
 
 store = None
@@ -104,16 +103,16 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", "{question}"),
 ])
 
-# Create the QA chain using the retriever to get the context dynamically
+# create the QA chain using the retriever to get the context dynamically
 def qa_chain(query):
     embedding = embedding_model._client.encode(query, prompt_name="s2p_query")
     embedding = embedding.tolist()
     res = retriever.similarity_search_with_score_by_vector(embedding, k=3)
     
-    # Use the top 2 documents for context
+    # use the top 2 documents for context
     context = "\n\n".join([doc.page_content for doc, score in res[:2]])
     
-    # Define the prompt template
+    # define the prompt template
     prompt_template = """
         You are a helpful assistant that gives direct, concise answers.
         Use the following context to answer the question, but do not repeat or reference the context.
@@ -128,21 +127,21 @@ def qa_chain(query):
         Answer:
         """.strip()
     
-    # Format the prompt with context and question
+    # format the prompt with context and question
     prompt_text = prompt_template.format(context=context, question=query)
     
-    # Generate the answer
+    # generate the answer
     result = llm(prompt_text)
     
-    # Check if the result contains the expected answer
+    # check if the result contains the expected answer
     if "Answer:" in result:
-        # Extract the answer after the "Answer:" keyword
+        # extract the answer after the "Answer:" keyword
         answer_start = result.index("Answer:") + len("Answer:")
         answer = result[answer_start:].strip().split('\n')[0]
     else:
         answer = "No answer found."
     
-    # Print the similarity scores and document names for the top 2 documents
+    # print the similarity scores and document names for the top 2 documents
     print("\nRetrieved documents (similarity scores):")
     for i, (doc, score) in enumerate(res[:2], 1):
         doc_name = doc.metadata.get('name', 'Unknown document')
@@ -154,5 +153,5 @@ while True:
     query = input("Enter your query (or type 'exit' to quit): ")
     if query.lower() == 'exit':
         break
-    result = qa_chain(query)  # Removed top_docs
-    print("\nAnswer:", result)  # Only print the answer
+    result = qa_chain(query)  # removed top_docs
+    print("\nAnswer:", result)  # only print the answer

@@ -1,4 +1,17 @@
 # I do not claim the total ownership of this code, help with AI
+
+"""
+This code implements a chatbot answering system. 
+
+The system first loads a pre-existing vector store and document store containing reference 
+materials. When processing questions, it converts them into vector embeddings, searches for relevant 
+context using similarity search, and then uses the retrieved context along with the question to generate 
+appropriate answers. 
+
+The system uses a prompt template that instructs the model to 
+provide direct, concise answers based on the given context. 
+The code uses transformers, langchain, and Qdrant for vector storage, and runs on GPU if available. 
+"""
 import json
 import os
 import torch

@@ -1,5 +1,11 @@
 # scripts/visualize.py
 # I do not claim the total ownership of this code, help with AI
+
+"""
+This script visualizes the similarity scores from a CSV file, showing both individual scores and a rolling 
+average.
+"""
+
 import csv
 import matplotlib.pyplot as plt
 import numpy as np

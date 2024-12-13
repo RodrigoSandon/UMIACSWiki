@@ -1,5 +1,11 @@
 # scripts/get_html.py
 # I do not claim the total ownership of this code, help with AI
+
+"""
+This script provides functionality for extracting and cleaning text content from HTML documents. It contains 
+three main functions that work together.
+"""
+
 import re
 from bs4 import BeautifulSoup
 

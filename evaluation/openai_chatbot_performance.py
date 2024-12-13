@@ -1,4 +1,8 @@
 # I do not claim the total ownership of this code, help with AI
+"""
+This code compares and visualizes the performance of two different systems (a chatbot and a baseline)
+based on cosine similarity scores for both.
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 

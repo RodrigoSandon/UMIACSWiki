@@ -1,5 +1,17 @@
 # scripts/evaluate.py
 # I do not claim the total ownership of this code, help with AI
+
+"""
+This evaluation script assesses the quality of a question-answering system by comparing generated answers 
+with their source documents by cosine similarity of a JSON file:
+1. Load Q&A pairs from a JSON file
+2. Converts URLs into local HTML filenames using regex
+3. Uses the SentenceTransformer model (all-MiniLM-L6-v2) to generate embeddings for both the source 
+   documents and the generated answers
+4. Computes cosine similarity scores between each answer and its source document
+5. Writes the results to a CSV file
+"""
+
 import json
 import os
 import re

@@ -10,20 +10,14 @@ Welcome to the **UMIACSWiki** repository! The primary goal of this project was t
 ---
 
 ## Table of Contents
-
+- [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-- [Running our Code](#setup-instructions)
   - [RAG](#rag)
   - [Fine-tuning](#fine-tuning)
-- Evaluation
+- [Evaluation](#evaluation)
 ---
 
-## Getting Started
-
-To get started with this repository, you can clone it, contribute to its content, or simply explore its resources.
-
-### Prerequisites
+## Prerequisites
 
 Ensure you have the following resources:
 - **CPU** >= 4 cores
@@ -36,11 +30,11 @@ Ensure you have the following resources:
 - Fine-tuning model on LLaMA-8B-instruct available at:
 https://drive.google.com/drive/folders/1ymBdxD07nHIs18DXtY0ZOL-b0cshCzzM?usp=drive_link
    
-### Running our Code
-## Web Scraping 
+## Getting Started
+### Web Scraping 
 1. To scrape the UMIACS wiki** interact with ```scraping/UMIACSWikiTextScrape.ipynb```
 2. Scraped raw text can be found at ```scraping/scrapedText.txt```
-## RAG
+### RAG
 1. **To run the RAG ui**:
    ```bash
    cd UMIACSWiki/UI 
@@ -54,7 +48,7 @@ https://drive.google.com/drive/folders/1ymBdxD07nHIs18DXtY0ZOL-b0cshCzzM?usp=dri
    cd UMIACSWiki/UI
    python -m unittest test_app.py
    ```
-## Fine-tuning 
+### Fine-tuning 
 
-### Evaluation 
+## Evaluation 
 

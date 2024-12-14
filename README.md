@@ -32,7 +32,7 @@ https://drive.google.com/drive/folders/1ymBdxD07nHIs18DXtY0ZOL-b0cshCzzM?usp=dri
    
 ## Getting Started
 ### Web Scraping 
-1. To scrape the UMIACS wiki** interact with ```scraping/UMIACSWikiTextScrape.ipynb```
+1. To scrape the UMIACS wiki interact with ```scraping/UMIACSWikiTextScrape.ipynb```
 2. Scraped raw text can be found at ```scraping/scrapedText.txt```
 ### RAG
 1. **To run the RAG ui**:

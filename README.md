@@ -67,4 +67,5 @@ huggingface-cli login --add-to-git-credential
 5. **The chatbot should able to be run locally or using API**
 
 ## Evaluation 
+1. Question dataset can be found here ```questions/UMIACSQuestions.json``` 
 

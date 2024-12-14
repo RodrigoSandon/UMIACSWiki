@@ -13,7 +13,10 @@ Welcome to the **UMIACSWiki** repository! The primary goal of this project was t
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Setup Instructions](#setup-instructions)
+- [Running our Code](#setup-instructions)
+  - [RAG](#rag)
+  - [Fine-tuning](#fine-tuning)
+- Evaluation
 ---
 
 ## Getting Started
@@ -24,20 +27,28 @@ To get started with this repository, you can clone it, contribute to its content
 
 Ensure you have the following resources installed on your system:
 - **CPU** >= 4 cores
-- **RAM** >= 16 GB
-- **Disk** >= 15 GB
-### Setup Instructions
-
-1. **Clone the repository**:
+- **RAM** >= 32 GB
+- **Disk** >= 32 GB
+- **Clone the repository**:
    ```bash
    git clone https://github.com/RodrigoSandon/UMIACSWiki.git
-2. **To run the RAG ui**:
+   
+### Running our Code
+### Web Scraping 
+1. **To scrape the UMIACS wiki** interact with ```scraping/UMIACSWikiTextScrape.ipynb```
+### RAG
+1. **To run the RAG ui**:
    ```bash
    cd UMIACSWiki/UI 
    pip install -r requirements.txt
    python app.py # on GPU 
    streamlit run streamlit_app.py --server.address=0.0.0.0 --server.port=8501 on cpu # on CPU
    # Chatbot should be availble at http://0.0.0.0:8501/
+   ```
+2. **To test the RAG pipeline**
+   ```bash
+   cd UMIACSWiki/UI
+   python -m unittest test_app.py
    ```
 
 

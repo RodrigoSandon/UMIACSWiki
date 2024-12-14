@@ -50,5 +50,20 @@ https://drive.google.com/drive/folders/1ymBdxD07nHIs18DXtY0ZOL-b0cshCzzM?usp=dri
    ```
 ### Fine-tuning 
 
+1. **To run the fine-tuning and Weibu UI using Llama-factory
+
+```bash
+cd /fs/classhomes/fall2024/cmsc473/c4730027/LLaMA-Factory
+CUDA_VISIBLE_DEVICES=0 GRADIO_SHARE=1 GRADIO_SERVER_PORT=7860 llamafactory-cli webui
+```
+2. **In the terminal, copy the port code then open it in the browser.
+3. **Get the hugging face access tokens and pass the authentication locally
+
+```bash
+huggingface-cli login --add-to-git-credential
+```
+4. **Load the check-point model(normally named by date-time)
+5. **The chatbot should able to be run locally or using API
+
 ## Evaluation 
 

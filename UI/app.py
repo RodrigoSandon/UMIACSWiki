@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 model_id = "meta-llama/Llama-3.1-8B-Instruct"
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
-token = "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"
+token = "*"
 
 login(token=token)
 

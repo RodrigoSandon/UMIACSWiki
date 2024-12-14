@@ -69,8 +69,8 @@ huggingface-cli login --add-to-git-credential
 ## Evaluation 
 1. Question dataset for OpenAI's answers can be found here ```questions/UMIACSQuestions.json``` 
 2. Question dataset for Chatbot's answers can be found here```UMIACS_QA_ChatbotAnswers.json```
-3. Make sure paths are correct in evaluate.py
-4. Install requirements in requirements.txt in evaluate folder
-5. Run evaluate.py then visualize.py to view the graphical results for individual performance
-6. Run openai_chatbot_performance.py to combine the rolling average results of both.
+3. Make sure paths are correct in ```evaluate.py```
+4. Install requirements in ```requirements.txt``` in evaluate folder
+5. Run ```evaluate.py``` then ```visualize.py``` to view the graphical results for individual performance
+6. Run ```openai_chatbot_performance.py``` to combine the rolling average results of both.
 

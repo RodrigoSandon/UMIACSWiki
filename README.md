@@ -25,18 +25,22 @@ To get started with this repository, you can clone it, contribute to its content
 
 ### Prerequisites
 
-Ensure you have the following resources installed on your system:
+Ensure you have the following resources:
 - **CPU** >= 4 cores
 - **RAM** >= 32 GB
 - **Disk** >= 32 GB
+- HuggingFace account
 - **Clone the repository**:
    ```bash
    git clone https://github.com/RodrigoSandon/UMIACSWiki.git
+- Fine-tuning model on LLaMA-8B-instruct available at:
+https://drive.google.com/drive/folders/1ymBdxD07nHIs18DXtY0ZOL-b0cshCzzM?usp=drive_link
    
 ### Running our Code
-### Web Scraping 
-1. **To scrape the UMIACS wiki** interact with ```scraping/UMIACSWikiTextScrape.ipynb```
-### RAG
+## Web Scraping 
+1. To scrape the UMIACS wiki** interact with ```scraping/UMIACSWikiTextScrape.ipynb```
+2. Scraped raw text can be found at ```scraping/scrapedText.txt```
+## RAG
 1. **To run the RAG ui**:
    ```bash
    cd UMIACSWiki/UI 
@@ -50,8 +54,7 @@ Ensure you have the following resources installed on your system:
    cd UMIACSWiki/UI
    python -m unittest test_app.py
    ```
+## Fine-tuning 
 
+### Evaluation 
 
-Fine-tuning model on LLaMA-8B-instruct
-file at GDrive:
-https://drive.google.com/drive/folders/1ymBdxD07nHIs18DXtY0ZOL-b0cshCzzM?usp=drive_link
